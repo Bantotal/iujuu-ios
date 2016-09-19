@@ -630,7 +630,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#<TBR>\"${PODS_ROOT}/Fabric/run\" XLFabricAPIKey";
+			shellScript = "${PODS_ROOT}/Fabric/run 1521d335756fcf445d66cea7321f7f03d50bf0ca 4d71710b0addd9bfb8ccc1d1134672d6acfb8022e0dbbef6bb7e292e1cfc6499";
 		};
 		283020B71C8A057C00E6EBC2 /* Swift Lint */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -759,7 +759,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "#<TBR>\"${PODS_ROOT}/Fabric/run\" XLFabricAPIKey";
+			shellScript = "${PODS_ROOT}/Fabric/run 1521d335756fcf445d66cea7321f7f03d50bf0ca 4d71710b0addd9bfb8ccc1d1134672d6acfb8022e0dbbef6bb7e292e1cfc6499";
 		};
 		2F79BEAD31A7EAC6AD4F4CA1 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
