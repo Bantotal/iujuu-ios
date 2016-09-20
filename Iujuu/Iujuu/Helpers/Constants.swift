@@ -12,8 +12,8 @@ import XLSwiftKit
 struct Constants {
 
 	struct Network {
-        static let baseUrl = URL(string: "https://api.github.com")!
-        static let AuthTokenName = "Authorization"
+        static let baseUrl = URL(string: "http://localhost:3000/api")!
+        static let AuthTokenName = "access_token"
         static let SuccessCode = 200
         static let successRange = 200..<300
         static let Unauthorized = 401

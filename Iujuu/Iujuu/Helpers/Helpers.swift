@@ -25,3 +25,15 @@ func DEBUGJson(_ value: AnyObject) {
         }
     #endif
 }
+
+func cleanedDict(_ dictionary: [String: Any?]) -> [String: Any] {
+    var newDict = [String: Any]()
+    dictionary.enumerated().forEach { (offset, element) in
+        if let value = element.value {
+            newDict[element.key] = value
+        }
+    }
+
+    return newDict
+
+}
