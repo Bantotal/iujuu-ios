@@ -10,7 +10,7 @@ import Foundation
 import Alamofire
 import Crashlytics
 import KeychainAccess
-//import Opera
+import Opera
 import RxSwift
 import RealmSwift
 

@@ -10,6 +10,10 @@ PODS:
   - Fabric (1.6.8)
   - KeychainAccess (3.0.0)
   - NVActivityIndicatorView (3.0)
+  - Opera (1.0.0):
+    - Alamofire (~> 4.0)
+    - RxCocoa (~> 3.0.0-beta.1)
+    - RxSwift (~> 3.0.0-beta.1)
   - Quick (0.9.3)
   - R.swift (3.0.0):
     - R.swift.Library (~> 3.0.0)
@@ -36,12 +40,13 @@ DEPENDENCIES:
   - Fabric (~> 1.6)
   - KeychainAccess (~> 3.0)
   - NVActivityIndicatorView (~> 3.0)
+  - Opera (from `~/Developer/Opera`)
   - Quick (from `https://github.com/Quick/Quick.git`, branch `swift-3.0`)
   - R.swift (~> 3.0)
   - RealmSwift (~> 1.1)
   - Result (~> 3.0)
-  - RxCocoa (from `https://github.com/ReactiveX/RxSwift.git`, tag `3.0.0-beta.1`)
-  - RxSwift (from `https://github.com/ReactiveX/RxSwift.git`, tag `3.0.0-beta.1`)
+  - RxCocoa (~> 3.0.0-beta.1)
+  - RxSwift (~> 3.0.0-beta.1)
   - SwiftDate (from `https://github.com/malcommac/SwiftDate.git`, branch `feature/swift-3.0`)
   - XLSwiftKit (~> 2.0)
 
@@ -52,15 +57,11 @@ EXTERNAL SOURCES:
   Eureka:
     :branch: Swift3
     :git: https://github.com/xmartlabs/Eureka.git
+  Opera:
+    :path: ~/Developer/Opera
   Quick:
     :branch: swift-3.0
     :git: https://github.com/Quick/Quick.git
-  RxCocoa:
-    :git: https://github.com/ReactiveX/RxSwift.git
-    :tag: 3.0.0-beta.1
-  RxSwift:
-    :git: https://github.com/ReactiveX/RxSwift.git
-    :tag: 3.0.0-beta.1
   SwiftDate:
     :branch: feature/swift-3.0
     :git: https://github.com/malcommac/SwiftDate.git
@@ -75,12 +76,6 @@ CHECKOUT OPTIONS:
   Quick:
     :commit: 1503fb019d72417d5d6e4fbebdbaa03c9e4a125f
     :git: https://github.com/Quick/Quick.git
-  RxCocoa:
-    :git: https://github.com/ReactiveX/RxSwift.git
-    :tag: 3.0.0-beta.1
-  RxSwift:
-    :git: https://github.com/ReactiveX/RxSwift.git
-    :tag: 3.0.0-beta.1
   SwiftDate:
     :commit: 644a4615c77dc70d7861ddadb2c59f5c45f4c235
     :git: https://github.com/malcommac/SwiftDate.git
@@ -95,6 +90,7 @@ SPEC CHECKSUMS:
   Fabric: 5755268d0171435ab167e3d0878a28a777deaf10
   KeychainAccess: 412bf2650d9aebfc8135a58103b90ec38caad7f8
   NVActivityIndicatorView: 81953b5e65093ba79edf4fe7268e002039ca5268
+  Opera: 47179a9b223645d94d0372d2026668cff80f26da
   Quick: 31fb576b6cbb6b028cc5e0016e4366accbb346f5
   R.swift: 5a8b4a4ea565b0f20c39d8ce1445f3d3a9064768
   R.swift.Library: fed723da260519abed60044de7aaf19494cc4e1f
@@ -106,6 +102,6 @@ SPEC CHECKSUMS:
   SwiftDate: fa487d9b7d8c3070ea2553486902494f4915465d
   XLSwiftKit: 4d48322a602120dc6300d58d7fb07b873e223c1c
 
-PODFILE CHECKSUM: 4fa767e0f85978273a59390707e804290645cb08
+PODFILE CHECKSUM: 8edffdd46f6b3ffb5124c70eeb1372eba8e447ae
 
 COCOAPODS: 1.1.0.rc.2
