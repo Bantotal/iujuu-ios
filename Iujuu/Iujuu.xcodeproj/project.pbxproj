@@ -512,10 +512,12 @@
 				ORGANIZATIONNAME = "'Xmartlabs SRL'";
 				TargetAttributes = {
 					2841F1D91CCFF55600D609CE = {
+						DevelopmentTeam = WE3PS2UVWT;
 						LastSwiftMigration = 0800;
 					};
 					2867E8261C74C7D400FCEBBD = {
 						CreatedOnToolsVersion = 7.2;
+						DevelopmentTeam = WE3PS2UVWT;
 						LastSwiftMigration = 0800;
 					};
 					28C69D381CD8E3D600F839D6 = {
@@ -1012,6 +1014,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = WE3PS2UVWT;
 				INFOPLIST_FILE = "$(SRCROOT)/Iujuu/Supporting Files/Info-Staging.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1029,6 +1032,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = WE3PS2UVWT;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/Iujuu/Supporting Files/Info-Staging.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -1132,6 +1136,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = WE3PS2UVWT;
 				INFOPLIST_FILE = "$(SRCROOT)/Iujuu/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1149,6 +1154,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = WE3PS2UVWT;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
 				INFOPLIST_FILE = "$(SRCROOT)/Iujuu/Supporting Files/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
