@@ -13,7 +13,7 @@ import RealmSwift
 
 class RealmManager: AnyObject {
 
-    static let sharedInstance = RealmManager()
+    static let shared = RealmManager()
 
     fileprivate(set) var defaultRealm: Realm!
 
@@ -58,7 +58,7 @@ class RealmManager: AnyObject {
 extension Object {
 
     fileprivate func realmInst() -> Realm {
-        return self.realm ?? RealmManager.sharedInstance.defaultRealm
+        return self.realm ?? RealmManager.shared.defaultRealm
     }
 
     /** Must be called from main thread */

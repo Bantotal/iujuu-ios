@@ -21,6 +21,7 @@ def app_pods
     # pod 'RxAlamofire', '~> 2.2'
     pod 'RxCocoa', '~> 3.0.0-beta.1'
     pod 'RxSwift',  '~> 3.0.0-beta.1'
+    pod 'RxRealm', :git => 'https://github.com/RxSwiftCommunity/RxRealm.git', :tag => '0.2.3'
     pod 'SwiftDate', :git => 'https://github.com/malcommac/SwiftDate.git', :branch => 'feature/swift-3.0'
     # pod 'WebLinking', '~> 1.0'
     pod 'XLSwiftKit', '~> 2.0'

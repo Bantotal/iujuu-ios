@@ -19,10 +19,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        parseArguments()
         setupCrashlytics()
         setupNetworking()
         stylizeEurekaRows()
-        
+
         // Register the supported push notifications interaction types.
         // Shows alert view askying for allowed push notification types
         // you can move this line to a more suitable point in the app.
@@ -57,6 +58,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    func parseArguments() {
+        var arguments = ProcessInfo.processInfo.arguments
+        arguments.removeFirst()
+        debugPrint("App launching with the following arguments: \(arguments)")
+        DataManager.shared = arguments.contains(TestArguments.mockData) ? MockedDataManager.shared : RealDataManager.shared
+    }
 
 }
 

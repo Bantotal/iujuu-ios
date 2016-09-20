@@ -12,7 +12,7 @@ class InitialViewController: XLViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        Router.Login(username: "yo", email: nil, password: "yo123").rx_anyObject().do(onNext: { object in
+        Router.Session.Login(username: "yo", email: nil, password: "yo123").rx_anyObject().do(onNext: { object in
             print(object)
         }, onError: { error in
             print(error)
