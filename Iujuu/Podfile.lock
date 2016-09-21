@@ -26,6 +26,9 @@ PODS:
   - Result (3.0.0)
   - RxCocoa (3.0.0-beta.1):
     - RxSwift (~> 3.0.0-beta.1)
+  - RxRealm (0.2.3):
+    - RealmSwift (~> 1.1)
+    - RxSwift (~> 3.0.0-beta.1)
   - RxSwift (3.0.0-beta.1)
   - SwiftDate (3.0.9)
   - XLSwiftKit (2.0.0)
@@ -40,12 +43,13 @@ DEPENDENCIES:
   - Fabric (~> 1.6)
   - KeychainAccess (~> 3.0)
   - NVActivityIndicatorView (~> 3.0)
-  - Opera (from `~/Developer/Opera`)
+  - Opera (from `https://github.com/xmartlabs/Opera.git`, branch `Swift3`)
   - Quick (from `https://github.com/Quick/Quick.git`, branch `swift-3.0`)
   - R.swift (~> 3.0)
   - RealmSwift (~> 1.1)
   - Result (~> 3.0)
   - RxCocoa (~> 3.0.0-beta.1)
+  - RxRealm (from `https://github.com/RxSwiftCommunity/RxRealm.git`, tag `0.2.3`)
   - RxSwift (~> 3.0.0-beta.1)
   - SwiftDate (from `https://github.com/malcommac/SwiftDate.git`, branch `feature/swift-3.0`)
   - XLSwiftKit (~> 2.0)
@@ -58,10 +62,14 @@ EXTERNAL SOURCES:
     :branch: Swift3
     :git: https://github.com/xmartlabs/Eureka.git
   Opera:
-    :path: ~/Developer/Opera
+    :branch: Swift3
+    :git: https://github.com/xmartlabs/Opera.git
   Quick:
     :branch: swift-3.0
     :git: https://github.com/Quick/Quick.git
+  RxRealm:
+    :git: https://github.com/RxSwiftCommunity/RxRealm.git
+    :tag: 0.2.3
   SwiftDate:
     :branch: feature/swift-3.0
     :git: https://github.com/malcommac/SwiftDate.git
@@ -73,9 +81,15 @@ CHECKOUT OPTIONS:
   Eureka:
     :commit: c2b0b03a1e33180af9c5ff30542b516aa495d24b
     :git: https://github.com/xmartlabs/Eureka.git
+  Opera:
+    :commit: 521f936dabb1377d608612f285fa74908eb35135
+    :git: https://github.com/xmartlabs/Opera.git
   Quick:
     :commit: 1503fb019d72417d5d6e4fbebdbaa03c9e4a125f
     :git: https://github.com/Quick/Quick.git
+  RxRealm:
+    :git: https://github.com/RxSwiftCommunity/RxRealm.git
+    :tag: 0.2.3
   SwiftDate:
     :commit: 644a4615c77dc70d7861ddadb2c59f5c45f4c235
     :git: https://github.com/malcommac/SwiftDate.git
@@ -98,10 +112,11 @@ SPEC CHECKSUMS:
   RealmSwift: 838058b2db95b12cb86bd0cf209df642c33fb60a
   Result: 1b3e431f37cbcd3ad89c6aa9ab0ae55515fae3b6
   RxCocoa: 8cecf331302b8ae5381bbab1bccba4ede2eae6a8
+  RxRealm: 56fb63ead229e0a568f6014f81a0530f74cd8bfa
   RxSwift: 0823e8d7969c23bfa9ddfb2afa4881e424a1a710
   SwiftDate: fa487d9b7d8c3070ea2553486902494f4915465d
   XLSwiftKit: 4d48322a602120dc6300d58d7fb07b873e223c1c
 
-PODFILE CHECKSUM: 8edffdd46f6b3ffb5124c70eeb1372eba8e447ae
+PODFILE CHECKSUM: 900489382c84a270fb19769ecb806f332a38c76a
 
 COCOAPODS: 1.1.0.rc.2

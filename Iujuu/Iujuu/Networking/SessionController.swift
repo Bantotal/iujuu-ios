@@ -15,6 +15,7 @@ import RxSwift
 import RealmSwift
 
 class SessionController {
+
     static let sharedInstance = SessionController()
     fileprivate let keychain = Keychain(service: Constants.Keychain.serviceIdentifier)
     fileprivate init() { }
@@ -37,7 +38,7 @@ class SessionController {
     }
 
     func invalidateIfNeeded() {
-        if token != nil && user == nil {
+        if token != nil && DataManager.shared.user == nil {
             clearSession()
         }
     }
@@ -47,24 +48,10 @@ class SessionController {
         return  Observable.just(nil)
     }
 
-    // MARK: - User handling
-    var user: User? {
-        //TODO: CHANGE ME
-        // This implementation just works if you will only have one User in the database all the time
-        // If you might have more than one then you should implement something else like another object that saves a relation to the 'currentUser'.
-        do {
-            let realm = try RealmManager.sharedInstance.createRealm()
-            return realm.objects(User.self).first
-        } catch {
-            Crashlytics.sharedInstance().recordError(error as NSError)
-            return nil
-        }
-    }
-
     // MARK: - Auxiliary functions
     func clearSession() {
         token = nil
-        RealmManager.sharedInstance.eraseAll()
+        RealmManager.shared.eraseAll()
 //        Analytics.reset()
 //        Analytics.registerUnidentifiedUser()
         Crashlytics.sharedInstance().setUserEmail(nil)
@@ -72,23 +59,4 @@ class SessionController {
         Crashlytics.sharedInstance().setUserName(nil)
     }
 
-    // MARK: - User observable
-    fileprivate var userObserverToken: NotificationToken?
-
-    lazy var userObservable: Observable<User> = {
-        return Observable.create() { [unowned self] (subscriber: AnyObserver<User>) in
-            let realm = RealmManager.sharedInstance.defaultRealm
-            let userResult = realm?.objects(User.self)
-            self.userObserverToken = userResult?.addNotificationBlock { _ in
-                if let user = self.user {
-                    subscriber.onNext(user)
-                }
-            }
-            return Disposables.create()
-        }
-    }()
-
-    deinit {
-        userObserverToken?.stop()
-    }
 }
