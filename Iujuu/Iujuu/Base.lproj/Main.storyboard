@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="zOV-V0-1xs">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -17,19 +18,40 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A2R-cs-o50">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mVm-cS-TwN">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Mde-SU-IZb"/>
+                                </constraints>
+                                <state key="normal" title="Primary"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lbB-Z6-w7t">
+                                <state key="normal" title="Secondary"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IS7-9G-cxL">
+                                <state key="normal" title="Borderless"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="A2R-cs-o50" firstAttribute="centerY" secondItem="abf-Tu-mT9" secondAttribute="centerY" id="eXt-60-B6C"/>
-                            <constraint firstItem="A2R-cs-o50" firstAttribute="centerX" secondItem="abf-Tu-mT9" secondAttribute="centerX" id="t4Y-lE-Xl0"/>
+                            <constraint firstItem="lbB-Z6-w7t" firstAttribute="height" secondItem="IS7-9G-cxL" secondAttribute="height" id="66W-ZP-Xab"/>
+                            <constraint firstItem="mVm-cS-TwN" firstAttribute="height" secondItem="lbB-Z6-w7t" secondAttribute="height" id="9W7-Bg-liC"/>
+                            <constraint firstItem="IS7-9G-cxL" firstAttribute="centerX" secondItem="lbB-Z6-w7t" secondAttribute="centerX" id="Ai6-9W-Jj0"/>
+                            <constraint firstItem="IS7-9G-cxL" firstAttribute="width" secondItem="lbB-Z6-w7t" secondAttribute="width" id="EBj-Et-1mU"/>
+                            <constraint firstItem="lbB-Z6-w7t" firstAttribute="centerX" secondItem="mVm-cS-TwN" secondAttribute="centerX" id="SNu-fV-KPt"/>
+                            <constraint firstItem="mVm-cS-TwN" firstAttribute="top" secondItem="tbR-v9-2c6" secondAttribute="bottom" constant="39" id="U8F-Lr-zaL"/>
+                            <constraint firstItem="lbB-Z6-w7t" firstAttribute="top" secondItem="mVm-cS-TwN" secondAttribute="bottom" constant="25" id="ZvX-R3-JEO"/>
+                            <constraint firstItem="mVm-cS-TwN" firstAttribute="centerX" secondItem="abf-Tu-mT9" secondAttribute="centerX" id="awH-OH-Z2f"/>
+                            <constraint firstItem="lbB-Z6-w7t" firstAttribute="width" secondItem="mVm-cS-TwN" secondAttribute="width" id="bUe-7W-AUu"/>
+                            <constraint firstItem="IS7-9G-cxL" firstAttribute="top" secondItem="lbB-Z6-w7t" secondAttribute="bottom" constant="17" id="diB-OW-scv"/>
+                            <constraint firstItem="mVm-cS-TwN" firstAttribute="width" secondItem="abf-Tu-mT9" secondAttribute="width" multiplier="0.7" id="eIq-DG-7gD"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Iujuu" id="1ki-Np-hkz"/>
+                    <connections>
+                        <outlet property="borderless" destination="IS7-9G-cxL" id="T9u-T7-aWW"/>
+                        <outlet property="primary" destination="mVm-cS-TwN" id="DKC-ti-piY"/>
+                        <outlet property="secondary" destination="lbB-Z6-w7t" id="LDD-gW-uWb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ohZ-iu-QMB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

@@ -8,6 +8,7 @@ PODS:
   - DynamicColor (3.1.0)
   - Eureka (1.7.0)
   - Fabric (1.6.8)
+  - FXPageControl (1.4)
   - KeychainAccess (3.0.0)
   - NVActivityIndicatorView (3.0)
   - Opera (1.0.0):
@@ -41,6 +42,7 @@ DEPENDENCIES:
   - DynamicColor (~> 3.1)
   - Eureka (from `https://github.com/xmartlabs/Eureka.git`, branch `Swift3`)
   - Fabric (~> 1.6)
+  - FXPageControl (~> 1.4)
   - KeychainAccess (~> 3.0)
   - NVActivityIndicatorView (~> 3.0)
   - Opera (from `https://github.com/xmartlabs/Opera.git`, branch `Swift3`)
@@ -102,6 +104,7 @@ SPEC CHECKSUMS:
   DynamicColor: 4dec283a881f7f9d9f3bc88fb5f306724242575f
   Eureka: 2020d9faeef7b7e9adeb9e3d8af779e5931c1897
   Fabric: 5755268d0171435ab167e3d0878a28a777deaf10
+  FXPageControl: 5057bf21537579b40ff30e119cd425d16d8ef90a
   KeychainAccess: 412bf2650d9aebfc8135a58103b90ec38caad7f8
   NVActivityIndicatorView: 81953b5e65093ba79edf4fe7268e002039ca5268
   Opera: 47179a9b223645d94d0372d2026668cff80f26da
@@ -117,6 +120,6 @@ SPEC CHECKSUMS:
   SwiftDate: fa487d9b7d8c3070ea2553486902494f4915465d
   XLSwiftKit: 4d48322a602120dc6300d58d7fb07b873e223c1c
 
-PODFILE CHECKSUM: 900489382c84a270fb19769ecb806f332a38c76a
+PODFILE CHECKSUM: 817d45c15592620697750dbe73ee2277c7d431ff
 
 COCOAPODS: 1.1.0.rc.2
