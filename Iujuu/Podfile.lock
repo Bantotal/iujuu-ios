@@ -31,6 +31,7 @@ PODS:
     - RealmSwift (~> 1.1)
     - RxSwift (~> 3.0.0-beta.1)
   - RxSwift (3.0.0-beta.1)
+  - SkyFloatingLabelTextField (1.2.1)
   - SwiftDate (3.0.9)
   - XLSwiftKit (2.0.0)
 
@@ -53,6 +54,7 @@ DEPENDENCIES:
   - RxCocoa (~> 3.0.0-beta.1)
   - RxRealm (from `https://github.com/RxSwiftCommunity/RxRealm.git`, tag `0.2.3`)
   - RxSwift (~> 3.0.0-beta.1)
+  - SkyFloatingLabelTextField (from `https://github.com/MLSDev/SkyFloatingLabelTextField.git`, branch `swift3`)
   - SwiftDate (from `https://github.com/malcommac/SwiftDate.git`, branch `feature/swift-3.0`)
   - XLSwiftKit (~> 2.0)
 
@@ -72,6 +74,9 @@ EXTERNAL SOURCES:
   RxRealm:
     :git: https://github.com/RxSwiftCommunity/RxRealm.git
     :tag: 0.2.3
+  SkyFloatingLabelTextField:
+    :branch: swift3
+    :git: https://github.com/MLSDev/SkyFloatingLabelTextField.git
   SwiftDate:
     :branch: feature/swift-3.0
     :git: https://github.com/malcommac/SwiftDate.git
@@ -92,6 +97,9 @@ CHECKOUT OPTIONS:
   RxRealm:
     :git: https://github.com/RxSwiftCommunity/RxRealm.git
     :tag: 0.2.3
+  SkyFloatingLabelTextField:
+    :commit: 03177934f990c794060765f33c408268ce8afee0
+    :git: https://github.com/MLSDev/SkyFloatingLabelTextField.git
   SwiftDate:
     :commit: 644a4615c77dc70d7861ddadb2c59f5c45f4c235
     :git: https://github.com/malcommac/SwiftDate.git
@@ -117,9 +125,10 @@ SPEC CHECKSUMS:
   RxCocoa: 8cecf331302b8ae5381bbab1bccba4ede2eae6a8
   RxRealm: 56fb63ead229e0a568f6014f81a0530f74cd8bfa
   RxSwift: 0823e8d7969c23bfa9ddfb2afa4881e424a1a710
+  SkyFloatingLabelTextField: 3f6610aded18e778df5cfab3b9e12a11b3e014e9
   SwiftDate: fa487d9b7d8c3070ea2553486902494f4915465d
   XLSwiftKit: 4d48322a602120dc6300d58d7fb07b873e223c1c
 
-PODFILE CHECKSUM: 817d45c15592620697750dbe73ee2277c7d431ff
+PODFILE CHECKSUM: a95adf51135657d10554a194ed1a03df9fd53a3d
 
 COCOAPODS: 1.1.0.rc.2

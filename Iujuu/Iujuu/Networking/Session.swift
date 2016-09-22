@@ -42,7 +42,7 @@ extension Router.Session {
     }
 
     struct Login: PostRouteType {
-        
+
         let username: String?
         let email: String?
         let password: String
@@ -58,6 +58,6 @@ extension Router.Session {
                 "username": username
                 ])
         }
-        
+
     }
 }
