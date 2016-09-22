@@ -21,34 +21,23 @@ class RSAmountViewController: BaseRegaloSetupController {
         navigationItem.rightBarButtonItem?.target = self
         navigationItem.rightBarButtonItem?.action = #selector(nextTapped)
 
-        amountField.textColor = textColor
-        amountField.lineColor = textColor.withAlphaComponent(0.38)
-        amountField.font = UIFont.bold(size: 29)
-
+        setup(textField: amountField)
         if let amount = regalo.amount {
-            amountField.text = formatter.string(from: NSNumber(value: amount))
+            amountField.text = Constants.Formatters.intCurrencyFormatter.string(from: NSNumber(value: amount))
+        } else {
+            amountField.text = Constants.Formatters.intCurrencyFormatter.string(from: 12000)
         }
-
-        amountField.titleLabel.font = UIFont.regular(size: 18)
-        amountField.titleColor = textColor.withAlphaComponent(0.38)
-        amountField.placeholder = NSLocalizedString("Monto objetivo", comment: "")
-        amountField.placeholderColor = textColor
-        amountField.selectedLineColor = textColor
-        amountField.selectedTitleColor = textColor
-        amountField.titleFormatter = { return $0 }
-        amountField.errorColor = .red
-        amountField.keyboardType = .numberPad
 
         amountField.rx.text.asObservable().do(onNext: { [weak self] text in
             guard let me = self else { return }
             if text.isEmpty {
                 if self?.fieldWasTouched == true {
-                    self?.amountField.errorMessage = "El monto no puede ser vacío"
+                    self?.amountField.errorMessage = NSLocalizedString("El monto no puede ser vacío", comment: "")
                 }
             } else {
                 self?.fieldWasTouched = true
                 self?.amountField.errorMessage = nil
-                if let amount = me.formatter.number(from: text)?.intValue {
+                if let amount = Constants.Formatters.intCurrencyFormatter.number(from: text)?.intValue {
                     me.regalo.amount = amount
                 }
             }
@@ -61,16 +50,36 @@ class RSAmountViewController: BaseRegaloSetupController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setProgressBarPercentage(page: 4)
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         _ = amountField.becomeFirstResponder()
+    }
+    
+    override func setup(textField: SkyFloatingLabelTextField) {
+        super.setup(textField: textField)
+        amountField.textColor = textColor
+        amountField.lineColor = textColor.withAlphaComponent(0.38)
+        amountField.font = UIFont.bold(size: 29)
+        amountField.titleLabel.font = UIFont.regular(size: 18)
+        amountField.titleColor = textColor.withAlphaComponent(0.38)
+        amountField.placeholder = NSLocalizedString("Monto objetivo", comment: "")
+        amountField.placeholderColor = textColor
+        amountField.selectedLineColor = textColor
+        amountField.selectedTitleColor = textColor
+        amountField.titleFormatter = { return $0 }
+        amountField.errorColor = .red
+        amountField.keyboardType = .numberPad
     }
 
     func nextTapped() {
-        if let amountText = amountField.text, let amount = formatter.number(from: amountText)?.intValue {
+        if let amountText = amountField.text, let amount = Constants.Formatters.intCurrencyFormatter.number(from: amountText)?.intValue {
             _ = amountField.resignFirstResponder()
             regalo.amount = amount
             performSegue(withIdentifier: R.segue.rSAmountViewController.showPerPersonSuggestion.identifier, sender: self)
         } else {
-            amountField.errorMessage = "El monto no puede ser vacío"
+            amountField.errorMessage = NSLocalizedString("El monto no puede ser vacío", comment: "")
         }
     }
 

@@ -11,7 +11,7 @@ import UIKit
 
 class RSMotivoViewController: BaseRegaloSetupController {
 
-    var motivos = ["Cumpleaños", "Aniversario", "Despedida", "Bienvenida"]
+    var motivos = Motivo.all().map { $0.rawValue }
     var selectedIndex = 0
 
     @IBOutlet weak var pickerView: UIPickerView!
