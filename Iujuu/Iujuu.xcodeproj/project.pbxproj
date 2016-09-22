@@ -65,6 +65,30 @@
 		46418F251D92FE540012EAC0 /* OnboardingCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 46418F231D92FE540012EAC0 /* OnboardingCell.xib */; };
 		46418F271D92FE750012EAC0 /* OnboardingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46418F261D92FE750012EAC0 /* OnboardingCell.swift */; };
 		46418F281D92FE750012EAC0 /* OnboardingCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46418F261D92FE750012EAC0 /* OnboardingCell.swift */; };
+		464512051D9595C2009C2FE6 /* GenericPasswordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464511FE1D9595C2009C2FE6 /* GenericPasswordCell.swift */; };
+		464512061D9595C2009C2FE6 /* DefaultPasswordStrengthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464511FF1D9595C2009C2FE6 /* DefaultPasswordStrengthView.swift */; };
+		464512071D9595C2009C2FE6 /* GenericPasswordRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464512001D9595C2009C2FE6 /* GenericPasswordRow.swift */; };
+		464512081D9595C2009C2FE6 /* DefaultPasswordValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464512011D9595C2009C2FE6 /* DefaultPasswordValidator.swift */; };
+		464512091D9595C2009C2FE6 /* PasswordStrengthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464512021D9595C2009C2FE6 /* PasswordStrengthView.swift */; };
+		4645120A1D9595C2009C2FE6 /* PasswordValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464512031D9595C2009C2FE6 /* PasswordValidator.swift */; };
+		4645120B1D9595C2009C2FE6 /* GenericPasswordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 464512041D9595C2009C2FE6 /* GenericPasswordCell.xib */; };
+		4645120C1D9595CD009C2FE6 /* GenericPasswordCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464511FE1D9595C2009C2FE6 /* GenericPasswordCell.swift */; };
+		4645120D1D9595CD009C2FE6 /* DefaultPasswordStrengthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464511FF1D9595C2009C2FE6 /* DefaultPasswordStrengthView.swift */; };
+		4645120E1D9595CD009C2FE6 /* GenericPasswordRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464512001D9595C2009C2FE6 /* GenericPasswordRow.swift */; };
+		4645120F1D9595CD009C2FE6 /* DefaultPasswordValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464512011D9595C2009C2FE6 /* DefaultPasswordValidator.swift */; };
+		464512101D9595CD009C2FE6 /* PasswordStrengthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464512021D9595C2009C2FE6 /* PasswordStrengthView.swift */; };
+		464512111D9595CD009C2FE6 /* PasswordValidator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464512031D9595C2009C2FE6 /* PasswordValidator.swift */; };
+		464512121D9595CD009C2FE6 /* GenericPasswordCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 464512041D9595C2009C2FE6 /* GenericPasswordCell.xib */; };
+		464512161D95A9A4009C2FE6 /* ButtonFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464512131D95A9A4009C2FE6 /* ButtonFooter.swift */; };
+		464512171D95A9A4009C2FE6 /* ButtonFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 464512141D95A9A4009C2FE6 /* ButtonFooter.xib */; };
+		464512181D95A9A4009C2FE6 /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464512151D95A9A4009C2FE6 /* ButtonStyles.swift */; };
+		464512191D95A9A7009C2FE6 /* ButtonFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464512131D95A9A4009C2FE6 /* ButtonFooter.swift */; };
+		4645121A1D95A9A7009C2FE6 /* ButtonFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 464512141D95A9A4009C2FE6 /* ButtonFooter.xib */; };
+		4645121B1D95A9A7009C2FE6 /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464512151D95A9A4009C2FE6 /* ButtonStyles.swift */; };
+		464512201D95ACF6009C2FE6 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4645121F1D95ACF6009C2FE6 /* R.generated.swift */; };
+		464512211D95AD07009C2FE6 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4645121F1D95ACF6009C2FE6 /* R.generated.swift */; };
+		464512231D95B1A5009C2FE6 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464512221D95B1A5009C2FE6 /* UITableView.swift */; };
+		464512241D95B2FA009C2FE6 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464512221D95B1A5009C2FE6 /* UITableView.swift */; };
 		4653B7F51D7A14A0002A6660 /* LoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4653B7F41D7A14A0002A6660 /* LoadingIndicator.swift */; };
 		4653B7F61D7A14A0002A6660 /* LoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4653B7F41D7A14A0002A6660 /* LoadingIndicator.swift */; };
 		4653B7F81D7A1EB6002A6660 /* LoadingIndicatorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4653B7F71D7A1EB6002A6660 /* LoadingIndicatorManager.swift */; };
@@ -84,8 +108,12 @@
 		4658D9BC1D92CFA500A2DF05 /* TestArguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4658D9B61D92CB4E00A2DF05 /* TestArguments.swift */; };
 		465910AF1D80A5000022374B /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465910AE1D80A5000022374B /* String.swift */; };
 		465910B01D80A5000022374B /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465910AE1D80A5000022374B /* String.swift */; };
-		46C394FC1D92DB45000965FB /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C394FB1D92DB45000965FB /* ButtonStyles.swift */; };
-		46C394FD1D92DB45000965FB /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C394FB1D92DB45000965FB /* ButtonStyles.swift */; };
+		466684161D94775900584FDB /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466684151D94775900584FDB /* WelcomeViewController.swift */; };
+		466684171D94775900584FDB /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466684151D94775900584FDB /* WelcomeViewController.swift */; };
+		4666841A1D947F9C00584FDB /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466684191D947F9C00584FDB /* UIViewController.swift */; };
+		4666841B1D947F9C00584FDB /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466684191D947F9C00584FDB /* UIViewController.swift */; };
+		4666841D1D94802800584FDB /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4666841C1D94802800584FDB /* CreateAccountViewController.swift */; };
+		4666841E1D94802800584FDB /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4666841C1D94802800584FDB /* CreateAccountViewController.swift */; };
 		46C394FF1D92DD8E000965FB /* Zeplin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C394FE1D92DD8E000965FB /* Zeplin.swift */; };
 		46C395001D92DD8E000965FB /* Zeplin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C394FE1D92DD8E000965FB /* Zeplin.swift */; };
 		46C395051D92FB46000965FB /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46C395031D92FB46000965FB /* Onboarding.storyboard */; };
@@ -109,10 +137,10 @@
 		8F0759A81D774FC10012D681 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0759A61D774FC10012D681 /* RealmManager.swift */; };
 		8F16F8D21D94499E003BDA0B /* IURegaloNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F16F8D11D94499E003BDA0B /* IURegaloNavigationController.swift */; };
 		8F16F8D31D9449C1003BDA0B /* IURegaloNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F16F8D11D94499E003BDA0B /* IURegaloNavigationController.swift */; };
-		8F8CE9F61D946863005FA5B6 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8CE9F51D946863005FA5B6 /* R.generated.swift */; };
+		8F8CE9F61D946863005FA5B6 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		8F8CE9F81D946BC4005FA5B6 /* PreviewRegaloController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8CE9F71D946BC4005FA5B6 /* PreviewRegaloController.swift */; };
 		8F8CE9F91D946BC4005FA5B6 /* PreviewRegaloController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8CE9F71D946BC4005FA5B6 /* PreviewRegaloController.swift */; };
-		8F8CE9FA1D946C72005FA5B6 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8CE9F51D946863005FA5B6 /* R.generated.swift */; };
+		8F8CE9FA1D946C72005FA5B6 /* (null) in Sources */ = {isa = PBXBuildFile; };
 		8F8CE9FC1D946F76005FA5B6 /* RegaloHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F8CE9FB1D946F76005FA5B6 /* RegaloHeaderView.xib */; };
 		8F8CE9FD1D946F76005FA5B6 /* RegaloHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F8CE9FB1D946F76005FA5B6 /* RegaloHeaderView.xib */; };
 		8F8CE9FF1D9470DA005FA5B6 /* RegaloHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8CE9FE1D9470DA005FA5B6 /* RegaloHeaderView.swift */; };
@@ -226,6 +254,18 @@
 		460C0B9F1D945417005814AA /* OpenSans-SemiboldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "OpenSans-SemiboldItalic.ttf"; sourceTree = "<group>"; };
 		46418F231D92FE540012EAC0 /* OnboardingCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = OnboardingCell.xib; path = Onboarding/OnboardingCell.xib; sourceTree = "<group>"; };
 		46418F261D92FE750012EAC0 /* OnboardingCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnboardingCell.swift; path = Onboarding/OnboardingCell.swift; sourceTree = "<group>"; };
+		464511FE1D9595C2009C2FE6 /* GenericPasswordCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GenericPasswordCell.swift; path = PasswordRow/GenericPasswordCell.swift; sourceTree = "<group>"; };
+		464511FF1D9595C2009C2FE6 /* DefaultPasswordStrengthView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DefaultPasswordStrengthView.swift; path = PasswordRow/DefaultPasswordStrengthView.swift; sourceTree = "<group>"; };
+		464512001D9595C2009C2FE6 /* GenericPasswordRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = GenericPasswordRow.swift; path = PasswordRow/GenericPasswordRow.swift; sourceTree = "<group>"; };
+		464512011D9595C2009C2FE6 /* DefaultPasswordValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = DefaultPasswordValidator.swift; path = PasswordRow/DefaultPasswordValidator.swift; sourceTree = "<group>"; };
+		464512021D9595C2009C2FE6 /* PasswordStrengthView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PasswordStrengthView.swift; path = PasswordRow/PasswordStrengthView.swift; sourceTree = "<group>"; };
+		464512031D9595C2009C2FE6 /* PasswordValidator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PasswordValidator.swift; path = PasswordRow/PasswordValidator.swift; sourceTree = "<group>"; };
+		464512041D9595C2009C2FE6 /* GenericPasswordCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = GenericPasswordCell.xib; path = PasswordRow/GenericPasswordCell.xib; sourceTree = "<group>"; };
+		464512131D95A9A4009C2FE6 /* ButtonFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonFooter.swift; sourceTree = "<group>"; };
+		464512141D95A9A4009C2FE6 /* ButtonFooter.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ButtonFooter.xib; sourceTree = "<group>"; };
+		464512151D95A9A4009C2FE6 /* ButtonStyles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonStyles.swift; sourceTree = "<group>"; };
+		4645121F1D95ACF6009C2FE6 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = R.generated.swift; path = "R-Swift/R.generated.swift"; sourceTree = "<group>"; };
+		464512221D95B1A5009C2FE6 /* UITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
 		4653B7F41D7A14A0002A6660 /* LoadingIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingIndicator.swift; sourceTree = "<group>"; };
 		4653B7F71D7A1EB6002A6660 /* LoadingIndicatorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingIndicatorManager.swift; sourceTree = "<group>"; };
 		465723041D91C59A001F4DC1 /* Regalo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Regalo.swift; sourceTree = "<group>"; };
@@ -235,7 +275,9 @@
 		4658D9B61D92CB4E00A2DF05 /* TestArguments.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TestArguments.swift; sourceTree = "<group>"; };
 		4658D9BA1D92CC8A00A2DF05 /* IujuuBaseUITest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IujuuBaseUITest.swift; sourceTree = "<group>"; };
 		465910AE1D80A5000022374B /* String.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
-		46C394FB1D92DB45000965FB /* ButtonStyles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonStyles.swift; sourceTree = "<group>"; };
+		466684151D94775900584FDB /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WelcomeViewController.swift; path = Onboarding/WelcomeViewController.swift; sourceTree = "<group>"; };
+		466684191D947F9C00584FDB /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
+		4666841C1D94802800584FDB /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateAccountViewController.swift; path = Onboarding/CreateAccountViewController.swift; sourceTree = "<group>"; };
 		46C394FE1D92DD8E000965FB /* Zeplin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Zeplin.swift; sourceTree = "<group>"; };
 		46C395041D92FB46000965FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		46C395071D92FCD4000965FB /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnboardingViewController.swift; path = Onboarding/OnboardingViewController.swift; sourceTree = "<group>"; };
@@ -256,7 +298,6 @@
 		8F0759A31D774C5C0012D681 /* AppDelegate+Iujuu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Iujuu.swift"; sourceTree = "<group>"; };
 		8F0759A61D774FC10012D681 /* RealmManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		8F16F8D11D94499E003BDA0B /* IURegaloNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IURegaloNavigationController.swift; sourceTree = "<group>"; };
-		8F8CE9F51D946863005FA5B6 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = R.generated.swift; path = "R-Swift/R.generated.swift"; sourceTree = "<group>"; };
 		8F8CE9F71D946BC4005FA5B6 /* PreviewRegaloController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewRegaloController.swift; sourceTree = "<group>"; };
 		8F8CE9FB1D946F76005FA5B6 /* RegaloHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegaloHeaderView.xib; sourceTree = "<group>"; };
 		8F8CE9FE1D9470DA005FA5B6 /* RegaloHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegaloHeaderView.swift; sourceTree = "<group>"; };
@@ -355,7 +396,7 @@
 		283020A21C86130600E6EBC2 /* R-Swift */ = {
 			isa = PBXGroup;
 			children = (
-				8F8CE9F51D946863005FA5B6 /* R.generated.swift */,
+				4645121F1D95ACF6009C2FE6 /* R.generated.swift */,
 			);
 			name = "R-Swift";
 			sourceTree = "<group>";
@@ -410,10 +451,12 @@
 		28C282361C779580003ECA4F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				464512131D95A9A4009C2FE6 /* ButtonFooter.swift */,
+				464512141D95A9A4009C2FE6 /* ButtonFooter.xib */,
+				464512151D95A9A4009C2FE6 /* ButtonStyles.swift */,
 				BFE90E661D955B4200E8F758 /* Regalos */,
 				8F8CEA041D947823005FA5B6 /* Eureka rows */,
 				4653B7F31D7A145A002A6660 /* LoadingIndicator */,
-				46C394FB1D92DB45000965FB /* ButtonStyles.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -424,12 +467,13 @@
 				28C282401C7797CA003ECA4F /* Constants.swift */,
 				8F0759911D7728360012D681 /* Helpers.swift */,
 				46C394FE1D92DD8E000965FB /* Zeplin.swift */,
+				460C0B911D9431E4005814AA /* UserMessages.swift */,
+				BFE90E6D1D956ED000E8F758 /* Eureka.swift */,
 				286C922E1CBD691A00208E3B /* Decodable */,
 				281731671C9C494C006237C7 /* Controllers */,
 				283020A21C86130600E6EBC2 /* R-Swift */,
 				28C282411C7797CA003ECA4F /* Extensions */,
-				460C0B911D9431E4005814AA /* UserMessages.swift */,
-				BFE90E6D1D956ED000E8F758 /* Eureka.swift */,
+				464511FD1D9595A3009C2FE6 /* PasswordRow */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -467,6 +511,8 @@
 				8F0759A31D774C5C0012D681 /* AppDelegate+Iujuu.swift */,
 				465910AE1D80A5000022374B /* String.swift */,
 				8F9694D51D93048F00A9EBB7 /* UIFont.swift */,
+				466684191D947F9C00584FDB /* UIViewController.swift */,
+				464512221D95B1A5009C2FE6 /* UITableView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -522,6 +568,20 @@
 			name = Fonts;
 			sourceTree = "<group>";
 		};
+		464511FD1D9595A3009C2FE6 /* PasswordRow */ = {
+			isa = PBXGroup;
+			children = (
+				464511FE1D9595C2009C2FE6 /* GenericPasswordCell.swift */,
+				464511FF1D9595C2009C2FE6 /* DefaultPasswordStrengthView.swift */,
+				464512001D9595C2009C2FE6 /* GenericPasswordRow.swift */,
+				464512011D9595C2009C2FE6 /* DefaultPasswordValidator.swift */,
+				464512021D9595C2009C2FE6 /* PasswordStrengthView.swift */,
+				464512031D9595C2009C2FE6 /* PasswordValidator.swift */,
+				464512041D9595C2009C2FE6 /* GenericPasswordCell.xib */,
+			);
+			name = PasswordRow;
+			sourceTree = "<group>";
+		};
 		4653B7F31D7A145A002A6660 /* LoadingIndicator */ = {
 			isa = PBXGroup;
 			children = (
@@ -547,6 +607,8 @@
 				46C395071D92FCD4000965FB /* OnboardingViewController.swift */,
 				46418F231D92FE540012EAC0 /* OnboardingCell.xib */,
 				46418F261D92FE750012EAC0 /* OnboardingCell.swift */,
+				466684151D94775900584FDB /* WelcomeViewController.swift */,
+				4666841C1D94802800584FDB /* CreateAccountViewController.swift */,
 			);
 			name = Onboarding;
 			sourceTree = "<group>";
@@ -797,6 +859,7 @@
 				460C0BA91D945417005814AA /* OpenSans-Italic.ttf in Resources */,
 				460C0BA11D945417005814AA /* OpenSans-Bold.ttf in Resources */,
 				8F8CE9FD1D946F76005FA5B6 /* RegaloHeaderView.xib in Resources */,
+				4645121A1D95A9A7009C2FE6 /* ButtonFooter.xib in Resources */,
 				460C0BA51D945417005814AA /* OpenSans-ExtraBold.ttf in Resources */,
 				460C0BA31D945417005814AA /* OpenSans-BoldItalic.ttf in Resources */,
 				2841F1F91CCFF55600D609CE /* Main.storyboard in Resources */,
@@ -806,6 +869,7 @@
 				460C0BB11D945417005814AA /* OpenSans-Semibold.ttf in Resources */,
 				BFE90E691D955B8D00E8F758 /* SubtitleView.xib in Resources */,
 				46C395061D92FB46000965FB /* Onboarding.storyboard in Resources */,
+				464512121D9595CD009C2FE6 /* GenericPasswordCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -823,6 +887,7 @@
 				460C0BA81D945417005814AA /* OpenSans-Italic.ttf in Resources */,
 				460C0BA01D945417005814AA /* OpenSans-Bold.ttf in Resources */,
 				8F8CE9FC1D946F76005FA5B6 /* RegaloHeaderView.xib in Resources */,
+				464512171D95A9A4009C2FE6 /* ButtonFooter.xib in Resources */,
 				460C0BA41D945417005814AA /* OpenSans-ExtraBold.ttf in Resources */,
 				460C0BA21D945417005814AA /* OpenSans-BoldItalic.ttf in Resources */,
 				2867E8301C74C7D400FCEBBD /* Main.storyboard in Resources */,
@@ -832,6 +897,7 @@
 				460C0BB01D945417005814AA /* OpenSans-Semibold.ttf in Resources */,
 				BFE90E681D955B8D00E8F758 /* SubtitleView.xib in Resources */,
 				46C395051D92FB46000965FB /* Onboarding.storyboard in Resources */,
+				4645120B1D9595C2009C2FE6 /* GenericPasswordCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1156,9 +1222,11 @@
 				2841F1DD1CCFF55600D609CE /* NSDate.swift in Sources */,
 				8F16F8D31D9449C1003BDA0B /* IURegaloNavigationController.swift in Sources */,
 				2841F1E01CCFF55600D609CE /* XLTableViewController.swift in Sources */,
+				464512111D9595CD009C2FE6 /* PasswordValidator.swift in Sources */,
 				8F8CEA071D947840005FA5B6 /* IJLabelRow.swift in Sources */,
 				2841F1E11CCFF55600D609CE /* Manager.swift in Sources */,
 				460C0B931D9431E4005814AA /* UserMessages.swift in Sources */,
+				466684171D94775900584FDB /* WelcomeViewController.swift in Sources */,
 				4658D9B81D92CB4E00A2DF05 /* TestArguments.swift in Sources */,
 				2841F1E31CCFF55600D609CE /* UIDevice.swift in Sources */,
 				2841F1E41CCFF55600D609CE /* RouteType.swift in Sources */,
@@ -1166,10 +1234,13 @@
 				8F9694C81D92E46300A9EBB7 /* BaseRegaloSetupController.swift in Sources */,
 				8F0759A21D774B390012D681 /* SessionController.swift in Sources */,
 				46C395001D92DD8E000965FB /* Zeplin.swift in Sources */,
+				464512241D95B2FA009C2FE6 /* UITableView.swift in Sources */,
 				BFE90E6F1D956ED000E8F758 /* Eureka.swift in Sources */,
 				2841F1E71CCFF55600D609CE /* User.swift in Sources */,
 				8F07599B1D7742CA0012D681 /* UIImageView.swift in Sources */,
+				4666841B1D947F9C00584FDB /* UIViewController.swift in Sources */,
 				2841F1E81CCFF55600D609CE /* XLViewController.swift in Sources */,
+				464512191D95A9A7009C2FE6 /* ButtonFooter.swift in Sources */,
 				8F8CEA031D947545005FA5B6 /* Motivo.swift in Sources */,
 				465723061D91C59A001F4DC1 /* Regalo.swift in Sources */,
 				8F9694CE1D92F3EB00A9EBB7 /* ProgressView.swift in Sources */,
@@ -1177,24 +1248,31 @@
 				8F0759A81D774FC10012D681 /* RealmManager.swift in Sources */,
 				8F9694DD1D93162400A9EBB7 /* RSAmountController.swift in Sources */,
 				465910B01D80A5000022374B /* String.swift in Sources */,
+				464512101D9595CD009C2FE6 /* PasswordStrengthView.swift in Sources */,
 				4658D9AD1D92BBDB00A2DF05 /* DataManager.swift in Sources */,
 				8F9694DA1D93084000A9EBB7 /* RSCloseDateController.swift in Sources */,
 				8F9694E21D932A5A00A9EBB7 /* RSPerPersonController.swift in Sources */,
 				46F45F271D905BED00A44C59 /* InitialViewController.swift in Sources */,
 				4653B7F61D7A14A0002A6660 /* LoadingIndicator.swift in Sources */,
+				4666841E1D94802800584FDB /* CreateAccountViewController.swift in Sources */,
 				8F9694D71D93048F00A9EBB7 /* UIFont.swift in Sources */,
-				8F8CE9FA1D946C72005FA5B6 /* R.generated.swift in Sources */,
+				8F8CE9FA1D946C72005FA5B6 /* (null) in Sources */,
+				464512211D95AD07009C2FE6 /* R.generated.swift in Sources */,
 				8F0759931D7728360012D681 /* Helpers.swift in Sources */,
 				4658D9B01D92BBF700A2DF05 /* RealDataManager.swift in Sources */,
+				4645120E1D9595CD009C2FE6 /* GenericPasswordRow.swift in Sources */,
+				4645120D1D9595CD009C2FE6 /* DefaultPasswordStrengthView.swift in Sources */,
 				BFE90E6C1D955C1F00E8F758 /* SubtitleView.swift in Sources */,
 				2841F1ED1CCFF55600D609CE /* Session.swift in Sources */,
 				4658D9B31D92BC1C00A2DF05 /* MockedDataManager.swift in Sources */,
 				46418F281D92FE750012EAC0 /* OnboardingCell.swift in Sources */,
+				4645121B1D95A9A7009C2FE6 /* ButtonStyles.swift in Sources */,
 				2841F1EE1CCFF55600D609CE /* AppDelegate.swift in Sources */,
 				2841F1F01CCFF55600D609CE /* Date+Decodable.swift in Sources */,
 				8F8CEA001D9470DA005FA5B6 /* RegaloHeaderView.swift in Sources */,
 				2841F1F11CCFF55600D609CE /* Constants.swift in Sources */,
-				46C394FD1D92DB45000965FB /* ButtonStyles.swift in Sources */,
+				4645120C1D9595CD009C2FE6 /* GenericPasswordCell.swift in Sources */,
+				4645120F1D9595CD009C2FE6 /* DefaultPasswordValidator.swift in Sources */,
 				4653B7F91D7A1EB6002A6660 /* LoadingIndicatorManager.swift in Sources */,
 				8F9694D41D9302BC00A9EBB7 /* RSNameViewController.swift in Sources */,
 				8F0759A51D774C5C0012D681 /* AppDelegate+Iujuu.swift in Sources */,
@@ -1206,50 +1284,62 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				8F8CE9F61D946863005FA5B6 /* R.generated.swift in Sources */,
+				8F8CE9F61D946863005FA5B6 /* (null) in Sources */,
 				28FEB24C1C9875F60027D470 /* UIApplication.swift in Sources */,
 				8F9694CA1D92EC5300A9EBB7 /* RSMotivoViewController.swift in Sources */,
 				B23A40F01C972C2B004AB8DC /* NSDate.swift in Sources */,
 				8F16F8D21D94499E003BDA0B /* IURegaloNavigationController.swift in Sources */,
 				8F8CEA061D947840005FA5B6 /* IJLabelRow.swift in Sources */,
 				2817316B1C9C4BDA006237C7 /* XLTableViewController.swift in Sources */,
+				4645120A1D9595C2009C2FE6 /* PasswordValidator.swift in Sources */,
 				28A6B9D81CB6271800682BCE /* Manager.swift in Sources */,
 				460C0B921D9431E4005814AA /* UserMessages.swift in Sources */,
+				466684161D94775900584FDB /* WelcomeViewController.swift in Sources */,
 				8F8CE9F81D946BC4005FA5B6 /* PreviewRegaloController.swift in Sources */,
 				4658D9B71D92CB4E00A2DF05 /* TestArguments.swift in Sources */,
 				28D65F951C99D8AF008ED705 /* UIDevice.swift in Sources */,
 				28A6B9D61CB5F95900682BCE /* RouteType.swift in Sources */,
 				46C395081D92FCD4000965FB /* OnboardingViewController.swift in Sources */,
 				8F9694C71D92E46300A9EBB7 /* BaseRegaloSetupController.swift in Sources */,
+				464512231D95B1A5009C2FE6 /* UITableView.swift in Sources */,
 				BFE90E6E1D956ED000E8F758 /* Eureka.swift in Sources */,
 				8F0759A11D774B390012D681 /* SessionController.swift in Sources */,
 				46C394FF1D92DD8E000965FB /* Zeplin.swift in Sources */,
 				28C2824A1C7798B0003ECA4F /* User.swift in Sources */,
 				8F8CEA021D947545005FA5B6 /* Motivo.swift in Sources */,
+				464512161D95A9A4009C2FE6 /* ButtonFooter.swift in Sources */,
 				8F07599A1D7742CA0012D681 /* UIImageView.swift in Sources */,
+				4666841A1D947F9C00584FDB /* UIViewController.swift in Sources */,
 				281731691C9C4BBC006237C7 /* XLViewController.swift in Sources */,
 				465723051D91C59A001F4DC1 /* Regalo.swift in Sources */,
 				8F9694CD1D92F3EB00A9EBB7 /* ProgressView.swift in Sources */,
 				8F0759A71D774FC10012D681 /* RealmManager.swift in Sources */,
 				8F9694DC1D93162400A9EBB7 /* RSAmountController.swift in Sources */,
 				465910AF1D80A5000022374B /* String.swift in Sources */,
+				464512091D9595C2009C2FE6 /* PasswordStrengthView.swift in Sources */,
 				4658D9AC1D92BBDB00A2DF05 /* DataManager.swift in Sources */,
 				8F9694D91D93084000A9EBB7 /* RSCloseDateController.swift in Sources */,
 				8F9694E11D932A5A00A9EBB7 /* RSPerPersonController.swift in Sources */,
 				46F45F261D905BED00A44C59 /* InitialViewController.swift in Sources */,
 				4653B7F51D7A14A0002A6660 /* LoadingIndicator.swift in Sources */,
+				4666841D1D94802800584FDB /* CreateAccountViewController.swift in Sources */,
 				8F9694D61D93048F00A9EBB7 /* UIFont.swift in Sources */,
+				464512201D95ACF6009C2FE6 /* R.generated.swift in Sources */,
 				8F0759921D7728360012D681 /* Helpers.swift in Sources */,
 				4658D9AF1D92BBF700A2DF05 /* RealDataManager.swift in Sources */,
+				464512071D9595C2009C2FE6 /* GenericPasswordRow.swift in Sources */,
+				464512061D9595C2009C2FE6 /* DefaultPasswordStrengthView.swift in Sources */,
 				BFE90E6B1D955C1F00E8F758 /* SubtitleView.swift in Sources */,
 				281BF1A31C7B8EEF00809E3F /* Session.swift in Sources */,
 				4658D9B21D92BC1C00A2DF05 /* MockedDataManager.swift in Sources */,
 				46418F271D92FE750012EAC0 /* OnboardingCell.swift in Sources */,
+				464512181D95A9A4009C2FE6 /* ButtonStyles.swift in Sources */,
 				2867E82B1C74C7D400FCEBBD /* AppDelegate.swift in Sources */,
 				286C92301CBD6AD300208E3B /* Date+Decodable.swift in Sources */,
 				8F8CE9FF1D9470DA005FA5B6 /* RegaloHeaderView.swift in Sources */,
 				28C282441C7797CA003ECA4F /* Constants.swift in Sources */,
-				46C394FC1D92DB45000965FB /* ButtonStyles.swift in Sources */,
+				464512051D9595C2009C2FE6 /* GenericPasswordCell.swift in Sources */,
+				464512081D9595C2009C2FE6 /* DefaultPasswordValidator.swift in Sources */,
 				4653B7F81D7A1EB6002A6660 /* LoadingIndicatorManager.swift in Sources */,
 				8F9694D31D9302BC00A9EBB7 /* RSNameViewController.swift in Sources */,
 				8F0759A41D774C5C0012D681 /* AppDelegate+Iujuu.swift in Sources */,

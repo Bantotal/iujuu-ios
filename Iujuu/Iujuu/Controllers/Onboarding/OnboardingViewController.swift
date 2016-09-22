@@ -21,7 +21,7 @@ class OnboardingViewController: UIViewController {
 
     let disposeBag = DisposeBag()
     var page = Variable<Int>(0)
-    
+
     override var prefersStatusBarHidden: Bool {
         return true
     }
@@ -29,8 +29,8 @@ class OnboardingViewController: UIViewController {
     let model = [
         (text: UserMessages.Onboarding.texts[0], image: R.image.splashLogo(), backgroundImage: R.image.backgroundMultiColor()),
         (text: UserMessages.Onboarding.texts[1], image: R.image.onboardingImage1(), backgroundImage: nil),
-        (text: UserMessages.Onboarding.texts[2], image: R.image.onboardingImage1(), backgroundImage: nil),
-        (text: UserMessages.Onboarding.texts[3], image: R.image.onboardingImage1(), backgroundImage: nil)
+        (text: UserMessages.Onboarding.texts[2], image: R.image.onboardingImage2(), backgroundImage: nil),
+        (text: UserMessages.Onboarding.texts[3], image: R.image.onboardingImage3(), backgroundImage: nil)
     ]
 
     override func viewDidLoad() {
@@ -76,10 +76,9 @@ class OnboardingViewController: UIViewController {
             }
         }.addDisposableTo(disposeBag)
     }
-    
+
     func finishOnboardingAction() {
-        // TODO: perform segue here.
-        UIApplication.changeRootViewController(R.storyboard.createRegalo().instantiateInitialViewController()!)
+        performSegue(withIdentifier: R.segue.onboardingViewController.finishOnboarding, sender: nil)
     }
 
 }

@@ -16,7 +16,7 @@ fileprivate let addIdeaRowTag = "addIdeaRowTag"
 fileprivate let ideaSectionTag = "ideaSectionTag"
 
 class RegaloPreviewViewController: FormViewController {
-    
+
     var regalo: RegaloSetup!
 
     override func viewDidLoad() {
@@ -76,14 +76,13 @@ class RegaloPreviewViewController: FormViewController {
                 
                 var footer = HeaderFooterView<UIView>(HeaderFooterProvider.callback({ () -> UIView in
                     //TODO: Setup button view
-                    let button = UIButton()
-                    button.setStyle(.primary)
-                    button.setTitle("Crear colecta", for: .normal)
-                    button.addTarget(me, action: #selector(RegaloPreviewViewController.nextTapped), for: .touchUpInside)
-                    return button
+                    let footer = ButtonFooter()
+                    footer.actionButton.setTitle("Crear colecta", for: .normal)
+                    footer.actionButton.addTarget(me, action: #selector(RegaloPreviewViewController.nextTapped), for: .touchUpInside)
+                    return footer
                 }))
-                
-                footer.height = { 80 }
+
+                footer.height = { 100 }
                 section.footer = footer
                 
                 section.tag = ideaSectionTag
@@ -107,7 +106,7 @@ class RegaloPreviewViewController: FormViewController {
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .default
     }
-    
+
     func setUpNavigationBar() {
         let bar = navigationController?.navigationBar
         navigationItem.backBarButtonItem?.title = "Atrás"
@@ -115,7 +114,7 @@ class RegaloPreviewViewController: FormViewController {
         bar?.barTintColor = .white
         bar?.tintColor = .ijGreyishBrownColor()
     }
-    
+
     func setupTableView() {
         
         tableView?.separatorStyle = .none

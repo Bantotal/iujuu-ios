@@ -3,6 +3,7 @@
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -68,11 +69,129 @@
                         <outlet property="collectionView" destination="pfj-dq-0Be" id="jyj-YF-tHi"/>
                         <outlet property="pageControl" destination="EKG-eo-QHF" id="N56-m6-tdh"/>
                         <outlet property="skipButton" destination="Q4d-uf-NWj" id="Ukr-QM-1ci"/>
+                        <segue destination="5ht-tB-Lrl" kind="presentation" identifier="finishOnboarding" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="abj-X8-bCa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yAQ-Qy-VxL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-202.40000000000001" y="35.532233883058474"/>
         </scene>
+        <!--Welcome View Controller-->
+        <scene sceneID="TEj-CW-FDH">
+            <objects>
+                <viewController id="5ht-tB-Lrl" customClass="WelcomeViewController" customModule="Iujuu" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Of7-IE-5gm"/>
+                        <viewControllerLayoutGuide type="bottom" id="RC1-ga-Czs"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="NLj-ZD-Yk3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="backgroundMultiColor" translatesAutoresizingMaskIntoConstraints="NO" id="tDR-nw-ZHL"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="splashLogo" translatesAutoresizingMaskIntoConstraints="NO" id="QR1-UD-wnA"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ojb-vu-BRM">
+                                <state key="normal" title="Facebook"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KBh-2a-qKu">
+                                <state key="normal" title="Crear cuenta IUJUU"/>
+                                <connections>
+                                    <segue destination="8Rw-UX-qOR" kind="presentation" id="rjl-QI-Fbl"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jMd-vj-cKa">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="Phy-qi-PFd"/>
+                                </constraints>
+                                <state key="normal" title="Ya tengo una cuenta"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="KBh-2a-qKu" firstAttribute="height" secondItem="Ojb-vu-BRM" secondAttribute="height" id="48I-gq-Vx6"/>
+                            <constraint firstItem="KBh-2a-qKu" firstAttribute="top" secondItem="Ojb-vu-BRM" secondAttribute="bottom" constant="20" id="4ph-LI-Czh"/>
+                            <constraint firstItem="QR1-UD-wnA" firstAttribute="centerX" secondItem="tDR-nw-ZHL" secondAttribute="centerX" id="A5w-cG-S4n"/>
+                            <constraint firstItem="RC1-ga-Czs" firstAttribute="top" secondItem="jMd-vj-cKa" secondAttribute="bottom" constant="30" id="Ayk-x7-Fs2"/>
+                            <constraint firstItem="jMd-vj-cKa" firstAttribute="height" secondItem="KBh-2a-qKu" secondAttribute="height" id="CCg-El-c9Z"/>
+                            <constraint firstItem="RC1-ga-Czs" firstAttribute="top" secondItem="tDR-nw-ZHL" secondAttribute="bottom" id="L8C-jX-JmD"/>
+                            <constraint firstItem="jMd-vj-cKa" firstAttribute="centerX" secondItem="KBh-2a-qKu" secondAttribute="centerX" id="LgH-XI-hTl"/>
+                            <constraint firstItem="QR1-UD-wnA" firstAttribute="width" secondItem="tDR-nw-ZHL" secondAttribute="width" multiplier="0.6" id="Lsn-hD-Tfk"/>
+                            <constraint firstItem="tDR-nw-ZHL" firstAttribute="leading" secondItem="NLj-ZD-Yk3" secondAttribute="leading" id="OFf-9x-v5j"/>
+                            <constraint firstItem="QR1-UD-wnA" firstAttribute="top" secondItem="Of7-IE-5gm" secondAttribute="bottom" constant="110" id="RVH-gh-dJx"/>
+                            <constraint firstItem="jMd-vj-cKa" firstAttribute="width" secondItem="tDR-nw-ZHL" secondAttribute="width" multiplier="0.75" id="TkS-a6-tn2"/>
+                            <constraint firstAttribute="trailing" secondItem="tDR-nw-ZHL" secondAttribute="trailing" id="W5c-8j-jtU"/>
+                            <constraint firstItem="jMd-vj-cKa" firstAttribute="width" secondItem="KBh-2a-qKu" secondAttribute="width" id="X9u-1V-hav"/>
+                            <constraint firstItem="jMd-vj-cKa" firstAttribute="centerX" secondItem="tDR-nw-ZHL" secondAttribute="centerX" id="aTr-fd-cFZ"/>
+                            <constraint firstItem="KBh-2a-qKu" firstAttribute="centerX" secondItem="Ojb-vu-BRM" secondAttribute="centerX" id="d26-bw-jkB"/>
+                            <constraint firstItem="KBh-2a-qKu" firstAttribute="width" secondItem="Ojb-vu-BRM" secondAttribute="width" id="dv5-Av-jOi"/>
+                            <constraint firstItem="jMd-vj-cKa" firstAttribute="top" secondItem="KBh-2a-qKu" secondAttribute="bottom" constant="20" id="gJU-MK-IoJ"/>
+                            <constraint firstItem="tDR-nw-ZHL" firstAttribute="top" secondItem="Of7-IE-5gm" secondAttribute="bottom" id="naI-2H-IhY"/>
+                            <constraint firstItem="QR1-UD-wnA" firstAttribute="height" secondItem="tDR-nw-ZHL" secondAttribute="height" multiplier="0.3" id="zri-Hv-Qyc"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <connections>
+                        <outlet property="createAccountButton" destination="KBh-2a-qKu" id="VYh-7r-upG"/>
+                        <outlet property="facebookButton" destination="Ojb-vu-BRM" id="u8Y-Z6-alJ"/>
+                        <outlet property="loginButton" destination="jMd-vj-cKa" id="NEc-s1-Pr9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gkN-T7-M5E" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="668" y="36"/>
+        </scene>
+        <!--Nueva cuenta-->
+        <scene sceneID="p6h-nE-e9O">
+            <objects>
+                <viewController id="hbL-fv-3eW" customClass="CreateAccountViewController" customModule="Iujuu" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="P77-EF-3cX"/>
+                        <viewControllerLayoutGuide type="bottom" id="e16-X4-DvT"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="w4f-fM-Wp3">
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" canCancelContentTouches="NO" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0VK-eT-Ucn">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="0VK-eT-Ucn" firstAttribute="top" secondItem="P77-EF-3cX" secondAttribute="bottom" id="77e-nh-sGU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="0VK-eT-Ucn" secondAttribute="trailing" id="IPy-Rw-N3a"/>
+                            <constraint firstItem="0VK-eT-Ucn" firstAttribute="leading" secondItem="w4f-fM-Wp3" secondAttribute="leadingMargin" id="NZv-2Q-vFo"/>
+                            <constraint firstItem="e16-X4-DvT" firstAttribute="top" secondItem="0VK-eT-Ucn" secondAttribute="bottom" id="r0e-cU-SbQ"/>
+                        </constraints>
+                    </view>
+                    <extendedEdge key="edgesForExtendedLayout"/>
+                    <navigationItem key="navigationItem" title="Nueva cuenta" id="tV5-vw-lDN"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="tbR-VF-6Ti" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2327" y="36"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="IVy-20-pZ1">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8Rw-UX-qOR" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="vfV-Dt-p5G">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="hbL-fv-3eW" kind="relationship" relationship="rootViewController" id="ZOy-FK-WuL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uT5-1Q-BzD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1492" y="35.532233883058474"/>
+        </scene>
     </scenes>
+    <resources>
+        <image name="backgroundMultiColor" width="375" height="667"/>
+        <image name="splashLogo" width="217" height="166"/>
+    </resources>
 </document>

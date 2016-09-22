@@ -43,23 +43,59 @@ extension AppDelegate {
         }
     }
 
+    func stylizeApp() {
+        let navigationBarAppearance = UINavigationBar.appearance()
+        navigationBarAppearance.barTintColor = .ijWhite90Color()
+        navigationBarAppearance.tintColor = .ijGreyishBrownColor()
+        navigationBarAppearance.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.ijTextBlackColor()]
+        stylizeEurekaRows()
+    }
+
     /**
      Set up your Eureka default row customization here
      */
     func stylizeEurekaRows() {
 
-        let genericHorizontalMargin = CGFloat(50)
-        BaseRow.estimatedRowHeight = 58
+        BaseRow.estimatedRowHeight = 60
+        let titleFont = UIFont.regular(size: 17)
+        let textFont = UIFont.regular(size: 16)
+        let titleColor = UIColor.ijPlaceHolderGrayColor()
+        let textColor = UIColor.ijTextBlackColor()
+        let defaultHeight = CGFloat(60)
+
+        NameRow.defaultCellSetup = { cell, _ in
+            cell.titleLabel?.font = titleFont
+            cell.detailTextLabel?.font = textFont
+            cell.height = { defaultHeight }
+        }
+        NameRow.defaultCellUpdate = { cell, _ in
+            cell.titleLabel?.textColor = titleColor
+            cell.detailTextLabel?.textColor = textColor
+        }
 
         EmailRow.defaultRowInitializer = {
-            $0.placeholder = NSLocalizedString("E-mail Address", comment: "")
-            $0.placeholderColor = .gray
+            $0.title = UserMessages.email
+        }
+        EmailRow.defaultCellSetup = { cell, _ in
+            cell.titleLabel?.font = titleFont
+            cell.detailTextLabel?.font = textFont
+            cell.height = { defaultHeight }
+        }
+        EmailRow.defaultCellUpdate = { cell, _ in
+            cell.titleLabel?.textColor = titleColor
+            cell.detailTextLabel?.textColor = textColor
+        }
+        
+        GenericPasswordRow.defaultCellSetup = { cell, _ in
+            cell.textField.font = titleFont
+            let offset = CGFloat(16)
+            cell.dynamicHeight = (collapsed: defaultHeight, expanded: defaultHeight + offset)
+        }
+        GenericPasswordRow.defaultCellUpdate = { cell, _ in
+            cell.textField.textColor = textColor
+            cell.textField.attributedPlaceholder = NSAttributedString(string: UserMessages.password, attributes: [NSForegroundColorAttributeName: titleColor])
         }
 
-        EmailRow.defaultCellSetup = { cell, _ in
-            cell.layoutMargins = UIEdgeInsets.zero
-            cell.contentView.layoutMargins.left = genericHorizontalMargin
-            cell.height = { 58 }
-        }
     }
+
 }
