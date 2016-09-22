@@ -38,21 +38,3 @@ extension UIColor {
     }
 
 }
-
-// Fonts
-
-extension UIFont {
-
-    static func bold(size: CGFloat) -> UIFont? {
-        return UIFont(name: "OpenSans-Bold", size: size)
-    }
-
-    static func regular(size: CGFloat) -> UIFont? {
-        return UIFont(name: "OpenSans", size: size)
-    }
-
-    static func light(size: CGFloat) -> UIFont? {
-        return UIFont(name: "OpenSans-Light", size: size)
-    }
-
-}
