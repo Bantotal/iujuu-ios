@@ -12,6 +12,7 @@ def app_pods
     pod 'DynamicColor', '~> 3.1'
     pod 'Eureka', :git => 'https://github.com/xmartlabs/Eureka.git', :branch => 'Swift3'
     pod 'Fabric', '~> 1.6'
+    pod 'FXPageControl', '~> 1.4'
     pod 'KeychainAccess', '~> 3.0'
     pod 'NVActivityIndicatorView', '~> 3.0'
     pod 'Opera', :git => 'https://github.com/xmartlabs/Opera.git', :branch => 'Swift3'
