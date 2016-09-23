@@ -45,7 +45,7 @@
                 <constraint firstItem="11L-NS-V2c" firstAttribute="top" relation="greaterThanOrEqual" secondItem="gXa-jc-WlK" secondAttribute="bottom" constant="20" id="qYj-hf-Ei4"/>
                 <constraint firstItem="0QE-1l-A6K" firstAttribute="centerX" secondItem="FSN-Ks-O1y" secondAttribute="centerX" id="qgB-Mc-PoQ"/>
                 <constraint firstItem="gXa-jc-WlK" firstAttribute="centerX" secondItem="FSN-Ks-O1y" secondAttribute="centerX" id="ric-ys-Qc9"/>
-                <constraint firstItem="0QE-1l-A6K" firstAttribute="width" secondItem="FSN-Ks-O1y" secondAttribute="width" multiplier="0.7" id="scj-l6-cv0"/>
+                <constraint firstItem="0QE-1l-A6K" firstAttribute="width" secondItem="FSN-Ks-O1y" secondAttribute="width" multiplier="0.75" id="scj-l6-cv0"/>
                 <constraint firstItem="11L-NS-V2c" firstAttribute="centerX" secondItem="FSN-Ks-O1y" secondAttribute="centerX" id="ssE-bV-SeH"/>
                 <constraint firstItem="0QE-1l-A6K" firstAttribute="top" secondItem="11L-NS-V2c" secondAttribute="bottom" constant="70" id="ukW-sA-TiQ"/>
             </constraints>

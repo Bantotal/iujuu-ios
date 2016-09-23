@@ -22,7 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         parseArguments()
         setupCrashlytics()
         setupNetworking()
-        stylizeEurekaRows()
+        stylizeApp()
         
         let onboarding = R.storyboard.onboarding.onboardingViewController()
 

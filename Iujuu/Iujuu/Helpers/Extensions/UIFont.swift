@@ -21,5 +21,5 @@ extension UIFont {
     static func light(size: CGFloat) -> UIFont {
         return UIFont(name: "OpenSans-Light", size: UIDevice.current.fontSizeForDevice(size))!
     }
-    
+
 }

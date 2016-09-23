@@ -29,12 +29,28 @@ extension UIColor {
         return UIColor(white: 33.0 / 255.0, alpha: 1.0)
     }
     
-    class func ijDustyOrangeColor() -> UIColor {
+    class func ijSeparatorGrayColor() -> UIColor {
+        return UIColor(white: 213.0 / 255.0, alpha: 1.0)
+    }
+    
+    class func ijMainOrangeColor() -> UIColor {
         return UIColor(red: 246.0 / 255.0, green: 132.0 / 255.0, blue: 40.0 / 255.0, alpha: 1.0)
     }
     
-    class func ijSeparatorGrayColor() -> UIColor {
-        return UIColor(white: 213.0 / 255.0, alpha: 1.0)
+    class func ijAccentRedColor() -> UIColor {
+        return UIColor(red: 219.0 / 255.0, green: 18.0 / 255.0, blue: 52.0 / 255.0, alpha: 1.0)
+    }
+    
+    class func ijAccentRedLightColor() -> UIColor {
+        return UIColor(red: 255.0 / 255.0, green: 231.0 / 255.0, blue: 241.0 / 255.0, alpha: 1.0)
+    }
+    
+    class func ijDenimBlueColor() -> UIColor {
+        return UIColor(red: 59.0 / 255.0, green: 89.0 / 255.0, blue: 152.0 / 255.0, alpha: 1.0)
+    }
+    
+    class func ijDeepOrangeColor() -> UIColor {
+        return UIColor(red: 216.0 / 255.0, green: 82.0 / 255.0, blue: 0.0, alpha: 1.0)
     }
     
     class func ijWarmGreyColor() -> UIColor {
@@ -51,6 +67,10 @@ extension UIColor {
     
     class func ijGreyishColor() -> UIColor {
         return UIColor(white: 178.0 / 255.0, alpha: 1.0)
+    }
+    
+    class func ijWhite90Color() -> UIColor {
+        return UIColor(white: 255.0 / 255.0, alpha: 0.9)
     }
 
 }

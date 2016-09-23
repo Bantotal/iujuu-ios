@@ -13,6 +13,7 @@ import DynamicColor
 enum IujuuButtonStyle {
 
     case primary /* .custom */
+    case primaryWith(color: UIColor) /* .custom */
     case secondary(borderColor: UIColor) /* .custom */
     case border(borderColor: UIColor) /* .system */
     case borderless(titleColor: UIColor) /* .system */
@@ -24,24 +25,31 @@ extension UIButton {
     func setStyle(_ style: IujuuButtonStyle) {
         switch style {
         case .primary:
-            setupBackground(color: .ijDustyOrangeColor())
+            setupBackground(color: .ijMainOrangeColor())
             setupFixedTitle(color: .white)
+            titleLabel?.font = .bold(size: 20)
+        case let .primaryWith(color):
+            setupBackground(color: color)
+            setupFixedTitle(color: .white)
+            titleLabel?.font = .bold(size: 20)
         case let .secondary(borderColor):
             setupBackground(color: .white)
-            layer.borderWidth = 3
+            layer.borderWidth = 0.8
             layer.borderColor = borderColor.cgColor
             setupFixedTitle(color: .black)
+            titleLabel?.font = .regular(size: 20)
         case let .border(borderColor):
             backgroundColor = .clear
             layer.borderWidth = 3
             layer.borderColor = borderColor.cgColor
             setTitleColor(borderColor, for: .normal)
+            titleLabel?.font = .regular(size: 20)
         case let .borderless(titleColor):
             backgroundColor = .clear
             setTitleColor(titleColor, for: .normal)
+            titleLabel?.font = .bold(size: 20)
         }
-        layer.cornerRadius = 16
-        titleLabel?.font = .bold(size: 23) // TODO: this will depend on button style
+        layer.cornerRadius = 12
         clipsToBounds = true
     }
 
