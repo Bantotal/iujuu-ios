@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G1004" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="SubtitleView" customModule="Iujuu" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="97"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4hF-2X-tCG">
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="obv-UG-Cdc">
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="4hF-2X-tCG" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="24" id="8Ic-T3-r3E"/>
+                <constraint firstItem="obv-UG-Cdc" firstAttribute="leading" secondItem="4hF-2X-tCG" secondAttribute="leading" id="XLM-jc-Yww"/>
+                <constraint firstItem="4hF-2X-tCG" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="XYu-EV-qJm"/>
+                <constraint firstItem="4hF-2X-tCG" firstAttribute="trailing" secondItem="obv-UG-Cdc" secondAttribute="trailing" id="YUJ-WO-wZd"/>
+                <constraint firstItem="obv-UG-Cdc" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="c1u-90-2Cm"/>
+                <constraint firstItem="obv-UG-Cdc" firstAttribute="top" secondItem="4hF-2X-tCG" secondAttribute="bottom" constant="5" id="yR0-6Q-pqf"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="subtitleLabel" destination="obv-UG-Cdc" id="san-Oa-9FR"/>
+                <outlet property="titleLabel" destination="4hF-2X-tCG" id="EzR-Qa-LAF"/>
+            </connections>
+            <point key="canvasLocation" x="11.5" y="-243.5"/>
+        </view>
+    </objects>
+</document>

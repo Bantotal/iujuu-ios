@@ -15,7 +15,7 @@ import RxSwift
 class NetworkManager: RxManager {
 
     static let singleton = NetworkManager(manager: SessionManager.default)
-    
+
     override init(manager: Alamofire.SessionManager) {
         super.init(manager: manager)
         observers = [Logger()]

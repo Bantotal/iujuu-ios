@@ -36,5 +36,21 @@ extension UIColor {
     class func ijSeparatorGrayColor() -> UIColor {
         return UIColor(white: 213.0 / 255.0, alpha: 1.0)
     }
+    
+    class func ijWarmGreyColor() -> UIColor {
+        return UIColor(white: 120.0 / 255.0, alpha: 1.0)
+    }
+    
+    class func ijBlackColor() -> UIColor {
+        return UIColor(white: 43.0 / 255.0, alpha: 1.0)
+    }
+    
+    class func ijGreyishBrownColor() -> UIColor {
+        return UIColor(white: 74.0 / 255.0, alpha: 1.0)
+    }
+    
+    class func ijGreyishColor() -> UIColor {
+        return UIColor(white: 178.0 / 255.0, alpha: 1.0)
+    }
 
 }

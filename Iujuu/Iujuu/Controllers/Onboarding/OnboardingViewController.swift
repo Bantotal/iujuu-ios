@@ -11,6 +11,7 @@ import UIKit
 import FXPageControl
 import DynamicColor
 import RxSwift
+import XLSwiftKit
 
 class OnboardingViewController: UIViewController {
 
@@ -78,7 +79,7 @@ class OnboardingViewController: UIViewController {
     
     func finishOnboardingAction() {
         // TODO: perform segue here.
-        print("segue here: finish onboarding")
+        UIApplication.changeRootViewController(R.storyboard.createRegalo().instantiateInitialViewController()!)
     }
 
 }
