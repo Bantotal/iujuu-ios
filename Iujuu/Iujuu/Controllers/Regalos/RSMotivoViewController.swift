@@ -19,20 +19,19 @@ class RSMotivoViewController: BaseRegaloSetupController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        regalo = RegaloSetup()
         pickerView.delegate = self
         pickerView.dataSource = self
 
-        titleLabel.text = NSLocalizedString("Motivo", comment: "")
+        titleLabel.text = UserMessages.RegalosSetup.motivoText
         titleLabel.textColor = textColor
-        titleLabel.font = UIFont.regular(size: 24)
+        titleLabel.font = .regular(size: 24)
 
         regalo.motivo = motivos.first
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setProgressBarPercentage(page: 1)
+        setProgressBarPercentage(page: 2)
 
         if let chosen = regalo.motivo, let index = motivos.index(of: chosen) {
             pickerView.selectRow(index, inComponent: 0, animated: false)
@@ -51,7 +50,7 @@ extension RSMotivoViewController: UIPickerViewDelegate {
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 200, height: 45))
         label.text = motivos[row]
         label.textColor = textColor
-        label.font = UIFont.regular(size: 23)
+        label.font = .regular(size: 23)
         label.textAlignment = .left
         return label
     }

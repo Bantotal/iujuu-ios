@@ -9,7 +9,7 @@
 import Foundation
 
 struct TestArguments {
-    
+
     static let mockData = "mockData"
 
 }

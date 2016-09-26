@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 extension UITableView {
-    
+
     func setFooterAtBottom(_ view: UIView, tableHeight: CGFloat) {
         guard self.numberOfSections > 0 else {
             self.tableFooterView = view
@@ -20,11 +20,11 @@ extension UITableView {
             self.tableFooterView = view
             return
         }
-        
+
         let cellY = cell.frame.origin.y
         let footerContainerY = cellY + cell.frame.height
         let footerContainerHeight = tableHeight - footerContainerY
-        
+
         if footerContainerHeight > 0 {
             let frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: footerContainerHeight)
             let footerContainerView = UIView(frame: frame)

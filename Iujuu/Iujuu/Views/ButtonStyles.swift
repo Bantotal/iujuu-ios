@@ -58,7 +58,7 @@ extension UIButton {
         setBackgroundImage(UIImage(color: color.darkened()), for: .highlighted)
         setBackgroundImage(UIImage(color: color.lighter()), for: .disabled)
     }
-    
+
     private func setupFixedTitle(color: UIColor) {
         setTitleColor(color, for: .normal)
         setTitleColor(color.lighter(), for: .highlighted)

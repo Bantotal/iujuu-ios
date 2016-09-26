@@ -20,7 +20,7 @@ class RSNameViewController: BaseRegaloSetupController {
 
         navigationItem.rightBarButtonItem?.target = self
         navigationItem.rightBarButtonItem?.action = #selector(nextTapped)
-        
+
         setup(textField: nameField)
         if let name = regalo.name {
             nameField.text = name
@@ -31,7 +31,7 @@ class RSNameViewController: BaseRegaloSetupController {
         nameField.rx.text.asObservable().do(onNext: { [weak self] text in
             if text.isEmpty {
                 if self?.fieldWasTouched == true {
-                    self?.nameField.errorMessage = "El nombre no puede ser vacío"
+                    self?.nameField.errorMessage = UserMessages.RegalosSetup.nameError
                 }
             } else {
                 self?.fieldWasTouched = true
@@ -43,24 +43,25 @@ class RSNameViewController: BaseRegaloSetupController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setProgressBarPercentage(page: 2)
+        setProgressBarPercentage(page: 3)
+        addGestureRecognizerToView()
     }
-    
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         _ = nameField.becomeFirstResponder()
     }
-    
+
     override func setup(textField: SkyFloatingLabelTextField) {
         super.setup(textField: textField)
         nameField.autocorrectionType = .no
         nameField.autocapitalizationType = .words
         nameField.textColor = textColor
         nameField.lineColor = textColor.withAlphaComponent(0.38)
-        nameField.font = UIFont.bold(size: 29)
-        nameField.titleLabel.font = UIFont.regular(size: 18)
+        nameField.font = .bold(size: 29)
+        nameField.titleLabel.font = .regular(size: 18)
         nameField.titleColor = textColor.withAlphaComponent(0.38)
-        nameField.placeholder = NSLocalizedString("\(regalo.motivo ?? "") de", comment: "")
+        nameField.placeholder = NSLocalizedString("{0} de", comment: "").parametrize(regalo.motivo ?? "")
         nameField.placeholderColor = textColor
         nameField.selectedLineColor = textColor
         nameField.selectedTitleColor = textColor
@@ -74,7 +75,7 @@ class RSNameViewController: BaseRegaloSetupController {
             regalo.name = nameField.text
             performSegue(withIdentifier: R.segue.rSNameViewController.pushToCloseDate.identifier, sender: self)
         } else {
-            nameField.errorMessage = "El nombre no puede ser vacío"
+            nameField.errorMessage = UserMessages.RegalosSetup.nameError
         }
     }
 

@@ -11,7 +11,7 @@
 		2817316B1C9C4BDA006237C7 /* XLTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2817316A1C9C4BDA006237C7 /* XLTableViewController.swift */; };
 		281BF1A31C7B8EEF00809E3F /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281BF19F1C7B8EEF00809E3F /* Session.swift */; };
 		2841F1DC1CCFF55600D609CE /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FEB24B1C9875F60027D470 /* UIApplication.swift */; };
-		2841F1DD1CCFF55600D609CE /* NSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23A40EF1C972C2B004AB8DC /* NSDate.swift */; };
+		2841F1DD1CCFF55600D609CE /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23A40EF1C972C2B004AB8DC /* Date.swift */; };
 		2841F1E01CCFF55600D609CE /* XLTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2817316A1C9C4BDA006237C7 /* XLTableViewController.swift */; };
 		2841F1E11CCFF55600D609CE /* Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28A6B9D71CB6271800682BCE /* Manager.swift */; };
 		2841F1E31CCFF55600D609CE /* UIDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D65F941C99D8AF008ED705 /* UIDevice.swift */; };
@@ -149,6 +149,12 @@
 		8F8CEA031D947545005FA5B6 /* Motivo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8CEA011D947545005FA5B6 /* Motivo.swift */; };
 		8F8CEA061D947840005FA5B6 /* IJLabelRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8CEA051D947840005FA5B6 /* IJLabelRow.swift */; };
 		8F8CEA071D947840005FA5B6 /* IJLabelRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F8CEA051D947840005FA5B6 /* IJLabelRow.swift */; };
+		8F9037E51D9973B4006E1C8E /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9037E41D9973B4006E1C8E /* UIView.swift */; };
+		8F9037E61D9973E9006E1C8E /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9037E41D9973B4006E1C8E /* UIView.swift */; };
+		8F9037E81D997662006E1C8E /* RSChooseAccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9037E71D997662006E1C8E /* RSChooseAccountController.swift */; };
+		8F9037E91D997662006E1C8E /* RSChooseAccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9037E71D997662006E1C8E /* RSChooseAccountController.swift */; };
+		8F9037EB1D9987D6006E1C8E /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9037EA1D9987D6006E1C8E /* Account.swift */; };
+		8F9037EC1D9987D6006E1C8E /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9037EA1D9987D6006E1C8E /* Account.swift */; };
 		8F9694C31D92D9B200A9EBB7 /* CreateRegalo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F9694C11D92D9B200A9EBB7 /* CreateRegalo.storyboard */; };
 		8F9694C41D92D9B200A9EBB7 /* CreateRegalo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F9694C11D92D9B200A9EBB7 /* CreateRegalo.storyboard */; };
 		8F9694C71D92E46300A9EBB7 /* BaseRegaloSetupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9694C61D92E46300A9EBB7 /* BaseRegaloSetupController.swift */; };
@@ -169,7 +175,7 @@
 		8F9694DD1D93162400A9EBB7 /* RSAmountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9694DB1D93162400A9EBB7 /* RSAmountController.swift */; };
 		8F9694E11D932A5A00A9EBB7 /* RSPerPersonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9694E01D932A5A00A9EBB7 /* RSPerPersonController.swift */; };
 		8F9694E21D932A5A00A9EBB7 /* RSPerPersonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9694E01D932A5A00A9EBB7 /* RSPerPersonController.swift */; };
-		B23A40F01C972C2B004AB8DC /* NSDate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23A40EF1C972C2B004AB8DC /* NSDate.swift */; };
+		B23A40F01C972C2B004AB8DC /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23A40EF1C972C2B004AB8DC /* Date.swift */; };
 		BFE90E681D955B8D00E8F758 /* SubtitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFE90E671D955B8D00E8F758 /* SubtitleView.xib */; };
 		BFE90E691D955B8D00E8F758 /* SubtitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFE90E671D955B8D00E8F758 /* SubtitleView.xib */; };
 		BFE90E6B1D955C1F00E8F758 /* SubtitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE90E6A1D955C1F00E8F758 /* SubtitleView.swift */; };
@@ -303,6 +309,9 @@
 		8F8CE9FE1D9470DA005FA5B6 /* RegaloHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegaloHeaderView.swift; sourceTree = "<group>"; };
 		8F8CEA011D947545005FA5B6 /* Motivo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Motivo.swift; sourceTree = "<group>"; };
 		8F8CEA051D947840005FA5B6 /* IJLabelRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IJLabelRow.swift; sourceTree = "<group>"; };
+		8F9037E41D9973B4006E1C8E /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		8F9037E71D997662006E1C8E /* RSChooseAccountController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSChooseAccountController.swift; sourceTree = "<group>"; };
+		8F9037EA1D9987D6006E1C8E /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
 		8F9694C21D92D9B200A9EBB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = CreateRegalo.storyboard; sourceTree = "<group>"; };
 		8F9694C61D92E46300A9EBB7 /* BaseRegaloSetupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRegaloSetupController.swift; sourceTree = "<group>"; };
 		8F9694C91D92EC5300A9EBB7 /* RSMotivoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSMotivoViewController.swift; sourceTree = "<group>"; };
@@ -317,7 +326,7 @@
 		9FDCBEAA30C082EB645948C0 /* Pods-UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UITests/Pods-UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A72B8BD70ACBADB61E8DCC94 /* Pods-ui_tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ui_tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ui_tests/Pods-ui_tests.debug.xcconfig"; sourceTree = "<group>"; };
 		AC9E911CC8B746EFE8866092 /* Pods-Iujuu.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Iujuu.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Iujuu/Pods-Iujuu.debug.xcconfig"; sourceTree = "<group>"; };
-		B23A40EF1C972C2B004AB8DC /* NSDate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSDate.swift; sourceTree = "<group>"; };
+		B23A40EF1C972C2B004AB8DC /* Date.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Date.swift; sourceTree = "<group>"; };
 		BFE90E671D955B8D00E8F758 /* SubtitleView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SubtitleView.xib; sourceTree = "<group>"; };
 		BFE90E6A1D955C1F00E8F758 /* SubtitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubtitleView.swift; sourceTree = "<group>"; };
 		BFE90E6D1D956ED000E8F758 /* Eureka.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Eureka.swift; sourceTree = "<group>"; };
@@ -486,6 +495,7 @@
 				465723041D91C59A001F4DC1 /* Regalo.swift */,
 				8F0759A61D774FC10012D681 /* RealmManager.swift */,
 				8F8CEA011D947545005FA5B6 /* Motivo.swift */,
+				8F9037EA1D9987D6006E1C8E /* Account.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -503,16 +513,17 @@
 		28C282411C7797CA003ECA4F /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				8F0759A31D774C5C0012D681 /* AppDelegate+Iujuu.swift */,
+				B23A40EF1C972C2B004AB8DC /* Date.swift */,
 				28A6B9D51CB5F95900682BCE /* RouteType.swift */,
-				B23A40EF1C972C2B004AB8DC /* NSDate.swift */,
+				465910AE1D80A5000022374B /* String.swift */,
 				28FEB24B1C9875F60027D470 /* UIApplication.swift */,
 				28D65F941C99D8AF008ED705 /* UIDevice.swift */,
 				8F0759991D7742CA0012D681 /* UIImageView.swift */,
-				8F0759A31D774C5C0012D681 /* AppDelegate+Iujuu.swift */,
-				465910AE1D80A5000022374B /* String.swift */,
 				8F9694D51D93048F00A9EBB7 /* UIFont.swift */,
 				466684191D947F9C00584FDB /* UIViewController.swift */,
 				464512221D95B1A5009C2FE6 /* UITableView.swift */,
+				8F9037E41D9973B4006E1C8E /* UIView.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -674,6 +685,7 @@
 			children = (
 				8F16F8D11D94499E003BDA0B /* IURegaloNavigationController.swift */,
 				8F9694C61D92E46300A9EBB7 /* BaseRegaloSetupController.swift */,
+				8F9037E71D997662006E1C8E /* RSChooseAccountController.swift */,
 				8F9694C91D92EC5300A9EBB7 /* RSMotivoViewController.swift */,
 				8F9694D21D9302BC00A9EBB7 /* RSNameViewController.swift */,
 				8F9694D81D93084000A9EBB7 /* RSCloseDateController.swift */,
@@ -1001,7 +1013,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		2841F1FA1CCFF55600D609CE /* [CP] Embed Pods Frameworks */ = {
@@ -1102,7 +1114,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		3B46532B09EF5FAC0AF9CE13 /* [CP] Embed Pods Frameworks */ = {
@@ -1177,7 +1189,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		A79AE596D560950CD8DCE35E /* [CP] Check Pods Manifest.lock */ = {
@@ -1192,7 +1204,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		DC47F16F71998B02D5AAB204 /* [CP] Embed Pods Frameworks */ = {
@@ -1219,7 +1231,7 @@
 			files = (
 				2841F1DC1CCFF55600D609CE /* UIApplication.swift in Sources */,
 				8F9694CB1D92EC5300A9EBB7 /* RSMotivoViewController.swift in Sources */,
-				2841F1DD1CCFF55600D609CE /* NSDate.swift in Sources */,
+				2841F1DD1CCFF55600D609CE /* Date.swift in Sources */,
 				8F16F8D31D9449C1003BDA0B /* IURegaloNavigationController.swift in Sources */,
 				2841F1E01CCFF55600D609CE /* XLTableViewController.swift in Sources */,
 				464512111D9595CD009C2FE6 /* PasswordValidator.swift in Sources */,
@@ -1228,11 +1240,13 @@
 				460C0B931D9431E4005814AA /* UserMessages.swift in Sources */,
 				466684171D94775900584FDB /* WelcomeViewController.swift in Sources */,
 				4658D9B81D92CB4E00A2DF05 /* TestArguments.swift in Sources */,
+				8F9037E91D997662006E1C8E /* RSChooseAccountController.swift in Sources */,
 				2841F1E31CCFF55600D609CE /* UIDevice.swift in Sources */,
 				2841F1E41CCFF55600D609CE /* RouteType.swift in Sources */,
 				46C395091D92FCD4000965FB /* OnboardingViewController.swift in Sources */,
 				8F9694C81D92E46300A9EBB7 /* BaseRegaloSetupController.swift in Sources */,
 				8F0759A21D774B390012D681 /* SessionController.swift in Sources */,
+				8F9037E61D9973E9006E1C8E /* UIView.swift in Sources */,
 				46C395001D92DD8E000965FB /* Zeplin.swift in Sources */,
 				464512241D95B2FA009C2FE6 /* UITableView.swift in Sources */,
 				BFE90E6F1D956ED000E8F758 /* Eureka.swift in Sources */,
@@ -1256,6 +1270,7 @@
 				4653B7F61D7A14A0002A6660 /* LoadingIndicator.swift in Sources */,
 				4666841E1D94802800584FDB /* CreateAccountViewController.swift in Sources */,
 				8F9694D71D93048F00A9EBB7 /* UIFont.swift in Sources */,
+				8F9037EC1D9987D6006E1C8E /* Account.swift in Sources */,
 				8F8CE9FA1D946C72005FA5B6 /* (null) in Sources */,
 				464512211D95AD07009C2FE6 /* R.generated.swift in Sources */,
 				8F0759931D7728360012D681 /* Helpers.swift in Sources */,
@@ -1287,7 +1302,7 @@
 				8F8CE9F61D946863005FA5B6 /* (null) in Sources */,
 				28FEB24C1C9875F60027D470 /* UIApplication.swift in Sources */,
 				8F9694CA1D92EC5300A9EBB7 /* RSMotivoViewController.swift in Sources */,
-				B23A40F01C972C2B004AB8DC /* NSDate.swift in Sources */,
+				B23A40F01C972C2B004AB8DC /* Date.swift in Sources */,
 				8F16F8D21D94499E003BDA0B /* IURegaloNavigationController.swift in Sources */,
 				8F8CEA061D947840005FA5B6 /* IJLabelRow.swift in Sources */,
 				2817316B1C9C4BDA006237C7 /* XLTableViewController.swift in Sources */,
@@ -1295,11 +1310,13 @@
 				28A6B9D81CB6271800682BCE /* Manager.swift in Sources */,
 				460C0B921D9431E4005814AA /* UserMessages.swift in Sources */,
 				466684161D94775900584FDB /* WelcomeViewController.swift in Sources */,
+				8F9037E81D997662006E1C8E /* RSChooseAccountController.swift in Sources */,
 				8F8CE9F81D946BC4005FA5B6 /* PreviewRegaloController.swift in Sources */,
 				4658D9B71D92CB4E00A2DF05 /* TestArguments.swift in Sources */,
 				28D65F951C99D8AF008ED705 /* UIDevice.swift in Sources */,
 				28A6B9D61CB5F95900682BCE /* RouteType.swift in Sources */,
 				46C395081D92FCD4000965FB /* OnboardingViewController.swift in Sources */,
+				8F9037E51D9973B4006E1C8E /* UIView.swift in Sources */,
 				8F9694C71D92E46300A9EBB7 /* BaseRegaloSetupController.swift in Sources */,
 				464512231D95B1A5009C2FE6 /* UITableView.swift in Sources */,
 				BFE90E6E1D956ED000E8F758 /* Eureka.swift in Sources */,
@@ -1323,6 +1340,7 @@
 				46F45F261D905BED00A44C59 /* InitialViewController.swift in Sources */,
 				4653B7F51D7A14A0002A6660 /* LoadingIndicator.swift in Sources */,
 				4666841D1D94802800584FDB /* CreateAccountViewController.swift in Sources */,
+				8F9037EB1D9987D6006E1C8E /* Account.swift in Sources */,
 				8F9694D61D93048F00A9EBB7 /* UIFont.swift in Sources */,
 				464512201D95ACF6009C2FE6 /* R.generated.swift in Sources */,
 				8F0759921D7728360012D681 /* Helpers.swift in Sources */,

@@ -10,11 +10,11 @@ import Foundation
 import UIKit
 
 class WelcomeViewController: UIViewController {
-    
+
     @IBOutlet weak var facebookButton: UIButton!
     @IBOutlet weak var createAccountButton: UIButton!
     @IBOutlet weak var loginButton: UIButton!
-    
+
     override var prefersStatusBarHidden: Bool {
         return true
     }
@@ -23,11 +23,11 @@ class WelcomeViewController: UIViewController {
         super.viewDidLoad()
         setup()
     }
-    
+
     private func setup() {
         facebookButton.setStyle(.primaryWith(color: .ijDenimBlueColor()))
         createAccountButton.setStyle(.secondary(borderColor: .ijDeepOrangeColor()))
         loginButton.setStyle(.borderless(titleColor: .white))
     }
-    
+
 }

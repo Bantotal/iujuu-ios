@@ -10,10 +10,10 @@ import Foundation
 import Eureka
 
 class IJLabelCell: LabelCell {
-    
+
     private var topSeparator: UIView?
     private var bottomSeparator: UIView?
-    
+
     required public init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
     }
@@ -24,10 +24,10 @@ class IJLabelCell: LabelCell {
 
     override func setup() {
         super.setup()
-        textLabel?.font = UIFont.regular(size: 17)
-        detailTextLabel?.font = UIFont.bold(size: 17)
+        textLabel?.font = .regular(size: 17)
+        detailTextLabel?.font = .bold(size: 17)
     }
-    
+
     override func update() {
         super.update()
         textLabel?.textColor = .ijTextBlackColor()
@@ -44,7 +44,7 @@ class IJLabelCell: LabelCell {
         topSeparator?.backgroundColor = .ijSeparatorGrayColor()
         bottomSeparator?.backgroundColor = .ijSeparatorGrayColor()
     }
-    
+
     override func layoutSubviews() {
         super.layoutSubviews()
         if let top = topSeparator {
@@ -54,13 +54,13 @@ class IJLabelCell: LabelCell {
             bottom.frame = CGRect(x: 0, y: frame.height - 1, width: contentView.frame.width, height: 1)
         }
     }
-    
+
 }
 
-final class IJLabelRow:  Row<IJLabelCell>, RowType {
-    
+final class IJLabelRow: Row<IJLabelCell>, RowType {
+
     required init(tag: String?) {
         super.init(tag: tag)
     }
-    
+
 }

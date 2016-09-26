@@ -24,11 +24,11 @@ final class User: Object {
     var avatarUrl: URL? {
         return URL(string: avatar ?? "")
     }
-    
+
     override class func primaryKey() -> String? {
         return "id"
     }
-    
+
     override static func ignoredProperties() -> [String] {
         return ["avatarUrl"]
     }
@@ -70,5 +70,5 @@ extension User: Decodable {
             avatar: j =>? "avatar"
         )
     }
-    
+
 }

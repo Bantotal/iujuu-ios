@@ -37,11 +37,11 @@ class IURegaloNavigationController: UINavigationController {
         view.bringSubview(toFront: progressView)
 
     }
-    
+
     func hideProgressBar() {
         progressView.isHidden = true
     }
-    
+
     func showProgressBar() {
         progressView.isHidden = false
     }
@@ -54,5 +54,5 @@ class IURegaloNavigationController: UINavigationController {
         (previousVC as? BaseRegaloSetupController)?.regalo = latest.regalo
         return previousVC
     }
-    
+
 }
