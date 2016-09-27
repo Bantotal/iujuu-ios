@@ -26,3 +26,19 @@ extension Section {
     }
 
 }
+
+public struct RulePasswordIsValid<T: Equatable>: RuleType {
+    
+    public init(){}
+    
+    public var id: String?
+    public var validationError = ValidationError(msg: "Password must have 6 character, one capital letter and one number!")
+    
+    public func isValid(value: T?) -> ValidationError? {
+        if let str = value as? String {
+            let passwordValidator = DefaultPasswordValidator()
+            return passwordValidator.isPasswordValid(str) ? nil : validationError
+        }
+        return value != nil ? nil : validationError
+    }
+}
