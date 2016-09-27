@@ -24,8 +24,6 @@ class RSNameViewController: BaseRegaloSetupController {
         setup(textField: nameField)
         if let name = regalo.name {
             nameField.text = name
-        } else {
-            nameField.text = "Pepe"
         }
 
         nameField.rx.text.asObservable().do(onNext: { [weak self] text in

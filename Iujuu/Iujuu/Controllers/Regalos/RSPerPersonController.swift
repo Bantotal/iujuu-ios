@@ -26,8 +26,6 @@ class RSPerPersonViewController: BaseRegaloSetupController {
         setup(textField: perPersonField)
         if let amount = regalo.suggestedPerPerson {
             perPersonField.text = Constants.Formatters.intCurrencyFormatter.string(from: NSNumber(value: amount))
-        } else {
-            perPersonField.text = Constants.Formatters.intCurrencyFormatter.string(from: 120)
         }
 
         perPersonField.rx.text.asObservable().do(onNext: { [weak self] text in

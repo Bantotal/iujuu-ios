@@ -14,6 +14,10 @@ extension UIFont {
         return UIFont(name: "OpenSans-Bold", size: UIDevice.current.fontSizeForDevice(size))!
     }
 
+    static func semibold(size: CGFloat) -> UIFont {
+        return UIFont(name: "OpenSans-Semibold", size: UIDevice.current.fontSizeForDevice(size))!
+    }
+
     static func regular(size: CGFloat) -> UIFont {
         return UIFont(name: "OpenSans", size: UIDevice.current.fontSizeForDevice(size))!
     }

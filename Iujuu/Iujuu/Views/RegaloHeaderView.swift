@@ -30,5 +30,5 @@ class RegaloHeaderView: UIView {
 
         imageHeightConstraint.constant = RegaloHeaderView.imageHeight
     }
-    
+
 }

@@ -59,7 +59,7 @@ class RegaloPreviewViewController: FormViewController {
             }
             <<< IJLabelRow() {
                     $0.title = UserMessages.RegaloPreview.closeDateText
-                    $0.value = closeDate.toString(format: DateFormat.custom("dd/MM/yyyy"))
+                    $0.value = closeDate.dateString()
                 }.cellSetup { (cell, row) in
                     cell.addSeparators()
                     cell.height = { 64 }
@@ -132,7 +132,8 @@ class RegaloPreviewViewController: FormViewController {
     }
 
     func nextTapped() {
-        showError("Se ha creado el regalo correctamente")
+//        showError("Se ha creado el regalo correctamente")
+        performSegue(withIdentifier: R.segue.regaloPreviewViewController.showRegaloSetupCompleted.identifier, sender: self)
     }
 
     // MARK: Overrides
@@ -146,6 +147,12 @@ class RegaloPreviewViewController: FormViewController {
             }
         }
         return result
+    }
+
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        //TODO: set code
+        (segue.destination as? ShareRegaloViewController)?.code = "12345"
     }
 
 }

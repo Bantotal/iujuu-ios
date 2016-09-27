@@ -155,6 +155,8 @@
 		8F9037E91D997662006E1C8E /* RSChooseAccountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9037E71D997662006E1C8E /* RSChooseAccountController.swift */; };
 		8F9037EB1D9987D6006E1C8E /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9037EA1D9987D6006E1C8E /* Account.swift */; };
 		8F9037EC1D9987D6006E1C8E /* Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9037EA1D9987D6006E1C8E /* Account.swift */; };
+		8F9037EE1D99AA37006E1C8E /* ShareRegaloController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9037ED1D99AA37006E1C8E /* ShareRegaloController.swift */; };
+		8F9037EF1D99AA37006E1C8E /* ShareRegaloController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9037ED1D99AA37006E1C8E /* ShareRegaloController.swift */; };
 		8F9694C31D92D9B200A9EBB7 /* CreateRegalo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F9694C11D92D9B200A9EBB7 /* CreateRegalo.storyboard */; };
 		8F9694C41D92D9B200A9EBB7 /* CreateRegalo.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8F9694C11D92D9B200A9EBB7 /* CreateRegalo.storyboard */; };
 		8F9694C71D92E46300A9EBB7 /* BaseRegaloSetupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9694C61D92E46300A9EBB7 /* BaseRegaloSetupController.swift */; };
@@ -175,6 +177,8 @@
 		8F9694DD1D93162400A9EBB7 /* RSAmountController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9694DB1D93162400A9EBB7 /* RSAmountController.swift */; };
 		8F9694E11D932A5A00A9EBB7 /* RSPerPersonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9694E01D932A5A00A9EBB7 /* RSPerPersonController.swift */; };
 		8F9694E21D932A5A00A9EBB7 /* RSPerPersonController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F9694E01D932A5A00A9EBB7 /* RSPerPersonController.swift */; };
+		8FBEC0F01D9AE3E600C07586 /* RegaloEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBEC0EF1D9AE3E600C07586 /* RegaloEndpoints.swift */; };
+		8FBEC0F11D9AE3E600C07586 /* RegaloEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8FBEC0EF1D9AE3E600C07586 /* RegaloEndpoints.swift */; };
 		B23A40F01C972C2B004AB8DC /* Date.swift in Sources */ = {isa = PBXBuildFile; fileRef = B23A40EF1C972C2B004AB8DC /* Date.swift */; };
 		BFE90E681D955B8D00E8F758 /* SubtitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFE90E671D955B8D00E8F758 /* SubtitleView.xib */; };
 		BFE90E691D955B8D00E8F758 /* SubtitleView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BFE90E671D955B8D00E8F758 /* SubtitleView.xib */; };
@@ -312,6 +316,7 @@
 		8F9037E41D9973B4006E1C8E /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		8F9037E71D997662006E1C8E /* RSChooseAccountController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSChooseAccountController.swift; sourceTree = "<group>"; };
 		8F9037EA1D9987D6006E1C8E /* Account.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Account.swift; sourceTree = "<group>"; };
+		8F9037ED1D99AA37006E1C8E /* ShareRegaloController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareRegaloController.swift; sourceTree = "<group>"; };
 		8F9694C21D92D9B200A9EBB7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = CreateRegalo.storyboard; sourceTree = "<group>"; };
 		8F9694C61D92E46300A9EBB7 /* BaseRegaloSetupController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseRegaloSetupController.swift; sourceTree = "<group>"; };
 		8F9694C91D92EC5300A9EBB7 /* RSMotivoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSMotivoViewController.swift; sourceTree = "<group>"; };
@@ -322,6 +327,7 @@
 		8F9694D81D93084000A9EBB7 /* RSCloseDateController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSCloseDateController.swift; sourceTree = "<group>"; };
 		8F9694DB1D93162400A9EBB7 /* RSAmountController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSAmountController.swift; sourceTree = "<group>"; };
 		8F9694E01D932A5A00A9EBB7 /* RSPerPersonController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RSPerPersonController.swift; sourceTree = "<group>"; };
+		8FBEC0EF1D9AE3E600C07586 /* RegaloEndpoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegaloEndpoints.swift; sourceTree = "<group>"; };
 		9C9526B7C0B8808A67721699 /* Pods-Iujuu-Staging.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Iujuu-Staging.release.xcconfig"; path = "Pods/Target Support Files/Pods-Iujuu-Staging/Pods-Iujuu-Staging.release.xcconfig"; sourceTree = "<group>"; };
 		9FDCBEAA30C082EB645948C0 /* Pods-UITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-UITests/Pods-UITests.debug.xcconfig"; sourceTree = "<group>"; };
 		A72B8BD70ACBADB61E8DCC94 /* Pods-ui_tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ui_tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ui_tests/Pods-ui_tests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -667,6 +673,7 @@
 			isa = PBXGroup;
 			children = (
 				281BF19F1C7B8EEF00809E3F /* Session.swift */,
+				8FBEC0EF1D9AE3E600C07586 /* RegaloEndpoints.swift */,
 			);
 			name = Router;
 			sourceTree = "<group>";
@@ -692,6 +699,7 @@
 				8F9694DB1D93162400A9EBB7 /* RSAmountController.swift */,
 				8F9694E01D932A5A00A9EBB7 /* RSPerPersonController.swift */,
 				8F8CE9F71D946BC4005FA5B6 /* PreviewRegaloController.swift */,
+				8F9037ED1D99AA37006E1C8E /* ShareRegaloController.swift */,
 			);
 			path = Regalos;
 			sourceTree = "<group>";
@@ -1256,6 +1264,7 @@
 				2841F1E81CCFF55600D609CE /* XLViewController.swift in Sources */,
 				464512191D95A9A7009C2FE6 /* ButtonFooter.swift in Sources */,
 				8F8CEA031D947545005FA5B6 /* Motivo.swift in Sources */,
+				8FBEC0F11D9AE3E600C07586 /* RegaloEndpoints.swift in Sources */,
 				465723061D91C59A001F4DC1 /* Regalo.swift in Sources */,
 				8F9694CE1D92F3EB00A9EBB7 /* ProgressView.swift in Sources */,
 				8F8CE9F91D946BC4005FA5B6 /* PreviewRegaloController.swift in Sources */,
@@ -1268,6 +1277,7 @@
 				8F9694E21D932A5A00A9EBB7 /* RSPerPersonController.swift in Sources */,
 				46F45F271D905BED00A44C59 /* InitialViewController.swift in Sources */,
 				4653B7F61D7A14A0002A6660 /* LoadingIndicator.swift in Sources */,
+				8F9037EF1D99AA37006E1C8E /* ShareRegaloController.swift in Sources */,
 				4666841E1D94802800584FDB /* CreateAccountViewController.swift in Sources */,
 				8F9694D71D93048F00A9EBB7 /* UIFont.swift in Sources */,
 				8F9037EC1D9987D6006E1C8E /* Account.swift in Sources */,
@@ -1326,6 +1336,7 @@
 				8F8CEA021D947545005FA5B6 /* Motivo.swift in Sources */,
 				464512161D95A9A4009C2FE6 /* ButtonFooter.swift in Sources */,
 				8F07599A1D7742CA0012D681 /* UIImageView.swift in Sources */,
+				8FBEC0F01D9AE3E600C07586 /* RegaloEndpoints.swift in Sources */,
 				4666841A1D947F9C00584FDB /* UIViewController.swift in Sources */,
 				281731691C9C4BBC006237C7 /* XLViewController.swift in Sources */,
 				465723051D91C59A001F4DC1 /* Regalo.swift in Sources */,
@@ -1338,6 +1349,7 @@
 				8F9694D91D93084000A9EBB7 /* RSCloseDateController.swift in Sources */,
 				8F9694E11D932A5A00A9EBB7 /* RSPerPersonController.swift in Sources */,
 				46F45F261D905BED00A44C59 /* InitialViewController.swift in Sources */,
+				8F9037EE1D99AA37006E1C8E /* ShareRegaloController.swift in Sources */,
 				4653B7F51D7A14A0002A6660 /* LoadingIndicator.swift in Sources */,
 				4666841D1D94802800584FDB /* CreateAccountViewController.swift in Sources */,
 				8F9037EB1D9987D6006E1C8E /* Account.swift in Sources */,

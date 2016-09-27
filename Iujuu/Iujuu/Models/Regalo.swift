@@ -11,8 +11,9 @@ import Foundation
 import Foundation
 import Decodable
 import RealmSwift
+import Opera
 
-final class Regalo: Object {
+final class Regalo: Object, OperaDecodable {
 
     dynamic var id: Int = Int.min
     dynamic var saldo: Double = 0

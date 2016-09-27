@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import SwiftDate
 
 extension Date {
 
@@ -14,4 +15,7 @@ extension Date {
         return Constants.Formatters.debugConsoleDateFormatter.string(from: self)
     }
 
+    func dateString() -> String? {
+        return self.toString(format: DateFormat.custom("dd/MM/yyyy"))
+    }
 }

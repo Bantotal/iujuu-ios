@@ -13,7 +13,7 @@ class SubtitleView: UIView {
     
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         titleLabel.font = .regular(size: 17)
@@ -24,5 +24,5 @@ class SubtitleView: UIView {
 
         subtitleLabel.numberOfLines = 0
     }
-    
+
 }

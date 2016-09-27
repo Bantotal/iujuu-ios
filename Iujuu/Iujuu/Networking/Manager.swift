@@ -38,6 +38,7 @@ struct Router {
     static let baseUsuariosString = "usuarios"
 
     struct Session {}
+    struct Regalo {}
 
 }
 

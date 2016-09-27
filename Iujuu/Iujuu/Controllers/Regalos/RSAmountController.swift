@@ -24,8 +24,6 @@ class RSAmountViewController: BaseRegaloSetupController {
         setup(textField: amountField)
         if let amount = regalo.amount {
             amountField.text = Constants.Formatters.intCurrencyFormatter.string(from: NSNumber(value: amount))
-        } else {
-            amountField.text = Constants.Formatters.intCurrencyFormatter.string(from: 12000)
         }
 
         amountField.rx.text.asObservable().do(onNext: { [weak self] text in
