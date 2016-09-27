@@ -13,7 +13,7 @@ import Decodable
 import RealmSwift
 
 final class Regalo: Object {
-    
+
     dynamic var id: Int = Int.min
     dynamic var saldo: Double = 0
     dynamic var fechaDeInicio = Date()
@@ -40,7 +40,7 @@ final class Regalo: Object {
 }
 
 extension Regalo: Decodable {
-    
+
     static func decode(_ j: Any) throws -> Regalo {
         let data: [AnyHashable: Any] = [
             "id": try j => "regaloId" as Int,
@@ -55,5 +55,5 @@ extension Regalo: Decodable {
         ]
         return Regalo(value: data)
     }
-    
+
 }

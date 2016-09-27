@@ -30,14 +30,14 @@ class RSCloseDateViewController: BaseRegaloSetupController {
             self?.regalo.closingDate = date
         }).subscribe().addDisposableTo(disposeBag)
 
-        titleLabel.text = NSLocalizedString("Fecha de cierre de la colecta", comment: "")
+        titleLabel.text = UserMessages.RegalosSetup.closeDateText
         titleLabel.textColor = textColor
-        titleLabel.font = UIFont.regular(size: 24)
+        titleLabel.font = .regular(size: 24)
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setProgressBarPercentage(page: 3)
+        setProgressBarPercentage(page: 4)
         datePicker.minimumDate = Date()
     }
 

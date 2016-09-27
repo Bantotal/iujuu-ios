@@ -86,7 +86,7 @@ open class DefaultPasswordStrengthView: PasswordStrengthView {
             }, completion: { [weak self] _ in
                 UIView.animate(withDuration: self?.animationTime ?? 0.3, animations: { [weak self] in
                     self?.progressView?.backgroundColor = self?.colorForProgress()
-                }) 
+                })
             })
         } else {
             layoutIfNeeded()

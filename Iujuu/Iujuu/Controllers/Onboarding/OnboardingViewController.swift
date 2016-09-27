@@ -46,7 +46,7 @@ class OnboardingViewController: UIViewController {
         setupPageControl()
         setupObservables()
     }
-    
+
     override func viewWillLayoutSubviews() {
         super.viewWillLayoutSubviews()
         let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout
@@ -54,7 +54,7 @@ class OnboardingViewController: UIViewController {
         layout?.minimumInteritemSpacing = 0
         layout?.minimumLineSpacing = 0
     }
-    
+
     private func setupPageControl() {
         pageControl.backgroundColor = .clear
         pageControl.dotColor = UIColor.white.withAlphaComponent(0.4)
@@ -64,12 +64,12 @@ class OnboardingViewController: UIViewController {
         pageControl.selectedDotSize = 14
         pageControl.selectedDotColor = .white
     }
-    
+
     private func setupObservables() {
         let _ = page.asObservable().bindNext {
             self.pageControl.currentPage = min($0, self.model.count - 2)
         }.addDisposableTo(disposeBag)
-        
+
         let _ = page.asObservable().bindNext { page in
             UIView.animate(withDuration: 0.2) {
                 self.pageControl.alpha = page == self.model.count - 1 ? 0 : 1
@@ -107,7 +107,7 @@ extension OnboardingViewController: UICollectionViewDelegate {
 }
 
 extension OnboardingViewController: UICollectionViewDataSource {
-    
+
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return model.count
     }

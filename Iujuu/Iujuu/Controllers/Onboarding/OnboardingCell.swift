@@ -10,12 +10,12 @@ import Foundation
 import UIKit
 
 class OnboardingCell: UICollectionViewCell {
-    
+
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var backgroundImageView: UIImageView!
     @IBOutlet weak var label: UILabel!
     @IBOutlet weak var doneButton: UIButton!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         doneButton.setStyle(.border(borderColor: .white))

@@ -50,7 +50,7 @@ struct Constants {
         static let crashlytics = false
         static let jsonResponse = false
     }
-    
+
     struct Cells {
         static let ListItemMargin: CGFloat = 36
     }

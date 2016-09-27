@@ -23,8 +23,8 @@ class RegaloHeaderView: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
 
-        firstLabel.font = UIFont.regular(size: 17)
-        secondLabel.font = UIFont.bold(size: 28)
+        firstLabel.font = .regular(size: 17)
+        secondLabel.font = .bold(size: 28)
         firstLabel.textColor = UIColor.ijTextBlackColor()
         secondLabel.textColor = UIColor.ijTextBlackColor()
 

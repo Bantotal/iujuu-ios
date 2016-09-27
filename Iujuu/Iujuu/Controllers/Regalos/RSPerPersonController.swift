@@ -14,15 +14,15 @@ class RSPerPersonViewController: BaseRegaloSetupController {
 
     @IBOutlet weak var perPersonField: SkyFloatingLabelTextField!
     @IBOutlet weak var helpLabel: UILabel!
-    
+
     private var fieldWasTouched = false
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
         navigationItem.rightBarButtonItem?.target = self
         navigationItem.rightBarButtonItem?.action = #selector(nextTapped)
-        
+
         setup(textField: perPersonField)
         if let amount = regalo.suggestedPerPerson {
             perPersonField.text = Constants.Formatters.intCurrencyFormatter.string(from: NSNumber(value: amount))
@@ -34,7 +34,7 @@ class RSPerPersonViewController: BaseRegaloSetupController {
             guard let me = self else { return }
             if text.isEmpty {
                 if self?.fieldWasTouched == true {
-                    self?.perPersonField.errorMessage = NSLocalizedString("El monto sugerido no puede ser vacío", comment: "")
+                    self?.perPersonField.errorMessage = UserMessages.RegalosSetup.perPersonError
                 }
             } else {
                 self?.fieldWasTouched = true
@@ -48,32 +48,33 @@ class RSPerPersonViewController: BaseRegaloSetupController {
             me.reformatCurrencyNumber(textField: me.perPersonField)
             }).subscribe().addDisposableTo(disposeBag)
 
-        helpLabel.text = NSLocalizedString("Los participantes podrán aportar cualquier cifra", comment: "")
+        helpLabel.text = UserMessages.RegalosSetup.perPersonHelp
         helpLabel.textColor = textColor
-        helpLabel.font = UIFont.regular(size: 14)
+        helpLabel.font = .regular(size: 14)
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setProgressBarPercentage(page: 5)
+        setProgressBarPercentage(page: 6)
+        addGestureRecognizerToView()
         setupNavigationBar()
     }
-    
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         _ = perPersonField.becomeFirstResponder()
         (navigationController as? IURegaloNavigationController)?.hideProgressBar()
     }
-    
+
     override func setup(textField: SkyFloatingLabelTextField) {
         super.setup(textField: textField)
         perPersonField.textColor = textColor
         perPersonField.lineColor = textColor.withAlphaComponent(0.38)
-        perPersonField.font = UIFont.bold(size: 29)
-        perPersonField.placeholderFont = UIFont.bold(size: 24)
-        perPersonField.titleLabel.font = UIFont.regular(size: 18)
+        perPersonField.font = .bold(size: 29)
+        perPersonField.placeholderFont = .bold(size: 24)
+        perPersonField.titleLabel.font = .regular(size: 18)
         perPersonField.titleColor = textColor.withAlphaComponent(0.38)
-        perPersonField.placeholder = NSLocalizedString("Monto sugerido por persona", comment: "")
+        perPersonField.placeholder = UserMessages.RegalosSetup.perPersonText
         perPersonField.placeholderColor = textColor
         perPersonField.selectedLineColor = textColor
         perPersonField.selectedTitleColor = textColor
@@ -88,7 +89,7 @@ class RSPerPersonViewController: BaseRegaloSetupController {
             regalo.suggestedPerPerson = perPersonAmount
             performSegue(withIdentifier: R.segue.rSPerPersonViewController.showConfirmRegaloView.identifier, sender: self)
         } else {
-            perPersonField.errorMessage = NSLocalizedString("El monto sugerido no puede ser vacío", comment: "")
+            perPersonField.errorMessage = UserMessages.RegalosSetup.perPersonError
         }
     }
 

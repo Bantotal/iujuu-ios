@@ -85,7 +85,7 @@ extension AppDelegate {
             cell.titleLabel?.textColor = titleColor
             cell.detailTextLabel?.textColor = textColor
         }
-        
+
         GenericPasswordRow.defaultCellSetup = { cell, _ in
             cell.textField.font = titleFont
             let offset = CGFloat(16)

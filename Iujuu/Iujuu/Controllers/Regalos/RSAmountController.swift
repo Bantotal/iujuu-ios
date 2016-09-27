@@ -14,7 +14,7 @@ class RSAmountViewController: BaseRegaloSetupController {
 
     @IBOutlet weak var amountField: SkyFloatingLabelTextField!
     private var fieldWasTouched = false
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -32,7 +32,7 @@ class RSAmountViewController: BaseRegaloSetupController {
             guard let me = self else { return }
             if text.isEmpty {
                 if self?.fieldWasTouched == true {
-                    self?.amountField.errorMessage = NSLocalizedString("El monto no puede ser vacío", comment: "")
+                    self?.amountField.errorMessage = UserMessages.RegalosSetup.amountError
                 }
             } else {
                 self?.fieldWasTouched = true
@@ -49,22 +49,23 @@ class RSAmountViewController: BaseRegaloSetupController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        setProgressBarPercentage(page: 4)
+        setProgressBarPercentage(page: 5)
+        addGestureRecognizerToView()
     }
-    
+
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         _ = amountField.becomeFirstResponder()
     }
-    
+
     override func setup(textField: SkyFloatingLabelTextField) {
         super.setup(textField: textField)
         amountField.textColor = textColor
         amountField.lineColor = textColor.withAlphaComponent(0.38)
-        amountField.font = UIFont.bold(size: 29)
-        amountField.titleLabel.font = UIFont.regular(size: 18)
+        amountField.font = .bold(size: 29)
+        amountField.titleLabel.font = .regular(size: 18)
         amountField.titleColor = textColor.withAlphaComponent(0.38)
-        amountField.placeholder = NSLocalizedString("Monto objetivo", comment: "")
+        amountField.placeholder = UserMessages.RegalosSetup.amountText
         amountField.placeholderColor = textColor
         amountField.selectedLineColor = textColor
         amountField.selectedTitleColor = textColor
@@ -79,7 +80,7 @@ class RSAmountViewController: BaseRegaloSetupController {
             regalo.amount = amount
             performSegue(withIdentifier: R.segue.rSAmountViewController.showPerPersonSuggestion.identifier, sender: self)
         } else {
-            amountField.errorMessage = NSLocalizedString("El monto no puede ser vacío", comment: "")
+            amountField.errorMessage = UserMessages.RegalosSetup.amountError
         }
     }
 

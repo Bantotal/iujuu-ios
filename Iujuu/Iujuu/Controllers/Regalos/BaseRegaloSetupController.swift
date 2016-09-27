@@ -11,6 +11,7 @@ import UIKit
 import SkyFloatingLabelTextField
 
 struct RegaloSetup {
+    var account: Account?
     var motivo: String?
     var name: String?
     var closingDate: Date?
@@ -22,29 +23,29 @@ struct RegaloSetup {
 class BaseRegaloSetupController: XLViewController {
 
     var regalo: RegaloSetup!
-    var textColor = UIColor.white
+    var textColor = UIColor.ijWhiteColor()
 
-    fileprivate var backgroundColor = UIColor(red: 232.0 / 255.0, green: 123.0 / 255.0, blue: 35.0 / 255.0, alpha: 1.0)
+    fileprivate var backgroundColor = UIColor.ijBackgroundOrangeColor()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setupNavigationBar()
         view.backgroundColor = backgroundColor
-        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(BaseRegaloSetupController.viewTapped)))
     }
 
     func setupNavigationBar() {
-        navigationItem.rightBarButtonItem?.title = "Siguiente"
-        navigationItem.backBarButtonItem?.title = "Atrás"
+        navigationItem.rightBarButtonItem?.title = UserMessages.next
+        navigationItem.rightBarButtonItem?.setTitleTextAttributes([NSFontAttributeName: UIFont.bold(size: 17)], for: .normal)
+        navigationItem.backBarButtonItem?.title = UserMessages.back
         navigationController?.navigationBar.isTranslucent = false
         navigationController?.navigationBar.barTintColor = backgroundColor
         navigationController?.navigationBar.tintColor = textColor
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)
         navigationController?.navigationBar.shadowImage = UIImage()
     }
-    
+
     func setup(textField: SkyFloatingLabelTextField) {
-        // TODO: setup input accessory view for textfield 
+        // TODO: setup input accessory view for textfield
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -53,17 +54,21 @@ class BaseRegaloSetupController: XLViewController {
     }
 
     func setProgressBarPercentage(page: Int) {
-        (navigationController as? IURegaloNavigationController)?.progressView.setProgress(percentage: page, of: 6)
+        (navigationController as? IURegaloNavigationController)?.progressView.setProgress(percentage: page, of: 7)
     }
-    
+
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
-    
+
+    func addGestureRecognizerToView() {
+        view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(BaseRegaloSetupController.viewTapped)))
+    }
+
     func viewTapped() {
         _ = view.findFirstResponder()?.resignFirstResponder()
     }
-    
+
 }
 
 extension BaseRegaloSetupController {
@@ -101,6 +106,10 @@ extension BaseRegaloSetupController {
         }
 
         return digitsOnlyString
+    }
+
+    override var inputAccessoryView: UIView? {
+        return (navigationController as? IURegaloNavigationController)?.progressView.copyView()
     }
 
 }

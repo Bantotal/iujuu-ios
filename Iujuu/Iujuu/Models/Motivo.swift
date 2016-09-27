@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 enum Motivo: String {
-    
+
     case Cumple = "Cumpleaños"
     case Graduacion
     case Nacimiento
@@ -38,5 +38,5 @@ enum Motivo: String {
     static func all() -> [Motivo] {
         return [Cumple, Graduacion, Nacimiento, Despedida, Bienvenida, Casamiento]
     }
-    
+
 }

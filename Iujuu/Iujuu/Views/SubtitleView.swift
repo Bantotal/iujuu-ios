@@ -16,12 +16,12 @@ class SubtitleView: UIView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        titleLabel.font = UIFont.regular(size: 17)
-        subtitleLabel.font = UIFont.regular(size: 14)
-        
+        titleLabel.font = .regular(size: 17)
+        subtitleLabel.font = .regular(size: 14)
+
         titleLabel.textColor = UIColor.ijTextBlackColor()
         subtitleLabel.textColor = UIColor.ijBlackColor()
-        
+
         subtitleLabel.numberOfLines = 0
     }
     

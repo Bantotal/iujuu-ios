@@ -27,7 +27,7 @@ class RegaloPreviewViewController: FormViewController {
             let amount = regalo.amount,
             let perPerson = regalo.suggestedPerPerson,
             let closeDate = regalo.closingDate else { return }
-        
+
         setupTableView()
         let labelRowHeight: CGFloat = 35
 
@@ -42,13 +42,13 @@ class RegaloPreviewViewController: FormViewController {
             section.header = header
         }
             <<< IJLabelRow() {
-                    $0.title = NSLocalizedString("Objetivo", comment: "")
+                    $0.title = UserMessages.RegaloPreview.amountText
                     $0.value = Constants.Formatters.intCurrencyFormatter.string(from: NSNumber(value: amount))
                 }.cellSetup { (cell, row) in
                         cell.height = { labelRowHeight }
                 }
             <<< IJLabelRow() {
-                    $0.title = NSLocalizedString("por persona", comment: "")
+                    $0.title = UserMessages.RegaloPreview.perPersonText
                     $0.value = Constants.Formatters.intCurrencyFormatter.string(from: NSNumber(value: perPerson))
                 }.cellSetup { (cell, row) in
                         cell.height = { labelRowHeight }
@@ -58,7 +58,7 @@ class RegaloPreviewViewController: FormViewController {
                 section.setEmptyHeaderOfHeight(height: 0.01)
             }
             <<< IJLabelRow() {
-                    $0.title = NSLocalizedString("Fecha de cierre", comment: "")
+                    $0.title = UserMessages.RegaloPreview.closeDateText
                     $0.value = closeDate.toString(format: DateFormat.custom("dd/MM/yyyy"))
                 }.cellSetup { (cell, row) in
                     cell.addSeparators()
@@ -68,40 +68,39 @@ class RegaloPreviewViewController: FormViewController {
                 guard let me = self else { return }
                 var header = HeaderFooterView<SubtitleView>(.nibFile(name: "SubtitleView", bundle: nil))
                 header.onSetupView = { view, _ in
-                    view.titleLabel.text = NSLocalizedString("Ideas de regalo", comment: "").parametrize(motivo)
-                    view.subtitleLabel.text = NSLocalizedString("Los participantes podrán votar entre las opciones", comment: "")
+                    view.titleLabel.text = UserMessages.RegaloPreview.regaloIdeasTitle
+                    view.subtitleLabel.text = UserMessages.RegaloPreview.regaloIdeasHelp
                 }
                 header.height = { suggestedVerticalConstraint(80, q6: 0.95, q5: 0.9) }
                 section.header = header
-                
+
                 var footer = HeaderFooterView<UIView>(HeaderFooterProvider.callback({ () -> UIView in
                     //TODO: Setup button view
                     let footer = ButtonFooter()
-                    footer.actionButton.setTitle("Crear colecta", for: .normal)
+                    footer.actionButton.setTitle(UserMessages.RegaloPreview.buttonText, for: .normal)
                     footer.actionButton.addTarget(me, action: #selector(RegaloPreviewViewController.nextTapped), for: .touchUpInside)
                     return footer
                 }))
 
                 footer.height = { 100 }
                 section.footer = footer
-                
                 section.tag = ideaSectionTag
         }
             <<< ListItemRow(addIdeaRowTag) {
                 $0.title = "+"
-                $0.placeholder = NSLocalizedString("Agregar idea", comment: "")
+                $0.placeholder = UserMessages.RegaloPreview.addIdea
             }.cellSetup { (cell, row) in
-                cell.titleLabel?.font = UIFont.regular(size: 18)
-                cell.textField.font = UIFont.regular(size: 18)
+                cell.titleLabel?.font = .regular(size: 18)
+                cell.textField.font = .regular(size: 18)
             }
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setUpNavigationBar()
         (navigationController as? IURegaloNavigationController)?.hideProgressBar()
     }
-    
+
     //MARK: Setting up
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .default
@@ -109,22 +108,21 @@ class RegaloPreviewViewController: FormViewController {
 
     func setUpNavigationBar() {
         let bar = navigationController?.navigationBar
-        navigationItem.backBarButtonItem?.title = "Atrás"
-        title = NSLocalizedString("Nueva colecta", comment: "")
+        navigationItem.backBarButtonItem?.title = UserMessages.back
+        title = UserMessages.RegaloPreview.title
         bar?.barTintColor = .white
         bar?.tintColor = .ijGreyishBrownColor()
     }
 
     func setupTableView() {
-        
         tableView?.separatorStyle = .none
         tableView?.backgroundColor = .white
     }
-    
+
     // MARK: Actions
     func addItem(with value: String) {
         guard var section = form.sectionBy(tag: ideaSectionTag) else { return }
-        let row = ListItemRow(){
+        let row = ListItemRow() {
             $0.value = value
             $0.title = "●"
         }.cellSetup { (cell, row) in
@@ -132,11 +130,11 @@ class RegaloPreviewViewController: FormViewController {
         }
         section.insert(row, at: section.count - 1)
     }
-    
+
     func nextTapped() {
-        showError("Se ha creado el regalo correctamnete")
+        showError("Se ha creado el regalo correctamente")
     }
-    
+
     // MARK: Overrides
     override func textInputShouldReturn<T>(_ textInput: UITextInput, cell: Cell<T>) -> Bool {
         let result = super.textInputShouldReturn(textInput, cell: cell)
@@ -149,23 +147,36 @@ class RegaloPreviewViewController: FormViewController {
         }
         return result
     }
-    
+
 }
 
 // MARK: TableView editing
 extension RegaloPreviewViewController {
-    
+
     func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
         if let section = form.sectionBy(tag: ideaSectionTag), indexPath.section == section.index && indexPath.row != section.count - 1 {
             return .delete
         }
         return .none
     }
-    
+
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             form[indexPath.section].remove(at: indexPath.row)
         }
     }
-    
+
+}
+
+extension UserMessages.RegaloPreview {
+
+    static let title = NSLocalizedString("Nueva colecta", comment: "")
+    static let addIdea = NSLocalizedString("Agregar idea", comment: "")
+    static let buttonText = NSLocalizedString("Crear colecta", comment: "")
+    static let regaloIdeasTitle = NSLocalizedString("Ideas de regalo", comment: "")
+    static let regaloIdeasHelp = NSLocalizedString("Los participantes podrán votar entre las opciones", comment: "")
+    static let closeDateText = NSLocalizedString("Fecha de cierre", comment: "")
+    static let perPersonText = NSLocalizedString("por persona", comment: "")
+    static let amountText = NSLocalizedString("Objetivo", comment: "")
+
 }

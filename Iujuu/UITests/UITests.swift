@@ -11,7 +11,7 @@ import XCTest
 class UITests: IujuuBaseUITest {
 
     func testNothing() {
-        
+
     }
 
 }
