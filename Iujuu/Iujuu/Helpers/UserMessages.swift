@@ -42,6 +42,8 @@ extension UserMessages.Onboarding {
 extension UserMessages.Register {
     
     static let registerError = NSLocalizedString("Ocurrió un error al intentar registrarse. Por favor intente de nuevo!", comment: "")
+    static let errorTitle = NSLocalizedString("Error", comment: "")
+    static let passwordInvalid = NSLocalizedString("Password must have 6 character, one capital letter and one number!", comment: "")
     
 }
 

@@ -70,7 +70,7 @@ class CreateAccountViewController: FormViewController {
             //TODO - save to db as current user
         }
         ,onError: { error in
-            self.showError("Error", message: UserMessages.Register.registerError)
+            self.showError(UserMessages.Register.errorTitle, message: UserMessages.Register.registerError)
         }
         ,onCompleted: {
             UIApplication.changeRootViewController(R.storyboard.createRegalo().instantiateInitialViewController()!)
