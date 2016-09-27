@@ -188,6 +188,12 @@
 		BFE90E6F1D956ED000E8F758 /* Eureka.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE90E6D1D956ED000E8F758 /* Eureka.swift */; };
 		BFE90E711D9575DA00E8F758 /* ListItemRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE90E701D9575DA00E8F758 /* ListItemRow.swift */; };
 		BFE90E721D9575DA00E8F758 /* ListItemRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE90E701D9575DA00E8F758 /* ListItemRow.swift */; };
+		CE43ABD81D9ACD9D00F123A6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE43ABD71D9ACD9D00F123A6 /* HomeViewController.swift */; };
+		CE43ABD91D9ACD9D00F123A6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE43ABD71D9ACD9D00F123A6 /* HomeViewController.swift */; };
+		CE43ABDC1D9AECE100F123A6 /* EmptyHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE43ABDB1D9AECE100F123A6 /* EmptyHomeView.swift */; };
+		CE43ABDD1D9AECE100F123A6 /* EmptyHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE43ABDB1D9AECE100F123A6 /* EmptyHomeView.swift */; };
+		CE43ABDF1D9AECEE00F123A6 /* EmptyHomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE43ABDE1D9AECEE00F123A6 /* EmptyHomeView.xib */; };
+		CE43ABE01D9AECEE00F123A6 /* EmptyHomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE43ABDE1D9AECEE00F123A6 /* EmptyHomeView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -337,6 +343,9 @@
 		BFE90E6A1D955C1F00E8F758 /* SubtitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubtitleView.swift; sourceTree = "<group>"; };
 		BFE90E6D1D956ED000E8F758 /* Eureka.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Eureka.swift; sourceTree = "<group>"; };
 		BFE90E701D9575DA00E8F758 /* ListItemRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListItemRow.swift; sourceTree = "<group>"; };
+		CE43ABD71D9ACD9D00F123A6 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = Home/HomeViewController.swift; sourceTree = "<group>"; };
+		CE43ABDB1D9AECE100F123A6 /* EmptyHomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyHomeView.swift; sourceTree = "<group>"; };
+		CE43ABDE1D9AECEE00F123A6 /* EmptyHomeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmptyHomeView.xib; sourceTree = "<group>"; };
 		DEE523F7CE6A0E56FCF7A0A5 /* Pods_Iujuu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Iujuu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5CE8DAF3DF9D8499BA58B7A /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -466,6 +475,7 @@
 		28C282361C779580003ECA4F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				CE43ABDA1D9AEC1F00F123A6 /* Home */,
 				464512131D95A9A4009C2FE6 /* ButtonFooter.swift */,
 				464512141D95A9A4009C2FE6 /* ButtonFooter.xib */,
 				464512151D95A9A4009C2FE6 /* ButtonStyles.swift */,
@@ -509,6 +519,7 @@
 		28C282391C7795DB003ECA4F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				CE43ABD21D9ACD1D00F123A6 /* Home */,
 				46C395021D92FB1A000965FB /* Onboarding */,
 				8F9694C51D92E38D00A9EBB7 /* Regalos */,
 				46F45F251D905BED00A44C59 /* InitialViewController.swift */,
@@ -717,6 +728,23 @@
 			name = Regalos;
 			sourceTree = "<group>";
 		};
+		CE43ABD21D9ACD1D00F123A6 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				CE43ABD71D9ACD9D00F123A6 /* HomeViewController.swift */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		CE43ABDA1D9AEC1F00F123A6 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				CE43ABDB1D9AECE100F123A6 /* EmptyHomeView.swift */,
+				CE43ABDE1D9AECEE00F123A6 /* EmptyHomeView.xib */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -882,6 +910,7 @@
 				4645121A1D95A9A7009C2FE6 /* ButtonFooter.xib in Resources */,
 				460C0BA51D945417005814AA /* OpenSans-ExtraBold.ttf in Resources */,
 				460C0BA31D945417005814AA /* OpenSans-BoldItalic.ttf in Resources */,
+				CE43ABE01D9AECEE00F123A6 /* EmptyHomeView.xib in Resources */,
 				2841F1F91CCFF55600D609CE /* Main.storyboard in Resources */,
 				46418F251D92FE540012EAC0 /* OnboardingCell.xib in Resources */,
 				460C0BAB1D945417005814AA /* OpenSans-Light.ttf in Resources */,
@@ -910,6 +939,7 @@
 				464512171D95A9A4009C2FE6 /* ButtonFooter.xib in Resources */,
 				460C0BA41D945417005814AA /* OpenSans-ExtraBold.ttf in Resources */,
 				460C0BA21D945417005814AA /* OpenSans-BoldItalic.ttf in Resources */,
+				CE43ABDF1D9AECEE00F123A6 /* EmptyHomeView.xib in Resources */,
 				2867E8301C74C7D400FCEBBD /* Main.storyboard in Resources */,
 				46418F241D92FE540012EAC0 /* OnboardingCell.xib in Resources */,
 				460C0BAA1D945417005814AA /* OpenSans-Light.ttf in Resources */,
@@ -1261,6 +1291,7 @@
 				2841F1E71CCFF55600D609CE /* User.swift in Sources */,
 				8F07599B1D7742CA0012D681 /* UIImageView.swift in Sources */,
 				4666841B1D947F9C00584FDB /* UIViewController.swift in Sources */,
+				CE43ABD91D9ACD9D00F123A6 /* HomeViewController.swift in Sources */,
 				2841F1E81CCFF55600D609CE /* XLViewController.swift in Sources */,
 				464512191D95A9A7009C2FE6 /* ButtonFooter.swift in Sources */,
 				8F8CEA031D947545005FA5B6 /* Motivo.swift in Sources */,
@@ -1282,6 +1313,7 @@
 				8F9694D71D93048F00A9EBB7 /* UIFont.swift in Sources */,
 				8F9037EC1D9987D6006E1C8E /* Account.swift in Sources */,
 				8F8CE9FA1D946C72005FA5B6 /* (null) in Sources */,
+				CE43ABDD1D9AECE100F123A6 /* EmptyHomeView.swift in Sources */,
 				464512211D95AD07009C2FE6 /* R.generated.swift in Sources */,
 				8F0759931D7728360012D681 /* Helpers.swift in Sources */,
 				4658D9B01D92BBF700A2DF05 /* RealDataManager.swift in Sources */,
@@ -1333,6 +1365,7 @@
 				8F0759A11D774B390012D681 /* SessionController.swift in Sources */,
 				46C394FF1D92DD8E000965FB /* Zeplin.swift in Sources */,
 				28C2824A1C7798B0003ECA4F /* User.swift in Sources */,
+				CE43ABD81D9ACD9D00F123A6 /* HomeViewController.swift in Sources */,
 				8F8CEA021D947545005FA5B6 /* Motivo.swift in Sources */,
 				464512161D95A9A4009C2FE6 /* ButtonFooter.swift in Sources */,
 				8F07599A1D7742CA0012D681 /* UIImageView.swift in Sources */,
@@ -1354,6 +1387,7 @@
 				4666841D1D94802800584FDB /* CreateAccountViewController.swift in Sources */,
 				8F9037EB1D9987D6006E1C8E /* Account.swift in Sources */,
 				8F9694D61D93048F00A9EBB7 /* UIFont.swift in Sources */,
+				CE43ABDC1D9AECE100F123A6 /* EmptyHomeView.swift in Sources */,
 				464512201D95ACF6009C2FE6 /* R.generated.swift in Sources */,
 				8F0759921D7728360012D681 /* Helpers.swift in Sources */,
 				4658D9AF1D92BBF700A2DF05 /* RealDataManager.swift in Sources */,
@@ -1465,6 +1499,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = WE3PS2UVWT;
 				INFOPLIST_FILE = "$(SRCROOT)/Iujuu/Supporting Files/Info-Staging.plist";
@@ -1473,6 +1508,7 @@
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-D\" \"DEBUG\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.iujuu.app.staging;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -1483,6 +1519,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = WE3PS2UVWT;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
@@ -1587,6 +1624,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = WE3PS2UVWT;
 				INFOPLIST_FILE = "$(SRCROOT)/Iujuu/Supporting Files/Info.plist";
@@ -1595,6 +1633,7 @@
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-D\" \"DEBUG\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.iujuu.app;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -1605,6 +1644,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = WE3PS2UVWT;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;

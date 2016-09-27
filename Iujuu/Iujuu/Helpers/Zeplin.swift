@@ -82,3 +82,11 @@ extension UIColor {
     }
 
 }
+
+extension UIFont {
+    
+    class func ijHomeTitleFont() -> UIFont? {
+        return UIFont(name: "OpenSans", size: 20.0)
+    }
+    
+}
