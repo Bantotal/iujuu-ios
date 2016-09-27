@@ -13,7 +13,8 @@ struct UserMessages {
     struct Onboarding { }
     struct RegalosSetup { }
     struct RegaloPreview { }
-
+    struct Register { }
+    
     static let cancel = NSLocalizedString("Cancelar", comment: "")
     static let email = NSLocalizedString("Correo Electrónico", comment: "")
     static let firstName = NSLocalizedString("Nombre", comment: "")
@@ -38,6 +39,14 @@ extension UserMessages.Onboarding {
 
 }
 
+extension UserMessages.Register {
+    
+    static let registerError = NSLocalizedString("Ocurrió un error al intentar registrarse. Por favor intente de nuevo!", comment: "")
+    static let errorTitle = NSLocalizedString("Error", comment: "")
+    static let passwordInvalid = NSLocalizedString("Password must have 6 character, one capital letter and one number!", comment: "")
+    
+}
+
 extension UserMessages.RegalosSetup {
 
     static let accountText = NSLocalizedString("Cuenta a asociar", comment: "")
@@ -52,5 +61,4 @@ extension UserMessages.RegalosSetup {
     static let perPersonError = NSLocalizedString("El monto sugerido no puede ser vacío", comment: "")
     static let perPersonText = NSLocalizedString("Monto sugerido por persona", comment: "")
     static let perPersonHelp = NSLocalizedString("Los participantes podrán aportar cualquier cifra", comment: "")
-
 }

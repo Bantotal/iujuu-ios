@@ -95,7 +95,7 @@ open class GenericPasswordCell: Cell<String>, CellType {
             }, completion: nil)
 
         // make the cell full visible
-        if let indexPath = row?.indexPath() {
+        if let indexPath = row?.indexPath {
             UIView.animate(withDuration: 0.3, delay: 0, options: .allowUserInteraction, animations: { [weak self] in
                 self?.formViewController()?.tableView?.scrollToRow(at: indexPath, at: .none, animated: false)
             }, completion: nil)

@@ -18,7 +18,6 @@ extension Router.Session {
         let nombre: String
         let apellido: String
         let documento: String?
-        let fechaDeNacimiento: Date?
         let username: String?
         let email: String
         let password: String
@@ -34,7 +33,6 @@ extension Router.Session {
                 "email": email,
                 "password": password,
                 "documento": documento,
-                "fechaDeNacimiento": fechaDeNacimiento?.toString(format: DateFormat.iso8601Format(.date)),
                 "username": username
             ])
         }

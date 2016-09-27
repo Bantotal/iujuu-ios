@@ -36,5 +36,9 @@ class RealDataManager: DataManagerProtocol {
         let _ = Observable<User>.empty() // TODO: consume api and write db
         return Observable.of(Observable.just(user), dbObservable).merge()
     }
+    
+    func registerUser(user: User, password: String) -> Observable<User>? {
+        return Router.Session.Register(nombre: user.nombre, apellido: user.apellido, documento: user.documento, username: user.username, email: user.email, password: password).rx_object()
+    }
 
 }

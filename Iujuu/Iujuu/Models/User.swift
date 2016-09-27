@@ -9,6 +9,7 @@
 import Foundation
 import Decodable
 import RealmSwift
+import Opera
 
 final class User: Object {
 
@@ -18,7 +19,6 @@ final class User: Object {
     dynamic var email: String = ""
     dynamic var username: String?
     dynamic var documento: String?
-    dynamic var fechaDeNacimiento: Date?
     dynamic var avatar: String?
 
     var avatarUrl: URL? {
@@ -50,7 +50,6 @@ final class User: Object {
         self.email = email
         self.username = username
         self.documento = documento
-        self.fechaDeNacimiento = fechaDeNacimiento
         self.avatar = avatar
     }
 
@@ -60,15 +59,16 @@ extension User: Decodable {
 
     static func decode(_ j: Any) throws -> User {
         return try User(
-            id: j => "userId",
+            id: j => "id",
             nombre: j => "nombre",
             apellido: j => "apellido",
             email: j => "email",
             username: j =>? "username",
             documento: j =>? "documento",
-            fechaDeNacimiento: j => "fechaDeNacimiento",
             avatar: j =>? "avatar"
         )
     }
 
 }
+
+extension User : OperaDecodable {}
