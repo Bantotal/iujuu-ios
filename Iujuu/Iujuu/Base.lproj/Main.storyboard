@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="zOV-V0-1xs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="zOV-V0-1xs">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,7 +10,7 @@
         <!--Iujuu-->
         <scene sceneID="kQz-kn-hVZ">
             <objects>
-                <viewController id="oOM-qU-Vra" customClass="InitialViewController" customModule="Iujuu" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="oOM-qU-Vra" customClass="HomeViewController" customModule="Iujuu" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="tbR-v9-2c6"/>
                         <viewControllerLayoutGuide type="bottom" id="d2b-Hd-gsX"/>
@@ -27,42 +28,77 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lbB-Z6-w7t">
                                 <state key="normal" title="Secondary"/>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IS7-9G-cxL">
-                                <state key="normal" title="Borderless"/>
-                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homeBackgroundBalloons" translatesAutoresizingMaskIntoConstraints="NO" id="n4Q-wx-Oc0">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="118" id="oZW-6H-c9d"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homeLogo" translatesAutoresizingMaskIntoConstraints="NO" id="mp9-iq-m2L">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="53" id="M5c-Te-M7w"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconSettings" translatesAutoresizingMaskIntoConstraints="NO" id="KU9-JL-5D3">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="22" id="JTX-50-d6h"/>
+                                    <constraint firstAttribute="width" constant="22" id="Nqm-fJ-dm7"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mis colectas activas" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FS0-hy-mtH">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="H0f-bN-dQj">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="lbB-Z6-w7t" firstAttribute="height" secondItem="IS7-9G-cxL" secondAttribute="height" id="66W-ZP-Xab"/>
+                            <constraint firstItem="H0f-bN-dQj" firstAttribute="centerX" secondItem="lbB-Z6-w7t" secondAttribute="centerX" id="0VV-Dp-HA3"/>
+                            <constraint firstItem="H0f-bN-dQj" firstAttribute="top" secondItem="FS0-hy-mtH" secondAttribute="bottom" constant="20" id="0mL-Vz-G0I"/>
+                            <constraint firstItem="n4Q-wx-Oc0" firstAttribute="top" secondItem="tbR-v9-2c6" secondAttribute="bottom" constant="-20" id="5CI-Nf-ATR"/>
+                            <constraint firstItem="H0f-bN-dQj" firstAttribute="width" secondItem="abf-Tu-mT9" secondAttribute="width" id="7AT-IH-24m"/>
+                            <constraint firstItem="n4Q-wx-Oc0" firstAttribute="width" secondItem="abf-Tu-mT9" secondAttribute="width" id="8vp-25-hTT"/>
                             <constraint firstItem="mVm-cS-TwN" firstAttribute="height" secondItem="lbB-Z6-w7t" secondAttribute="height" id="9W7-Bg-liC"/>
-                            <constraint firstItem="IS7-9G-cxL" firstAttribute="centerX" secondItem="lbB-Z6-w7t" secondAttribute="centerX" id="Ai6-9W-Jj0"/>
-                            <constraint firstItem="IS7-9G-cxL" firstAttribute="width" secondItem="lbB-Z6-w7t" secondAttribute="width" id="EBj-Et-1mU"/>
+                            <constraint firstAttribute="bottom" secondItem="H0f-bN-dQj" secondAttribute="bottom" id="Dgv-fb-hmf"/>
                             <constraint firstItem="lbB-Z6-w7t" firstAttribute="centerX" secondItem="mVm-cS-TwN" secondAttribute="centerX" id="SNu-fV-KPt"/>
                             <constraint firstItem="mVm-cS-TwN" firstAttribute="top" secondItem="tbR-v9-2c6" secondAttribute="bottom" constant="39" id="U8F-Lr-zaL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="FS0-hy-mtH" secondAttribute="trailing" constant="25" id="WvI-HH-cYv"/>
                             <constraint firstItem="lbB-Z6-w7t" firstAttribute="top" secondItem="mVm-cS-TwN" secondAttribute="bottom" constant="25" id="ZvX-R3-JEO"/>
                             <constraint firstItem="mVm-cS-TwN" firstAttribute="centerX" secondItem="abf-Tu-mT9" secondAttribute="centerX" id="awH-OH-Z2f"/>
                             <constraint firstItem="lbB-Z6-w7t" firstAttribute="width" secondItem="mVm-cS-TwN" secondAttribute="width" id="bUe-7W-AUu"/>
-                            <constraint firstItem="IS7-9G-cxL" firstAttribute="top" secondItem="lbB-Z6-w7t" secondAttribute="bottom" constant="17" id="diB-OW-scv"/>
+                            <constraint firstItem="mp9-iq-m2L" firstAttribute="centerX" secondItem="n4Q-wx-Oc0" secondAttribute="centerX" id="bha-Rl-wKg"/>
+                            <constraint firstItem="FS0-hy-mtH" firstAttribute="centerX" secondItem="abf-Tu-mT9" secondAttribute="centerX" id="eH7-1G-Bve"/>
                             <constraint firstItem="mVm-cS-TwN" firstAttribute="width" secondItem="abf-Tu-mT9" secondAttribute="width" multiplier="0.7" id="eIq-DG-7gD"/>
+                            <constraint firstItem="n4Q-wx-Oc0" firstAttribute="centerX" secondItem="abf-Tu-mT9" secondAttribute="centerX" id="ftY-UI-fRd"/>
+                            <constraint firstItem="FS0-hy-mtH" firstAttribute="top" secondItem="n4Q-wx-Oc0" secondAttribute="bottom" constant="15" id="gJb-U4-sXk"/>
+                            <constraint firstItem="FS0-hy-mtH" firstAttribute="leading" secondItem="abf-Tu-mT9" secondAttribute="leadingMargin" constant="25" id="gWn-Tn-2hS"/>
+                            <constraint firstItem="KU9-JL-5D3" firstAttribute="leading" secondItem="n4Q-wx-Oc0" secondAttribute="trailing" constant="-40" id="nbE-fd-Kgb"/>
+                            <constraint firstItem="mp9-iq-m2L" firstAttribute="bottom" secondItem="n4Q-wx-Oc0" secondAttribute="bottom" id="ryM-1t-Jks"/>
+                            <constraint firstItem="KU9-JL-5D3" firstAttribute="centerY" secondItem="n4Q-wx-Oc0" secondAttribute="centerY" id="wKM-Sz-p2Q"/>
+                            <constraint firstItem="mp9-iq-m2L" firstAttribute="height" secondItem="n4Q-wx-Oc0" secondAttribute="height" multiplier="0.5" id="zOQ-IH-uHc"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Iujuu" id="1ki-Np-hkz"/>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
-                        <outlet property="borderless" destination="IS7-9G-cxL" id="T9u-T7-aWW"/>
-                        <outlet property="primary" destination="mVm-cS-TwN" id="DKC-ti-piY"/>
-                        <outlet property="secondary" destination="lbB-Z6-w7t" id="LDD-gW-uWb"/>
+                        <outlet property="balloonsImage" destination="n4Q-wx-Oc0" id="obj-d9-AgM"/>
+                        <outlet property="settingsIcon" destination="KU9-JL-5D3" id="71A-4S-yCj"/>
+                        <outlet property="tableView" destination="H0f-bN-dQj" id="reY-zS-XGL"/>
+                        <outlet property="titleLabel" destination="FS0-hy-mtH" id="7mc-Kz-wvl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ohZ-iu-QMB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="801" y="444"/>
+            <point key="canvasLocation" x="816.79999999999995" y="453.82308845577217"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="li8-7t-S1h">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zOV-V0-1xs" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wXp-WV-J8K">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="wXp-WV-J8K">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -76,4 +112,9 @@
             <point key="canvasLocation" x="-65" y="444"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="homeBackgroundBalloons" width="375" height="118"/>
+        <image name="homeLogo" width="60" height="60"/>
+        <image name="iconSettings" width="22" height="22"/>
+    </resources>
 </document>
