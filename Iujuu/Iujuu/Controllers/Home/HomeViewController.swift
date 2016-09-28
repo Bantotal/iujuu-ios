@@ -22,13 +22,36 @@ class HomeViewController: XLTableViewController {
     }
     
     private func setTableView() {
-        if empty {
-           setEmptyView()
-        }
+        tableView.delegate = self
+        tableView.dataSource = self
+        tableView.separatorStyle = .none
+        setEmptyView()
     }
     
     private func setEmptyView() {
-        
+        if empty {
+            let emptyView = R.nib.emptyHomeView.firstView(owner: nil)
+            
+            emptyView?.nuevaColectaAction = {
+                self.sendToCrearColecta()
+            }
+            
+            emptyView?.ingresarCodigoAction = {
+                self.sendToIngresarCodigo()
+            }
+            
+            tableView.backgroundView = emptyView
+        } else {
+            tableView.backgroundView = nil
+        }
+    }
+    
+    private func sendToCrearColecta() {
+        UIApplication.changeRootViewController(R.storyboard.createRegalo().instantiateInitialViewController()!)
+    }
+    
+    private func sendToIngresarCodigo() {
+        //TODO - send to ingresar codigo
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -60,7 +83,25 @@ class HomeViewController: XLTableViewController {
     
     func settingsTapped() {
         //TODO - go to settings
-        print("Setting tapped")
     }
     
+}
+
+extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        if empty {
+            return 0
+        } else {
+            return 1
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 5
+    }
 }

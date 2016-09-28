@@ -56,12 +56,12 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="H0f-bN-dQj" firstAttribute="centerX" secondItem="lbB-Z6-w7t" secondAttribute="centerX" id="0VV-Dp-HA3"/>
-                            <constraint firstItem="H0f-bN-dQj" firstAttribute="top" secondItem="FS0-hy-mtH" secondAttribute="bottom" constant="26" id="0mL-Vz-G0I"/>
+                            <constraint firstItem="H0f-bN-dQj" firstAttribute="top" secondItem="FS0-hy-mtH" secondAttribute="bottom" constant="20" id="0mL-Vz-G0I"/>
                             <constraint firstItem="n4Q-wx-Oc0" firstAttribute="top" secondItem="tbR-v9-2c6" secondAttribute="bottom" constant="-20" id="5CI-Nf-ATR"/>
+                            <constraint firstItem="H0f-bN-dQj" firstAttribute="width" secondItem="abf-Tu-mT9" secondAttribute="width" id="7AT-IH-24m"/>
                             <constraint firstItem="n4Q-wx-Oc0" firstAttribute="width" secondItem="abf-Tu-mT9" secondAttribute="width" id="8vp-25-hTT"/>
                             <constraint firstItem="mVm-cS-TwN" firstAttribute="height" secondItem="lbB-Z6-w7t" secondAttribute="height" id="9W7-Bg-liC"/>
-                            <constraint firstAttribute="bottom" secondItem="H0f-bN-dQj" secondAttribute="bottom" constant="20" symbolic="YES" id="Dgv-fb-hmf"/>
-                            <constraint firstItem="H0f-bN-dQj" firstAttribute="trailing" secondItem="KU9-JL-5D3" secondAttribute="trailing" id="JvT-aA-boW"/>
+                            <constraint firstAttribute="bottom" secondItem="H0f-bN-dQj" secondAttribute="bottom" id="Dgv-fb-hmf"/>
                             <constraint firstItem="lbB-Z6-w7t" firstAttribute="centerX" secondItem="mVm-cS-TwN" secondAttribute="centerX" id="SNu-fV-KPt"/>
                             <constraint firstItem="mVm-cS-TwN" firstAttribute="top" secondItem="tbR-v9-2c6" secondAttribute="bottom" constant="39" id="U8F-Lr-zaL"/>
                             <constraint firstAttribute="trailingMargin" secondItem="FS0-hy-mtH" secondAttribute="trailing" constant="25" id="WvI-HH-cYv"/>
