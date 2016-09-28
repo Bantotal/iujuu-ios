@@ -11,6 +11,7 @@ import Opera
 import Alamofire
 import KeychainAccess
 import RxSwift
+import SwiftyJSON
 
 class NetworkManager: RxManager {
 
@@ -27,8 +28,28 @@ class NetworkManager: RxManager {
     }
 
     override func rx_response(_ requestConvertible: URLRequestConvertible) -> Observable<OperaResult> {
-        let response = super.rx_response(requestConvertible)
-        return refreshToken().flatMap { _ in response }
+        return Observable.create { subscriber in
+            let req = self.response(requestConvertible) { result in
+                switch result.result {
+                case .failure(let error):
+                    subscriber.onError(error)
+                case .success:
+                    if let data = result.result.value?.data {
+                        let json = JSON(data: data)
+                        if let token = json["id"].string {
+                            SessionController.sharedInstance.token = token
+                            print("got token: \(token)")
+                        }
+                    }
+
+                    subscriber.onNext(result)
+                    subscriber.onCompleted()
+                }
+            }
+            return Disposables.create {
+                req.cancel()
+            }
+        }
     }
 
 }

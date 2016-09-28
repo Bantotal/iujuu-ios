@@ -32,6 +32,7 @@ PODS:
   - RxSwift (3.0.0-beta.1)
   - SkyFloatingLabelTextField (1.2.1)
   - SwiftDate (3.0.9)
+  - SwiftyJSON (3.0.0)
   - XLSwiftKit (2.0.0)
 
 DEPENDENCIES:
@@ -54,6 +55,7 @@ DEPENDENCIES:
   - RxSwift (~> 3.0.0-beta.1)
   - SkyFloatingLabelTextField (from `https://github.com/MLSDev/SkyFloatingLabelTextField.git`, branch `swift3`)
   - SwiftDate (from `https://github.com/malcommac/SwiftDate.git`, branch `feature/swift-3.0`)
+  - SwiftyJSON (= 3.0.0)
   - XLSwiftKit (~> 2.0)
 
 EXTERNAL SOURCES:
@@ -118,8 +120,9 @@ SPEC CHECKSUMS:
   RxSwift: 0823e8d7969c23bfa9ddfb2afa4881e424a1a710
   SkyFloatingLabelTextField: 3f6610aded18e778df5cfab3b9e12a11b3e014e9
   SwiftDate: fa487d9b7d8c3070ea2553486902494f4915465d
+  SwiftyJSON: f57b2b44bc166617372d1c70773591fe9f0f5fd4
   XLSwiftKit: 4d48322a602120dc6300d58d7fb07b873e223c1c
 
-PODFILE CHECKSUM: 1b1ea1219b8fd5d150a2439f82254ac241038ded
+PODFILE CHECKSUM: 9fc005a7545c486e7df66c35444abf08516509cc
 
 COCOAPODS: 1.1.0.rc.2

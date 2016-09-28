@@ -35,6 +35,10 @@ class OnboardingViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        if let token = SessionController.sharedInstance.token {
+            //TODO: autologin
+        }
         view.backgroundColor = .ijBackgroundOrangeColor()
         collectionView.backgroundColor = .clear
         collectionView.dataSource = self
