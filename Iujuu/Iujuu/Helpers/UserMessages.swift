@@ -14,7 +14,8 @@ struct UserMessages {
     struct RegalosSetup { }
     struct RegaloPreview { }
     struct Register { }
-    
+    struct Share { }
+
     static let cancel = NSLocalizedString("Cancelar", comment: "")
     static let email = NSLocalizedString("Correo Electrónico", comment: "")
     static let firstName = NSLocalizedString("Nombre", comment: "")
@@ -22,6 +23,8 @@ struct UserMessages {
     static let password = NSLocalizedString("Contraseña", comment: "")
     static let back = NSLocalizedString("Atrás", comment: "")
     static let next = NSLocalizedString("Siguiente", comment: "")
+    static let share = NSLocalizedString("Compartir", comment: "")
+    static let finish = NSLocalizedString("Finalizar", comment: "")
 
 }
 

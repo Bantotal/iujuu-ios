@@ -54,4 +54,8 @@ struct Constants {
     struct Cells {
         static let ListItemMargin: CGFloat = 36
     }
+
+    struct Texts {
+        static let shareBaseUrl = "http://iujuu.app/colecta/"
+    }
 }

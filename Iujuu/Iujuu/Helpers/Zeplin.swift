@@ -73,4 +73,12 @@ extension UIColor {
         return UIColor(white: 255.0 / 255.0, alpha: 0.9)
     }
 
+    class func ijSoftBlackColor() -> UIColor {
+        return UIColor(white: 70.0 / 255.0, alpha: 1.0)
+    }
+
+    class func ijOrangeColor() -> UIColor {
+        return UIColor(red: 249.0 / 255.0, green: 102.0 / 255.0, blue: 17.0 / 255.0, alpha: 1.0)
+    }
+
 }

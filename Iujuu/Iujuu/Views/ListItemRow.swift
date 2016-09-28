@@ -10,7 +10,7 @@ import Foundation
 import Eureka
 
 class ListItemCell: _FieldCell<String>, CellType {
-    
+
     private var bottomSeparator: UIView?
 
     required public init(style: UITableViewCellStyle, reuseIdentifier: String?) {
