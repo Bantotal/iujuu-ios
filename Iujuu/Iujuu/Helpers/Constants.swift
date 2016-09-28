@@ -18,6 +18,7 @@ struct Constants {
         static let successRange = 200..<300
         static let Unauthorized = 401
         static let NotFoundCode = 404
+        static let ValidationError = 422
         static let ServerError = 500
     }
 

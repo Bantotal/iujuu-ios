@@ -28,6 +28,20 @@ extension AppDelegate {
             object: nil)
     }
 
+    static func logUser(user: User) {
+        Crashlytics.sharedInstance().setUserEmail(user.email)
+        Crashlytics.sharedInstance().setUserIdentifier(String(user.id))
+        Crashlytics.sharedInstance().setUserName(user.username)
+    }
+
+    func autologin() {
+        let onboarding = R.storyboard.onboarding.onboardingViewController()
+
+        window = UIWindow(frame: UIScreen.main.bounds)
+        window?.rootViewController = onboarding
+        window?.makeKeyAndVisible()
+    }
+
     func requestDidComplete(_ notification: Notification) {
         guard let task = notification.object as? URLSessionTask, let response = task.response as? HTTPURLResponse else {
             DEBUGLog("Request object not a task")
@@ -39,7 +53,7 @@ extension AppDelegate {
             }
         } else if response.statusCode == Constants.Network.Unauthorized && SessionController.sharedInstance.isLoggedIn() {
             SessionController.sharedInstance.clearSession()
-            // here you should implement AutoLogout: Transition to login screen and show an appropiate message
+            UIApplication.changeRootViewController(R.storyboard.onboarding.instantiateInitialViewController()!)
         }
     }
 

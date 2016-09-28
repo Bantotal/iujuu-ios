@@ -10,6 +10,8 @@ import Foundation
 import UIKit
 import Eureka
 import RxSwift
+import Opera
+import SwiftyJSON
 
 struct rowTags {
     static let firstNameRow = "first name"
@@ -66,20 +68,33 @@ class CreateAccountViewController: FormViewController {
     func registerUser() {
         let createdUser = getUserFromForm()
         DataManager.shared.registerUser(user: createdUser.user, password: createdUser.password)?
-        .do(onNext: { user in
-            //TODO - save to db as current user
-        }
-        ,onError: { error in
-            self.showError(UserMessages.Register.errorTitle, message: UserMessages.Register.registerError)
-        }
-        ,onCompleted: {
-            UIApplication.changeRootViewController(R.storyboard.createRegalo().instantiateInitialViewController()!)
+        .do(onError: { [weak self] error in
+            if let error = error as? OperaError {
+                switch error {
+                case let .networking(_, _, response, json):
+                    if response?.statusCode == Constants.Network.ValidationError, let data = json as? Data {
+                        let json = JSON(data: data)
+                        if let codes = json["error"]["details"]["codes"].dictionary {
+                            if let emailError = codes["email"]?.array {
+                                if emailError.contains("uniqueness") {
+                                    self?.showError(UserMessages.Register.duplicatedEmail)
+                                    return
+                                }
+                            }
+                        }
+                    }
+                default: break
+                }
+            }
+            self?.showError(UserMessages.errorTitle, message: UserMessages.Register.registerError)
+        }, onCompleted: {
+            UIApplication.changeRootViewController(R.storyboard.main().instantiateInitialViewController()!)
         })
         .subscribe()
         .addDisposableTo(disposeBag)
     }
 
-    private func getUserFromForm() -> (user: User, password: String)  {
+    private func getUserFromForm() -> (user: User, password: String) {
         let formValues = form.values()
 
         let firstName = formValues[rowTags.firstNameRow] as? String

@@ -29,7 +29,6 @@ class SessionController {
     // MARK: - Session handling
     func logOut() {
         clearSession()
-        //TODO: Logout: App should transition to login / onboarding screen
     }
 
     func isLoggedIn() -> Bool {

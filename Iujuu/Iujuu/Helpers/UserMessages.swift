@@ -25,6 +25,8 @@ struct UserMessages {
     static let next = NSLocalizedString("Siguiente", comment: "")
     static let share = NSLocalizedString("Compartir", comment: "")
     static let finish = NSLocalizedString("Finalizar", comment: "")
+    static let networkError = NSLocalizedString("Hubo un error de conexión. Por favor inténtelo más tarde.", comment: "")
+    static let errorTitle = NSLocalizedString("Error", comment: "")
 
 }
 
@@ -45,8 +47,9 @@ extension UserMessages.Onboarding {
 extension UserMessages.Register {
     
     static let registerError = NSLocalizedString("Ocurrió un error al intentar registrarse. Por favor intente de nuevo!", comment: "")
-    static let errorTitle = NSLocalizedString("Error", comment: "")
     static let passwordInvalid = NSLocalizedString("Password must have 6 character, one capital letter and one number!", comment: "")
+    static let loginError = NSLocalizedString("Nombre de usuario o clave incorrecta.", comment: "")
+    static let duplicatedEmail = NSLocalizedString("Ya ha un usuario registrado con este email.", comment: "")
     
 }
 

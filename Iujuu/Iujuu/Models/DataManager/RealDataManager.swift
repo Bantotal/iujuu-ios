@@ -12,6 +12,9 @@ import Foundation
 import RxSwift
 import RxRealm
 import RealmSwift
+import XLSwiftKit
+import Crashlytics
+import SwiftyJSON
 
 class RealDataManager: DataManagerProtocol {
 
@@ -36,9 +39,29 @@ class RealDataManager: DataManagerProtocol {
         let _ = Observable<User>.empty() // TODO: consume api and write db
         return Observable.of(Observable.just(user), dbObservable).merge()
     }
-    
+
     func registerUser(user: User, password: String) -> Observable<User>? {
-        return Router.Session.Register(nombre: user.nombre, apellido: user.apellido, documento: user.documento, username: user.username, email: user.email, password: password).rx_object()
+        return Router.Session.Register(nombre: user.nombre, apellido: user.apellido, documento: user.documento, username: user.username, email: user.email, password: password).rx_anyObject().do(onNext: { object in
+            GCDHelper.runOnMainThread {
+                try? user.save()
+            }
+            AppDelegate.logUser(user: user)
+        }).map { _ in user }
     }
 
+    func login(username: String?, email: String?, password: String) -> Observable<Any>? {
+        return Router.Session.Login(username: username, email: email, password: password).rx_anyObject().do(onNext: { object in
+            let json = JSON(object)
+            guard let userId = json["userId"].int else { return }
+            if let token = json["id"].string {
+                SessionController.sharedInstance.token = token
+                print("got token: \(token)")
+            }
+            let user = User(id: userId, nombre: "", apellido: "", email: email ?? "")
+            GCDHelper.runOnMainThread {
+                try? user.save()
+            }
+            AppDelegate.logUser(user: user)
+        })
+    }
 }

@@ -11,6 +11,7 @@ import UIKit
 import Eureka
 import XLSwiftKit
 import SwiftDate
+import RxSwift
 
 fileprivate let addIdeaRowTag = "addIdeaRowTag"
 fileprivate let ideaSectionTag = "ideaSectionTag"
@@ -18,6 +19,7 @@ fileprivate let ideaSectionTag = "ideaSectionTag"
 class RegaloPreviewViewController: FormViewController {
 
     var regalo: RegaloSetup!
+    var disposeBag = DisposeBag()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -132,7 +134,29 @@ class RegaloPreviewViewController: FormViewController {
     }
 
     func nextTapped() {
-//        showError("Se ha creado el regalo correctamente")
+        LoadingIndicator.show()
+        guard //let userId = DataManager.shared.user?.id,
+            let motivo = regalo.motivo,
+            let name = regalo.name,
+            let date = regalo.closingDate,
+            let amount = regalo.amount,
+            let perPersonAmount = regalo.suggestedPerPerson,
+            let account = regalo.account else { return }
+        Router.Regalo.Create(userId: 1, motivo: motivo, name: name, closeDate: date,
+                             targetAmount: amount, perPersonAmount: perPersonAmount, account: account)
+            .rx_object()
+            .do(onNext: { [weak self] (regalo: Regalo) in
+                LoadingIndicator.hide()
+                GCDHelper.runOnMainThread {
+                    try? regalo.save()
+                }
+                self?.performSegue(withIdentifier: R.segue.regaloPreviewViewController.showRegaloSetupCompleted.identifier, sender: self)
+            }, onError: { [weak self] (error) in
+                LoadingIndicator.hide()
+                print(error)
+                
+                self?.showError("No se pudo dar de alta el regalo. Por favor, inténtelo más tarde")
+        }).subscribe().addDisposableTo(disposeBag)
         performSegue(withIdentifier: R.segue.regaloPreviewViewController.showRegaloSetupCompleted.identifier, sender: self)
     }
 

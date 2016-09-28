@@ -25,6 +25,7 @@ def app_pods
     pod 'RxRealm', :git => 'https://github.com/RxSwiftCommunity/RxRealm.git', :tag => '0.2.3'
     pod 'SkyFloatingLabelTextField', :git => 'https://github.com/MLSDev/SkyFloatingLabelTextField.git', :branch => 'swift3'
     pod 'SwiftDate', :git => 'https://github.com/malcommac/SwiftDate.git', :branch => 'feature/swift-3.0'
+    pod 'SwiftyJSON', '3.0.0'
     # pod 'WebLinking', '~> 1.0'
     pod 'XLSwiftKit', '~> 2.0'
 end

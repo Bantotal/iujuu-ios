@@ -23,12 +23,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         setupCrashlytics()
         setupNetworking()
         stylizeApp()
-        
-        let onboarding = R.storyboard.onboarding.onboardingViewController()
-
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = onboarding
-        window?.makeKeyAndVisible()
 
         // Register the supported push notifications interaction types.
         // Shows alert view askying for allowed push notification types

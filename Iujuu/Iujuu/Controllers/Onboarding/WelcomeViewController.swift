@@ -8,8 +8,9 @@
 
 import Foundation
 import UIKit
+import Opera
 
-class WelcomeViewController: UIViewController {
+class WelcomeViewController: XLViewController {
 
     @IBOutlet weak var facebookButton: UIButton!
     @IBOutlet weak var createAccountButton: UIButton!
@@ -28,6 +29,28 @@ class WelcomeViewController: UIViewController {
         facebookButton.setStyle(.primaryWith(color: .ijDenimBlueColor()))
         createAccountButton.setStyle(.secondary(borderColor: .ijDeepOrangeColor()))
         loginButton.setStyle(.borderless(titleColor: .white))
+
+        loginButton.addTarget(self, action: #selector(loginTapped), for: .touchUpInside)
+    }
+
+    func loginTapped() {
+        DataManager.shared.login(username: nil, email: "mbegerez@iujuu.com", password: "1234")?
+            .do(onNext: { (user) in
+                UIApplication.changeRootViewController(R.storyboard.main().instantiateInitialViewController()!)
+                }, onError: { [weak self] (error) in
+                    if let error = error as? OperaError {
+                        switch error {
+                        case let .networking(_, _, response, _):
+                            if response?.statusCode == Constants.Network.Unauthorized {
+                                self?.showError(UserMessages.Register.loginError)
+                                return
+                            }
+                        default: break
+                        }
+                    }
+                    self?.showError(UserMessages.networkError)
+                })
+            .subscribe().addDisposableTo(disposeBag)
     }
 
 }

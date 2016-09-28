@@ -31,4 +31,8 @@ class MockedDataManager: DataManagerProtocol {
     func registerUser(user: User, password: String) -> Observable<User>? {
         return Observable.empty() // TODO:
     }
+
+    func login(username: String?, email: String?, password: String) -> Observable<Any>? {
+        return Observable.empty() // TODO:
+    }
 }
