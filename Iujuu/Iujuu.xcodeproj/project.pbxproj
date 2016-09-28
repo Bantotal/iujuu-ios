@@ -192,6 +192,8 @@
 		BFE90E6F1D956ED000E8F758 /* Eureka.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE90E6D1D956ED000E8F758 /* Eureka.swift */; };
 		BFE90E711D9575DA00E8F758 /* ListItemRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE90E701D9575DA00E8F758 /* ListItemRow.swift */; };
 		BFE90E721D9575DA00E8F758 /* ListItemRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE90E701D9575DA00E8F758 /* ListItemRow.swift */; };
+		CE40784A1D9C47AB00A3CD4B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4078491D9C47AB00A3CD4B /* LoginViewController.swift */; };
+		CE40784B1D9C47AB00A3CD4B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4078491D9C47AB00A3CD4B /* LoginViewController.swift */; };
 		CE43ABD81D9ACD9D00F123A6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE43ABD71D9ACD9D00F123A6 /* HomeViewController.swift */; };
 		CE43ABD91D9ACD9D00F123A6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE43ABD71D9ACD9D00F123A6 /* HomeViewController.swift */; };
 		CE43ABDC1D9AECE100F123A6 /* EmptyHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE43ABDB1D9AECE100F123A6 /* EmptyHomeView.swift */; };
@@ -351,6 +353,7 @@
 		BFE90E6A1D955C1F00E8F758 /* SubtitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubtitleView.swift; sourceTree = "<group>"; };
 		BFE90E6D1D956ED000E8F758 /* Eureka.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Eureka.swift; sourceTree = "<group>"; };
 		BFE90E701D9575DA00E8F758 /* ListItemRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListItemRow.swift; sourceTree = "<group>"; };
+		CE4078491D9C47AB00A3CD4B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Onboarding/LoginViewController.swift; sourceTree = "<group>"; };
 		CE43ABD71D9ACD9D00F123A6 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = Home/HomeViewController.swift; sourceTree = "<group>"; };
 		CE43ABDB1D9AECE100F123A6 /* EmptyHomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyHomeView.swift; sourceTree = "<group>"; };
 		CE43ABDE1D9AECEE00F123A6 /* EmptyHomeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmptyHomeView.xib; sourceTree = "<group>"; };
@@ -645,6 +648,7 @@
 				46418F261D92FE750012EAC0 /* OnboardingCell.swift */,
 				466684151D94775900584FDB /* WelcomeViewController.swift */,
 				4666841C1D94802800584FDB /* CreateAccountViewController.swift */,
+				CE4078491D9C47AB00A3CD4B /* LoginViewController.swift */,
 			);
 			name = Onboarding;
 			sourceTree = "<group>";
@@ -1356,6 +1360,7 @@
 				4645120C1D9595CD009C2FE6 /* GenericPasswordCell.swift in Sources */,
 				4645120F1D9595CD009C2FE6 /* DefaultPasswordValidator.swift in Sources */,
 				4653B7F91D7A1EB6002A6660 /* LoadingIndicatorManager.swift in Sources */,
+				CE40784B1D9C47AB00A3CD4B /* LoginViewController.swift in Sources */,
 				8F9694D41D9302BC00A9EBB7 /* RSNameViewController.swift in Sources */,
 				8F0759A51D774C5C0012D681 /* AppDelegate+Iujuu.swift in Sources */,
 				BFE90E721D9575DA00E8F758 /* ListItemRow.swift in Sources */,
@@ -1431,6 +1436,7 @@
 				464512051D9595C2009C2FE6 /* GenericPasswordCell.swift in Sources */,
 				464512081D9595C2009C2FE6 /* DefaultPasswordValidator.swift in Sources */,
 				4653B7F81D7A1EB6002A6660 /* LoadingIndicatorManager.swift in Sources */,
+				CE40784A1D9C47AB00A3CD4B /* LoginViewController.swift in Sources */,
 				8F9694D31D9302BC00A9EBB7 /* RSNameViewController.swift in Sources */,
 				8F0759A41D774C5C0012D681 /* AppDelegate+Iujuu.swift in Sources */,
 				BFE90E711D9575DA00E8F758 /* ListItemRow.swift in Sources */,

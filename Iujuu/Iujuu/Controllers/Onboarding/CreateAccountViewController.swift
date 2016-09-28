@@ -67,8 +67,10 @@ class CreateAccountViewController: FormViewController {
 
     func registerUser() {
         let createdUser = getUserFromForm()
+        LoadingIndicator.show()
         DataManager.shared.registerUser(user: createdUser.user, password: createdUser.password)?
         .do(onError: { [weak self] error in
+            LoadingIndicator.hide()
             if let error = error as? OperaError {
                 switch error {
                 case let .networking(_, _, response, json):
@@ -88,6 +90,7 @@ class CreateAccountViewController: FormViewController {
             }
             self?.showError(UserMessages.errorTitle, message: UserMessages.Register.registerError)
         }, onCompleted: { [weak self] in
+            LoadingIndicator.hide()
             UIApplication.changeRootViewControllerAfterDismiss(self, to: R.storyboard.main().instantiateInitialViewController()!, completion: nil)
         })
         .subscribe()
