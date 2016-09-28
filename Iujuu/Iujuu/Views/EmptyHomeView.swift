@@ -53,7 +53,7 @@ class EmptyHomeView: UIView {
     }
     
     private func setTitleStyle() {
-        titleLabel.font = UIFont.ijEmptyHomeTitleFont()
+        titleLabel.font = UIFont.regular(size: 18)
     }
     
     private func setConstraints() {

@@ -71,7 +71,7 @@ class HomeViewController: XLTableViewController {
     }
     
     private func setTitle() {
-        titleLabel.font = UIFont.ijHomeTitleFont()
+        titleLabel.font = UIFont.regular(size: 20)
         titleLabel.textColor = UIColor.ijGreyishBrownColor()
     }
     

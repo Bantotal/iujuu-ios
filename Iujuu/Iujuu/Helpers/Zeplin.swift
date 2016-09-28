@@ -83,22 +83,3 @@ extension UIColor {
 
 }
 
-extension UIFont {
-    
-    class func ijHomeTitleFont() -> UIFont? {
-        return UIFont(name: "OpenSans", size: 20.0)
-    }
-    
-    class func ijEmptyHomeIngresarCodigoFont() -> UIFont? {
-        return UIFont(name: "OpenSans", size: 20.0)
-    }
-    
-    class func ijEmptyHomeNuevaColectaFont() -> UIFont? {
-        return UIFont(name: "OpenSans-Bold", size: 23.0)
-    }
-    
-    class func ijEmptyHomeTitleFont() -> UIFont? {
-        return UIFont(name: "OpenSans", size: 18.0)
-    }
-    
-}

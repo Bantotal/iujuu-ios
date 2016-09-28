@@ -82,17 +82,17 @@ class CreateAccountViewController: FormViewController {
     private func getUserFromForm() -> (user: User, password: String)  {
         let formValues = form.values()
 
-        let firstName = formValues[rowTags.firstNameRow] as! String
-        let lastName = formValues[rowTags.lastNameRow] as! String
-        let email = formValues[rowTags.emailRow] as! String
-        let password = formValues[rowTags.passwordRow] as! String
+        let firstName = formValues[rowTags.firstNameRow] as? String
+        let lastName = formValues[rowTags.lastNameRow] as? String
+        let email = formValues[rowTags.emailRow] as? String
+        let password = formValues[rowTags.passwordRow] as? String
 
         let newUser = User()
-        newUser.nombre = firstName
-        newUser.apellido = lastName
-        newUser.email = email
+        newUser.nombre = firstName!
+        newUser.apellido = lastName!
+        newUser.email = email!
 
-        return (user: newUser, password: password)
+        return (user: newUser, password: password!)
     }
 
     override func viewDidAppear(_ animated: Bool) {
