@@ -15,6 +15,7 @@ struct UserMessages {
     struct RegaloPreview { }
     struct Register { }
     struct Share { }
+    struct Home { }
 
     static let cancel = NSLocalizedString("Cancelar", comment: "")
     static let email = NSLocalizedString("Correo Electrónico", comment: "")
@@ -67,4 +68,9 @@ extension UserMessages.RegalosSetup {
     static let perPersonError = NSLocalizedString("El monto sugerido no puede ser vacío", comment: "")
     static let perPersonText = NSLocalizedString("Monto sugerido por persona", comment: "")
     static let perPersonHelp = NSLocalizedString("Los participantes podrán aportar cualquier cifra", comment: "")
+}
+
+extension UserMessages.Home {
+    static let notParticipated = NSLocalizedString("Aún no participe", comment: "")
+    static let didParticipate = NSLocalizedString("Ya Participé", comment: "")
 }

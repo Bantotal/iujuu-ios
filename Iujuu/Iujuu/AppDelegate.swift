@@ -8,6 +8,8 @@
 
 import UIKit
 import Crashlytics
+import Decodable
+import SwiftDate
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -23,6 +25,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         setupCrashlytics()
         setupNetworking()
         stylizeApp()
+
+        setupDateFormatter()
 
         // Register the supported push notifications interaction types.
         // Shows alert view askying for allowed push notification types

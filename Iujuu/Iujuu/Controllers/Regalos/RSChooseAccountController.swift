@@ -37,6 +37,7 @@ class RSChooseAccountViewController: BaseRegaloSetupController {
 
         navigationItem.rightBarButtonItem?.target = self
         navigationItem.rightBarButtonItem?.action = #selector(nextTapped)
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: UserMessages.back, style: .done, target: self, action: "backTapped")
 
         titleLabel.text = UserMessages.RegalosSetup.accountText
         titleLabel.textColor = textColor
@@ -78,6 +79,10 @@ class RSChooseAccountViewController: BaseRegaloSetupController {
         } else {
             showError(UserMessages.RegalosSetup.accountError)
         }
+    }
+
+    func backTapped() {
+        dismiss(animated: true, completion: nil)
     }
 
 }

@@ -113,7 +113,7 @@ class ShareRegaloViewController: XLViewController {
     }
 
     func finishTapped() {
-        //TODO: push to home
+        dismiss(animated: true, completion: nil)
     }
 
     func shareTapped() {

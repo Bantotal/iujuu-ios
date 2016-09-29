@@ -12,7 +12,7 @@ import UIKit
 enum Motivo: String {
 
     case Cumple = "Cumpleaños"
-    case Graduacion
+    case Graduacion = "Graduación"
     case Nacimiento
     case Despedida
     case Bienvenida

@@ -15,11 +15,13 @@ import RealmSwift
 import XLSwiftKit
 import Crashlytics
 import SwiftyJSON
+import Opera
 
 class RealDataManager: DataManagerProtocol {
 
     static let shared = RealDataManager()
 
+    var disposeBag = DisposeBag()
     var user: User? {
         return RealmManager.shared.defaultRealm.objects(User.self).first
     }
@@ -29,19 +31,35 @@ class RealDataManager: DataManagerProtocol {
     func getRegalos() -> Observable<Results<Regalo>> {
         let regalos = RealmManager.shared.defaultRealm.objects(Regalo.self)
         let dbObservable = Observable.from(RealmManager.shared.defaultRealm.objects(Regalo.self))
-        let _ = Observable<Results<Regalo>>.empty() // TODO: consume api and write db
-        return Observable.of(Observable.just(regalos), dbObservable).merge()
-    }
+        if let userId = user?.id {
+            Router.Regalo.List(userId: userId).rx_collection("regalos").do(onNext: { (collection: [Regalo]) in
+                GCDHelper.runOnMainThread {
+                    try? Regalo.save(collection)
+                }
+                }, onError: { error in
+                    if let error = error as? OperaError {
+                        switch error {
+                        case let .networking(_, _, response, json):
+                            print(response)
+                            print(JSON(json as? AnyObject))
+                        case let .parsing(_, _, response, json):
+                            print(response)
+                            print(JSON(data: (json as? Data)!))
+                        }
+                    }
+            }).subscribe().addDisposableTo(disposeBag)
+        }
 
-    func getUser() -> Observable<User>? {
-        guard let user = RealmManager.shared.defaultRealm.objects(User.self).first else { return nil }
-        let dbObservable = Observable.from(RealmManager.shared.defaultRealm.objects(User.self)).map { $0.first! }
-        let _ = Observable<User>.empty() // TODO: consume api and write db
-        return Observable.of(Observable.just(user), dbObservable).merge()
+        return Observable.of(Observable.just(regalos), dbObservable).merge()
     }
 
     func registerUser(user: User, password: String) -> Observable<User>? {
         return Router.Session.Register(nombre: user.nombre, apellido: user.apellido, documento: user.documento, username: user.username, email: user.email, password: password).rx_anyObject().do(onNext: { object in
+            let json = JSON(object)
+            if let token = json["id"].string {
+                SessionController.sharedInstance.token = token
+                print("got token: \(token)")
+            }
             GCDHelper.runOnMainThread {
                 try? user.save()
             }

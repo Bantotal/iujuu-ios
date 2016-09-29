@@ -12,6 +12,7 @@ import Eureka
 import XLSwiftKit
 import SwiftDate
 import RxSwift
+import Opera
 
 fileprivate let addIdeaRowTag = "addIdeaRowTag"
 fileprivate let ideaSectionTag = "ideaSectionTag"
@@ -135,16 +136,16 @@ class RegaloPreviewViewController: FormViewController {
 
     func nextTapped() {
         LoadingIndicator.show()
-        guard //let userId = DataManager.shared.user?.id,
+        guard let userId = DataManager.shared.user?.id,
             let motivo = regalo.motivo,
             let name = regalo.name,
             let date = regalo.closingDate,
             let amount = regalo.amount,
             let perPersonAmount = regalo.suggestedPerPerson,
             let account = regalo.account else { return }
-        Router.Regalo.Create(userId: 1, motivo: motivo, name: name, closeDate: date,
-                             targetAmount: amount, perPersonAmount: perPersonAmount, account: account)
-            .rx_object()
+        Router.Regalo.Create(userId: userId, motivo: motivo, name: name, closeDate: date,
+                             targetAmount: amount, perPersonAmount: perPersonAmount)
+            .rx_object("regalo")
             .do(onNext: { [weak self] (regalo: Regalo) in
                 LoadingIndicator.hide()
                 GCDHelper.runOnMainThread {
@@ -153,11 +154,9 @@ class RegaloPreviewViewController: FormViewController {
                 self?.performSegue(withIdentifier: R.segue.regaloPreviewViewController.showRegaloSetupCompleted.identifier, sender: self)
             }, onError: { [weak self] (error) in
                 LoadingIndicator.hide()
-                print(error)
-                
+
                 self?.showError("No se pudo dar de alta el regalo. Por favor, inténtelo más tarde")
         }).subscribe().addDisposableTo(disposeBag)
-        performSegue(withIdentifier: R.segue.regaloPreviewViewController.showRegaloSetupCompleted.identifier, sender: self)
     }
 
     // MARK: Overrides

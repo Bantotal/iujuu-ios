@@ -73,7 +73,7 @@ class RSAmountViewController: BaseRegaloSetupController {
     }
 
     func nextTapped() {
-        if let amountText = amountField.text, let amount = Constants.Formatters.intCurrencyFormatter.number(from: amountText)?.intValue {
+        if let amountText = amountField.text, let amount = Constants.Formatters.intCurrencyFormatter.number(from: amountText)?.intValue, amount > 0 {
             _ = amountField.resignFirstResponder()
             regalo.amount = amount
             performSegue(withIdentifier: R.segue.rSAmountViewController.showPerPersonSuggestion.identifier, sender: self)
