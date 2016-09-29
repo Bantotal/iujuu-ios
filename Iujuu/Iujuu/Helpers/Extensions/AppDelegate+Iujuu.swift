@@ -11,6 +11,7 @@ import Fabric
 import Alamofire
 import Eureka
 import Crashlytics
+import SwiftDate
 
 extension AppDelegate {
 
@@ -64,6 +65,14 @@ extension AppDelegate {
         navigationBarAppearance.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.ijTextBlackColor()]
         stylizeEurekaRows()
     }
+
+    func setupDateFormatter() {
+        let formatter = DateFormatter()
+        formatter.locale = Locale(identifier: "en_US_POSIX")
+        formatter.dateFormat = ISO8601Type.extended.rawValue
+        Date.decoder = Date.decoder(using: formatter)
+    }
+
 
     /**
      Set up your Eureka default row customization here

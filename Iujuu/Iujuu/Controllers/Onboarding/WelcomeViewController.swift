@@ -35,8 +35,8 @@ class WelcomeViewController: XLViewController {
 
     func loginTapped() {
         DataManager.shared.login(username: nil, email: "mbegerez@iujuu.com", password: "1234")?
-            .do(onNext: { (user) in
-                UIApplication.changeRootViewController(R.storyboard.main().instantiateInitialViewController()!)
+            .do(onNext: { [weak self] (user) in
+                UIApplication.changeRootViewControllerAfterDismiss(self, to: R.storyboard.main().instantiateInitialViewController()!, completion: nil)
                 }, onError: { [weak self] (error) in
                     if let error = error as? OperaError {
                         switch error {

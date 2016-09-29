@@ -82,7 +82,7 @@ class RSPerPersonViewController: BaseRegaloSetupController {
     }
 
     func nextTapped() {
-        if let perPersonText = perPersonField.text, let perPersonAmount = Constants.Formatters.intCurrencyFormatter.number(from: perPersonText)?.intValue {
+        if let perPersonText = perPersonField.text, let perPersonAmount = Constants.Formatters.intCurrencyFormatter.number(from: perPersonText)?.intValue, perPersonAmount > 0 {
             _ = perPersonField.resignFirstResponder()
             regalo.suggestedPerPerson = perPersonAmount
             performSegue(withIdentifier: R.segue.rSPerPersonViewController.showConfirmRegaloView.identifier, sender: self)

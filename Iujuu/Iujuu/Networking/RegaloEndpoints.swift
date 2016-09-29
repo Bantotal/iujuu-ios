@@ -21,22 +21,29 @@ extension Router.Regalo {
         let closeDate: Date
         let targetAmount: Int
         let perPersonAmount: Int
-        let account: Account
 
         var path: String {
             return "\(Router.baseUsuariosString)/\(userId)/regalos"
         }
 
         var parameters: [String : Any]? {
-            return cleanedDict([
+            return ["regalo": cleanedDict([
                 "descripcion": name,
                 "motivo": motivo,
                 "fechaDeCierre": closeDate.toString(format: DateFormat.iso8601Format(.date)),
                 "montoObjetivo": targetAmount,
                 "montoPorPersona": perPersonAmount
-                // TODO: Add account data
-                ])
+                ])]
         }
 
+    }
+
+    struct List: GetRouteType {
+
+        let userId: Int
+
+        var path: String {
+            return "\(Router.baseUsuariosString)/\(userId)/regalos"
+        }
     }
 }

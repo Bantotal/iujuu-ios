@@ -27,31 +27,6 @@ class NetworkManager: RxManager {
         return Observable.just(nil)
     }
 
-    override func rx_response(_ requestConvertible: URLRequestConvertible) -> Observable<OperaResult> {
-        return Observable.create { subscriber in
-            let req = self.response(requestConvertible) { result in
-                switch result.result {
-                case .failure(let error):
-                    subscriber.onError(error)
-                case .success:
-                    if let data = result.result.value?.data {
-                        let json = JSON(data: data)
-                        if let token = json["id"].string {
-                            SessionController.sharedInstance.token = token
-                            print("got token: \(token)")
-                        }
-                    }
-
-                    subscriber.onNext(result)
-                    subscriber.onCompleted()
-                }
-            }
-            return Disposables.create {
-                req.cancel()
-            }
-        }
-    }
-
 }
 
 struct Router {

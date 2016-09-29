@@ -35,14 +35,18 @@ extension URLRequestParametersSetup {
 //MARK: URLRequestSetup
 extension URLRequestSetup {
 
-    func urlRequestSetup(_ urlRequest: URLRequest) {
-        // setup url
+    func urlRequestSetup(_ urlRequest: inout URLRequest) {
+        // Add token to URL parameters
+        if let urlString = urlRequest.url?.absoluteString {
+            let url = urlString + "?\(Constants.Network.AuthTokenName)=\(SessionController.sharedInstance.token ?? "")"
+            urlRequest.url = URL(string: url)!
+        }
     }
 
 }
 
 //MARK: GetRouteType
-protocol GetRouteType: RouteType {}
+protocol GetRouteType: RouteType, URLRequestParametersSetup {}
 
 extension GetRouteType {
 
@@ -53,7 +57,7 @@ extension GetRouteType {
 }
 
 //MARK: PostRouteType
-protocol PostRouteType: RouteType {}
+protocol PostRouteType: RouteType, URLRequestParametersSetup, URLRequestSetup {}
 
 extension PostRouteType {
 
@@ -64,7 +68,7 @@ extension PostRouteType {
 }
 
 //MARK: DeleteRouteType
-protocol DeleteRouteType: RouteType {}
+protocol DeleteRouteType: RouteType, URLRequestParametersSetup, URLRequestSetup {}
 
 extension DeleteRouteType {
 

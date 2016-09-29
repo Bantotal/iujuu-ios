@@ -87,8 +87,8 @@ class CreateAccountViewController: FormViewController {
                 }
             }
             self?.showError(UserMessages.errorTitle, message: UserMessages.Register.registerError)
-        }, onCompleted: {
-            UIApplication.changeRootViewController(R.storyboard.main().instantiateInitialViewController()!)
+        }, onCompleted: { [weak self] in
+            UIApplication.changeRootViewControllerAfterDismiss(self, to: R.storyboard.main().instantiateInitialViewController()!, completion: nil)
         })
         .subscribe()
         .addDisposableTo(disposeBag)

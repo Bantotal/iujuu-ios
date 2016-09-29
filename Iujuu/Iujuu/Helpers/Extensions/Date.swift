@@ -18,4 +18,12 @@ extension Date {
     func dateString() -> String? {
         return self.toString(format: DateFormat.custom("dd/MM/yyyy"))
     }
+
+    func daysFrom(date: Date) -> Int {
+        return Calendar.current.dateComponents([.day], from: date, to: self).day!
+    }
+
+    func hoursFrom(date: Date) -> Int {
+        return Calendar.current.dateComponents([.hour], from: date, to: self).hour!
+    }
 }
