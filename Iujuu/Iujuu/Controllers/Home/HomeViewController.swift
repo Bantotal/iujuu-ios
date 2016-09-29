@@ -13,6 +13,7 @@ class HomeViewController: XLTableViewController {
     @IBOutlet weak var balloonsImage: UIImageView!
     @IBOutlet weak var settingsIcon: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var createColectaButton: UIButton!
 
     var regalos: [Regalo] = []
     var emptyView: EmptyHomeView?
@@ -21,9 +22,10 @@ class HomeViewController: XLTableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setTableView()
+        setupCreateColectaButton()
         DataManager.shared.getRegalos()
             .do(onNext: { [weak self] regalos in
-                self?.emptyView?.isHidden = regalos.count != 0
+                self?.setEmptyViewState(hidden: regalos.count != 0)
                 self?.regalos = Array(regalos)
                 print(self?.regalos.count)
                 self?.tableView.reloadData()
@@ -53,9 +55,36 @@ class HomeViewController: XLTableViewController {
         tableView.backgroundView = emptyView
     }
 
+    private func setupCreateColectaButton() {
+        createColectaButton.setStyle(.primary)
+        createColectaButton.layer.cornerRadius = 0
+        createColectaButton.setTitle(UserMessages.Home.createColecta, for: .normal)
+        createColectaButton.addTarget(self, action: #selector(createColectaTapped), for: .touchUpInside)
+    }
+
+    func setEmptyViewState(hidden: Bool) {
+        emptyView?.isHidden = hidden
+        createColectaButton.isHidden = !hidden
+    }
+
     private func sendToCrearColecta() {
         let viewController = R.storyboard.createRegalo().instantiateInitialViewController()!
         present(viewController, animated: true, completion: nil)
+    }
+
+    func createColectaTapped() {
+        let controller = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+        controller.addAction(UIAlertAction(title: UserMessages.Home.actionCreateColecta, style: .default, handler: { [weak self] _ in
+            self?.sendToCrearColecta()
+        }))
+        controller.addAction(UIAlertAction(title: UserMessages.Home.actionInsertCode, style: .default, handler: { [weak self] _ in
+            self?.sendToIngresarCodigo()
+        }))
+
+        controller.addAction(UIAlertAction(title: UserMessages.cancel, style: .cancel, handler: nil))
+        present(controller, animated: true, completion: nil)
+
+
     }
 
     private func sendToIngresarCodigo() {

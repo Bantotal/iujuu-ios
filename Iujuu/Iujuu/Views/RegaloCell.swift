@@ -12,7 +12,7 @@ import XLSwiftKit
 import SwiftDate
 
 class RegaloCell: UITableViewCell {
-    
+
     @IBOutlet weak var motivoImageView: UIImageView!
     @IBOutlet weak var motivoLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!

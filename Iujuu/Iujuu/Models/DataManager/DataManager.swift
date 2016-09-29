@@ -17,7 +17,7 @@ protocol DataManagerProtocol {
     func getRegalos() -> Observable<Results<Regalo>>
     func registerUser(user: User, password: String) -> Observable<User>?
     func login(username: String?, email: String?, password: String) -> Observable<Any>?
-    
+
 }
 
 class DataManager {

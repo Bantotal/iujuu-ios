@@ -78,7 +78,6 @@ class RegaloPreviewViewController: FormViewController {
                 section.header = header
 
                 var footer = HeaderFooterView<UIView>(HeaderFooterProvider.callback({ () -> UIView in
-                    //TODO: Setup button view
                     let footer = ButtonFooter()
                     footer.actionButton.setTitle(UserMessages.RegaloPreview.buttonText, for: .normal)
                     footer.actionButton.addTarget(me, action: #selector(RegaloPreviewViewController.nextTapped), for: .touchUpInside)

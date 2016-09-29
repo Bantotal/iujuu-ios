@@ -45,7 +45,16 @@ class BaseRegaloSetupController: XLViewController {
     }
 
     func setup(textField: SkyFloatingLabelTextField) {
-        // TODO: setup input accessory view for textfield
+        textField.textColor = textColor
+        textField.lineColor = textColor.withAlphaComponent(0.38)
+        textField.font = .bold(size: 29)
+        textField.titleLabel.font = .regular(size: 18)
+        textField.titleColor = textColor.withAlphaComponent(0.38)
+        textField.placeholderColor = textColor
+        textField.selectedLineColor = textColor
+        textField.selectedTitleColor = textColor
+        textField.titleFormatter = { return $0 }
+        textField.errorColor = .red
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

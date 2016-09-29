@@ -66,18 +66,8 @@ class RSPerPersonViewController: BaseRegaloSetupController {
 
     override func setup(textField: SkyFloatingLabelTextField) {
         super.setup(textField: textField)
-        perPersonField.textColor = textColor
-        perPersonField.lineColor = textColor.withAlphaComponent(0.38)
-        perPersonField.font = .bold(size: 29)
         perPersonField.placeholderFont = .bold(size: 24)
-        perPersonField.titleLabel.font = .regular(size: 18)
-        perPersonField.titleColor = textColor.withAlphaComponent(0.38)
         perPersonField.placeholder = UserMessages.RegalosSetup.perPersonText
-        perPersonField.placeholderColor = textColor
-        perPersonField.selectedLineColor = textColor
-        perPersonField.selectedTitleColor = textColor
-        perPersonField.titleFormatter = { return $0 }
-        perPersonField.errorColor = .red
         perPersonField.keyboardType = .numberPad
     }
 

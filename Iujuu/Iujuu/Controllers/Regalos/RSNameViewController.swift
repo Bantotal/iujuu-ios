@@ -54,17 +54,7 @@ class RSNameViewController: BaseRegaloSetupController {
         super.setup(textField: textField)
         nameField.autocorrectionType = .no
         nameField.autocapitalizationType = .words
-        nameField.textColor = textColor
-        nameField.lineColor = textColor.withAlphaComponent(0.38)
-        nameField.font = .bold(size: 29)
-        nameField.titleLabel.font = .regular(size: 18)
-        nameField.titleColor = textColor.withAlphaComponent(0.38)
         nameField.placeholder = NSLocalizedString("{0} de", comment: "").parametrize(regalo.motivo ?? "")
-        nameField.placeholderColor = textColor
-        nameField.selectedLineColor = textColor
-        nameField.selectedTitleColor = textColor
-        nameField.titleFormatter = { return $0 }
-        nameField.errorColor = .red
     }
 
     func nextTapped() {

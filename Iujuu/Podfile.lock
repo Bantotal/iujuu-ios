@@ -33,9 +33,6 @@ PODS:
   - SkyFloatingLabelTextField (1.2.1)
   - SwiftDate (3.0.9)
   - SwiftyJSON (3.0.0)
-  - XLActionController (2.1.0):
-    - XLActionController/Core (= 2.1.0)
-  - XLActionController/Core (2.1.0)
   - XLSwiftKit (2.0.0)
 
 DEPENDENCIES:
@@ -59,7 +56,6 @@ DEPENDENCIES:
   - SkyFloatingLabelTextField (from `https://github.com/MLSDev/SkyFloatingLabelTextField.git`, branch `swift3`)
   - SwiftDate (from `https://github.com/malcommac/SwiftDate.git`, branch `feature/swift-3.0`)
   - SwiftyJSON (= 3.0.0)
-  - XLActionController (from `https://github.com/xmartlabs/XLActionController.git`)
   - XLSwiftKit (~> 2.0)
 
 EXTERNAL SOURCES:
@@ -81,8 +77,6 @@ EXTERNAL SOURCES:
   SwiftDate:
     :branch: feature/swift-3.0
     :git: https://github.com/malcommac/SwiftDate.git
-  XLActionController:
-    :git: https://github.com/xmartlabs/XLActionController.git
 
 CHECKOUT OPTIONS:
   Decodable:
@@ -103,9 +97,6 @@ CHECKOUT OPTIONS:
   SwiftDate:
     :commit: 040b2c844a34a677feed13238a1bbcf85eceac41
     :git: https://github.com/malcommac/SwiftDate.git
-  XLActionController:
-    :commit: 9e83f9ccb3c7318ec9473a215c18c942709d7036
-    :git: https://github.com/xmartlabs/XLActionController.git
 
 SPEC CHECKSUMS:
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
@@ -130,9 +121,8 @@ SPEC CHECKSUMS:
   SkyFloatingLabelTextField: 3f6610aded18e778df5cfab3b9e12a11b3e014e9
   SwiftDate: fa487d9b7d8c3070ea2553486902494f4915465d
   SwiftyJSON: f57b2b44bc166617372d1c70773591fe9f0f5fd4
-  XLActionController: 085f4baf9246c6e54c6e337f88d045e2e7b3c0bb
   XLSwiftKit: 4d48322a602120dc6300d58d7fb07b873e223c1c
 
-PODFILE CHECKSUM: f6294ea814727eec0e2bd40d6c4253e9f44f6fca
+PODFILE CHECKSUM: 9fc005a7545c486e7df66c35444abf08516509cc
 
 COCOAPODS: 1.1.0.rc.2

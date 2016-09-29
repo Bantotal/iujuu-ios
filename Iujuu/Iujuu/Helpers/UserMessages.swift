@@ -54,12 +54,12 @@ extension UserMessages.Onboarding {
 }
 
 extension UserMessages.Register {
-    
+
     static let registerError = NSLocalizedString("Ocurrió un error al intentar registrarse. Por favor intente de nuevo!", comment: "")
     static let passwordInvalid = NSLocalizedString("Password must have 6 character, one capital letter and one number!", comment: "")
     static let loginError = NSLocalizedString("Nombre de usuario o clave incorrecta.", comment: "")
     static let duplicatedEmail = NSLocalizedString("Ya ha un usuario registrado con este email.", comment: "")
-    
+
 }
 
 extension UserMessages.RegalosSetup {
@@ -81,4 +81,7 @@ extension UserMessages.RegalosSetup {
 extension UserMessages.Home {
     static let notParticipated = NSLocalizedString("Aún no participe", comment: "")
     static let didParticipate = NSLocalizedString("Ya Participé", comment: "")
+    static let createColecta = NSLocalizedString("Nueva colecta", comment: "")
+    static let actionCreateColecta = NSLocalizedString("Crear nueva colecta", comment: "")
+    static let actionInsertCode = NSLocalizedString("Ingresar código de colecta", comment: "")
 }
