@@ -194,6 +194,12 @@
 		BFE90E721D9575DA00E8F758 /* ListItemRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE90E701D9575DA00E8F758 /* ListItemRow.swift */; };
 		CE40784A1D9C47AB00A3CD4B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4078491D9C47AB00A3CD4B /* LoginViewController.swift */; };
 		CE40784B1D9C47AB00A3CD4B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4078491D9C47AB00A3CD4B /* LoginViewController.swift */; };
+		CE4275381D9D4ED500293CA0 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4275371D9D4ED500293CA0 /* SettingsViewController.swift */; };
+		CE4275391D9D4ED500293CA0 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4275371D9D4ED500293CA0 /* SettingsViewController.swift */; };
+		CE42753B1D9D625B00293CA0 /* logoutButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE42753A1D9D625B00293CA0 /* logoutButton.swift */; };
+		CE42753C1D9D625B00293CA0 /* logoutButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE42753A1D9D625B00293CA0 /* logoutButton.swift */; };
+		CE42753E1D9D626E00293CA0 /* logoutButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE42753D1D9D626E00293CA0 /* logoutButton.xib */; };
+		CE42753F1D9D626E00293CA0 /* logoutButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE42753D1D9D626E00293CA0 /* logoutButton.xib */; };
 		CE43ABD81D9ACD9D00F123A6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE43ABD71D9ACD9D00F123A6 /* HomeViewController.swift */; };
 		CE43ABD91D9ACD9D00F123A6 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE43ABD71D9ACD9D00F123A6 /* HomeViewController.swift */; };
 		CE43ABDC1D9AECE100F123A6 /* EmptyHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE43ABDB1D9AECE100F123A6 /* EmptyHomeView.swift */; };
@@ -354,6 +360,9 @@
 		BFE90E6D1D956ED000E8F758 /* Eureka.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Eureka.swift; sourceTree = "<group>"; };
 		BFE90E701D9575DA00E8F758 /* ListItemRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListItemRow.swift; sourceTree = "<group>"; };
 		CE4078491D9C47AB00A3CD4B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Onboarding/LoginViewController.swift; sourceTree = "<group>"; };
+		CE4275371D9D4ED500293CA0 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = Home/SettingsViewController.swift; sourceTree = "<group>"; };
+		CE42753A1D9D625B00293CA0 /* logoutButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = logoutButton.swift; sourceTree = "<group>"; };
+		CE42753D1D9D626E00293CA0 /* logoutButton.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = logoutButton.xib; sourceTree = "<group>"; };
 		CE43ABD71D9ACD9D00F123A6 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = Home/HomeViewController.swift; sourceTree = "<group>"; };
 		CE43ABDB1D9AECE100F123A6 /* EmptyHomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyHomeView.swift; sourceTree = "<group>"; };
 		CE43ABDE1D9AECEE00F123A6 /* EmptyHomeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmptyHomeView.xib; sourceTree = "<group>"; };
@@ -746,6 +755,7 @@
 			isa = PBXGroup;
 			children = (
 				CE43ABD71D9ACD9D00F123A6 /* HomeViewController.swift */,
+				CE4275371D9D4ED500293CA0 /* SettingsViewController.swift */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -757,6 +767,8 @@
 				CE43ABDE1D9AECEE00F123A6 /* EmptyHomeView.xib */,
 				8F702F971D9D579400FE159E /* RegaloCell.swift */,
 				8F702F9A1D9D57A100FE159E /* RegaloCell.xib */,
+				CE42753A1D9D625B00293CA0 /* logoutButton.swift */,
+				CE42753D1D9D626E00293CA0 /* logoutButton.xib */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -938,6 +950,7 @@
 				460C0BA31D945417005814AA /* OpenSans-BoldItalic.ttf in Resources */,
 				CE43ABE01D9AECEE00F123A6 /* EmptyHomeView.xib in Resources */,
 				2841F1F91CCFF55600D609CE /* Main.storyboard in Resources */,
+				CE42753F1D9D626E00293CA0 /* logoutButton.xib in Resources */,
 				46418F251D92FE540012EAC0 /* OnboardingCell.xib in Resources */,
 				460C0BAB1D945417005814AA /* OpenSans-Light.ttf in Resources */,
 				8F702F9C1D9D57A100FE159E /* RegaloCell.xib in Resources */,
@@ -968,6 +981,7 @@
 				460C0BA21D945417005814AA /* OpenSans-BoldItalic.ttf in Resources */,
 				CE43ABDF1D9AECEE00F123A6 /* EmptyHomeView.xib in Resources */,
 				2867E8301C74C7D400FCEBBD /* Main.storyboard in Resources */,
+				CE42753E1D9D626E00293CA0 /* logoutButton.xib in Resources */,
 				46418F241D92FE540012EAC0 /* OnboardingCell.xib in Resources */,
 				460C0BAA1D945417005814AA /* OpenSans-Light.ttf in Resources */,
 				8F702F9B1D9D57A100FE159E /* RegaloCell.xib in Resources */,
@@ -1354,11 +1368,13 @@
 				46418F281D92FE750012EAC0 /* OnboardingCell.swift in Sources */,
 				4645121B1D95A9A7009C2FE6 /* ButtonStyles.swift in Sources */,
 				2841F1EE1CCFF55600D609CE /* AppDelegate.swift in Sources */,
+				CE42753C1D9D625B00293CA0 /* logoutButton.swift in Sources */,
 				2841F1F01CCFF55600D609CE /* Date+Decodable.swift in Sources */,
 				8F8CEA001D9470DA005FA5B6 /* RegaloHeaderView.swift in Sources */,
 				2841F1F11CCFF55600D609CE /* Constants.swift in Sources */,
 				4645120C1D9595CD009C2FE6 /* GenericPasswordCell.swift in Sources */,
 				4645120F1D9595CD009C2FE6 /* DefaultPasswordValidator.swift in Sources */,
+				CE4275391D9D4ED500293CA0 /* SettingsViewController.swift in Sources */,
 				4653B7F91D7A1EB6002A6660 /* LoadingIndicatorManager.swift in Sources */,
 				CE40784B1D9C47AB00A3CD4B /* LoginViewController.swift in Sources */,
 				8F9694D41D9302BC00A9EBB7 /* RSNameViewController.swift in Sources */,
@@ -1430,11 +1446,13 @@
 				46418F271D92FE750012EAC0 /* OnboardingCell.swift in Sources */,
 				464512181D95A9A4009C2FE6 /* ButtonStyles.swift in Sources */,
 				2867E82B1C74C7D400FCEBBD /* AppDelegate.swift in Sources */,
+				CE42753B1D9D625B00293CA0 /* logoutButton.swift in Sources */,
 				286C92301CBD6AD300208E3B /* Date+Decodable.swift in Sources */,
 				8F8CE9FF1D9470DA005FA5B6 /* RegaloHeaderView.swift in Sources */,
 				28C282441C7797CA003ECA4F /* Constants.swift in Sources */,
 				464512051D9595C2009C2FE6 /* GenericPasswordCell.swift in Sources */,
 				464512081D9595C2009C2FE6 /* DefaultPasswordValidator.swift in Sources */,
+				CE4275381D9D4ED500293CA0 /* SettingsViewController.swift in Sources */,
 				4653B7F81D7A1EB6002A6660 /* LoadingIndicatorManager.swift in Sources */,
 				CE40784A1D9C47AB00A3CD4B /* LoginViewController.swift in Sources */,
 				8F9694D31D9302BC00A9EBB7 /* RSNameViewController.swift in Sources */,

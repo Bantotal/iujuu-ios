@@ -54,16 +54,11 @@ class RealDataManager: DataManagerProtocol {
     }
 
     func registerUser(user: User, password: String) -> Observable<User>? {
-        return Router.Session.Register(nombre: user.nombre, apellido: user.apellido, documento: user.documento, username: user.username, email: user.email, password: password).rx_anyObject().do(onNext: { object in
-            let json = JSON(object)
-            if let token = json["id"].string {
-                SessionController.sharedInstance.token = token
-                print("got token: \(token)")
-            }
-            GCDHelper.runOnMainThread {
-                try? user.save()
-            }
-            AppDelegate.logUser(user: user)
+        return Router.Session.Register(nombre: user.nombre, apellido: user.apellido, documento: user.documento, username: user.username, email: user.email, password: password).rx_anyObject().do(onNext: { _ in
+                GCDHelper.runOnMainThread {
+                    try? user.save()
+                }
+                AppDelegate.logUser(user: user)
         }).map { _ in user }
     }
 
@@ -80,6 +75,16 @@ class RealDataManager: DataManagerProtocol {
                 try? user.save()
             }
             AppDelegate.logUser(user: user)
+        })
+    }
+
+    func logout() -> Observable<Any>? {
+        let userToken = SessionController.sharedInstance.token
+
+        guard let token = userToken else { return Observable.empty() }
+
+        return Router.Session.Logout(token: token).rx_anyObject().do(onNext: { object in
+            SessionController.sharedInstance.logOut()
         })
     }
 }
