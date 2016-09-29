@@ -36,8 +36,8 @@ class OnboardingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if let token = SessionController.sharedInstance.token {
-            //TODO: autologin
+        if let _ = SessionController.sharedInstance.token {
+            UIApplication.changeRootViewController(R.storyboard.main().instantiateInitialViewController()!)
         }
         view.backgroundColor = .ijBackgroundOrangeColor()
         collectionView.backgroundColor = .clear
