@@ -96,6 +96,19 @@ extension AppDelegate {
             cell.detailTextLabel?.textColor = textColor
         }
 
+        PasswordRow.defaultRowInitializer = {
+            $0.title = UserMessages.password
+        }
+        PasswordRow.defaultCellSetup = { cell, _ in
+            cell.titleLabel?.font = titleFont
+            cell.detailTextLabel?.font = textFont
+            cell.height = { defaultHeight }
+        }
+        PasswordRow.defaultCellUpdate = { cell, _ in
+            cell.titleLabel?.textColor = titleColor
+            cell.detailTextLabel?.textColor = textColor
+        }
+
         EmailRow.defaultRowInitializer = {
             $0.title = UserMessages.email
         }

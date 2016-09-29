@@ -29,28 +29,6 @@ class WelcomeViewController: XLViewController {
         facebookButton.setStyle(.primaryWith(color: .ijDenimBlueColor()))
         createAccountButton.setStyle(.secondary(borderColor: .ijDeepOrangeColor()))
         loginButton.setStyle(.borderless(titleColor: .white))
-
-        loginButton.addTarget(self, action: #selector(loginTapped), for: .touchUpInside)
-    }
-
-    func loginTapped() {
-        DataManager.shared.login(username: nil, email: "mbegerez@iujuu.com", password: "1234")?
-            .do(onNext: { [weak self] (user) in
-                UIApplication.changeRootViewControllerAfterDismiss(self, to: R.storyboard.main().instantiateInitialViewController()!, completion: nil)
-                }, onError: { [weak self] (error) in
-                    if let error = error as? OperaError {
-                        switch error {
-                        case let .networking(_, _, response, _):
-                            if response?.statusCode == Constants.Network.Unauthorized {
-                                self?.showError(UserMessages.Register.loginError)
-                                return
-                            }
-                        default: break
-                        }
-                    }
-                    self?.showError(UserMessages.networkError)
-                })
-            .subscribe().addDisposableTo(disposeBag)
     }
 
 }
