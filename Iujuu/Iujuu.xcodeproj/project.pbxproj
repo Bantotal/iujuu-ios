@@ -206,6 +206,8 @@
 		CE43ABDD1D9AECE100F123A6 /* EmptyHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE43ABDB1D9AECE100F123A6 /* EmptyHomeView.swift */; };
 		CE43ABDF1D9AECEE00F123A6 /* EmptyHomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE43ABDE1D9AECEE00F123A6 /* EmptyHomeView.xib */; };
 		CE43ABE01D9AECEE00F123A6 /* EmptyHomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE43ABDE1D9AECEE00F123A6 /* EmptyHomeView.xib */; };
+		CE4967971D9E95D500E2363E /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4967961D9E95D500E2363E /* WebViewController.swift */; };
+		CE4967981D9E95D500E2363E /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4967961D9E95D500E2363E /* WebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -366,6 +368,7 @@
 		CE43ABD71D9ACD9D00F123A6 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = Home/HomeViewController.swift; sourceTree = "<group>"; };
 		CE43ABDB1D9AECE100F123A6 /* EmptyHomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyHomeView.swift; sourceTree = "<group>"; };
 		CE43ABDE1D9AECEE00F123A6 /* EmptyHomeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmptyHomeView.xib; sourceTree = "<group>"; };
+		CE4967961D9E95D500E2363E /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebViewController.swift; path = Home/WebViewController.swift; sourceTree = "<group>"; };
 		DEE523F7CE6A0E56FCF7A0A5 /* Pods_Iujuu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Iujuu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5CE8DAF3DF9D8499BA58B7A /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -756,6 +759,7 @@
 			children = (
 				CE43ABD71D9ACD9D00F123A6 /* HomeViewController.swift */,
 				CE4275371D9D4ED500293CA0 /* SettingsViewController.swift */,
+				CE4967961D9E95D500E2363E /* WebViewController.swift */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -1364,6 +1368,7 @@
 				4645120D1D9595CD009C2FE6 /* DefaultPasswordStrengthView.swift in Sources */,
 				BFE90E6C1D955C1F00E8F758 /* SubtitleView.swift in Sources */,
 				2841F1ED1CCFF55600D609CE /* Session.swift in Sources */,
+				CE4967981D9E95D500E2363E /* WebViewController.swift in Sources */,
 				4658D9B31D92BC1C00A2DF05 /* MockedDataManager.swift in Sources */,
 				46418F281D92FE750012EAC0 /* OnboardingCell.swift in Sources */,
 				4645121B1D95A9A7009C2FE6 /* ButtonStyles.swift in Sources */,
@@ -1442,6 +1447,7 @@
 				464512061D9595C2009C2FE6 /* DefaultPasswordStrengthView.swift in Sources */,
 				BFE90E6B1D955C1F00E8F758 /* SubtitleView.swift in Sources */,
 				281BF1A31C7B8EEF00809E3F /* Session.swift in Sources */,
+				CE4967971D9E95D500E2363E /* WebViewController.swift in Sources */,
 				4658D9B21D92BC1C00A2DF05 /* MockedDataManager.swift in Sources */,
 				46418F271D92FE750012EAC0 /* OnboardingCell.swift in Sources */,
 				464512181D95A9A4009C2FE6 /* ButtonStyles.swift in Sources */,

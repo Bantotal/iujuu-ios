@@ -9,8 +9,11 @@
 import UIKit
 import Eureka
 import Opera
+import RxSwift
 
 class SettingsViewController: FormViewController {
+
+    let disposeBag = DisposeBag()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,13 +46,28 @@ class SettingsViewController: FormViewController {
             <<< ButtonRow () {
                 $0.title = UserMessages.Settings.aboutRow
             }
+            .onCellSelection { cell, row in
+                let webViewController = WebViewController()
+                webViewController.pageTitle = "About"
+                self.navigationController?.pushViewController(webViewController, animated: true)
+            }
 
             <<< ButtonRow () {
                 $0.title = UserMessages.Settings.faqRow
             }
+            .onCellSelection { cell, row in
+                let webViewController = WebViewController()
+                webViewController.pageTitle = "FAQ"
+                self.navigationController?.pushViewController(webViewController, animated: true)
+            }
 
             <<< ButtonRow () {
                 $0.title = UserMessages.Settings.legalRow
+            }
+            .onCellSelection { cell, row in
+                let webViewController = WebViewController()
+                webViewController.pageTitle = "Legal"
+                self.navigationController?.pushViewController(webViewController, animated: true)
             }
     }
 
@@ -63,12 +81,16 @@ class SettingsViewController: FormViewController {
     }
 
     private func logout() {
+        LoadingIndicator.show()
         DataManager.shared.logout()?
         .do(onError: { [weak self] error in
+            LoadingIndicator.hide()
             self?.showError(UserMessages.errorTitle, message: UserMessages.Settings.logoutError)
         }, onCompleted: {
+            LoadingIndicator.hide()
             UIApplication.changeRootViewController(R.storyboard.onboarding().instantiateInitialViewController()!)
         })
+        .subscribe()
+        .addDisposableTo(disposeBag)
     }
 }
-

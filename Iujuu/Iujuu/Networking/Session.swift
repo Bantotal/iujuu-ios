@@ -63,10 +63,8 @@ extension Router.Session {
 
     struct Logout: PostRouteType {
 
-        let token: String
-
         var path: String {
-            return "\(Router.baseUsuariosString)/logout/access_token='\(token)'"
+            return "\(Router.baseUsuariosString)/logout"
         }
 
         func urlRequestSetup(_ urlRequest: inout URLRequest) {
@@ -78,5 +76,6 @@ extension Router.Session {
                 urlRequest = try encoding.encode(urlRequest, with: parameters)
             } catch {}
         }
+
     }
 }

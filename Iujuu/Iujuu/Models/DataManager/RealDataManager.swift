@@ -81,9 +81,9 @@ class RealDataManager: DataManagerProtocol {
     func logout() -> Observable<Any>? {
         let userToken = SessionController.sharedInstance.token
 
-        guard let token = userToken else { return Observable.empty() }
+        guard let _ = userToken else { return Observable.empty() }
 
-        return Router.Session.Logout(token: token).rx_anyObject().do(onNext: { object in
+        return Router.Session.Logout().rx_anyObject().do(onNext: { object in
             SessionController.sharedInstance.logOut()
         })
     }
