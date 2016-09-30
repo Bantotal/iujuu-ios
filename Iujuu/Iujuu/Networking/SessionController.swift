@@ -42,11 +42,6 @@ class SessionController {
         }
     }
 
-    func refreshToken() -> Observable<String?> {
-        //TODO: refresh session token if necessary
-        return  Observable.just(nil)
-    }
-
     // MARK: - Auxiliary functions
     func clearSession() {
         token = nil

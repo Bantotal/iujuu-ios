@@ -131,7 +131,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Jni-3C-69S" customClass="IURegaloNavigationController" customModule="Iujuu" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="ZVF-Ii-yGk">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="ZVF-Ii-yGk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -152,7 +152,7 @@
                         <viewControllerLayoutGuide type="top" id="pNo-tQ-OtC"/>
                         <viewControllerLayoutGuide type="bottom" id="vzX-Sm-YZm"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" misplaced="YES" id="yil-kf-439">
+                    <view key="view" contentMode="scaleToFill" id="yil-kf-439">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -242,7 +242,7 @@
                         <viewControllerLayoutGuide type="top" id="7bj-Va-oXC"/>
                         <viewControllerLayoutGuide type="bottom" id="qnr-bj-ywB"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" misplaced="YES" id="Api-bc-9fd">
+                    <view key="view" contentMode="scaleToFill" id="Api-bc-9fd">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
@@ -279,7 +279,7 @@
                         <viewControllerLayoutGuide type="top" id="Xp1-aY-x3B"/>
                         <viewControllerLayoutGuide type="bottom" id="qMe-dl-rON"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" misplaced="YES" id="FMo-eS-j5c">
+                    <view key="view" contentMode="scaleToFill" id="FMo-eS-j5c">
                         <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>

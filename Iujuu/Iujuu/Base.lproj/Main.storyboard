@@ -52,16 +52,24 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="H0f-bN-dQj">
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vSo-me-hl3">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="68" id="Sia-89-D5g"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="H0f-bN-dQj" firstAttribute="centerX" secondItem="lbB-Z6-w7t" secondAttribute="centerX" id="0VV-Dp-HA3"/>
                             <constraint firstItem="H0f-bN-dQj" firstAttribute="top" secondItem="FS0-hy-mtH" secondAttribute="bottom" constant="20" id="0mL-Vz-G0I"/>
+                            <constraint firstItem="vSo-me-hl3" firstAttribute="top" secondItem="H0f-bN-dQj" secondAttribute="bottom" id="1hA-Hq-a4A"/>
                             <constraint firstItem="n4Q-wx-Oc0" firstAttribute="top" secondItem="tbR-v9-2c6" secondAttribute="bottom" constant="-20" id="5CI-Nf-ATR"/>
                             <constraint firstItem="H0f-bN-dQj" firstAttribute="width" secondItem="abf-Tu-mT9" secondAttribute="width" id="7AT-IH-24m"/>
                             <constraint firstItem="n4Q-wx-Oc0" firstAttribute="width" secondItem="abf-Tu-mT9" secondAttribute="width" id="8vp-25-hTT"/>
                             <constraint firstItem="mVm-cS-TwN" firstAttribute="height" secondItem="lbB-Z6-w7t" secondAttribute="height" id="9W7-Bg-liC"/>
-                            <constraint firstAttribute="bottom" secondItem="H0f-bN-dQj" secondAttribute="bottom" id="Dgv-fb-hmf"/>
+                            <constraint firstAttribute="trailing" secondItem="vSo-me-hl3" secondAttribute="trailing" id="HWW-mb-xwV"/>
+                            <constraint firstItem="d2b-Hd-gsX" firstAttribute="top" secondItem="vSo-me-hl3" secondAttribute="bottom" id="RCP-AL-RMu"/>
                             <constraint firstItem="lbB-Z6-w7t" firstAttribute="centerX" secondItem="mVm-cS-TwN" secondAttribute="centerX" id="SNu-fV-KPt"/>
                             <constraint firstItem="mVm-cS-TwN" firstAttribute="top" secondItem="tbR-v9-2c6" secondAttribute="bottom" constant="39" id="U8F-Lr-zaL"/>
                             <constraint firstAttribute="trailingMargin" secondItem="FS0-hy-mtH" secondAttribute="trailing" constant="25" id="WvI-HH-cYv"/>
@@ -71,6 +79,7 @@
                             <constraint firstItem="mp9-iq-m2L" firstAttribute="centerX" secondItem="n4Q-wx-Oc0" secondAttribute="centerX" id="bha-Rl-wKg"/>
                             <constraint firstItem="FS0-hy-mtH" firstAttribute="centerX" secondItem="abf-Tu-mT9" secondAttribute="centerX" id="eH7-1G-Bve"/>
                             <constraint firstItem="mVm-cS-TwN" firstAttribute="width" secondItem="abf-Tu-mT9" secondAttribute="width" multiplier="0.7" id="eIq-DG-7gD"/>
+                            <constraint firstItem="vSo-me-hl3" firstAttribute="leading" secondItem="abf-Tu-mT9" secondAttribute="leading" id="fZH-3R-asj"/>
                             <constraint firstItem="n4Q-wx-Oc0" firstAttribute="centerX" secondItem="abf-Tu-mT9" secondAttribute="centerX" id="ftY-UI-fRd"/>
                             <constraint firstItem="FS0-hy-mtH" firstAttribute="top" secondItem="n4Q-wx-Oc0" secondAttribute="bottom" constant="15" id="gJb-U4-sXk"/>
                             <constraint firstItem="FS0-hy-mtH" firstAttribute="leading" secondItem="abf-Tu-mT9" secondAttribute="leadingMargin" constant="25" id="gWn-Tn-2hS"/>
@@ -84,6 +93,7 @@
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="balloonsImage" destination="n4Q-wx-Oc0" id="obj-d9-AgM"/>
+                        <outlet property="createColectaButton" destination="vSo-me-hl3" id="eio-NJ-hiR"/>
                         <outlet property="settingsIcon" destination="KU9-JL-5D3" id="71A-4S-yCj"/>
                         <outlet property="tableView" destination="H0f-bN-dQj" id="reY-zS-XGL"/>
                         <outlet property="titleLabel" destination="FS0-hy-mtH" id="7mc-Kz-wvl"/>
@@ -98,7 +108,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zOV-V0-1xs" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wXp-WV-J8K">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="wXp-WV-J8K">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

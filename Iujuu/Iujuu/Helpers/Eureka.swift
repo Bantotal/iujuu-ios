@@ -29,7 +29,7 @@ extension Section {
 
 public struct RulePasswordIsValid<T: Equatable>: RuleType {
 
-    public init(){}
+    public init() {}
 
     public var id: String?
     public var validationError = ValidationError(msg: UserMessages.Register.passwordInvalid)

@@ -26,7 +26,7 @@ class LoginViewController: FormViewController {
     override var prefersStatusBarHidden: Bool {
         return _prefersStatusBarHidden
     }
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         addLeftNavigationCancel(withTarget: self, action: #selector(LoginViewController.cancel))

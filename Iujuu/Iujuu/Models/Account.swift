@@ -60,5 +60,5 @@ extension Account: Decodable {
             sucursal: j => "sucursal"
         )
     }
-    
+
 }

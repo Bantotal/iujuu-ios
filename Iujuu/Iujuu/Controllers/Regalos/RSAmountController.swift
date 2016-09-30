@@ -58,17 +58,7 @@ class RSAmountViewController: BaseRegaloSetupController {
 
     override func setup(textField: SkyFloatingLabelTextField) {
         super.setup(textField: textField)
-        amountField.textColor = textColor
-        amountField.lineColor = textColor.withAlphaComponent(0.38)
-        amountField.font = .bold(size: 29)
-        amountField.titleLabel.font = .regular(size: 18)
-        amountField.titleColor = textColor.withAlphaComponent(0.38)
         amountField.placeholder = UserMessages.RegalosSetup.amountText
-        amountField.placeholderColor = textColor
-        amountField.selectedLineColor = textColor
-        amountField.selectedTitleColor = textColor
-        amountField.titleFormatter = { return $0 }
-        amountField.errorColor = .red
         amountField.keyboardType = .numberPad
     }
 

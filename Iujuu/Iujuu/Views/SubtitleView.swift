@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 class SubtitleView: UIView {
-    
+
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var subtitleLabel: UILabel!
 
