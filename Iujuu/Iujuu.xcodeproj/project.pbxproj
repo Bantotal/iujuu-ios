@@ -232,6 +232,14 @@
 		CE43ABE01D9AECEE00F123A6 /* EmptyHomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE43ABDE1D9AECEE00F123A6 /* EmptyHomeView.xib */; };
 		CE4967971D9E95D500E2363E /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4967961D9E95D500E2363E /* WebViewController.swift */; };
 		CE4967981D9E95D500E2363E /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4967961D9E95D500E2363E /* WebViewController.swift */; };
+		CE49679A1D9EA1AD00E2363E /* RegaloDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4967991D9EA1AD00E2363E /* RegaloDetailViewController.swift */; };
+		CE49679B1D9EA1AD00E2363E /* RegaloDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4967991D9EA1AD00E2363E /* RegaloDetailViewController.swift */; };
+		CE49679D1D9EA55400E2363E /* RegaloDetailHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE49679C1D9EA55400E2363E /* RegaloDetailHeader.swift */; };
+		CE49679E1D9EA55400E2363E /* RegaloDetailHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE49679C1D9EA55400E2363E /* RegaloDetailHeader.swift */; };
+		CE4967A01D9EA56800E2363E /* RegaloDetailHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE49679F1D9EA56800E2363E /* RegaloDetailHeader.xib */; };
+		CE4967A11D9EA56800E2363E /* RegaloDetailHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE49679F1D9EA56800E2363E /* RegaloDetailHeader.xib */; };
+		CE4967A31D9ED1DF00E2363E /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4967A21D9ED1DF00E2363E /* ProgressBarView.swift */; };
+		CE4967A41D9ED1DF00E2363E /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4967A21D9ED1DF00E2363E /* ProgressBarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -405,6 +413,10 @@
 		CE43ABDB1D9AECE100F123A6 /* EmptyHomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyHomeView.swift; sourceTree = "<group>"; };
 		CE43ABDE1D9AECEE00F123A6 /* EmptyHomeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmptyHomeView.xib; sourceTree = "<group>"; };
 		CE4967961D9E95D500E2363E /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebViewController.swift; path = Home/WebViewController.swift; sourceTree = "<group>"; };
+		CE4967991D9EA1AD00E2363E /* RegaloDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegaloDetailViewController.swift; path = Home/RegaloDetailViewController.swift; sourceTree = "<group>"; };
+		CE49679C1D9EA55400E2363E /* RegaloDetailHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegaloDetailHeader.swift; sourceTree = "<group>"; };
+		CE49679F1D9EA56800E2363E /* RegaloDetailHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegaloDetailHeader.xib; sourceTree = "<group>"; };
+		CE4967A21D9ED1DF00E2363E /* ProgressBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
 		DEE523F7CE6A0E56FCF7A0A5 /* Pods_Iujuu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Iujuu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5CE8DAF3DF9D8499BA58B7A /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -848,6 +860,7 @@
 				CE43ABD71D9ACD9D00F123A6 /* HomeViewController.swift */,
 				CE4275371D9D4ED500293CA0 /* SettingsViewController.swift */,
 				CE4967961D9E95D500E2363E /* WebViewController.swift */,
+				CE4967991D9EA1AD00E2363E /* RegaloDetailViewController.swift */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -861,6 +874,9 @@
 				8F702F9A1D9D57A100FE159E /* RegaloCell.xib */,
 				CE42753A1D9D625B00293CA0 /* LogoutButton.swift */,
 				CE42753D1D9D626E00293CA0 /* LogoutButton.xib */,
+				CE49679C1D9EA55400E2363E /* RegaloDetailHeader.swift */,
+				CE49679F1D9EA56800E2363E /* RegaloDetailHeader.xib */,
+				CE4967A21D9ED1DF00E2363E /* ProgressBarView.swift */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -1052,6 +1068,7 @@
 				46A429811DA5697000A37ACB /* InvitedFlow.storyboard in Resources */,
 				460C0BB11D945417005814AA /* OpenSans-Semibold.ttf in Resources */,
 				BFE90E691D955B8D00E8F758 /* SubtitleView.xib in Resources */,
+				CE4967A11D9EA56800E2363E /* RegaloDetailHeader.xib in Resources */,
 				46C395061D92FB46000965FB /* Onboarding.storyboard in Resources */,
 				464512121D9595CD009C2FE6 /* GenericPasswordCell.xib in Resources */,
 			);
@@ -1085,6 +1102,7 @@
 				460C0BB01D945417005814AA /* OpenSans-Semibold.ttf in Resources */,
 				46A429801DA5697000A37ACB /* InvitedFlow.storyboard in Resources */,
 				BFE90E681D955B8D00E8F758 /* SubtitleView.xib in Resources */,
+				CE4967A01D9EA56800E2363E /* RegaloDetailHeader.xib in Resources */,
 				46C395051D92FB46000965FB /* Onboarding.storyboard in Resources */,
 				46F5AF081DA4134900401255 /* Info.plist in Resources */,
 				4645120B1D9595C2009C2FE6 /* GenericPasswordCell.xib in Resources */,
@@ -1440,12 +1458,14 @@
 				8F8CEA031D947545005FA5B6 /* Motivo.swift in Sources */,
 				8FBEC0F11D9AE3E600C07586 /* RegaloEndpoints.swift in Sources */,
 				465723061D91C59A001F4DC1 /* Regalo.swift in Sources */,
+				CE49679B1D9EA1AD00E2363E /* RegaloDetailViewController.swift in Sources */,
 				8F9694CE1D92F3EB00A9EBB7 /* ProgressView.swift in Sources */,
 				8F8CE9F91D946BC4005FA5B6 /* PreviewRegaloController.swift in Sources */,
 				8F0759A81D774FC10012D681 /* RealmManager.swift in Sources */,
 				8F9694DD1D93162400A9EBB7 /* RSAmountController.swift in Sources */,
 				465910B01D80A5000022374B /* String.swift in Sources */,
 				464512101D9595CD009C2FE6 /* PasswordStrengthView.swift in Sources */,
+				CE4967A41D9ED1DF00E2363E /* ProgressBarView.swift in Sources */,
 				4658D9AD1D92BBDB00A2DF05 /* DataManager.swift in Sources */,
 				8F9694DA1D93084000A9EBB7 /* RSCloseDateController.swift in Sources */,
 				8F9694E21D932A5A00A9EBB7 /* RSPerPersonController.swift in Sources */,
@@ -1463,6 +1483,7 @@
 				464512211D95AD07009C2FE6 /* R.generated.swift in Sources */,
 				8F0759931D7728360012D681 /* Helpers.swift in Sources */,
 				4658D9B01D92BBF700A2DF05 /* RealDataManager.swift in Sources */,
+				CE49679E1D9EA55400E2363E /* RegaloDetailHeader.swift in Sources */,
 				4645120E1D9595CD009C2FE6 /* GenericPasswordRow.swift in Sources */,
 				4645120D1D9595CD009C2FE6 /* DefaultPasswordStrengthView.swift in Sources */,
 				BFE90E6C1D955C1F00E8F758 /* SubtitleView.swift in Sources */,
@@ -1528,12 +1549,14 @@
 				8F07599A1D7742CA0012D681 /* UIImageView.swift in Sources */,
 				8FBEC0F01D9AE3E600C07586 /* RegaloEndpoints.swift in Sources */,
 				4666841A1D947F9C00584FDB /* UIViewController.swift in Sources */,
+				CE49679A1D9EA1AD00E2363E /* RegaloDetailViewController.swift in Sources */,
 				281731691C9C4BBC006237C7 /* XLViewController.swift in Sources */,
 				465723051D91C59A001F4DC1 /* Regalo.swift in Sources */,
 				8F9694CD1D92F3EB00A9EBB7 /* ProgressView.swift in Sources */,
 				8F0759A71D774FC10012D681 /* RealmManager.swift in Sources */,
 				8F9694DC1D93162400A9EBB7 /* RSAmountController.swift in Sources */,
 				465910AF1D80A5000022374B /* String.swift in Sources */,
+				CE4967A31D9ED1DF00E2363E /* ProgressBarView.swift in Sources */,
 				464512091D9595C2009C2FE6 /* PasswordStrengthView.swift in Sources */,
 				4658D9AC1D92BBDB00A2DF05 /* DataManager.swift in Sources */,
 				8F9694D91D93084000A9EBB7 /* RSCloseDateController.swift in Sources */,
@@ -1551,6 +1574,7 @@
 				464512201D95ACF6009C2FE6 /* R.generated.swift in Sources */,
 				8F0759921D7728360012D681 /* Helpers.swift in Sources */,
 				4658D9AF1D92BBF700A2DF05 /* RealDataManager.swift in Sources */,
+				CE49679D1D9EA55400E2363E /* RegaloDetailHeader.swift in Sources */,
 				464512071D9595C2009C2FE6 /* GenericPasswordRow.swift in Sources */,
 				464512061D9595C2009C2FE6 /* DefaultPasswordStrengthView.swift in Sources */,
 				BFE90E6B1D955C1F00E8F758 /* SubtitleView.swift in Sources */,
