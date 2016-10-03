@@ -13,7 +13,7 @@ import SkyFloatingLabelTextField
 struct RegaloSetup {
     var account: Account?
     var motivo: String?
-    var name: String?
+    var descripcion: String?
     var closingDate: Date?
     var amount: Int?
     var peopleCount: Int?

@@ -32,7 +32,6 @@ class SessionController {
     }
 
     func isLoggedIn() -> Bool {
-        invalidateIfNeeded()
         return token != nil
     }
 

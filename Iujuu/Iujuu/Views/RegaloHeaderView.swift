@@ -14,7 +14,6 @@ class RegaloHeaderView: UIView {
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var firstLabel: UILabel!
-    @IBOutlet weak var secondLabel: UILabel!
     @IBOutlet weak var imageHeightConstraint: NSLayoutConstraint!
 
     private static let imageHeight = suggestedHorizontalConstraint(156)
@@ -23,10 +22,8 @@ class RegaloHeaderView: UIView {
     override func awakeFromNib() {
         super.awakeFromNib()
 
-        firstLabel.font = .regular(size: 17)
-        secondLabel.font = .bold(size: 28)
+        firstLabel.font = .bold(size: 24)
         firstLabel.textColor = UIColor.ijTextBlackColor()
-        secondLabel.textColor = UIColor.ijTextBlackColor()
 
         imageHeightConstraint.constant = RegaloHeaderView.imageHeight
     }

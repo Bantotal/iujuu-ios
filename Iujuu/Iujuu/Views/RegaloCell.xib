@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,11 +21,6 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="B0O-4v-BJY"/>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lNi-d7-ppY">
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wEa-kD-ZLv">
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" horizontalCompressionResistancePriority="760" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zDy-4h-M89">
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
@@ -38,11 +34,9 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="oda-vz-OXB" firstAttribute="baseline" secondItem="zDy-4h-M89" secondAttribute="baseline" id="C0S-Ix-M2x"/>
-                                    <constraint firstItem="wEa-kD-ZLv" firstAttribute="top" secondItem="zDy-4h-M89" secondAttribute="bottom" id="HRO-mD-r8W"/>
-                                    <constraint firstItem="oda-vz-OXB" firstAttribute="leading" secondItem="zDy-4h-M89" secondAttribute="trailing" id="Slk-AU-9y6"/>
-                                    <constraint firstItem="wEa-kD-ZLv" firstAttribute="leading" secondItem="zDy-4h-M89" secondAttribute="leading" id="em2-4x-hlG"/>
-                                    <constraint firstItem="oda-vz-OXB" firstAttribute="trailing" secondItem="wEa-kD-ZLv" secondAttribute="trailing" id="zQc-Mv-AjE"/>
+                                    <constraint firstItem="oda-vz-OXB" firstAttribute="firstBaseline" secondItem="zDy-4h-M89" secondAttribute="firstBaseline" id="C0S-Ix-M2x"/>
+                                    <constraint firstItem="oda-vz-OXB" firstAttribute="leading" secondItem="zDy-4h-M89" secondAttribute="trailing" constant="16" id="Slk-AU-9y6"/>
+                                    <constraint firstItem="zDy-4h-M89" firstAttribute="centerY" secondItem="lNi-d7-ppY" secondAttribute="centerY" id="jGZ-58-Lj1"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -52,7 +46,6 @@
                             <constraint firstAttribute="trailing" secondItem="B0O-4v-BJY" secondAttribute="trailing" id="GGm-vH-Eu3"/>
                             <constraint firstItem="B0O-4v-BJY" firstAttribute="top" secondItem="cq3-FF-nOB" secondAttribute="top" id="IHU-Ze-JaG"/>
                             <constraint firstAttribute="trailing" secondItem="oda-vz-OXB" secondAttribute="trailing" constant="20" id="TUr-pO-Kgu"/>
-                            <constraint firstItem="zDy-4h-M89" firstAttribute="top" secondItem="B0O-4v-BJY" secondAttribute="bottom" constant="14" id="aPr-oX-YyZ"/>
                             <constraint firstItem="zDy-4h-M89" firstAttribute="leading" secondItem="cq3-FF-nOB" secondAttribute="leading" constant="18" id="ezV-kq-ikg"/>
                             <constraint firstItem="lNi-d7-ppY" firstAttribute="top" secondItem="B0O-4v-BJY" secondAttribute="bottom" constant="-2" id="hwr-v2-UeY"/>
                             <constraint firstItem="B0O-4v-BJY" firstAttribute="height" secondItem="cq3-FF-nOB" secondAttribute="height" multiplier="0.6" id="iU4-By-Yge"/>
@@ -94,7 +87,6 @@
                 <outlet property="dateLabelBackground" destination="yeR-5P-nhn" id="xD7-zG-uYq"/>
                 <outlet property="motivoImageView" destination="B0O-4v-BJY" id="vIz-YE-ARA"/>
                 <outlet property="motivoLabel" destination="zDy-4h-M89" id="Juj-eQ-7ue"/>
-                <outlet property="nameLabel" destination="wEa-kD-ZLv" id="Hpc-EH-3fA"/>
                 <outlet property="statusLabel" destination="oda-vz-OXB" id="AUj-I4-V8c"/>
             </connections>
             <point key="canvasLocation" x="-337.5" y="57"/>
