@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="LogoutButton" customModule="Iujuu" customModuleProvider="target">
+            <connections>
+                <outlet property="logoutButton" destination="DK7-ON-BdY" id="Kef-ER-dYP"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="449" height="94"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DK7-ON-BdY">
+                    <state key="normal" title="Cerrar sesión"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="DK7-ON-BdY" secondAttribute="bottom" id="8Wn-Lg-a4g"/>
+                <constraint firstAttribute="trailing" secondItem="DK7-ON-BdY" secondAttribute="trailing" id="Jao-2G-4c1"/>
+                <constraint firstItem="DK7-ON-BdY" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="K0t-rk-6NS"/>
+                <constraint firstItem="DK7-ON-BdY" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="SxB-34-biE"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="62.5" y="-234"/>
+        </view>
+    </objects>
+</document>

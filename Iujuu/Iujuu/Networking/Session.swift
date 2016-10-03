@@ -60,4 +60,22 @@ extension Router.Session {
         }
 
     }
+
+    struct Logout: PostRouteType {
+
+        var path: String {
+            return "\(Router.baseUsuariosString)/logout"
+        }
+
+        func urlRequestSetup(_ urlRequest: inout URLRequest) {
+            let url = baseURL.appendingPathComponent(path).absoluteString + "?\(Constants.Network.AuthTokenName)=\(SessionController.sharedInstance.token ?? "")"
+            urlRequest = URLRequest(url: URL(string: url)!)
+            urlRequest.httpMethod = method.rawValue
+
+            do {
+                urlRequest = try encoding.encode(urlRequest, with: parameters)
+            } catch {}
+        }
+
+    }
 }

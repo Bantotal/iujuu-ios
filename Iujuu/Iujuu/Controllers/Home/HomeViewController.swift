@@ -119,7 +119,8 @@ class HomeViewController: XLTableViewController {
     }
 
     func settingsTapped() {
-        //TODO - go to settings
+        let settingsViewController = SettingsViewController()
+        navigationController?.pushViewController(settingsViewController, animated: true)
     }
 
 }

@@ -109,6 +109,17 @@ extension AppDelegate {
             cell.detailTextLabel?.textColor = textColor
         }
 
+        ButtonRow.defaultCellUpdate = { cell, _ in
+            cell.accessoryType = .disclosureIndicator
+            cell.editingAccessoryType = cell.accessoryType
+            cell.textLabel?.font = UIFont.regular(size: 16)
+            cell.textLabel?.textColor = UIColor.ijBlackColor()
+            cell.textLabel?.textAlignment = .left
+        }
+        ButtonRow.defaultCellSetup = { cell, _ in
+            cell.height = { defaultHeight }
+        }
+
         EmailRow.defaultRowInitializer = {
             $0.title = UserMessages.email
         }

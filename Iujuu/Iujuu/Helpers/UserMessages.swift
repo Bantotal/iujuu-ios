@@ -17,6 +17,7 @@ struct UserMessages {
     struct Share { }
     struct Home { }
     struct LogIn { }
+    struct Settings { }
 
     static let cancel = NSLocalizedString("Cancelar", comment: "")
     static let email = NSLocalizedString("Correo Electrónico", comment: "")
@@ -33,10 +34,18 @@ struct UserMessages {
 }
 
 extension UserMessages.LogIn {
-
     static let title = NSLocalizedString("Log in", comment: "")
     static let buttonText = NSLocalizedString("Ingresar", comment: "")
+}
 
+extension UserMessages.Settings {
+    static let title = NSLocalizedString("Ajustes", comment: "")
+    static let headerTitle = NSLocalizedString("Sesión iniciada", comment: "")
+    static let aboutRow = NSLocalizedString("About", comment: "")
+    static let faqRow = NSLocalizedString("FAQ", comment: "")
+    static let legalRow = NSLocalizedString("Legal", comment: "")
+    static let logoutButton = NSLocalizedString("Cerrar sesión", comment: "")
+    static let logoutError = NSLocalizedString("Ocurrió un error al cerrar la sesión.", comment: "")
 }
 
 extension UserMessages.Onboarding {
