@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import XLSwiftKit
 
-class logoutButton: UIView {
+class LogoutButton: OwnerView {
 
     @IBOutlet weak var logoutButton: UIButton!
 
@@ -21,7 +21,12 @@ class logoutButton: UIView {
         }
     }
 
-    override func awakeFromNib() {
+    override func viewForContent() -> UIView? {
+        return R.nib.logoutButton.firstView(owner: self)
+    }
+
+    override func setup() {
+        super.setup()
         logoutButton.setTitleColor(UIColor.ijAccentRedColor(), for: UIControlState.normal)
         logoutButton.titleLabel?.font = UIFont.regular(size: 16)
     }

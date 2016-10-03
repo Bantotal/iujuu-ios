@@ -41,12 +41,12 @@ class SettingsViewController: FormViewController {
                 cell.editingAccessoryType = cell.accessoryType
             }
 
-        form +++ Section(UserMessages.Settings.headerTitle)
+        form +++ Section()
 
             <<< ButtonRow () {
                 $0.title = UserMessages.Settings.aboutRow
             }
-            .onCellSelection { cell, row in
+            .onCellSelection { _, _ in
                 let webViewController = WebViewController()
                 webViewController.pageTitle = "About"
                 self.navigationController?.pushViewController(webViewController, animated: true)
@@ -55,7 +55,7 @@ class SettingsViewController: FormViewController {
             <<< ButtonRow () {
                 $0.title = UserMessages.Settings.faqRow
             }
-            .onCellSelection { cell, row in
+            .onCellSelection { _, _ in
                 let webViewController = WebViewController()
                 webViewController.pageTitle = "FAQ"
                 self.navigationController?.pushViewController(webViewController, animated: true)
@@ -64,7 +64,7 @@ class SettingsViewController: FormViewController {
             <<< ButtonRow () {
                 $0.title = UserMessages.Settings.legalRow
             }
-            .onCellSelection { cell, row in
+            .onCellSelection { _, _ in
                 let webViewController = WebViewController()
                 webViewController.pageTitle = "Legal"
                 self.navigationController?.pushViewController(webViewController, animated: true)
@@ -72,12 +72,11 @@ class SettingsViewController: FormViewController {
     }
 
     private func addLogoutbutton() {
-        let button = R.nib.logoutButton.firstView(owner: nil)
-        button?.onAction = {
+        let button = LogoutButton(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 60))
+        button.onAction = {
             self.logout()
         }
-        button?.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: 60)
-        tableView?.setFooterAtBottom(button!, tableHeight: UIScreen.main.bounds.height - 120)
+        tableView?.setFooterAtBottom(button, tableHeight: UIScreen.main.bounds.height - 120)
     }
 
     private func logout() {
