@@ -19,6 +19,8 @@ struct UserMessages {
     struct LogIn { }
     struct Settings { }
     struct InsertCode { }
+    struct ConfirmationCode { }
+    struct Deeplinks { }
 
     static let cancel = NSLocalizedString("Cancelar", comment: "")
     static let email = NSLocalizedString("Correo Electrónico", comment: "")
@@ -30,6 +32,8 @@ struct UserMessages {
     static let share = NSLocalizedString("Compartir", comment: "")
     static let finish = NSLocalizedString("Finalizar", comment: "")
     static let networkError = NSLocalizedString("Hubo un error de conexión. Por favor inténtelo más tarde.", comment: "")
+    static let unkownError = NSLocalizedString("Oops! Ha ocurrido un error. Por favor inténtelo más tarde.", comment: "")
+    static let noInternet = NSLocalizedString("No hay conexión a internet. Por favor inténtelo más tarde.", comment: "")
     static let errorTitle = NSLocalizedString("Error", comment: "")
 
 }

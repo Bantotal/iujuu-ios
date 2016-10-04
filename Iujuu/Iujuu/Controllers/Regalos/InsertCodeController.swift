@@ -11,6 +11,7 @@ import UIKit
 import SkyFloatingLabelTextField
 import Opera
 import SwiftyJSON
+import Crashlytics
 
 class RSInsertCodeViewController: BaseRegaloSetupController {
 
@@ -61,26 +62,26 @@ class RSInsertCodeViewController: BaseRegaloSetupController {
         codeField.placeholder = UserMessages.InsertCode.textTitle
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        (segue.destination as? ConfirmationCodeViewController)?.regalo = sender as? Regalo
+    }
+
     func nextTapped() {
         if codeField.text?.characters.count == RSInsertCodeViewController.codeLength {
-            DataManager.shared.getRegalo(code: codeField.text!).do(onNext: { regalos in
-                //TODO: perform segue with regalo
-                }, onError: { [weak self] error in
-                    if let error = error as? OperaError {
-                        switch error {
-                        case let .networking(_, _, _, data):
-                            let json = JSON(data)
-                            print(data)
-                            print(json)
-                            //TODO: check for error code
-                            self?.showError(UserMessages.errorTitle, message: UserMessages.InsertCode.noRegaloForCode)
-                            return
-                        default:
-                            print(error.debugDescription)
-                        }
-                    }
-                    self?.showError(UserMessages.errorTitle, message: UserMessages.networkError)
-            }).subscribe().addDisposableTo(disposeBag)
+            LoadingIndicator.show()
+            DataManager.shared.getRegalo(withCode: codeField.text!, onlyFromBackend: true).do(
+                onNext: { [weak self] regalo in
+                    LoadingIndicator.hide()
+                    self?.performSegue(withIdentifier: R.segue.rSInsertCodeViewController.showConfirmRegalo, sender: regalo)
+                },
+                onError: { [weak self] error in
+                    LoadingIndicator.hide()
+                    self?.showError(
+                        error,
+                        alternative: (title: UserMessages.errorTitle, message: UserMessages.Deeplinks.regaloNotFound)
+                    )
+                }
+            ).subscribe().addDisposableTo(disposeBag)
             _ = codeField.resignFirstResponder()
         } else {
             codeField.errorMessage = UserMessages.InsertCode.errorMessage

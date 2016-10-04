@@ -19,8 +19,18 @@ class RegaloCell: UITableViewCell {
     @IBOutlet weak var borderView: UIView!
     @IBOutlet weak var dateLabelBackground: UIView!
     @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var centerMotivoLabelConstraint: NSLayoutConstraint!
 
     static let rowHeight = suggestedHorizontalConstraint(242)
+
+    var centerMotivo = false {
+        didSet {
+            centerMotivoLabelConstraint.priority = centerMotivo ? 850 : 750
+            motivoLabel.textAlignment = centerMotivo ? .center : .left
+            statusLabel.isHidden = centerMotivo
+            setNeedsLayout()
+        }
+    }
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -33,8 +43,10 @@ class RegaloCell: UITableViewCell {
         borderView.layer.shadowOpacity = 0.23
 
         motivoLabel.textColor = .ijSoftBlackColor()
-        motivoLabel.numberOfLines = 2
+        motivoLabel.numberOfLines = 0
         statusLabel.textColor = .ijGreyishBrownColor()
+        statusLabel.numberOfLines = 0
+        centerMotivo = false
 
         motivoLabel.font = .semibold(size: 22)
         statusLabel.font = .semibold(size: 16)

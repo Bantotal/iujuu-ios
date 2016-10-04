@@ -34,7 +34,7 @@ class ShareRegaloViewController: XLViewController {
     var code: String!
 
     var shareUrlString: String {
-        return Constants.Texts.shareBaseUrl + code
+        return Constants.Texts.shareBaseUrl.parametrize(code)
     }
 
     override func viewWillAppear(_ animated: Bool) {

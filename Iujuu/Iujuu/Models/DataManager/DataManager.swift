@@ -21,7 +21,7 @@ protocol DataManagerProtocol {
     func getUser() -> User?
 
     //MARK: Regalos
-    func getRegalo(code: String) -> Observable<Regalo>
+    func getRegalo(withCode code: String, onlyFromBackend: Bool) -> Observable<Regalo>
     func getRegalos() -> Observable<Results<Regalo>>
     func createRegalo(userId: Int, motivo: String, descripcion: String, closeDate: Date,
                       targetAmount: Int, perPersonAmount: Int, regalosSugeridos: [String], account: Account) -> Observable<Regalo>

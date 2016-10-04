@@ -13,6 +13,7 @@ struct Constants {
 
 	struct Network {
         static let baseUrl = URL(string: "http://dec01.cloudapp.net/apiIUJUU/api/")!
+        static let dynamicLinkUrl = "https://cht58.app.goo.gl/"
         static let AuthTokenName = "access_token"
         static let SuccessCode = 200
         static let successRange = 200..<300
@@ -64,7 +65,11 @@ struct Constants {
     }
 
     struct Texts {
-        static let shareBaseUrl = "http://iujuu.app/colecta/"
+        #if STAGING
+        static let shareBaseUrl = "https://cht58.app.goo.gl/?link=https://com.iujuu.app.staging/invite?code%3D{0}&ibi=com.iujuu.app.staging"
+        #else
+        static let shareBaseUrl = "https://cht58.app.goo.gl/?link=https://com.iujuu.app/invite?code%3D{0}&ibi=com.iujuu.app"
+        #endif
     }
 
     struct Oauth {
@@ -80,5 +85,9 @@ struct Constants {
     }
 
     static let locale = Locale(identifier: "es_ar")
+
+    struct Tasks {
+        static let onboardingCompleted = "onboardingCompleted"
+    }
 
 }

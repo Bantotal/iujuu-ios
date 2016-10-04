@@ -114,14 +114,28 @@
 		4666841B1D947F9C00584FDB /* UIViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 466684191D947F9C00584FDB /* UIViewController.swift */; };
 		4666841D1D94802800584FDB /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4666841C1D94802800584FDB /* CreateAccountViewController.swift */; };
 		4666841E1D94802800584FDB /* CreateAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4666841C1D94802800584FDB /* CreateAccountViewController.swift */; };
+		46900BA11DA5A26400AE0DC7 /* RegaloDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46900BA01DA5A26400AE0DC7 /* RegaloDetailController.swift */; };
+		46900BA21DA5A26400AE0DC7 /* RegaloDetailController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46900BA01DA5A26400AE0DC7 /* RegaloDetailController.swift */; };
+		46A429801DA5697000A37ACB /* InvitedFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46A4297E1DA5697000A37ACB /* InvitedFlow.storyboard */; };
+		46A429811DA5697000A37ACB /* InvitedFlow.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46A4297E1DA5697000A37ACB /* InvitedFlow.storyboard */; };
+		46A429841DA5727900A37ACB /* ConfirmationCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A429831DA5727900A37ACB /* ConfirmationCodeViewController.swift */; };
+		46A429851DA5727900A37ACB /* ConfirmationCodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46A429831DA5727900A37ACB /* ConfirmationCodeViewController.swift */; };
 		46C394FF1D92DD8E000965FB /* Zeplin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C394FE1D92DD8E000965FB /* Zeplin.swift */; };
 		46C395001D92DD8E000965FB /* Zeplin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C394FE1D92DD8E000965FB /* Zeplin.swift */; };
 		46C395051D92FB46000965FB /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46C395031D92FB46000965FB /* Onboarding.storyboard */; };
 		46C395061D92FB46000965FB /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46C395031D92FB46000965FB /* Onboarding.storyboard */; };
 		46C395081D92FCD4000965FB /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C395071D92FCD4000965FB /* OnboardingViewController.swift */; };
 		46C395091D92FCD4000965FB /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C395071D92FCD4000965FB /* OnboardingViewController.swift */; };
+		46CBE7AB1DA6A10B0068298B /* IujuuError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CBE7AA1DA6A10B0068298B /* IujuuError.swift */; };
+		46CBE7AC1DA6A10B0068298B /* IujuuError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CBE7AA1DA6A10B0068298B /* IujuuError.swift */; };
 		46F45F261D905BED00A44C59 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F45F251D905BED00A44C59 /* InitialViewController.swift */; };
 		46F45F271D905BED00A44C59 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F45F251D905BED00A44C59 /* InitialViewController.swift */; };
+		46F5AF081DA4134900401255 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46F5AF071DA4134900401255 /* Info.plist */; };
+		46F5AF0D1DA413A400401255 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46F5AF091DA4135100401255 /* GoogleService-Info.plist */; };
+		46F5AF0E1DA413A700401255 /* Info-Staging.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46F5AF0A1DA4135100401255 /* Info-Staging.plist */; };
+		46F5AF121DA4143600401255 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46F5AF0F1DA4142E00401255 /* GoogleService-Info.plist */; };
+		46F5AF151DA41D6C00401255 /* AppDelegate+Iujuu+Deeplinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F5AF141DA41D6C00401255 /* AppDelegate+Iujuu+Deeplinks.swift */; };
+		46F5AF161DA41D6C00401255 /* AppDelegate+Iujuu+Deeplinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F5AF141DA41D6C00401255 /* AppDelegate+Iujuu+Deeplinks.swift */; };
 		4B945363A28A1C6640411283 /* Pods_Iujuu.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DEE523F7CE6A0E56FCF7A0A5 /* Pods_Iujuu.framework */; };
 		6AAAC7ADB56883E748045F14 /* Pods_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 174F585F7E9D6B2B6BF61B19 /* Pods_Tests.framework */; };
 		8DAA6177DA9042D85860C750 /* Pods_UITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4E57F1A373849C3308E5FA57 /* Pods_UITests.framework */; };
@@ -261,13 +275,11 @@
 		2817316A1C9C4BDA006237C7 /* XLTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XLTableViewController.swift; sourceTree = "<group>"; };
 		281BF19F1C7B8EEF00809E3F /* Session.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		2841F2031CCFF55600D609CE /* Iujuu-Staging.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Iujuu-Staging.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		2841F2041CCFF55600D609CE /* Info-Staging.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "Info-Staging.plist"; sourceTree = "<group>"; };
 		2867E8271C74C7D400FCEBBD /* Iujuu.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Iujuu.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2867E82A1C74C7D400FCEBBD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2867E82F1C74C7D400FCEBBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2867E8311C74C7D400FCEBBD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2867E8341C74C7D400FCEBBD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		2867E8361C74C7D400FCEBBD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		286C922F1CBD6AD300208E3B /* Date+Decodable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Date+Decodable.swift"; sourceTree = "<group>"; };
 		28A6B9D51CB5F95900682BCE /* RouteType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RouteType.swift; sourceTree = "<group>"; };
 		28A6B9D71CB6271800682BCE /* Manager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Manager.swift; sourceTree = "<group>"; };
@@ -318,10 +330,19 @@
 		466684151D94775900584FDB /* WelcomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WelcomeViewController.swift; path = Onboarding/WelcomeViewController.swift; sourceTree = "<group>"; };
 		466684191D947F9C00584FDB /* UIViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewController.swift; sourceTree = "<group>"; };
 		4666841C1D94802800584FDB /* CreateAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = CreateAccountViewController.swift; path = Onboarding/CreateAccountViewController.swift; sourceTree = "<group>"; };
+		46900BA01DA5A26400AE0DC7 /* RegaloDetailController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegaloDetailController.swift; sourceTree = "<group>"; };
+		46A4297F1DA5697000A37ACB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = InvitedFlow.storyboard; sourceTree = "<group>"; };
+		46A429831DA5727900A37ACB /* ConfirmationCodeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConfirmationCodeViewController.swift; path = Invited/ConfirmationCodeViewController.swift; sourceTree = "<group>"; };
 		46C394FE1D92DD8E000965FB /* Zeplin.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Zeplin.swift; sourceTree = "<group>"; };
 		46C395041D92FB46000965FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		46C395071D92FCD4000965FB /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnboardingViewController.swift; path = Onboarding/OnboardingViewController.swift; sourceTree = "<group>"; };
+		46CBE7AA1DA6A10B0068298B /* IujuuError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IujuuError.swift; sourceTree = "<group>"; };
 		46F45F251D905BED00A44C59 /* InitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
+		46F5AF071DA4134900401255 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Production/Info.plist; sourceTree = "<group>"; };
+		46F5AF091DA4135100401255 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "Staging/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		46F5AF0A1DA4135100401255 /* Info-Staging.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Info-Staging.plist"; path = "Staging/Info-Staging.plist"; sourceTree = "<group>"; };
+		46F5AF0F1DA4142E00401255 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "Production/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		46F5AF141DA41D6C00401255 /* AppDelegate+Iujuu+Deeplinks.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Iujuu+Deeplinks.swift"; sourceTree = "<group>"; };
 		4E57F1A373849C3308E5FA57 /* Pods_UITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_UITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5447D68A31F540904DA06E64 /* Pods_Iujuu_Staging.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Iujuu_Staging.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5B5428E1F88CA43202CA5CDD /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
@@ -431,6 +452,7 @@
 				2867E8331C74C7D400FCEBBD /* LaunchScreen.storyboard */,
 				46C395031D92FB46000965FB /* Onboarding.storyboard */,
 				8F9694C11D92D9B200A9EBB7 /* CreateRegalo.storyboard */,
+				46A4297E1DA5697000A37ACB /* InvitedFlow.storyboard */,
 			);
 			name = Stoyboards;
 			path = Base.lproj;
@@ -533,6 +555,7 @@
 				460C0B911D9431E4005814AA /* UserMessages.swift */,
 				BFE90E6D1D956ED000E8F758 /* Eureka.swift */,
 				8FD9D0731DA2ECFB006AC192 /* Realm+Iujuu.swift */,
+				46CBE7AA1DA6A10B0068298B /* IujuuError.swift */,
 				286C922E1CBD691A00208E3B /* Decodable */,
 				281731671C9C494C006237C7 /* Controllers */,
 				283020A21C86130600E6EBC2 /* R-Swift */,
@@ -559,6 +582,7 @@
 			isa = PBXGroup;
 			children = (
 				8FD9D06D1DA2E1F4006AC192 /* Galicia API */,
+				46A429821DA5725500A37ACB /* Invited */,
 				46C395021D92FB1A000965FB /* Onboarding */,
 				CE43ABD21D9ACD1D00F123A6 /* Home */,
 				8F9694C51D92E38D00A9EBB7 /* Regalos */,
@@ -583,6 +607,7 @@
 				464512221D95B1A5009C2FE6 /* UITableView.swift */,
 				8F9037E41D9973B4006E1C8E /* UIView.swift */,
 				8F7C01631DA54ABA004D6F54 /* HTTPURLResponse.swift */,
+				46F5AF141DA41D6C00401255 /* AppDelegate+Iujuu+Deeplinks.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -671,6 +696,14 @@
 			name = DataManager;
 			sourceTree = "<group>";
 		};
+		46A429821DA5725500A37ACB /* Invited */ = {
+			isa = PBXGroup;
+			children = (
+				46A429831DA5727900A37ACB /* ConfirmationCodeViewController.swift */,
+			);
+			name = Invited;
+			sourceTree = "<group>";
+		};
 		46C395021D92FB1A000965FB /* Onboarding */ = {
 			isa = PBXGroup;
 			children = (
@@ -682,6 +715,24 @@
 				CE4078491D9C47AB00A3CD4B /* LoginViewController.swift */,
 			);
 			name = Onboarding;
+			sourceTree = "<group>";
+		};
+		46F5AF051DA4132C00401255 /* Staging */ = {
+			isa = PBXGroup;
+			children = (
+				46F5AF091DA4135100401255 /* GoogleService-Info.plist */,
+				46F5AF0A1DA4135100401255 /* Info-Staging.plist */,
+			);
+			name = Staging;
+			sourceTree = "<group>";
+		};
+		46F5AF061DA4133600401255 /* Production */ = {
+			isa = PBXGroup;
+			children = (
+				46F5AF0F1DA4142E00401255 /* GoogleService-Info.plist */,
+				46F5AF071DA4134900401255 /* Info.plist */,
+			);
+			name = Production;
 			sourceTree = "<group>";
 		};
 		5EE537605AFB39F1AD1482CF /* Pods */ = {
@@ -708,10 +759,10 @@
 		8F0759941D772AA50012D681 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				46F5AF061DA4133600401255 /* Production */,
+				46F5AF051DA4132C00401255 /* Staging */,
 				8F79C2481D9C3FE800EE6D27 /* Iujuu-Staging.entitlements */,
 				8F79C2471D9C3FDD00EE6D27 /* Iujuu.entitlements */,
-				2867E8361C74C7D400FCEBBD /* Info.plist */,
-				2841F2041CCFF55600D609CE /* Info-Staging.plist */,
 			);
 			path = "Supporting Files";
 			sourceTree = "<group>";
@@ -765,6 +816,7 @@
 				8F9694E01D932A5A00A9EBB7 /* RSPerPersonController.swift */,
 				8F8CE9F71D946BC4005FA5B6 /* PreviewRegaloController.swift */,
 				8F9037ED1D99AA37006E1C8E /* ShareRegaloController.swift */,
+				46900BA01DA5A26400AE0DC7 /* RegaloDetailController.swift */,
 			);
 			path = Regalos;
 			sourceTree = "<group>";
@@ -977,6 +1029,7 @@
 			files = (
 				8F9694C41D92D9B200A9EBB7 /* CreateRegalo.storyboard in Resources */,
 				2841F1F51CCFF55600D609CE /* LaunchScreen.storyboard in Resources */,
+				46F5AF0D1DA413A400401255 /* GoogleService-Info.plist in Resources */,
 				460C0BB31D945417005814AA /* OpenSans-SemiboldItalic.ttf in Resources */,
 				460C0BA71D945417005814AA /* OpenSans-ExtraBoldItalic.ttf in Resources */,
 				460C0BAD1D945417005814AA /* OpenSans-LightItalic.ttf in Resources */,
@@ -992,9 +1045,11 @@
 				2841F1F91CCFF55600D609CE /* Main.storyboard in Resources */,
 				CE42753F1D9D626E00293CA0 /* LogoutButton.xib in Resources */,
 				46418F251D92FE540012EAC0 /* OnboardingCell.xib in Resources */,
+				46F5AF0E1DA413A700401255 /* Info-Staging.plist in Resources */,
 				460C0BAB1D945417005814AA /* OpenSans-Light.ttf in Resources */,
 				8F702F9C1D9D57A100FE159E /* RegaloCell.xib in Resources */,
 				460C0BAF1D945417005814AA /* OpenSans-Regular.ttf in Resources */,
+				46A429811DA5697000A37ACB /* InvitedFlow.storyboard in Resources */,
 				460C0BB11D945417005814AA /* OpenSans-Semibold.ttf in Resources */,
 				BFE90E691D955B8D00E8F758 /* SubtitleView.xib in Resources */,
 				46C395061D92FB46000965FB /* Onboarding.storyboard in Resources */,
@@ -1019,6 +1074,7 @@
 				464512171D95A9A4009C2FE6 /* ButtonFooter.xib in Resources */,
 				460C0BA41D945417005814AA /* OpenSans-ExtraBold.ttf in Resources */,
 				460C0BA21D945417005814AA /* OpenSans-BoldItalic.ttf in Resources */,
+				46F5AF121DA4143600401255 /* GoogleService-Info.plist in Resources */,
 				CE43ABDF1D9AECEE00F123A6 /* EmptyHomeView.xib in Resources */,
 				2867E8301C74C7D400FCEBBD /* Main.storyboard in Resources */,
 				CE42753E1D9D626E00293CA0 /* LogoutButton.xib in Resources */,
@@ -1027,8 +1083,10 @@
 				8F702F9B1D9D57A100FE159E /* RegaloCell.xib in Resources */,
 				460C0BAE1D945417005814AA /* OpenSans-Regular.ttf in Resources */,
 				460C0BB01D945417005814AA /* OpenSans-Semibold.ttf in Resources */,
+				46A429801DA5697000A37ACB /* InvitedFlow.storyboard in Resources */,
 				BFE90E681D955B8D00E8F758 /* SubtitleView.xib in Resources */,
 				46C395051D92FB46000965FB /* Onboarding.storyboard in Resources */,
+				46F5AF081DA4134900401255 /* Info.plist in Resources */,
 				4645120B1D9595C2009C2FE6 /* GenericPasswordCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1366,9 +1424,11 @@
 				2841F1E41CCFF55600D609CE /* RouteType.swift in Sources */,
 				46C395091D92FCD4000965FB /* OnboardingViewController.swift in Sources */,
 				8F9694C81D92E46300A9EBB7 /* BaseRegaloSetupController.swift in Sources */,
+				46F5AF161DA41D6C00401255 /* AppDelegate+Iujuu+Deeplinks.swift in Sources */,
 				8F0759A21D774B390012D681 /* SessionController.swift in Sources */,
 				8F9037E61D9973E9006E1C8E /* UIView.swift in Sources */,
 				46C395001D92DD8E000965FB /* Zeplin.swift in Sources */,
+				46A429851DA5727900A37ACB /* ConfirmationCodeViewController.swift in Sources */,
 				464512241D95B2FA009C2FE6 /* UITableView.swift in Sources */,
 				BFE90E6F1D956ED000E8F758 /* Eureka.swift in Sources */,
 				2841F1E71CCFF55600D609CE /* User.swift in Sources */,
@@ -1397,6 +1457,7 @@
 				8F9694D71D93048F00A9EBB7 /* UIFont.swift in Sources */,
 				8F9037EC1D9987D6006E1C8E /* Account.swift in Sources */,
 				8FD9D0751DA2ECFB006AC192 /* Realm+Iujuu.swift in Sources */,
+				46CBE7AC1DA6A10B0068298B /* IujuuError.swift in Sources */,
 				8F8CE9FA1D946C72005FA5B6 /* (null) in Sources */,
 				CE43ABDD1D9AECE100F123A6 /* EmptyHomeView.swift in Sources */,
 				464512211D95AD07009C2FE6 /* R.generated.swift in Sources */,
@@ -1409,6 +1470,7 @@
 				CE4967981D9E95D500E2363E /* WebViewController.swift in Sources */,
 				4658D9B31D92BC1C00A2DF05 /* MockedDataManager.swift in Sources */,
 				46418F281D92FE750012EAC0 /* OnboardingCell.swift in Sources */,
+				46900BA21DA5A26400AE0DC7 /* RegaloDetailController.swift in Sources */,
 				8F81DA7D1DA3F2FF0004CA2A /* InsertCodeController.swift in Sources */,
 				8FD9D0701DA2E21C006AC192 /* OAuthViewController.swift in Sources */,
 				4645121B1D95A9A7009C2FE6 /* ButtonStyles.swift in Sources */,
@@ -1450,9 +1512,11 @@
 				4658D9B71D92CB4E00A2DF05 /* TestArguments.swift in Sources */,
 				28D65F951C99D8AF008ED705 /* UIDevice.swift in Sources */,
 				28A6B9D61CB5F95900682BCE /* RouteType.swift in Sources */,
+				46F5AF151DA41D6C00401255 /* AppDelegate+Iujuu+Deeplinks.swift in Sources */,
 				46C395081D92FCD4000965FB /* OnboardingViewController.swift in Sources */,
 				8F9037E51D9973B4006E1C8E /* UIView.swift in Sources */,
 				8F9694C71D92E46300A9EBB7 /* BaseRegaloSetupController.swift in Sources */,
+				46A429841DA5727900A37ACB /* ConfirmationCodeViewController.swift in Sources */,
 				464512231D95B1A5009C2FE6 /* UITableView.swift in Sources */,
 				BFE90E6E1D956ED000E8F758 /* Eureka.swift in Sources */,
 				8F0759A11D774B390012D681 /* SessionController.swift in Sources */,
@@ -1481,6 +1545,7 @@
 				4666841D1D94802800584FDB /* CreateAccountViewController.swift in Sources */,
 				8F9037EB1D9987D6006E1C8E /* Account.swift in Sources */,
 				8FD9D0741DA2ECFB006AC192 /* Realm+Iujuu.swift in Sources */,
+				46CBE7AB1DA6A10B0068298B /* IujuuError.swift in Sources */,
 				8F9694D61D93048F00A9EBB7 /* UIFont.swift in Sources */,
 				CE43ABDC1D9AECE100F123A6 /* EmptyHomeView.swift in Sources */,
 				464512201D95ACF6009C2FE6 /* R.generated.swift in Sources */,
@@ -1493,6 +1558,7 @@
 				CE4967971D9E95D500E2363E /* WebViewController.swift in Sources */,
 				4658D9B21D92BC1C00A2DF05 /* MockedDataManager.swift in Sources */,
 				46418F271D92FE750012EAC0 /* OnboardingCell.swift in Sources */,
+				46900BA11DA5A26400AE0DC7 /* RegaloDetailController.swift in Sources */,
 				8F81DA7C1DA3F2FF0004CA2A /* InsertCodeController.swift in Sources */,
 				8FD9D06F1DA2E21C006AC192 /* OAuthViewController.swift in Sources */,
 				464512181D95A9A4009C2FE6 /* ButtonStyles.swift in Sources */,
@@ -1576,6 +1642,14 @@
 			path = ..;
 			sourceTree = "<group>";
 		};
+		46A4297E1DA5697000A37ACB /* InvitedFlow.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				46A4297F1DA5697000A37ACB /* Base */,
+			);
+			name = InvitedFlow.storyboard;
+			sourceTree = "<group>";
+		};
 		46C395031D92FB46000965FB /* Onboarding.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -1606,10 +1680,10 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = WE3PS2UVWT;
-				INFOPLIST_FILE = "$(SRCROOT)/Iujuu/Supporting Files/Info-Staging.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Iujuu/Supporting Files/Staging/Info-Staging.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-D\" \"DEBUG\"";
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-D\" \"DEBUG\" \"-D\" \"STAGING\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.iujuu.app.staging;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -1629,9 +1703,10 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = WE3PS2UVWT;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
-				INFOPLIST_FILE = "$(SRCROOT)/Iujuu/Supporting Files/Info-Staging.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Iujuu/Supporting Files/Staging/Info-Staging.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-D\" \"STAGING\"";
 				PRODUCT_BUNDLE_IDENTIFIER = com.iujuu.app.staging;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
@@ -1735,7 +1810,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = WE3PS2UVWT;
-				INFOPLIST_FILE = "$(SRCROOT)/Iujuu/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Iujuu/Supporting Files/Production/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				OTHER_SWIFT_FLAGS = "$(inherited) \"-D\" \"COCOAPODS\" \"-D\" \"DEBUG\"";
@@ -1758,7 +1833,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEVELOPMENT_TEAM = WE3PS2UVWT;
 				GCC_TREAT_WARNINGS_AS_ERRORS = YES;
-				INFOPLIST_FILE = "$(SRCROOT)/Iujuu/Supporting Files/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/Iujuu/Supporting Files/Production/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.iujuu.app;
