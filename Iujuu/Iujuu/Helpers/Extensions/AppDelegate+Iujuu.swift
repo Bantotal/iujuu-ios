@@ -37,7 +37,8 @@ extension AppDelegate {
     }
 
     func autologin() {
-        if let _ = SessionController.sharedInstance.token, let _ = DataManager.shared.user {
+        SessionController.loadCurrentUserId()
+        if let _ = SessionController.sharedInstance.token, let _ = DataManager.shared.userId {
             UIApplication.changeRootViewController(R.storyboard.main().instantiateInitialViewController()!)
         } else {
             UIApplication.changeRootViewController(R.storyboard.onboarding.onboardingViewController()!)
@@ -49,12 +50,21 @@ extension AppDelegate {
             DEBUGLog("Request object not a task")
             return
         }
-        if response.statusCode == Constants.Network.Unauthorized && SessionController.sharedInstance.isLoggedIn() {
-            SessionController.sharedInstance.clearSession()
-            GCDHelper.runOnMainThread {
-                UIApplication.changeRootViewController(R.storyboard.onboarding.instantiateInitialViewController()!)
+        if task.originalRequest?.isBackendRequest() == true {
+            if response.statusCode == Constants.Network.Unauthorized &&
+                SessionController.sharedInstance.isLoggedIn() {
+                SessionController.sharedInstance.clearSession()
+                GCDHelper.runOnMainThread {
+                    UIApplication.changeRootViewController(R.storyboard.onboarding.instantiateInitialViewController()!)
+                }
             }
+        } else if task.originalRequest?.isGaliciaRequest()  == true {
+            if response.statusCode == Constants.Network.Unauthorized && SessionController.hasGaliciaToken() {
+                SessionController.removeGaliciaToken()
+            }
+            print(response.allHeaderFields)
         }
+
     }
 
     func stylizeApp() {

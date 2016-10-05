@@ -102,11 +102,12 @@ class LoginViewController: FormViewController {
         case let .networking(_, _, response, _):
             if response?.statusCode == Constants.Network.Unauthorized {
                 showError(UserMessages.Register.loginError)
+                return
             }
         default:
-            showError(UserMessages.networkError)
             break
         }
+        showError(UserMessages.networkError)
     }
 
     private func getUserToLogIn() -> (email: String, password: String) {

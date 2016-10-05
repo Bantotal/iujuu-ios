@@ -11,6 +11,7 @@ PODS:
   - FXPageControl (1.4)
   - KeychainAccess (3.0.0)
   - NVActivityIndicatorView (3.0)
+  - OAuthSwift (1.0.0)
   - Opera (1.0.0):
     - Alamofire (~> 4.0)
     - RxCocoa (~> 3.0.0-beta.1)
@@ -46,6 +47,7 @@ DEPENDENCIES:
   - FXPageControl (~> 1.4)
   - KeychainAccess (~> 3.0)
   - NVActivityIndicatorView (~> 3.0)
+  - OAuthSwift (from `https://github.com/OAuthSwift/OAuthSwift.git`)
   - Opera (from `https://github.com/xmartlabs/Opera.git`, branch `Swift3`)
   - R.swift (~> 3.0)
   - RealmSwift (~> 1.1)
@@ -65,6 +67,8 @@ EXTERNAL SOURCES:
   Eureka:
     :branch: Swift3
     :git: https://github.com/xmartlabs/Eureka.git
+  OAuthSwift:
+    :git: https://github.com/OAuthSwift/OAuthSwift.git
   Opera:
     :branch: Swift3
     :git: https://github.com/xmartlabs/Opera.git
@@ -85,6 +89,9 @@ CHECKOUT OPTIONS:
   Eureka:
     :commit: 1a7ef721f0565cb62a54e273c43d0ae9528b4590
     :git: https://github.com/xmartlabs/Eureka.git
+  OAuthSwift:
+    :commit: 3d0f81ae5c4cf2e1509481b7ff97f9c33a519622
+    :git: https://github.com/OAuthSwift/OAuthSwift.git
   Opera:
     :commit: 521f936dabb1377d608612f285fa74908eb35135
     :git: https://github.com/xmartlabs/Opera.git
@@ -109,6 +116,7 @@ SPEC CHECKSUMS:
   FXPageControl: 5057bf21537579b40ff30e119cd425d16d8ef90a
   KeychainAccess: 412bf2650d9aebfc8135a58103b90ec38caad7f8
   NVActivityIndicatorView: 81953b5e65093ba79edf4fe7268e002039ca5268
+  OAuthSwift: 08e79dc7c071418daeb9a4752a81141b1d9acc63
   Opera: 47179a9b223645d94d0372d2026668cff80f26da
   R.swift: 5a8b4a4ea565b0f20c39d8ce1445f3d3a9064768
   R.swift.Library: 0869d8d546517aa79db078fd8262724391a38db8
@@ -123,6 +131,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: f57b2b44bc166617372d1c70773591fe9f0f5fd4
   XLSwiftKit: 4d48322a602120dc6300d58d7fb07b873e223c1c
 
-PODFILE CHECKSUM: 9fc005a7545c486e7df66c35444abf08516509cc
+PODFILE CHECKSUM: 88db66d52b5e4a0429e24b0abe8a22c72d8a5f51
 
 COCOAPODS: 1.1.0.rc.2

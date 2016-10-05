@@ -22,6 +22,16 @@ class NetworkManager: RxManager {
         observers = [Logger()]
     }
 
+}
+
+class GaliciaNetworkManager: RxManager {
+
+    static let singleton = GaliciaNetworkManager(manager: SessionManager.default)
+
+    override init(manager: Alamofire.SessionManager) {
+        super.init(manager: manager)
+        observers = [Logger()]
+    }
 
     func refreshToken() -> Observable<String?> {
         return Observable.just(nil)
@@ -35,6 +45,7 @@ struct Router {
 
     struct Session {}
     struct Regalo {}
+    struct Galicia {}
 
 }
 

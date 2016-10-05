@@ -12,7 +12,7 @@ import XLSwiftKit
 struct Constants {
 
 	struct Network {
-        static let baseUrl = URL(string: "http://localhost:3000/api")!
+        static let baseUrl = URL(string: "http://dec01.cloudapp.net/apiIUJUU/api/")!
         static let AuthTokenName = "access_token"
         static let SuccessCode = 200
         static let successRange = 200..<300
@@ -20,12 +20,19 @@ struct Constants {
         static let NotFoundCode = 404
         static let ValidationError = 422
         static let ServerError = 500
+
+        struct Galicia {
+            static let baseUrl = URL(string: "http://galicia.desarrollo.fluxit.com.ar/api/v1")!
+            static let AuthHeaderName = "Authorization"
+        }
     }
 
     struct Keychain {
         static let serviceIdentifier = UIApplication.bundleIdentifier
         static let sessionToken = "session_token"
         static let deviceToken = "device_token"
+        static let galiciaToken = "galicia_token"
+        static let userIdentifier = "userIdentifier"
     }
 
     struct Formatters {
@@ -59,4 +66,19 @@ struct Constants {
     struct Texts {
         static let shareBaseUrl = "http://iujuu.app/colecta/"
     }
+
+    struct Oauth {
+        static let Host = "galicia-host"
+        static let ClientId = "8c4179cb-a2ad-478f-9ddc-d6a58d2d038b"
+        static let ClientSecret = "26d74708-4476-41e1-b0a9-448212011ac0"
+        static let Scope = "global"
+        static let authorizationUrl = "http://galicia.desarrollo.fluxit.com.ar/auth/oauth/authorize"
+        static let accessTokenUrl = "http://galicia.desarrollo.fluxit.com.ar/auth/oauth/token"
+        static let loginUrl = "http://galicia.desarrollo.fluxit.com.ar/auth/login"
+        static let callbackUrl = "http://galicia.desarrollo.fluxit.com.ar/pagos/" //"http://localhost:8084/pagos/"
+        static let responseType = "code"
+    }
+
+    static let locale = Locale(identifier: "es_ar")
+
 }

@@ -11,7 +11,7 @@ import Decodable
 import RealmSwift
 import Opera
 
-final class User: Object {
+final class User: Object, IUObject {
 
     dynamic var id: Int = Int.min
     dynamic var nombre: String = ""

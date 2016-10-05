@@ -12,12 +12,14 @@ import RealmSwift
 
 protocol DataManagerProtocol {
 
-    var user: User? { get }
+    var userId: Int? { get set }
 
     func getRegalos() -> Observable<Results<Regalo>>
+    func getAccounts() -> Observable<[Account]>
     func registerUser(user: User, password: String) -> Observable<User>?
     func login(username: String?, email: String?, password: String) -> Observable<Any>?
     func logout() -> Observable<Any>?
+    func getUser() -> User?
 }
 
 class DataManager {

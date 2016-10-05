@@ -133,7 +133,7 @@ class RegaloPreviewViewController: FormViewController {
     }
 
     func nextTapped() {
-        guard let userId = DataManager.shared.user?.id,
+        guard let userId = DataManager.shared.userId,
             let motivo = regalo.motivo,
             let descripcion = regalo.descripcion,
             let date = regalo.closingDate,
@@ -143,9 +143,10 @@ class RegaloPreviewViewController: FormViewController {
                 print("Error with regalo setup")
                 return
         }
+        let regalosSugeridos = form.sectionBy(tag: ideaSectionTag)?.map({ $0.baseValue as? String }).filter { $0 != nil} as? [String]
         LoadingIndicator.show()
         Router.Regalo.Create(userId: userId, motivo: motivo, descripcion: descripcion, closeDate: date,
-                             targetAmount: amount, perPersonAmount: perPersonAmount, account: account)
+                             targetAmount: amount, perPersonAmount: perPersonAmount, regalosSugeridos: regalosSugeridos ?? [], account: account)
             .rx_object("regalo")
             .do(onNext: { [weak self] (regalo: Regalo) in
                 LoadingIndicator.hide()

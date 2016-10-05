@@ -28,6 +28,7 @@ def app_pods
     pod 'SwiftyJSON', '3.0.0'
     # pod 'WebLinking', '~> 1.0'
     pod 'XLSwiftKit', '~> 2.0'
+    pod 'OAuthSwift', :git => 'https://github.com/OAuthSwift/OAuthSwift.git'
 end
 def testing_pods
     # pod 'Quick', :git => 'https://github.com/Quick/Quick.git', :branch => 'swift-3.0'

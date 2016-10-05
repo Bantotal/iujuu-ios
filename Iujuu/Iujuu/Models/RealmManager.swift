@@ -70,7 +70,7 @@ extension Object {
     }
 
     /** Must be called from main thread */
-    static func save(_ objects: [Object], update: Bool = true, removeOld: Bool = false) throws {
+    static func save<T: Object>(_ objects: [T], update: Bool = true, removeOld: Bool = false) throws where T: IUObject {
         guard let first = objects.first else {
             return
         }
@@ -78,7 +78,7 @@ extension Object {
         try realm.write() {
             if removeOld {
                 let old = realm.objects(self)
-                let deleted = old.filter { !objects.contains($0) }
+                let deleted = old.filter { del in !objects.contains(where: { obj in obj.id == (del as? T)!.id }) }
                 realm.delete(deleted)
             }
             objects.forEach() { realm.add($0, update: update) }

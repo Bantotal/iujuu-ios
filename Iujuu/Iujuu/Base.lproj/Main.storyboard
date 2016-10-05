@@ -63,12 +63,12 @@
                         <constraints>
                             <constraint firstItem="H0f-bN-dQj" firstAttribute="centerX" secondItem="lbB-Z6-w7t" secondAttribute="centerX" id="0VV-Dp-HA3"/>
                             <constraint firstItem="H0f-bN-dQj" firstAttribute="top" secondItem="FS0-hy-mtH" secondAttribute="bottom" constant="20" id="0mL-Vz-G0I"/>
-                            <constraint firstItem="vSo-me-hl3" firstAttribute="top" secondItem="H0f-bN-dQj" secondAttribute="bottom" id="1hA-Hq-a4A"/>
                             <constraint firstItem="n4Q-wx-Oc0" firstAttribute="top" secondItem="tbR-v9-2c6" secondAttribute="bottom" constant="-20" id="5CI-Nf-ATR"/>
                             <constraint firstItem="H0f-bN-dQj" firstAttribute="width" secondItem="abf-Tu-mT9" secondAttribute="width" id="7AT-IH-24m"/>
                             <constraint firstItem="n4Q-wx-Oc0" firstAttribute="width" secondItem="abf-Tu-mT9" secondAttribute="width" id="8vp-25-hTT"/>
                             <constraint firstItem="mVm-cS-TwN" firstAttribute="height" secondItem="lbB-Z6-w7t" secondAttribute="height" id="9W7-Bg-liC"/>
                             <constraint firstAttribute="trailing" secondItem="vSo-me-hl3" secondAttribute="trailing" id="HWW-mb-xwV"/>
+                            <constraint firstAttribute="bottom" secondItem="H0f-bN-dQj" secondAttribute="bottom" id="L7S-LG-RZg"/>
                             <constraint firstItem="d2b-Hd-gsX" firstAttribute="top" secondItem="vSo-me-hl3" secondAttribute="bottom" id="RCP-AL-RMu"/>
                             <constraint firstItem="lbB-Z6-w7t" firstAttribute="centerX" secondItem="mVm-cS-TwN" secondAttribute="centerX" id="SNu-fV-KPt"/>
                             <constraint firstItem="mVm-cS-TwN" firstAttribute="top" secondItem="tbR-v9-2c6" secondAttribute="bottom" constant="39" id="U8F-Lr-zaL"/>
@@ -95,6 +95,7 @@
                         <outlet property="balloonsImage" destination="n4Q-wx-Oc0" id="obj-d9-AgM"/>
                         <outlet property="createColectaButton" destination="vSo-me-hl3" id="eio-NJ-hiR"/>
                         <outlet property="settingsIcon" destination="KU9-JL-5D3" id="71A-4S-yCj"/>
+                        <outlet property="tableBottomConstraint" destination="L7S-LG-RZg" id="LEz-Pj-0pl"/>
                         <outlet property="tableView" destination="H0f-bN-dQj" id="reY-zS-XGL"/>
                         <outlet property="titleLabel" destination="FS0-hy-mtH" id="7mc-Kz-wvl"/>
                     </connections>
@@ -103,12 +104,44 @@
             </objects>
             <point key="canvasLocation" x="816.79999999999995" y="453.82308845577217"/>
         </scene>
+        <!--Auth View Controller-->
+        <scene sceneID="D7U-hV-Zpo">
+            <objects>
+                <viewController storyboardIdentifier="OAuthViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kVT-bS-8CA" customClass="OAuthViewController" customModule="Iujuu" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="FyW-ZR-KJv"/>
+                        <viewControllerLayoutGuide type="bottom" id="NIm-0h-HIf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="y2t-7m-FTn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bZg-SM-SnU">
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="bZg-SM-SnU" firstAttribute="leading" secondItem="y2t-7m-FTn" secondAttribute="leading" id="0Vc-bY-dzW"/>
+                            <constraint firstItem="NIm-0h-HIf" firstAttribute="top" secondItem="bZg-SM-SnU" secondAttribute="bottom" id="I1u-vZ-Eg9"/>
+                            <constraint firstAttribute="trailing" secondItem="bZg-SM-SnU" secondAttribute="trailing" id="a8a-5i-20v"/>
+                            <constraint firstItem="bZg-SM-SnU" firstAttribute="top" secondItem="FyW-ZR-KJv" secondAttribute="bottom" id="jTR-pr-cQc"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="bZg-SM-SnU" id="7v5-Vz-N5S"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PLK-H4-mXI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="816.79999999999995" y="1123.088455772114"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="li8-7t-S1h">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zOV-V0-1xs" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="wXp-WV-J8K">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wXp-WV-J8K">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

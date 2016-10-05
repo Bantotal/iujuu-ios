@@ -18,6 +18,7 @@ struct UserMessages {
     struct Home { }
     struct LogIn { }
     struct Settings { }
+    struct InsertCode { }
 
     static let cancel = NSLocalizedString("Cancelar", comment: "")
     static let email = NSLocalizedString("Correo Electrónico", comment: "")
@@ -85,6 +86,7 @@ extension UserMessages.RegalosSetup {
     static let perPersonError = NSLocalizedString("El monto sugerido no puede ser vacío", comment: "")
     static let perPersonText = NSLocalizedString("Monto sugerido por persona", comment: "")
     static let perPersonHelp = NSLocalizedString("Los participantes podrán aportar cualquier cifra", comment: "")
+    static let balance = NSLocalizedString("Balance", comment: "")
 }
 
 extension UserMessages.Home {
@@ -93,4 +95,6 @@ extension UserMessages.Home {
     static let createColecta = NSLocalizedString("Nueva colecta", comment: "")
     static let actionCreateColecta = NSLocalizedString("Crear nueva colecta", comment: "")
     static let actionInsertCode = NSLocalizedString("Ingresar código de colecta", comment: "")
+    static let needAccounts = NSLocalizedString("Necesita una cuenta en Banco Galicia para crear una colecta.", comment: "")
+    static let galiciaError = NSLocalizedString("Hubo un error tratando de obtener sus cuentas del banco Galicia. Por favor inténtelo más tarde.", comment: "")
 }

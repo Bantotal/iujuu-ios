@@ -10,6 +10,7 @@ import UIKit
 import Crashlytics
 import Decodable
 import SwiftDate
+import OAuthSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -25,6 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         setupCrashlytics()
         setupNetworking()
         stylizeApp()
+        SessionController.sharedInstance.setupOAuthSwift()
 
         setupDateFormatter()
         window?.makeKey()

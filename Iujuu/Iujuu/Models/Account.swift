@@ -9,6 +9,7 @@
 import Foundation
 import Decodable
 import RealmSwift
+import Opera
 
 enum AccountType: String {
 
@@ -19,11 +20,11 @@ enum AccountType: String {
 
 final class Account: Object {
 
-    dynamic var id: Int = Int.min
+    dynamic var id: String = ""
     dynamic var type: String = ""
-    dynamic var objectDescription: String = ""
-    dynamic var accountNumber: String = ""
-    dynamic var sucursal: String = ""
+    dynamic var balance: Int = 0
+    dynamic var currency: String = ""
+    dynamic var cbu: String?
 
     override class func primaryKey() -> String? {
         return "id"
@@ -34,30 +35,30 @@ final class Account: Object {
     }
 
     convenience init(
-        id: Int,
+        id: String,
         type: String,
-        description: String,
-        accountNumber: String,
-        sucursal: String) {
+        balance: Int,
+        currency: String,
+        cbu: String?) {
 
         self.init()
         self.id = id
         self.type = type
-        self.objectDescription = description
-        self.accountNumber = accountNumber
-        self.sucursal = sucursal
+        self.balance = balance
+        self.currency = currency
+        self.cbu = cbu
     }
 
 }
 
-extension Account: Decodable {
+extension Account: Decodable, OperaDecodable {
 
     static func decode(_ j: Any) throws -> Account {
-        return try Account(id: j => "accountId",
-            type: j => "tipo",
-            description: j => "description",
-            accountNumber: j => "number",
-            sucursal: j => "sucursal"
+        return try Account(id: j => "id",
+            type: j => "type",
+            balance: j => "balance",
+            currency: j => "currency",
+            cbu: j =>? "cbu"
         )
     }
 
