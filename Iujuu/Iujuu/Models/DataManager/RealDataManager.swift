@@ -100,4 +100,33 @@ class RealDataManager: DataManagerProtocol {
         }
 
     }
+
+    func getRegalo(code: String) -> Observable<Regalo> {
+        return Router.Regalo.GetByCode(code: code).rx_object("regalo")
+    }
+
+    func createRegalo(userId: Int, motivo: String, descripcion: String, closeDate: Date,
+                      targetAmount: Int, perPersonAmount: Int, regalosSugeridos: [String], account: Account) -> Observable<Regalo>{
+        return Router.Regalo.Create(userId: userId, motivo: motivo, descripcion: descripcion, closeDate: closeDate,
+                             targetAmount: targetAmount, perPersonAmount: perPersonAmount, regalosSugeridos: regalosSugeridos, account: account)
+            .rx_object("regalo")
+            .do(onNext: { (regalo: Regalo) in
+                GCDHelper.runOnMainThread {
+                    try? regalo.save()
+                }
+        })
+    }
+
+    func getPagosUrl(account: String, amount: Int, callbackUrl: String, currency: String, motive: String, owner: String) -> Observable<(String, String)?> {
+        return Router.Galicia.GetPagosUrl(account: account, amount: amount, callbackUrl: callbackUrl,
+                                          currency: currency, motive: motive, owner: owner)
+            .rx_anyObject().map({ (anyObject) -> (String, String)? in
+                let json = JSON(anyObject)
+                if let url = json["url"].string, let id = json["id"].string {
+                    return (url, id)
+                } else {
+                    return nil
+                }
+        })
+    }
 }

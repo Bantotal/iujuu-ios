@@ -18,28 +18,42 @@ class MockedDataManager: DataManagerProtocol {
 
     var userId: Int?
 
+    //TODO: all functions for testing
     func getRegalos() -> Observable<Results<Regalo>> {
-        return Observable.empty() // TODO:
+        return Observable.empty()
     }
 
     func getAccounts() -> Observable<[Account]> {
-        return Observable.empty() // TODO:
+        return Observable.empty()
     }
 
     func registerUser(user: User, password: String) -> Observable<User>? {
-        return Observable.empty() // TODO:
+        return Observable.empty()
     }
 
     func login(username: String?, email: String?, password: String) -> Observable<Any>? {
-        return Observable.empty() // TODO:
+        return Observable.empty()
     }
 
     func logout() -> Observable<Any>? {
-        return Observable.empty() // TODO:
+        return Observable.empty()
 
     }
 
     func getUser() -> User? {
         return nil
+    }
+
+    func getRegalo(code: String) -> Observable<Regalo> {
+        return Observable.empty()
+    }
+
+    func createRegalo(userId: Int, motivo: String, descripcion: String, closeDate: Date,
+                      targetAmount: Int, perPersonAmount: Int, regalosSugeridos: [String], account: Account) -> Observable<Regalo> {
+        return Observable.empty()
+    }
+
+    func getPagosUrl(account: String, amount: Int, callbackUrl: String, currency: String, motive: String, owner: String) -> Observable<(String, String)?> {
+        return Observable.empty()
     }
 }

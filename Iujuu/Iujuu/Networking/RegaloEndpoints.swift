@@ -58,7 +58,7 @@ extension Router.Regalo {
         let code: String
 
         var path: String {
-            return "regalos/\(code)"
+            return "regalos/regalos/\(code)"
         }
 
     }

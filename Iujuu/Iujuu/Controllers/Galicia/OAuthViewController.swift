@@ -14,11 +14,16 @@ class OAuthViewController: XLViewController, UIWebViewDelegate {
 
     @IBOutlet weak var webView: UIWebView!
     var request: URLRequest!
+    @IBOutlet weak var cancelButton: UIButton!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         webView.loadRequest(request)
         webView.delegate = self
+        cancelButton.setStyle(.primary)
+        cancelButton.layer.cornerRadius = 0
+        cancelButton.setTitle(UserMessages.cancel, for: .normal)
+        cancelButton.addTarget(self, action: #selector(dismissTapped), for: .touchUpInside)
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -38,10 +43,17 @@ class OAuthViewController: XLViewController, UIWebViewDelegate {
 
     func webViewDidFinishLoad(_ webView: UIWebView) {
         LoadingIndicator.hide()
-        debugPrint(webView.request?.url)
-//        if let url = webView.request?.url, url.absoluteString.hasPrefix(Constants.Oauth.loginUrl) {
-//
-//        }
     }
 
+    func webView(_ webView: UIWebView, didFailLoadWithError error: Error) {
+        LoadingIndicator.hide()
+        let presenter = presentingViewController
+        dismiss(animated: true, completion: {
+            presenter?.showError(UserMessages.Home.galiciaError)
+        })
+    }
+
+    func dismissTapped() {
+        dismiss(animated: true, completion: nil)
+    }
 }
