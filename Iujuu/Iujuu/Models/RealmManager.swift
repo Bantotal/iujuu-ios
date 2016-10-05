@@ -70,12 +70,17 @@ extension Object {
     }
 
     /** Must be called from main thread */
-    static func save(_ objects: [Object], update: Bool = true) throws {
+    static func save(_ objects: [Object], update: Bool = true, removeOld: Bool = false) throws {
         guard let first = objects.first else {
             return
         }
         let realm = first.realmInst()
         try realm.write() {
+            if removeOld {
+                let old = realm.objects(self)
+                let deleted = old.filter { !objects.contains($0) }
+                realm.delete(deleted)
+            }
             objects.forEach() { realm.add($0, update: update) }
         }
     }

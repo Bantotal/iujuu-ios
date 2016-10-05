@@ -32,25 +32,12 @@ class RealDataManager: DataManagerProtocol {
         let regalos = RealmManager.shared.defaultRealm.objects(Regalo.self)
         let dbObservable = Observable.from(RealmManager.shared.defaultRealm.objects(Regalo.self))
         if let userId = user?.id {
-            Router.Regalo.List(userId: userId).rx_collection("regalos").do(onNext: { (collection: [Regalo]) in
-                GCDHelper.runOnMainThread {
-                    try? Regalo.save(collection)
-                }
-                }, onError: { error in
-                    if let error = error as? OperaError {
-                        switch error {
-                        case let .networking(_, _, response, json):
-                            print(response)
-                            print(JSON(json as? AnyObject))
-                        case let .parsing(_, _, response, json):
-                            print(response)
-                            print(JSON(data: (json as? Data)!))
-                        }
-                    }
-            }).subscribe().addDisposableTo(disposeBag)
+            Router.Regalo.List(userId: userId).rx_collection("regalos").do(onNext: { [weak self] (collection: [Regalo]) in
+                self?.updateRegalos(collection)
+                }).subscribe().addDisposableTo(disposeBag)
         }
 
-        return Observable.of(Observable.just(regalos), dbObservable).merge()
+        return Observable.of(Observable.just(regalos), dbObservable).switchLatest()
     }
 
     func registerUser(user: User, password: String) -> Observable<User>? {
@@ -86,5 +73,11 @@ class RealDataManager: DataManagerProtocol {
         return Router.Session.Logout().rx_anyObject().do(onNext: { object in
             SessionController.sharedInstance.logOut()
         })
+    }
+
+    private func updateRegalos(_ regalos: [Regalo]) {
+        GCDHelper.runOnMainThread {
+            try? Regalo.save(regalos, update: true, removeOld: true)
+        }
     }
 }

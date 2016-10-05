@@ -12,6 +12,7 @@ import Alamofire
 import Eureka
 import Crashlytics
 import SwiftDate
+import XLSwiftKit
 
 extension AppDelegate {
 
@@ -36,25 +37,23 @@ extension AppDelegate {
     }
 
     func autologin() {
-        let onboarding = R.storyboard.onboarding.onboardingViewController()
-
-        window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = onboarding
-        window?.makeKeyAndVisible()
+        if let _ = SessionController.sharedInstance.token, let _ = DataManager.shared.user {
+            UIApplication.changeRootViewController(R.storyboard.main().instantiateInitialViewController()!)
+        } else {
+            UIApplication.changeRootViewController(R.storyboard.onboarding.onboardingViewController()!)
+        }
     }
 
     func requestDidComplete(_ notification: Notification) {
-        guard let task = notification.object as? URLSessionTask, let response = task.response as? HTTPURLResponse else {
+        guard let task = notification.userInfo?[Notification.Key.Task] as? URLSessionTask, let response = task.response as? HTTPURLResponse else {
             DEBUGLog("Request object not a task")
             return
         }
-        if Constants.Network.successRange ~= response.statusCode {
-            if let token = response.allHeaderFields["Set-Cookie"] as? String {
-                SessionController.sharedInstance.token = token
-            }
-        } else if response.statusCode == Constants.Network.Unauthorized && SessionController.sharedInstance.isLoggedIn() {
+        if response.statusCode == Constants.Network.Unauthorized && SessionController.sharedInstance.isLoggedIn() {
             SessionController.sharedInstance.clearSession()
-            UIApplication.changeRootViewController(R.storyboard.onboarding.instantiateInitialViewController()!)
+            GCDHelper.runOnMainThread {
+                UIApplication.changeRootViewController(R.storyboard.onboarding.instantiateInitialViewController()!)
+            }
         }
     }
 

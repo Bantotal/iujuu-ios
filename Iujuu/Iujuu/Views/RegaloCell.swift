@@ -15,7 +15,6 @@ class RegaloCell: UITableViewCell {
 
     @IBOutlet weak var motivoImageView: UIImageView!
     @IBOutlet weak var motivoLabel: UILabel!
-    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var statusLabel: UILabel!
     @IBOutlet weak var borderView: UIView!
     @IBOutlet weak var dateLabelBackground: UIView!
@@ -34,12 +33,11 @@ class RegaloCell: UITableViewCell {
         borderView.layer.shadowOpacity = 0.23
 
         motivoLabel.textColor = .ijSoftBlackColor()
-        nameLabel.textColor = .ijSoftBlackColor()
+        motivoLabel.numberOfLines = 2
         statusLabel.textColor = .ijGreyishBrownColor()
 
-        motivoLabel.font = .regular(size: 16)
+        motivoLabel.font = .semibold(size: 22)
         statusLabel.font = .semibold(size: 16)
-        nameLabel.font = .bold(size: 27)
 
         dateLabel.textColor = .ijWhiteColor()
         dateLabel.font = .bold(size: 14)
@@ -48,8 +46,7 @@ class RegaloCell: UITableViewCell {
 
     func setup(regalo: Regalo) {
         let motivo = regalo.getMotivo()
-        motivoLabel.text = NSLocalizedString("{0} de", comment: "").parametrize(motivo?.rawValue ?? regalo.motivo)
-        nameLabel.text = regalo.descripcion
+        motivoLabel.text = regalo.descripcion
         statusLabel.text = regalo.paid ? UserMessages.Home.didParticipate : UserMessages.Home.notParticipated
         motivoImageView.image = motivo?.image()
         if 7.days.fromNow > regalo.fechaDeCierre && Date() < regalo.fechaDeCierre {

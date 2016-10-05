@@ -22,8 +22,8 @@ class RSNameViewController: BaseRegaloSetupController {
         navigationItem.rightBarButtonItem?.action = #selector(nextTapped)
 
         setup(textField: nameField)
-        if let name = regalo.name {
-            nameField.text = name
+        if let descripcion = regalo.descripcion {
+            nameField.text = descripcion
         }
 
         nameField.rx.text.asObservable().do(onNext: { [weak self] text in
@@ -35,7 +35,7 @@ class RSNameViewController: BaseRegaloSetupController {
                 self?.fieldWasTouched = true
                 self?.nameField.errorMessage = nil
             }
-            self?.regalo.name = text
+            self?.regalo.descripcion = text
         }).subscribe().addDisposableTo(disposeBag)
     }
 
@@ -54,13 +54,13 @@ class RSNameViewController: BaseRegaloSetupController {
         super.setup(textField: textField)
         nameField.autocorrectionType = .no
         nameField.autocapitalizationType = .words
-        nameField.placeholder = NSLocalizedString("{0} de", comment: "").parametrize(regalo.motivo ?? "")
+        nameField.text = NSLocalizedString("{0} de", comment: "").parametrize(regalo.motivo ?? "")
     }
 
     func nextTapped() {
         if nameField.text?.isEmpty == false {
             _ = nameField.resignFirstResponder()
-            regalo.name = nameField.text
+            regalo.descripcion = nameField.text
             performSegue(withIdentifier: R.segue.rSNameViewController.pushToCloseDate.identifier, sender: self)
         } else {
             nameField.errorMessage = UserMessages.RegalosSetup.nameError

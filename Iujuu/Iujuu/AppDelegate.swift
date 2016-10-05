@@ -27,6 +27,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         stylizeApp()
 
         setupDateFormatter()
+        window?.makeKey()
+        autologin()
 
         // Register the supported push notifications interaction types.
         // Shows alert view askying for allowed push notification types

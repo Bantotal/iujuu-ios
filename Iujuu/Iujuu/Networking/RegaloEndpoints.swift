@@ -17,10 +17,11 @@ extension Router.Regalo {
 
         let userId: Int
         let motivo: String
-        let name: String
+        let descripcion: String
         let closeDate: Date
         let targetAmount: Int
         let perPersonAmount: Int
+        let account: Account
 
         var path: String {
             return "\(Router.baseUsuariosString)/\(userId)/regalos"
@@ -28,11 +29,12 @@ extension Router.Regalo {
 
         var parameters: [String : Any]? {
             return ["regalo": cleanedDict([
-                "descripcion": name,
+                "descripcion": descripcion,
                 "motivo": motivo,
                 "fechaDeCierre": closeDate.toString(format: DateFormat.iso8601Format(.date)),
                 "montoObjetivo": targetAmount,
-                "montoPorPersona": perPersonAmount
+                "montoPorPersona": perPersonAmount,
+                "cuentaId": account.id
                 ])]
         }
 

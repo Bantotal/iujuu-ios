@@ -26,10 +26,11 @@ final class Regalo: Object, OperaDecodable {
     dynamic var isAdministrator = false
     dynamic var active = true
     dynamic var paid = true
+    dynamic var codigo: String?
 
 
     convenience init(id: Int, saldo: Double, fechaDeCierre: Date, motivo: String, descripcion: String,
-                     regaloSugerido: String?, amount: Int, perPerson: Int, active: Bool?, isAdministrator: Bool?, paid: Bool?) {
+                     regaloSugerido: String?, amount: Int, perPerson: Int, active: Bool?, isAdministrator: Bool?, paid: Bool?, codigo: String?) {
         self.init()
         self.id = id
         self.saldo = saldo
@@ -42,6 +43,7 @@ final class Regalo: Object, OperaDecodable {
         active.map { self.active = $0 }
         isAdministrator.map { self.isAdministrator = $0 }
         paid.map { self.paid = $0 }
+        self.codigo = codigo
 
     }
 
@@ -68,7 +70,8 @@ extension Regalo: Decodable {
                           perPerson: j => "montoPorPersona",
                           active: j =>? "activo",
                           isAdministrator: j =>? "esAdministrador",
-                          paid: j =>? "pago")
+                          paid: j =>? "pago",
+                          codigo: j =>? "codigo")
     }
 
 }

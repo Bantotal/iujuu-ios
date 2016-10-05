@@ -25,7 +25,7 @@ class RegaloPreviewViewController: FormViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        guard let name = regalo.name,
+        guard let descripcion = regalo.descripcion,
             let motivo = regalo.motivo,
             let amount = regalo.amount,
             let perPerson = regalo.suggestedPerPerson,
@@ -38,8 +38,7 @@ class RegaloPreviewViewController: FormViewController {
             var header = HeaderFooterView<RegaloHeaderView>(.nibFile(name: "RegaloHeaderView", bundle: nil))
             header.onSetupView = { view, _ in
                 view.imageView.image = Motivo(rawValue: motivo)?.image()
-                view.firstLabel.text = NSLocalizedString("{0} de", comment: "").parametrize(motivo)
-                view.secondLabel.text = name
+                view.firstLabel.text = descripcion
             }
             header.height = { RegaloHeaderView.viewHeight }
             section.header = header
@@ -134,27 +133,30 @@ class RegaloPreviewViewController: FormViewController {
     }
 
     func nextTapped() {
-        LoadingIndicator.show()
         guard let userId = DataManager.shared.user?.id,
             let motivo = regalo.motivo,
-            let name = regalo.name,
+            let descripcion = regalo.descripcion,
             let date = regalo.closingDate,
             let amount = regalo.amount,
             let perPersonAmount = regalo.suggestedPerPerson,
-            let account = regalo.account else { return }
-        Router.Regalo.Create(userId: userId, motivo: motivo, name: name, closeDate: date,
-                             targetAmount: amount, perPersonAmount: perPersonAmount)
+            let account = regalo.account else {
+                print("Error with regalo setup")
+                return
+        }
+        LoadingIndicator.show()
+        Router.Regalo.Create(userId: userId, motivo: motivo, descripcion: descripcion, closeDate: date,
+                             targetAmount: amount, perPersonAmount: perPersonAmount, account: account)
             .rx_object("regalo")
             .do(onNext: { [weak self] (regalo: Regalo) in
                 LoadingIndicator.hide()
                 GCDHelper.runOnMainThread {
                     try? regalo.save()
                 }
-                self?.performSegue(withIdentifier: R.segue.regaloPreviewViewController.showRegaloSetupCompleted.identifier, sender: self)
+                self?.performSegue(withIdentifier: R.segue.regaloPreviewViewController.showRegaloSetupCompleted.identifier, sender: regalo)
             }, onError: { [weak self] (error) in
                 LoadingIndicator.hide()
 
-                self?.showError("No se pudo dar de alta el regalo. Por favor, inténtelo más tarde")
+                self?.showError(UserMessages.RegaloPreview.confirmationError)
         }).subscribe().addDisposableTo(disposeBag)
     }
 
@@ -173,8 +175,8 @@ class RegaloPreviewViewController: FormViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         super.prepare(for: segue, sender: sender)
-        //TODO: set code
-        (segue.destination as? ShareRegaloViewController)?.code = "12345"
+        guard let regalo = sender as? Regalo, let code = regalo.codigo else { return }
+        (segue.destination as? ShareRegaloViewController)?.code = code
     }
 
 }
@@ -201,11 +203,12 @@ extension UserMessages.RegaloPreview {
 
     static let title = NSLocalizedString("Nueva colecta", comment: "")
     static let addIdea = NSLocalizedString("Agregar idea", comment: "")
-    static let buttonText = NSLocalizedString("Crear colecta", comment: "")
+    static let buttonText = NSLocalizedString("Confirmar", comment: "")
     static let regaloIdeasTitle = NSLocalizedString("Ideas de regalo", comment: "")
     static let regaloIdeasHelp = NSLocalizedString("Los participantes podrán votar entre las opciones", comment: "")
     static let closeDateText = NSLocalizedString("Fecha de cierre", comment: "")
     static let perPersonText = NSLocalizedString("por persona", comment: "")
     static let amountText = NSLocalizedString("Objetivo", comment: "")
+    static let confirmationError = NSLocalizedString("No se pudo dar de alta el regalo. Por favor, inténtelo más tarde", comment: "")
 
 }
