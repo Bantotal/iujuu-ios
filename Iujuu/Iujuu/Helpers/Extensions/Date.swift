@@ -26,5 +26,5 @@ extension Date {
     func hoursFrom(date: Date) -> Int {
         return Calendar.current.dateComponents([.hour], from: date, to: self).hour!
     }
-    
+
 }

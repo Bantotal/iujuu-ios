@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import OAuthSwift
 
 class RSChooseAccountViewController: BaseRegaloSetupController {
 
@@ -17,12 +18,10 @@ class RSChooseAccountViewController: BaseRegaloSetupController {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var descriptionLabel: UILabel!
-    @IBOutlet weak var actionButton: UIButton!
     @IBOutlet weak var stackView: UIStackView!
     @IBOutlet weak var tableViewHeightConstraint: NSLayoutConstraint!
 
-    var accounts: [Account] = [Account(id: 1, type: "Galicia", description: "", accountNumber: "", sucursal: ""),
-                               Account(id: 2, type: "Galicia", description: "", accountNumber: "", sucursal: "")]
+    var accounts: [Account] = []
 
     fileprivate let selectedImage = R.image.radioFull()
     fileprivate let unselectedImage = R.image.radioEmpty()
@@ -37,7 +36,7 @@ class RSChooseAccountViewController: BaseRegaloSetupController {
 
         navigationItem.rightBarButtonItem?.target = self
         navigationItem.rightBarButtonItem?.action = #selector(nextTapped)
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: UserMessages.back, style: .done, target: self, action: "backTapped")
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: UserMessages.back, style: .done, target: self, action: #selector(backTapped))
 
         titleLabel.text = UserMessages.RegalosSetup.accountText
         titleLabel.textColor = textColor
@@ -48,12 +47,6 @@ class RSChooseAccountViewController: BaseRegaloSetupController {
         descriptionLabel.textColor = textColor
         descriptionLabel.font = .regular(size: 16)
         descriptionLabel.numberOfLines = 0
-
-        actionButton.setStyle(.primaryWith(color: UIColor.clear))
-        actionButton.setTitle(UserMessages.RegalosSetup.accountButtonText, for: .normal)
-        actionButton.rx.tap.asObservable().do(onNext: { _ in
-            //TODO: Add account
-        }).subscribe().addDisposableTo(disposeBag)
 
     }
 
@@ -106,9 +99,8 @@ extension RSChooseAccountViewController: UITableViewDelegate, UITableViewDataSou
         let account = accounts[indexPath.row]
         cell?.imageView?.image = account == selectedAccount ? selectedImage : unselectedImage
 
-        //TODO: Correctly set up
-        cell?.textLabel?.text = "Caja de ahorros - Suc 17."
-        cell?.detailTextLabel?.text = "28505909 40090418135201"
+        cell?.textLabel?.text = "\(UserMessages.RegalosSetup.balance): \(account.balance) \(account.currency)"
+        cell?.detailTextLabel?.text = account.cbu
 
         configure(cell: cell!)
         return cell!

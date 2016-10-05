@@ -16,11 +16,13 @@ class MockedDataManager: DataManagerProtocol {
 
     private init() { }
 
-    var user: User? {
-        return nil // TODO:
-    }
+    var userId: Int?
 
     func getRegalos() -> Observable<Results<Regalo>> {
+        return Observable.empty() // TODO:
+    }
+
+    func getAccounts() -> Observable<[Account]> {
         return Observable.empty() // TODO:
     }
 
@@ -35,5 +37,9 @@ class MockedDataManager: DataManagerProtocol {
     func logout() -> Observable<Any>? {
         return Observable.empty() // TODO:
 
+    }
+
+    func getUser() -> User? {
+        return nil
     }
 }

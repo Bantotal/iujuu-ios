@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import OAuthSwift
+import Opera
 
 class HomeViewController: XLTableViewController {
 
@@ -14,6 +16,7 @@ class HomeViewController: XLTableViewController {
     @IBOutlet weak var settingsIcon: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var createColectaButton: UIButton!
+    @IBOutlet weak var tableBottomConstraint: NSLayoutConstraint!
 
     var regalos: [Regalo] = []
     var emptyView: EmptyHomeView?
@@ -45,7 +48,7 @@ class HomeViewController: XLTableViewController {
         emptyView = R.nib.emptyHomeView.firstView(owner: nil)
 
         emptyView?.nuevaColectaAction = {
-            self.sendToCrearColecta()
+            self.getAccounts()
         }
 
         emptyView?.ingresarCodigoAction = {
@@ -65,17 +68,19 @@ class HomeViewController: XLTableViewController {
     func setEmptyViewState(hidden: Bool) {
         emptyView?.isHidden = hidden
         createColectaButton.isHidden = !hidden
+        tableBottomConstraint.constant = hidden ? 68 : 0
     }
 
-    private func sendToCrearColecta() {
-        let viewController = R.storyboard.createRegalo().instantiateInitialViewController()!
+    private func sendToCrearColecta(_ accounts: [Account]) {
+        let viewController = R.storyboard.createRegalo.regaloSetupNavigationController()!
+        (viewController.topViewController as? RSChooseAccountViewController)!.accounts = accounts
         present(viewController, animated: true, completion: nil)
     }
 
     func createColectaTapped() {
         let controller = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
         controller.addAction(UIAlertAction(title: UserMessages.Home.actionCreateColecta, style: .default, handler: { [weak self] _ in
-            self?.sendToCrearColecta()
+            self?.getAccounts()
         }))
         controller.addAction(UIAlertAction(title: UserMessages.Home.actionInsertCode, style: .default, handler: { [weak self] _ in
             self?.sendToIngresarCodigo()
@@ -89,6 +94,51 @@ class HomeViewController: XLTableViewController {
 
     private func sendToIngresarCodigo() {
         //TODO - send to ingresar codigo
+    }
+
+    private func getAccounts() {
+
+        func getAccountsAuthenticated() {
+            DataManager.shared.getAccounts().do(onNext: { [weak self] accounts in
+                LoadingIndicator.hide()
+                if accounts.isEmpty {
+                    self?.showError(UserMessages.Home.needAccounts)
+                } else {
+                    self?.sendToCrearColecta(accounts)
+                }
+            }, onError: { [weak self] error in
+                LoadingIndicator.hide()
+                if let error = error as? OperaError {
+                    switch error {
+                    case let .networking(_, _, response, _):
+                        if response?.statusCode == Constants.Network.Unauthorized {
+                            // restart process without token
+                            self?.getAccounts()
+                            return
+                        }
+                    default:
+                        break
+                    }
+                    print(error.debugDescription)
+                    print(error.description)
+                }
+                self?.showError(UserMessages.Home.galiciaError)
+            }).subscribe().addDisposableTo(disposeBag)
+        }
+
+        LoadingIndicator.show()
+        if !SessionController.hasGaliciaToken() {
+            SessionController.sharedInstance.getOAuthToken(urlHandler: self) { [weak self] error in
+                if let _ = error {
+                    LoadingIndicator.hide()
+                    self?.showError(UserMessages.Home.needAccounts)
+                } else {
+                    getAccountsAuthenticated()
+                }
+            }
+        } else {
+            getAccountsAuthenticated()
+        }
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -152,4 +202,15 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
+
+}
+
+extension HomeViewController: OAuthSwiftURLHandlerType {
+
+    func handle(_ url: URL) {
+        let webViewController = R.storyboard.main.oAuthViewController()!
+        webViewController.request = URLRequest(url: url)
+        present(webViewController, animated: true, completion: nil)
+    }
+
 }

@@ -34,7 +34,7 @@ class SettingsViewController: FormViewController {
         form +++ Section (UserMessages.Settings.headerTitle)
 
             <<< ButtonRow() {
-                $0.title = DataManager.shared.user?.nombre
+                $0.title = DataManager.shared.getUser()?.nombre
             }
             .cellUpdate { cell, _ in
                 cell.accessoryType = .none

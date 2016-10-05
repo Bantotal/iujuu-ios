@@ -13,7 +13,7 @@ import Decodable
 import RealmSwift
 import Opera
 
-final class Regalo: Object, OperaDecodable {
+final class Regalo: Object, OperaDecodable, IUObject {
 
     dynamic var id: Int = Int.min
     dynamic var saldo: Double = 0
