@@ -93,7 +93,8 @@ class HomeViewController: XLTableViewController {
     }
 
     private func sendToIngresarCodigo() {
-        //TODO - send to ingresar codigo
+        let viewController = R.storyboard.createRegalo.joinRegaloNavigationController()!
+        present(viewController, animated: true, completion: nil)
     }
 
     private func getAccounts() {
@@ -122,7 +123,7 @@ class HomeViewController: XLTableViewController {
                     print(error.debugDescription)
                     print(error.description)
                 }
-                self?.showError(UserMessages.Home.galiciaError)
+                self?.showError(UserMessages.Home.galiciaAccountError)
             }).subscribe().addDisposableTo(disposeBag)
         }
 

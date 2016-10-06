@@ -96,5 +96,6 @@ extension UserMessages.Home {
     static let actionCreateColecta = NSLocalizedString("Crear nueva colecta", comment: "")
     static let actionInsertCode = NSLocalizedString("Ingresar código de colecta", comment: "")
     static let needAccounts = NSLocalizedString("Necesita una cuenta en Banco Galicia para crear una colecta.", comment: "")
-    static let galiciaError = NSLocalizedString("Hubo un error tratando de obtener sus cuentas del banco Galicia. Por favor inténtelo más tarde.", comment: "")
+    static let galiciaAccountError = NSLocalizedString("Hubo un error tratando de obtener sus cuentas del banco Galicia. Por favor inténtelo más tarde.", comment: "")
+    static let galiciaError = NSLocalizedString("Hubo un error tratando de conectarse al servicio del banco Galicia. Por favor inténtelo más tarde.", comment: "")
 }

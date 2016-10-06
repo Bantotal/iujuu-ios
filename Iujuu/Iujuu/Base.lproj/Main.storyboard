@@ -119,16 +119,26 @@
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bZg-SM-SnU">
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </webView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zsk-B5-ycU">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="68" id="FtF-CG-eA8"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="bZg-SM-SnU" firstAttribute="leading" secondItem="y2t-7m-FTn" secondAttribute="leading" id="0Vc-bY-dzW"/>
+                            <constraint firstAttribute="trailing" secondItem="Zsk-B5-ycU" secondAttribute="trailing" id="4CS-Ph-Wxf"/>
                             <constraint firstItem="NIm-0h-HIf" firstAttribute="top" secondItem="bZg-SM-SnU" secondAttribute="bottom" id="I1u-vZ-Eg9"/>
+                            <constraint firstItem="NIm-0h-HIf" firstAttribute="top" secondItem="Zsk-B5-ycU" secondAttribute="bottom" id="Txr-c7-YyQ"/>
                             <constraint firstAttribute="trailing" secondItem="bZg-SM-SnU" secondAttribute="trailing" id="a8a-5i-20v"/>
+                            <constraint firstItem="Zsk-B5-ycU" firstAttribute="leading" secondItem="y2t-7m-FTn" secondAttribute="leading" id="iFt-Ne-jVf"/>
                             <constraint firstItem="bZg-SM-SnU" firstAttribute="top" secondItem="FyW-ZR-KJv" secondAttribute="bottom" id="jTR-pr-cQc"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="cancelButton" destination="Zsk-B5-ycU" id="i04-L2-iMb"/>
                         <outlet property="webView" destination="bZg-SM-SnU" id="7v5-Vz-N5S"/>
                     </connections>
                 </viewController>
@@ -141,7 +151,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zOV-V0-1xs" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wXp-WV-J8K">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="wXp-WV-J8K">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
