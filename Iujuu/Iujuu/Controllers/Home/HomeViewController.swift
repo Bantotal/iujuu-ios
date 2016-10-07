@@ -33,6 +33,8 @@ class HomeViewController: XLTableViewController {
                 self?.regalos = Array(regalos)
                 print(self?.regalos.count)
                 self?.tableView.reloadData()
+                }, onError: { error in
+                    print(error)
             }).subscribe().addDisposableTo(disposeBag)
     }
 
@@ -149,11 +151,6 @@ class HomeViewController: XLTableViewController {
         setUp()
     }
 
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        navigationController?.navigationBar.isHidden = false
-    }
-
     private func setUp () {
         setTitle()
         setSettingsButton()
@@ -180,7 +177,7 @@ class HomeViewController: XLTableViewController {
 extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
 
     func numberOfSections(in tableView: UITableView) -> Int {
-            return regalos.count
+        return regalos.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -203,6 +200,9 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        let detailController = RegaloDetailViewController()
+        detailController.regalo = regalos[indexPath.section]
+        navigationController?.pushViewController(detailController, animated: true)
     }
 
 }

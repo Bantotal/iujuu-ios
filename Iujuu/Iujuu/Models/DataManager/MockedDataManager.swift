@@ -56,4 +56,12 @@ class MockedDataManager: DataManagerProtocol {
     func getPagosUrl(account: String, amount: Int, callbackUrl: String, currency: String, motive: String, owner: String) -> Observable<(String, String)?> {
         return Observable.empty()
     }
+
+    func voteRegalo(regaloId: Int, voto: String) -> Observable<[RegaloSugerido]>? {
+        return Observable.empty() // TODO:
+    }
+
+    func pagarRegalo(regaloId: Int, importe: String, imagen: String? = nil, comentario: String? = nil) -> Observable<Any>? {
+        return Observable.empty() // TODO:
+    }
 }

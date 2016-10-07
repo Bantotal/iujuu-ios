@@ -13,6 +13,30 @@ import Decodable
 import RealmSwift
 import Opera
 
+final class RegaloSugerido: Object, OperaDecodable {
+
+    dynamic var regaloDescription = ""
+    dynamic var votos = 0
+
+    convenience init(regaloDescription: String, votos: Int) {
+        self.init()
+        self.regaloDescription = regaloDescription
+        self.votos = votos
+    }
+
+}
+
+extension RegaloSugerido: Decodable {
+
+    static func decode(_ j: Any) throws -> RegaloSugerido {
+        return try RegaloSugerido(
+                          regaloDescription: j => "descripcion",
+                          votos: j => "votos"
+                        )
+    }
+
+}
+
 final class Regalo: Object, OperaDecodable, IUObject {
 
     dynamic var id: Int = Int.min
@@ -20,9 +44,11 @@ final class Regalo: Object, OperaDecodable, IUObject {
     dynamic var fechaDeCierre = Date()
     dynamic var motivo = ""
     dynamic var descripcion = ""
-    dynamic var regaloSugerido: String?
+    var regalosSugeridos = List<RegaloSugerido>()
+    var participantes = List<RLMString>()
     dynamic var amount = 0
     dynamic var perPerson = 0
+    dynamic var usuarioAdministradorId = ""
     dynamic var isAdministrator = false
     dynamic var active = true
     dynamic var paid = true
@@ -30,18 +56,20 @@ final class Regalo: Object, OperaDecodable, IUObject {
 
 
     convenience init(id: Int, saldo: Double, fechaDeCierre: Date, motivo: String, descripcion: String,
-                     regaloSugerido: String?, amount: Int, perPerson: Int, active: Bool?, isAdministrator: Bool?, paid: Bool?, codigo: String?) {
+                     regalosSugeridos: [RegaloSugerido], participantes: [String], amount: Int, perPerson: Int, active: Bool?, usuarioAdministradorId: String, isAdministrator: Bool, paid: Bool?, codigo: String?) {
         self.init()
         self.id = id
         self.saldo = saldo
         self.fechaDeCierre = fechaDeCierre
         self.motivo = motivo
         self.descripcion = descripcion
-        self.regaloSugerido = regaloSugerido
+        self.regalosSugeridos.append(objectsIn: regalosSugeridos)
+        self.participantes.append(objectsIn: participantes.map({ RLMString(string: $0)}) )
         self.amount = amount
         self.perPerson = perPerson
+        self.usuarioAdministradorId = usuarioAdministradorId
+        self.isAdministrator = isAdministrator
         active.map { self.active = $0 }
-        isAdministrator.map { self.isAdministrator = $0 }
         paid.map { self.paid = $0 }
         self.codigo = codigo
 
@@ -65,11 +93,13 @@ extension Regalo: Decodable {
                           fechaDeCierre: j => "fechaDeCierre",
                           motivo: j => "motivo",
                           descripcion: j => "descripcion",
-                          regaloSugerido: j =>? "regaloSugerido",
+                          regalosSugeridos: j => "regalosSugeridos",
+                          participantes: j => "participantes",
                           amount: j => "montoObjetivo",
                           perPerson: j => "montoPorPersona",
                           active: j =>? "activo",
-                          isAdministrator: j =>? "esAdministrador",
+                          usuarioAdministradorId: j => "usuarioAdministradorId",
+                          isAdministrator: j => "esAdministrador",
                           paid: j =>? "pago",
                           codigo: j =>? "codigo")
     }

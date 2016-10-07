@@ -42,3 +42,18 @@ public struct RulePasswordIsValid<T: Equatable>: RuleType {
         return value != nil ? nil : validationError
     }
 }
+
+public struct RuleIntRequired<T: Equatable>: RuleType {
+
+    public init(){}
+
+    public var id: String?
+    public var validationError = ValidationError(msg: "")
+
+    public func isValid(value: T?) -> ValidationError? {
+        if let number = value as? Int {
+            return number == 0 ? validationError : nil
+        }
+        return value != nil ? nil : validationError
+    }
+}

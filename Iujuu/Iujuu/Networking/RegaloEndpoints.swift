@@ -60,4 +60,35 @@ extension Router.Regalo {
 
     }
 
+    struct VotarRegalo: PostRouteType {
+
+        let userId: Int
+        let regaloId: Int
+        let voto: String
+
+        var path: String {
+            return "\(Router.baseUsuariosString)/\(userId)/regalos/\(regaloId)/votar"
+        }
+
+        var parameters: [String : Any]? {
+            return ["voto": voto]
+        }
+    }
+
+    struct PagarRegalo: PostRouteType {
+
+        let userId: Int
+        let regaloId: Int
+        let importe: String
+        let comentario: String?
+        let imagen: String?
+
+        var path: String {
+            return "\(Router.baseUsuariosString)/\(userId)/regalos/\(regaloId)/pagar"
+        }
+
+        var parameters: [String : Any]? {
+            return ["pago": ["importe": importe]]
+        }
+    }
 }
