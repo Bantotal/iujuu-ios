@@ -37,8 +37,8 @@ extension URLRequestSetup {
 
     func urlRequestSetup(_ urlRequest: inout URLRequest) {
         // Add token to URL parameters
-        if let urlString = urlRequest.url?.absoluteString {
-            let url = urlString + "?\(Constants.Network.AuthTokenName)=\(SessionController.sharedInstance.token ?? "")"
+        if let urlString = urlRequest.url?.absoluteString, let token = SessionController.sharedInstance.token {
+            let url = urlString + "?\(Constants.Network.AuthTokenName)=\(token)"
             urlRequest.url = URL(string: url)!
         }
     }

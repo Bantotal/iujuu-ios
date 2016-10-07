@@ -128,6 +128,18 @@ class RealDataManager: DataManagerProtocol {
         })
     }
 
+    func editRegalo(userId: Int, regaloId: Int, descripcion: String, closeDate: Date,
+                    targetAmount: Int, perPersonAmount: Int, regalosSugeridos: [RegaloSugerido]) -> Observable<Regalo>{
+        return Router.Regalo.Edit(userId: userId, regaloId: regaloId, descripcion: descripcion, closeDate: closeDate,
+                                    targetAmount: targetAmount, perPersonAmount: perPersonAmount, regalosSugeridos: regalosSugeridos)
+            .rx_object("regalo")
+            .do(onNext: { (regalo: Regalo) in
+                GCDHelper.runOnMainThread {
+                    try? regalo.save()
+                }
+            })
+    }
+
     func getPagosUrl(account: String, amount: Int, callbackUrl: String, currency: String, motive: String, owner: String) -> Observable<(String, String)?> {
         return Observable.just(("", ""))
 //        return Router.Galicia.GetPagosUrl(account: account, amount: amount, callbackUrl: callbackUrl,

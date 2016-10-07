@@ -70,7 +70,7 @@ class ConfirmationCodeViewController: XLTableViewController {
     }
 
     func backTapped() {
-        navigationController?.popViewController(animated: true)
+        _ = navigationController?.popViewController(animated: true)
     }
 
     @IBAction func addButtonDidTouch(_ sender: UIButton) {

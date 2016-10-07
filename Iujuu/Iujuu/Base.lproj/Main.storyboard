@@ -144,7 +144,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PLK-H4-mXI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="816.79999999999995" y="1123.088455772114"/>
+            <point key="canvasLocation" x="817" y="1142"/>
         </scene>
         <!--Regalo Detail View Controller-->
         <scene sceneID="8ct-GY-OJI">
@@ -182,6 +182,55 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5Q-54-6Jj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-65" y="444"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="kpT-1B-leC">
+            <objects>
+                <navigationController storyboardIdentifier="EditRegaloNavigationController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="J0u-2E-PjY" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="t1z-80-HN0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="XLv-Zb-cJN" kind="relationship" relationship="rootViewController" id="wgy-Fn-1wR"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sqe-o9-pJ5" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2206" y="1142"/>
+        </scene>
+        <!--Edit Regalo View Controller-->
+        <scene sceneID="gHX-ws-KNb">
+            <objects>
+                <viewController id="XLv-Zb-cJN" customClass="EditRegaloViewController" customModule="Iujuu" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="vRK-H5-NKu"/>
+                        <viewControllerLayoutGuide type="bottom" id="BT3-fQ-QtH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="JQw-Bf-0dB">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="LTq-0A-xtJ">
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="LTq-0A-xtJ" firstAttribute="top" secondItem="vRK-H5-NKu" secondAttribute="bottom" constant="-64" id="L2N-Wb-Vgd"/>
+                            <constraint firstItem="BT3-fQ-QtH" firstAttribute="top" secondItem="LTq-0A-xtJ" secondAttribute="bottom" id="XJ6-C5-ddB"/>
+                            <constraint firstItem="LTq-0A-xtJ" firstAttribute="leading" secondItem="JQw-Bf-0dB" secondAttribute="leading" id="gve-5S-bp1"/>
+                            <constraint firstAttribute="trailing" secondItem="LTq-0A-xtJ" secondAttribute="trailing" id="uEq-qn-Shn"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="MNv-Qe-Q6x"/>
+                    <connections>
+                        <outlet property="tableView" destination="LTq-0A-xtJ" id="eIB-9J-S6p"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ctA-dm-qTD" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2959.1999999999998" y="1141.9790104947526"/>
         </scene>
     </scenes>
     <resources>

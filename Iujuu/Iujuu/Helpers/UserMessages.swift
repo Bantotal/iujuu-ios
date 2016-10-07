@@ -24,6 +24,7 @@ struct UserMessages {
     struct RegaloDetail { }
     struct ParticiparRegalo { }
     struct Participantes { }
+    struct EditRegalo { }
 
     static let cancel = NSLocalizedString("Cancelar", comment: "")
     static let email = NSLocalizedString("Correo Electrónico", comment: "")
@@ -34,6 +35,7 @@ struct UserMessages {
     static let next = NSLocalizedString("Siguiente", comment: "")
     static let share = NSLocalizedString("Compartir", comment: "")
     static let finish = NSLocalizedString("Finalizar", comment: "")
+    static let save = NSLocalizedString("Guardar", comment: "")
     static let networkError = NSLocalizedString("Hubo un error de conexión. Por favor inténtelo más tarde.", comment: "")
     static let unkownError = NSLocalizedString("Oops! Ha ocurrido un error. Por favor inténtelo más tarde.", comment: "")
     static let noInternet = NSLocalizedString("No hay conexión a internet. Por favor inténtelo más tarde.", comment: "")
@@ -143,4 +145,16 @@ extension UserMessages.Participantes {
     static let title = NSLocalizedString("Participantes", comment: "")
     static let participantesTitle = NSLocalizedString("Ya participaron en la colecta", comment: "")
 
+}
+
+extension UserMessages.EditRegalo {
+    static let title = NSLocalizedString("Editar colecta", comment: "")
+    static let motivo = NSLocalizedString("Motivo", comment: "")
+    static let description = NSLocalizedString("Descripción", comment: "")
+    static let finishDate = NSLocalizedString("Fecha de cierre", comment: "")
+    static let montoObjetivo = NSLocalizedString("Monto objetivo", comment: "")
+    static let montoSugerido = NSLocalizedString("Monto sugerido", comment: "")
+    static let deleteRegalo = NSLocalizedString("Borrar Colecta", comment: "")
+    static let ValidationError = NSLocalizedString("Por favor, ingrese datos válidos", comment: "")
+    static let confirmationError = NSLocalizedString("No se pudo editar el regalo, por favor ingrese datos válidos.", comment: "")
 }

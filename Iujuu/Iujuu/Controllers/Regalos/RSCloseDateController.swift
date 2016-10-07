@@ -25,7 +25,6 @@ class RSCloseDateViewController: BaseRegaloSetupController {
         }
 
         datePicker.setValue(textColor, forKey: "textColor")
-        datePicker.locale = Constants.locale
 
         datePicker.rx.date.asObservable().do(onNext: { [weak self] date in
             self?.regalo.closingDate = date

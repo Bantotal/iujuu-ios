@@ -145,18 +145,13 @@ class RegaloPreviewViewController: FormViewController {
         }
         let regalosSugeridos = form.sectionBy(tag: ideaSectionTag)?.map({ $0.baseValue as? String }).filter { $0 != nil} as? [String]
         LoadingIndicator.show()
-        Router.Regalo.Create(userId: userId, motivo: motivo, descripcion: descripcion, closeDate: date,
+        DataManager.shared.createRegalo(userId: userId, motivo: motivo, descripcion: descripcion, closeDate: date,
                              targetAmount: amount, perPersonAmount: perPersonAmount, regalosSugeridos: regalosSugeridos ?? [], account: account)
-            .rx_object("regalo")
             .do(onNext: { [weak self] (regalo: Regalo) in
                 LoadingIndicator.hide()
-                GCDHelper.runOnMainThread {
-                    try? regalo.save()
-                }
                 self?.performSegue(withIdentifier: R.segue.regaloPreviewViewController.showRegaloSetupCompleted.identifier, sender: regalo)
             }, onError: { [weak self] (error) in
                 LoadingIndicator.hide()
-
                 self?.showError(UserMessages.RegaloPreview.confirmationError)
         }).subscribe().addDisposableTo(disposeBag)
     }

@@ -86,40 +86,7 @@ class BaseRegaloSetupController: XLViewController {
 
 extension BaseRegaloSetupController {
 
-    func reformatCurrencyNumber(textField: UITextField) {
-        guard let selectedRange = textField.selectedTextRange, let textString = textField.text else { return }
-        var targetCursorPosition = textField.offset(from: textField.beginningOfDocument, to: selectedRange.start)
-        let digitString = removeNonDigits(string: textString, cursorPosition: &targetCursorPosition)
-
-        if let amount = Int(digitString) {
-            textField.text = Constants.Formatters.intCurrencyFormatter.string(from: NSNumber(value: amount))
-        } else {
-            textField.text = Constants.Formatters.intCurrencyFormatter.string(from: 0)
-            return
-        }
-
-        targetCursorPosition += 2 + Int(targetCursorPosition / 3)
-        if let targetPosition = textField.position(from: textField.beginningOfDocument, offset: targetCursorPosition) {
-            textField.selectedTextRange = textField.textRange(from: targetPosition, to: targetPosition)
-        }
-    }
-
-    public func removeNonDigits(string: String, cursorPosition: inout Int) -> String {
-        let originalCursorPosition = cursorPosition
-        var digitsOnlyString = ""
-        for i in 0..<string.characters.count {
-            let characterToAdd = string[string.index(string.startIndex, offsetBy: i)]
-            if "0"..."9" ~= characterToAdd {
-                digitsOnlyString.append(characterToAdd)
-            } else {
-                if i < originalCursorPosition {
-                    cursorPosition -= 1
-                }
-            }
-        }
-
-        return digitsOnlyString
-    }
+    
 
     override var inputAccessoryView: UIView? {
         return (navigationController as? IURegaloNavigationController)?.progressView.copyView()

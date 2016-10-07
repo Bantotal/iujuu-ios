@@ -81,4 +81,8 @@ extension UIColor {
         return UIColor(red: 249.0 / 255.0, green: 102.0 / 255.0, blue: 17.0 / 255.0, alpha: 1.0)
     }
 
+    class var ijDangerRed: UIColor {
+        return UIColor(red: 208.0 / 255.0, green: 26.0 / 255.0, blue: 2.0 / 255.0, alpha: 1.0)
+    }
+
 }

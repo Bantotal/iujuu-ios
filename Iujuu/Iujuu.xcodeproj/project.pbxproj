@@ -130,9 +130,7 @@
 		46CBE7AC1DA6A10B0068298B /* IujuuError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CBE7AA1DA6A10B0068298B /* IujuuError.swift */; };
 		46F45F261D905BED00A44C59 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F45F251D905BED00A44C59 /* InitialViewController.swift */; };
 		46F45F271D905BED00A44C59 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F45F251D905BED00A44C59 /* InitialViewController.swift */; };
-		46F5AF081DA4134900401255 /* Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46F5AF071DA4134900401255 /* Info.plist */; };
 		46F5AF0D1DA413A400401255 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46F5AF091DA4135100401255 /* GoogleService-Info.plist */; };
-		46F5AF0E1DA413A700401255 /* Info-Staging.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46F5AF0A1DA4135100401255 /* Info-Staging.plist */; };
 		46F5AF121DA4143600401255 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46F5AF0F1DA4142E00401255 /* GoogleService-Info.plist */; };
 		46F5AF151DA41D6C00401255 /* AppDelegate+Iujuu+Deeplinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F5AF141DA41D6C00401255 /* AppDelegate+Iujuu+Deeplinks.swift */; };
 		46F5AF161DA41D6C00401255 /* AppDelegate+Iujuu+Deeplinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F5AF141DA41D6C00401255 /* AppDelegate+Iujuu+Deeplinks.swift */; };
@@ -151,12 +149,18 @@
 		8F0759A81D774FC10012D681 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0759A61D774FC10012D681 /* RealmManager.swift */; };
 		8F16F8D21D94499E003BDA0B /* IURegaloNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F16F8D11D94499E003BDA0B /* IURegaloNavigationController.swift */; };
 		8F16F8D31D9449C1003BDA0B /* IURegaloNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F16F8D11D94499E003BDA0B /* IURegaloNavigationController.swift */; };
+		8F5FB2A71DA691BC003ED73E /* EditRegaloViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5FB2A61DA691BC003ED73E /* EditRegaloViewController.swift */; };
+		8F5FB2A81DA691BC003ED73E /* EditRegaloViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5FB2A61DA691BC003ED73E /* EditRegaloViewController.swift */; };
+		8F5FB2AB1DA6B674003ED73E /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5FB2AA1DA6B674003ED73E /* UITextField.swift */; };
+		8F5FB2AC1DA6B674003ED73E /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5FB2AA1DA6B674003ED73E /* UITextField.swift */; };
+		8F5FB2AE1DA6B76B003ED73E /* CurrencyIntRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5FB2AD1DA6B76B003ED73E /* CurrencyIntRow.swift */; };
+		8F5FB2AF1DA6B76B003ED73E /* CurrencyIntRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5FB2AD1DA6B76B003ED73E /* CurrencyIntRow.swift */; };
 		8F702F981D9D579400FE159E /* RegaloCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F702F971D9D579400FE159E /* RegaloCell.swift */; };
 		8F702F991D9D579400FE159E /* RegaloCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F702F971D9D579400FE159E /* RegaloCell.swift */; };
 		8F702F9B1D9D57A100FE159E /* RegaloCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F702F9A1D9D57A100FE159E /* RegaloCell.xib */; };
 		8F702F9C1D9D57A100FE159E /* RegaloCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F702F9A1D9D57A100FE159E /* RegaloCell.xib */; };
-		8F7C01641DA54ABA004D6F54 /* HTTPURLResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7C01631DA54ABA004D6F54 /* HTTPURLResponse.swift */; };
-		8F7C01651DA54ABA004D6F54 /* HTTPURLResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7C01631DA54ABA004D6F54 /* HTTPURLResponse.swift */; };
+		8F7C01641DA54ABA004D6F54 /* URLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7C01631DA54ABA004D6F54 /* URLRequest.swift */; };
+		8F7C01651DA54ABA004D6F54 /* URLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7C01631DA54ABA004D6F54 /* URLRequest.swift */; };
 		8F81DA7C1DA3F2FF0004CA2A /* InsertCodeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F81DA7B1DA3F2FF0004CA2A /* InsertCodeController.swift */; };
 		8F81DA7D1DA3F2FF0004CA2A /* InsertCodeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F81DA7B1DA3F2FF0004CA2A /* InsertCodeController.swift */; };
 		8F81DA801DA3FDB40004CA2A /* Galicia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F81DA7F1DA3FDB40004CA2A /* Galicia.swift */; };
@@ -387,11 +391,14 @@
 		8F0759A31D774C5C0012D681 /* AppDelegate+Iujuu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Iujuu.swift"; sourceTree = "<group>"; };
 		8F0759A61D774FC10012D681 /* RealmManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		8F16F8D11D94499E003BDA0B /* IURegaloNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IURegaloNavigationController.swift; sourceTree = "<group>"; };
+		8F5FB2A61DA691BC003ED73E /* EditRegaloViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditRegaloViewController.swift; sourceTree = "<group>"; };
+		8F5FB2AA1DA6B674003ED73E /* UITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
+		8F5FB2AD1DA6B76B003ED73E /* CurrencyIntRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyIntRow.swift; sourceTree = "<group>"; };
 		8F702F971D9D579400FE159E /* RegaloCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegaloCell.swift; sourceTree = "<group>"; };
 		8F702F9A1D9D57A100FE159E /* RegaloCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegaloCell.xib; sourceTree = "<group>"; };
 		8F79C2471D9C3FDD00EE6D27 /* Iujuu.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = Iujuu.entitlements; path = ../Iujuu.entitlements; sourceTree = "<group>"; };
 		8F79C2481D9C3FE800EE6D27 /* Iujuu-Staging.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = "Iujuu-Staging.entitlements"; path = "../../Iujuu-Staging.entitlements"; sourceTree = "<group>"; };
-		8F7C01631DA54ABA004D6F54 /* HTTPURLResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPURLResponse.swift; sourceTree = "<group>"; };
+		8F7C01631DA54ABA004D6F54 /* URLRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRequest.swift; sourceTree = "<group>"; };
 		8F81DA7B1DA3F2FF0004CA2A /* InsertCodeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InsertCodeController.swift; path = Regalos/InsertCodeController.swift; sourceTree = "<group>"; };
 		8F81DA7F1DA3FDB40004CA2A /* Galicia.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Galicia.swift; sourceTree = "<group>"; };
 		8F8CE9F71D946BC4005FA5B6 /* PreviewRegaloController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewRegaloController.swift; sourceTree = "<group>"; };
@@ -648,9 +655,10 @@
 				466684191D947F9C00584FDB /* UIViewController.swift */,
 				464512221D95B1A5009C2FE6 /* UITableView.swift */,
 				8F9037E41D9973B4006E1C8E /* UIView.swift */,
-				8F7C01631DA54ABA004D6F54 /* HTTPURLResponse.swift */,
 				46F5AF141DA41D6C00401255 /* AppDelegate+Iujuu+Deeplinks.swift */,
 				CE7A1D601DA2AD1300EF9B63 /* Realm.swift */,
+				8F7C01631DA54ABA004D6F54 /* URLRequest.swift */,
+				8F5FB2AA1DA6B674003ED73E /* UITextField.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -847,6 +855,7 @@
 				CE3F25B31DA3FD0B0035A150 /* ImagePickerController.swift */,
 				CE3F25B81DA416210035A150 /* FloatingLabelRow.swift */,
 				CE3F25BB1DA419280035A150 /* FloatingLabelCell.xib */,
+				8F5FB2AD1DA6B76B003ED73E /* CurrencyIntRow.swift */,
 			);
 			name = "Eureka rows";
 			sourceTree = "<group>";
@@ -865,6 +874,7 @@
 				8F8CE9F71D946BC4005FA5B6 /* PreviewRegaloController.swift */,
 				8F9037ED1D99AA37006E1C8E /* ShareRegaloController.swift */,
 				46900BA01DA5A26400AE0DC7 /* RegaloDetailController.swift */,
+				8F5FB2A61DA691BC003ED73E /* EditRegaloViewController.swift */,
 			);
 			path = Regalos;
 			sourceTree = "<group>";
@@ -1103,7 +1113,6 @@
 				2841F1F91CCFF55600D609CE /* Main.storyboard in Resources */,
 				CE42753F1D9D626E00293CA0 /* LogoutButton.xib in Resources */,
 				46418F251D92FE540012EAC0 /* OnboardingCell.xib in Resources */,
-				46F5AF0E1DA413A700401255 /* Info-Staging.plist in Resources */,
 				460C0BAB1D945417005814AA /* OpenSans-Light.ttf in Resources */,
 				8F702F9C1D9D57A100FE159E /* RegaloCell.xib in Resources */,
 				460C0BAF1D945417005814AA /* OpenSans-Regular.ttf in Resources */,
@@ -1148,7 +1157,6 @@
 				BFE90E681D955B8D00E8F758 /* SubtitleView.xib in Resources */,
 				CE4967A01D9EA56800E2363E /* RegaloDetailHeader.xib in Resources */,
 				46C395051D92FB46000965FB /* Onboarding.storyboard in Resources */,
-				46F5AF081DA4134900401255 /* Info.plist in Resources */,
 				4645120B1D9595C2009C2FE6 /* GenericPasswordCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1474,7 +1482,7 @@
 				8F9694CB1D92EC5300A9EBB7 /* RSMotivoViewController.swift in Sources */,
 				2841F1DD1CCFF55600D609CE /* Date.swift in Sources */,
 				8F16F8D31D9449C1003BDA0B /* IURegaloNavigationController.swift in Sources */,
-				8F7C01651DA54ABA004D6F54 /* HTTPURLResponse.swift in Sources */,
+				8F7C01651DA54ABA004D6F54 /* URLRequest.swift in Sources */,
 				2841F1E01CCFF55600D609CE /* XLTableViewController.swift in Sources */,
 				464512111D9595CD009C2FE6 /* PasswordValidator.swift in Sources */,
 				8F8CEA071D947840005FA5B6 /* IJLabelRow.swift in Sources */,
@@ -1485,6 +1493,7 @@
 				CE3F25B21DA3FB420035A150 /* ImageRow.swift in Sources */,
 				8F9037E91D997662006E1C8E /* RSChooseAccountController.swift in Sources */,
 				2841F1E31CCFF55600D609CE /* UIDevice.swift in Sources */,
+				8F5FB2AF1DA6B76B003ED73E /* CurrencyIntRow.swift in Sources */,
 				2841F1E41CCFF55600D609CE /* RouteType.swift in Sources */,
 				46C395091D92FCD4000965FB /* OnboardingViewController.swift in Sources */,
 				CE3F25BA1DA416210035A150 /* FloatingLabelRow.swift in Sources */,
@@ -1514,6 +1523,7 @@
 				465910B01D80A5000022374B /* String.swift in Sources */,
 				464512101D9595CD009C2FE6 /* PasswordStrengthView.swift in Sources */,
 				CE4967A41D9ED1DF00E2363E /* ProgressBarView.swift in Sources */,
+				8F5FB2A81DA691BC003ED73E /* EditRegaloViewController.swift in Sources */,
 				4658D9AD1D92BBDB00A2DF05 /* DataManager.swift in Sources */,
 				8F9694DA1D93084000A9EBB7 /* RSCloseDateController.swift in Sources */,
 				8F9694E21D932A5A00A9EBB7 /* RSPerPersonController.swift in Sources */,
@@ -1529,6 +1539,7 @@
 				46CBE7AC1DA6A10B0068298B /* IujuuError.swift in Sources */,
 				8F8CE9FA1D946C72005FA5B6 /* (null) in Sources */,
 				CE60EF3C1DA7D5F6007CEA3B /* ParticipantesViewController.swift in Sources */,
+				8F5FB2AC1DA6B674003ED73E /* UITextField.swift in Sources */,
 				CE43ABDD1D9AECE100F123A6 /* EmptyHomeView.swift in Sources */,
 				464512211D95AD07009C2FE6 /* R.generated.swift in Sources */,
 				8F0759931D7728360012D681 /* Helpers.swift in Sources */,
@@ -1573,7 +1584,7 @@
 				28FEB24C1C9875F60027D470 /* UIApplication.swift in Sources */,
 				8F9694CA1D92EC5300A9EBB7 /* RSMotivoViewController.swift in Sources */,
 				B23A40F01C972C2B004AB8DC /* Date.swift in Sources */,
-				8F7C01641DA54ABA004D6F54 /* HTTPURLResponse.swift in Sources */,
+				8F7C01641DA54ABA004D6F54 /* URLRequest.swift in Sources */,
 				8F16F8D21D94499E003BDA0B /* IURegaloNavigationController.swift in Sources */,
 				8F8CEA061D947840005FA5B6 /* IJLabelRow.swift in Sources */,
 				2817316B1C9C4BDA006237C7 /* XLTableViewController.swift in Sources */,
@@ -1584,6 +1595,7 @@
 				CE3F25B11DA3FB420035A150 /* ImageRow.swift in Sources */,
 				8F9037E81D997662006E1C8E /* RSChooseAccountController.swift in Sources */,
 				8F8CE9F81D946BC4005FA5B6 /* PreviewRegaloController.swift in Sources */,
+				8F5FB2AE1DA6B76B003ED73E /* CurrencyIntRow.swift in Sources */,
 				4658D9B71D92CB4E00A2DF05 /* TestArguments.swift in Sources */,
 				28D65F951C99D8AF008ED705 /* UIDevice.swift in Sources */,
 				CE3F25B91DA416210035A150 /* FloatingLabelRow.swift in Sources */,
@@ -1613,6 +1625,7 @@
 				8F9694DC1D93162400A9EBB7 /* RSAmountController.swift in Sources */,
 				465910AF1D80A5000022374B /* String.swift in Sources */,
 				CE4967A31D9ED1DF00E2363E /* ProgressBarView.swift in Sources */,
+				8F5FB2A71DA691BC003ED73E /* EditRegaloViewController.swift in Sources */,
 				464512091D9595C2009C2FE6 /* PasswordStrengthView.swift in Sources */,
 				4658D9AC1D92BBDB00A2DF05 /* DataManager.swift in Sources */,
 				8F9694D91D93084000A9EBB7 /* RSCloseDateController.swift in Sources */,
@@ -1628,6 +1641,7 @@
 				46CBE7AB1DA6A10B0068298B /* IujuuError.swift in Sources */,
 				8F9694D61D93048F00A9EBB7 /* UIFont.swift in Sources */,
 				CE60EF3B1DA7D5F6007CEA3B /* ParticipantesViewController.swift in Sources */,
+				8F5FB2AB1DA6B674003ED73E /* UITextField.swift in Sources */,
 				CE43ABDC1D9AECE100F123A6 /* EmptyHomeView.swift in Sources */,
 				464512201D95ACF6009C2FE6 /* R.generated.swift in Sources */,
 				8F0759921D7728360012D681 /* Helpers.swift in Sources */,

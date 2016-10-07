@@ -43,7 +43,7 @@ class RSPerPersonViewController: BaseRegaloSetupController {
             }
 
             // format currency number
-            me.reformatCurrencyNumber(textField: me.perPersonField)
+            me.perPersonField.reformatCurrencyNumber()
             }).subscribe().addDisposableTo(disposeBag)
 
         helpLabel.text = UserMessages.RegalosSetup.perPersonHelp

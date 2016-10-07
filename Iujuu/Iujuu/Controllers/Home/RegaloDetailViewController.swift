@@ -76,7 +76,9 @@ class RegaloDetailViewController: FormViewController {
     }
 
     func editPressed() {
-        //TODO - send to edit regalo
+        let vc = R.storyboard.main.editRegaloNavigationController()!
+        (vc.topViewController as? EditRegaloViewController)?.regalo = regalo
+        present(vc, animated: true, completion: nil)
     }
 
     //MARK: - Regalo helper functions
@@ -92,8 +94,8 @@ class RegaloDetailViewController: FormViewController {
     //MARK: - Styles setup
 
     private func setUpStyles() {
-        view.backgroundColor = UIColor.ijWhiteColor()
-        tableView?.backgroundColor = UIColor.ijWhiteColor()
+        view.backgroundColor = .ijWhiteColor()
+        tableView?.backgroundColor = .ijWhiteColor()
         tableView?.backgroundView = nil
     }
 
@@ -183,7 +185,7 @@ class RegaloDetailViewController: FormViewController {
             }
         }
         .cellSetup { cell, _ in
-            cell.textLabel?.font = UIFont.regular(size: 17)
+            cell.textLabel?.font = .regular(size: 17)
             cell.height = { 60 }
         }
         .onCellSelection { cell, row in
@@ -266,10 +268,6 @@ class RegaloDetailViewController: FormViewController {
     private func showOperaError(error: OperaError) {
         switch error {
         case let .networking(error, request, response, json):
-            print(error)
-            print(request)
-            print(response)
-            print(json)
             showError(UserMessages.RegaloDetail.voteError)
         default:
             showError(UserMessages.networkError)
