@@ -216,6 +216,20 @@
 		BFE90E6F1D956ED000E8F758 /* Eureka.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE90E6D1D956ED000E8F758 /* Eureka.swift */; };
 		BFE90E711D9575DA00E8F758 /* ListItemRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE90E701D9575DA00E8F758 /* ListItemRow.swift */; };
 		BFE90E721D9575DA00E8F758 /* ListItemRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFE90E701D9575DA00E8F758 /* ListItemRow.swift */; };
+		CE3BD1C11DA5557D00B3261B /* IdeaRegalosHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3BD1C01DA5557D00B3261B /* IdeaRegalosHeader.swift */; };
+		CE3BD1C21DA5557D00B3261B /* IdeaRegalosHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3BD1C01DA5557D00B3261B /* IdeaRegalosHeader.swift */; };
+		CE3BD1C41DA5558800B3261B /* IdeaRegalosHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE3BD1C31DA5558800B3261B /* IdeaRegalosHeader.xib */; };
+		CE3BD1C51DA5558800B3261B /* IdeaRegalosHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE3BD1C31DA5558800B3261B /* IdeaRegalosHeader.xib */; };
+		CE3F25AE1DA3E7810035A150 /* ParticiparViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3F25AD1DA3E7810035A150 /* ParticiparViewController.swift */; };
+		CE3F25AF1DA3E7810035A150 /* ParticiparViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3F25AD1DA3E7810035A150 /* ParticiparViewController.swift */; };
+		CE3F25B11DA3FB420035A150 /* ImageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3F25B01DA3FB420035A150 /* ImageRow.swift */; };
+		CE3F25B21DA3FB420035A150 /* ImageRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3F25B01DA3FB420035A150 /* ImageRow.swift */; };
+		CE3F25B41DA3FD0B0035A150 /* ImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3F25B31DA3FD0B0035A150 /* ImagePickerController.swift */; };
+		CE3F25B51DA3FD0B0035A150 /* ImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3F25B31DA3FD0B0035A150 /* ImagePickerController.swift */; };
+		CE3F25B91DA416210035A150 /* FloatingLabelRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3F25B81DA416210035A150 /* FloatingLabelRow.swift */; };
+		CE3F25BA1DA416210035A150 /* FloatingLabelRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3F25B81DA416210035A150 /* FloatingLabelRow.swift */; };
+		CE3F25BC1DA419280035A150 /* FloatingLabelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE3F25BB1DA419280035A150 /* FloatingLabelCell.xib */; };
+		CE3F25BD1DA419280035A150 /* FloatingLabelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE3F25BB1DA419280035A150 /* FloatingLabelCell.xib */; };
 		CE40784A1D9C47AB00A3CD4B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4078491D9C47AB00A3CD4B /* LoginViewController.swift */; };
 		CE40784B1D9C47AB00A3CD4B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4078491D9C47AB00A3CD4B /* LoginViewController.swift */; };
 		CE4275381D9D4ED500293CA0 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4275371D9D4ED500293CA0 /* SettingsViewController.swift */; };
@@ -240,6 +254,12 @@
 		CE4967A11D9EA56800E2363E /* RegaloDetailHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE49679F1D9EA56800E2363E /* RegaloDetailHeader.xib */; };
 		CE4967A31D9ED1DF00E2363E /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4967A21D9ED1DF00E2363E /* ProgressBarView.swift */; };
 		CE4967A41D9ED1DF00E2363E /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4967A21D9ED1DF00E2363E /* ProgressBarView.swift */; };
+		CE60EF3B1DA7D5F6007CEA3B /* ParticipantesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE60EF3A1DA7D5F6007CEA3B /* ParticipantesViewController.swift */; };
+		CE60EF3C1DA7D5F6007CEA3B /* ParticipantesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE60EF3A1DA7D5F6007CEA3B /* ParticipantesViewController.swift */; };
+		CE7A1D5D1DA28D1C00EF9B63 /* CheckRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7A1D5C1DA28D1C00EF9B63 /* CheckRow.swift */; };
+		CE7A1D5E1DA28D1C00EF9B63 /* CheckRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7A1D5C1DA28D1C00EF9B63 /* CheckRow.swift */; };
+		CE7A1D611DA2AD1300EF9B63 /* Realm.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7A1D601DA2AD1300EF9B63 /* Realm.swift */; };
+		CE7A1D621DA2AD1300EF9B63 /* Realm.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7A1D601DA2AD1300EF9B63 /* Realm.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -405,6 +425,13 @@
 		BFE90E6A1D955C1F00E8F758 /* SubtitleView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubtitleView.swift; sourceTree = "<group>"; };
 		BFE90E6D1D956ED000E8F758 /* Eureka.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Eureka.swift; sourceTree = "<group>"; };
 		BFE90E701D9575DA00E8F758 /* ListItemRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListItemRow.swift; sourceTree = "<group>"; };
+		CE3BD1C01DA5557D00B3261B /* IdeaRegalosHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IdeaRegalosHeader.swift; sourceTree = "<group>"; };
+		CE3BD1C31DA5558800B3261B /* IdeaRegalosHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = IdeaRegalosHeader.xib; sourceTree = "<group>"; };
+		CE3F25AD1DA3E7810035A150 /* ParticiparViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParticiparViewController.swift; path = Home/ParticiparViewController.swift; sourceTree = "<group>"; };
+		CE3F25B01DA3FB420035A150 /* ImageRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageRow.swift; sourceTree = "<group>"; };
+		CE3F25B31DA3FD0B0035A150 /* ImagePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerController.swift; sourceTree = "<group>"; };
+		CE3F25B81DA416210035A150 /* FloatingLabelRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatingLabelRow.swift; sourceTree = "<group>"; };
+		CE3F25BB1DA419280035A150 /* FloatingLabelCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FloatingLabelCell.xib; sourceTree = "<group>"; };
 		CE4078491D9C47AB00A3CD4B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Onboarding/LoginViewController.swift; sourceTree = "<group>"; };
 		CE4275371D9D4ED500293CA0 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = Home/SettingsViewController.swift; sourceTree = "<group>"; };
 		CE42753A1D9D625B00293CA0 /* LogoutButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoutButton.swift; sourceTree = "<group>"; };
@@ -417,6 +444,9 @@
 		CE49679C1D9EA55400E2363E /* RegaloDetailHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegaloDetailHeader.swift; sourceTree = "<group>"; };
 		CE49679F1D9EA56800E2363E /* RegaloDetailHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegaloDetailHeader.xib; sourceTree = "<group>"; };
 		CE4967A21D9ED1DF00E2363E /* ProgressBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
+		CE60EF3A1DA7D5F6007CEA3B /* ParticipantesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParticipantesViewController.swift; path = Home/ParticipantesViewController.swift; sourceTree = "<group>"; };
+		CE7A1D5C1DA28D1C00EF9B63 /* CheckRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckRow.swift; sourceTree = "<group>"; };
+		CE7A1D601DA2AD1300EF9B63 /* Realm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Realm.swift; sourceTree = "<group>"; };
 		DEE523F7CE6A0E56FCF7A0A5 /* Pods_Iujuu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Iujuu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F5CE8DAF3DF9D8499BA58B7A /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -620,6 +650,7 @@
 				8F9037E41D9973B4006E1C8E /* UIView.swift */,
 				8F7C01631DA54ABA004D6F54 /* HTTPURLResponse.swift */,
 				46F5AF141DA41D6C00401255 /* AppDelegate+Iujuu+Deeplinks.swift */,
+				CE7A1D601DA2AD1300EF9B63 /* Realm.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -811,6 +842,11 @@
 			children = (
 				8F8CEA051D947840005FA5B6 /* IJLabelRow.swift */,
 				BFE90E701D9575DA00E8F758 /* ListItemRow.swift */,
+				CE7A1D5C1DA28D1C00EF9B63 /* CheckRow.swift */,
+				CE3F25B01DA3FB420035A150 /* ImageRow.swift */,
+				CE3F25B31DA3FD0B0035A150 /* ImagePickerController.swift */,
+				CE3F25B81DA416210035A150 /* FloatingLabelRow.swift */,
+				CE3F25BB1DA419280035A150 /* FloatingLabelCell.xib */,
 			);
 			name = "Eureka rows";
 			sourceTree = "<group>";
@@ -861,6 +897,8 @@
 				CE4275371D9D4ED500293CA0 /* SettingsViewController.swift */,
 				CE4967961D9E95D500E2363E /* WebViewController.swift */,
 				CE4967991D9EA1AD00E2363E /* RegaloDetailViewController.swift */,
+				CE3F25AD1DA3E7810035A150 /* ParticiparViewController.swift */,
+				CE60EF3A1DA7D5F6007CEA3B /* ParticipantesViewController.swift */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -877,6 +915,8 @@
 				CE49679C1D9EA55400E2363E /* RegaloDetailHeader.swift */,
 				CE49679F1D9EA56800E2363E /* RegaloDetailHeader.xib */,
 				CE4967A21D9ED1DF00E2363E /* ProgressBarView.swift */,
+				CE3BD1C01DA5557D00B3261B /* IdeaRegalosHeader.swift */,
+				CE3BD1C31DA5558800B3261B /* IdeaRegalosHeader.xib */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -1050,12 +1090,14 @@
 				460C0BA71D945417005814AA /* OpenSans-ExtraBoldItalic.ttf in Resources */,
 				460C0BAD1D945417005814AA /* OpenSans-LightItalic.ttf in Resources */,
 				8F9694D11D92F48000A9EBB7 /* ProgressView.xib in Resources */,
+				CE3F25BD1DA419280035A150 /* FloatingLabelCell.xib in Resources */,
 				2841F1F81CCFF55600D609CE /* Assets.xcassets in Resources */,
 				460C0BA91D945417005814AA /* OpenSans-Italic.ttf in Resources */,
 				460C0BA11D945417005814AA /* OpenSans-Bold.ttf in Resources */,
 				8F8CE9FD1D946F76005FA5B6 /* RegaloHeaderView.xib in Resources */,
 				4645121A1D95A9A7009C2FE6 /* ButtonFooter.xib in Resources */,
 				460C0BA51D945417005814AA /* OpenSans-ExtraBold.ttf in Resources */,
+				CE3BD1C51DA5558800B3261B /* IdeaRegalosHeader.xib in Resources */,
 				460C0BA31D945417005814AA /* OpenSans-BoldItalic.ttf in Resources */,
 				CE43ABE01D9AECEE00F123A6 /* EmptyHomeView.xib in Resources */,
 				2841F1F91CCFF55600D609CE /* Main.storyboard in Resources */,
@@ -1084,12 +1126,14 @@
 				460C0BA61D945417005814AA /* OpenSans-ExtraBoldItalic.ttf in Resources */,
 				460C0BAC1D945417005814AA /* OpenSans-LightItalic.ttf in Resources */,
 				8F9694D01D92F48000A9EBB7 /* ProgressView.xib in Resources */,
+				CE3F25BC1DA419280035A150 /* FloatingLabelCell.xib in Resources */,
 				2867E8321C74C7D400FCEBBD /* Assets.xcassets in Resources */,
 				460C0BA81D945417005814AA /* OpenSans-Italic.ttf in Resources */,
 				460C0BA01D945417005814AA /* OpenSans-Bold.ttf in Resources */,
 				8F8CE9FC1D946F76005FA5B6 /* RegaloHeaderView.xib in Resources */,
 				464512171D95A9A4009C2FE6 /* ButtonFooter.xib in Resources */,
 				460C0BA41D945417005814AA /* OpenSans-ExtraBold.ttf in Resources */,
+				CE3BD1C41DA5558800B3261B /* IdeaRegalosHeader.xib in Resources */,
 				460C0BA21D945417005814AA /* OpenSans-BoldItalic.ttf in Resources */,
 				46F5AF121DA4143600401255 /* GoogleService-Info.plist in Resources */,
 				CE43ABDF1D9AECEE00F123A6 /* EmptyHomeView.xib in Resources */,
@@ -1426,6 +1470,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				2841F1DC1CCFF55600D609CE /* UIApplication.swift in Sources */,
+				CE3F25AF1DA3E7810035A150 /* ParticiparViewController.swift in Sources */,
 				8F9694CB1D92EC5300A9EBB7 /* RSMotivoViewController.swift in Sources */,
 				2841F1DD1CCFF55600D609CE /* Date.swift in Sources */,
 				8F16F8D31D9449C1003BDA0B /* IURegaloNavigationController.swift in Sources */,
@@ -1437,10 +1482,12 @@
 				460C0B931D9431E4005814AA /* UserMessages.swift in Sources */,
 				466684171D94775900584FDB /* WelcomeViewController.swift in Sources */,
 				4658D9B81D92CB4E00A2DF05 /* TestArguments.swift in Sources */,
+				CE3F25B21DA3FB420035A150 /* ImageRow.swift in Sources */,
 				8F9037E91D997662006E1C8E /* RSChooseAccountController.swift in Sources */,
 				2841F1E31CCFF55600D609CE /* UIDevice.swift in Sources */,
 				2841F1E41CCFF55600D609CE /* RouteType.swift in Sources */,
 				46C395091D92FCD4000965FB /* OnboardingViewController.swift in Sources */,
+				CE3F25BA1DA416210035A150 /* FloatingLabelRow.swift in Sources */,
 				8F9694C81D92E46300A9EBB7 /* BaseRegaloSetupController.swift in Sources */,
 				46F5AF161DA41D6C00401255 /* AppDelegate+Iujuu+Deeplinks.swift in Sources */,
 				8F0759A21D774B390012D681 /* SessionController.swift in Sources */,
@@ -1463,6 +1510,7 @@
 				8F8CE9F91D946BC4005FA5B6 /* PreviewRegaloController.swift in Sources */,
 				8F0759A81D774FC10012D681 /* RealmManager.swift in Sources */,
 				8F9694DD1D93162400A9EBB7 /* RSAmountController.swift in Sources */,
+				CE7A1D621DA2AD1300EF9B63 /* Realm.swift in Sources */,
 				465910B01D80A5000022374B /* String.swift in Sources */,
 				464512101D9595CD009C2FE6 /* PasswordStrengthView.swift in Sources */,
 				CE4967A41D9ED1DF00E2363E /* ProgressBarView.swift in Sources */,
@@ -1475,10 +1523,12 @@
 				8F9037EF1D99AA37006E1C8E /* ShareRegaloController.swift in Sources */,
 				4666841E1D94802800584FDB /* CreateAccountViewController.swift in Sources */,
 				8F9694D71D93048F00A9EBB7 /* UIFont.swift in Sources */,
+				CE7A1D5E1DA28D1C00EF9B63 /* CheckRow.swift in Sources */,
 				8F9037EC1D9987D6006E1C8E /* Account.swift in Sources */,
 				8FD9D0751DA2ECFB006AC192 /* Realm+Iujuu.swift in Sources */,
 				46CBE7AC1DA6A10B0068298B /* IujuuError.swift in Sources */,
 				8F8CE9FA1D946C72005FA5B6 /* (null) in Sources */,
+				CE60EF3C1DA7D5F6007CEA3B /* ParticipantesViewController.swift in Sources */,
 				CE43ABDD1D9AECE100F123A6 /* EmptyHomeView.swift in Sources */,
 				464512211D95AD07009C2FE6 /* R.generated.swift in Sources */,
 				8F0759931D7728360012D681 /* Helpers.swift in Sources */,
@@ -1487,6 +1537,7 @@
 				4645120E1D9595CD009C2FE6 /* GenericPasswordRow.swift in Sources */,
 				4645120D1D9595CD009C2FE6 /* DefaultPasswordStrengthView.swift in Sources */,
 				BFE90E6C1D955C1F00E8F758 /* SubtitleView.swift in Sources */,
+				CE3F25B51DA3FD0B0035A150 /* ImagePickerController.swift in Sources */,
 				2841F1ED1CCFF55600D609CE /* Session.swift in Sources */,
 				CE4967981D9E95D500E2363E /* WebViewController.swift in Sources */,
 				4658D9B31D92BC1C00A2DF05 /* MockedDataManager.swift in Sources */,
@@ -1509,6 +1560,7 @@
 				8F9694D41D9302BC00A9EBB7 /* RSNameViewController.swift in Sources */,
 				8F0759A51D774C5C0012D681 /* AppDelegate+Iujuu.swift in Sources */,
 				BFE90E721D9575DA00E8F758 /* ListItemRow.swift in Sources */,
+				CE3BD1C21DA5557D00B3261B /* IdeaRegalosHeader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1517,6 +1569,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F8CE9F61D946863005FA5B6 /* (null) in Sources */,
+				CE3F25AE1DA3E7810035A150 /* ParticiparViewController.swift in Sources */,
 				28FEB24C1C9875F60027D470 /* UIApplication.swift in Sources */,
 				8F9694CA1D92EC5300A9EBB7 /* RSMotivoViewController.swift in Sources */,
 				B23A40F01C972C2B004AB8DC /* Date.swift in Sources */,
@@ -1528,10 +1581,12 @@
 				28A6B9D81CB6271800682BCE /* Manager.swift in Sources */,
 				460C0B921D9431E4005814AA /* UserMessages.swift in Sources */,
 				466684161D94775900584FDB /* WelcomeViewController.swift in Sources */,
+				CE3F25B11DA3FB420035A150 /* ImageRow.swift in Sources */,
 				8F9037E81D997662006E1C8E /* RSChooseAccountController.swift in Sources */,
 				8F8CE9F81D946BC4005FA5B6 /* PreviewRegaloController.swift in Sources */,
 				4658D9B71D92CB4E00A2DF05 /* TestArguments.swift in Sources */,
 				28D65F951C99D8AF008ED705 /* UIDevice.swift in Sources */,
+				CE3F25B91DA416210035A150 /* FloatingLabelRow.swift in Sources */,
 				28A6B9D61CB5F95900682BCE /* RouteType.swift in Sources */,
 				46F5AF151DA41D6C00401255 /* AppDelegate+Iujuu+Deeplinks.swift in Sources */,
 				46C395081D92FCD4000965FB /* OnboardingViewController.swift in Sources */,
@@ -1554,6 +1609,7 @@
 				465723051D91C59A001F4DC1 /* Regalo.swift in Sources */,
 				8F9694CD1D92F3EB00A9EBB7 /* ProgressView.swift in Sources */,
 				8F0759A71D774FC10012D681 /* RealmManager.swift in Sources */,
+				CE7A1D611DA2AD1300EF9B63 /* Realm.swift in Sources */,
 				8F9694DC1D93162400A9EBB7 /* RSAmountController.swift in Sources */,
 				465910AF1D80A5000022374B /* String.swift in Sources */,
 				CE4967A31D9ED1DF00E2363E /* ProgressBarView.swift in Sources */,
@@ -1566,10 +1622,12 @@
 				8F9037EE1D99AA37006E1C8E /* ShareRegaloController.swift in Sources */,
 				4653B7F51D7A14A0002A6660 /* LoadingIndicator.swift in Sources */,
 				4666841D1D94802800584FDB /* CreateAccountViewController.swift in Sources */,
+				CE7A1D5D1DA28D1C00EF9B63 /* CheckRow.swift in Sources */,
 				8F9037EB1D9987D6006E1C8E /* Account.swift in Sources */,
 				8FD9D0741DA2ECFB006AC192 /* Realm+Iujuu.swift in Sources */,
 				46CBE7AB1DA6A10B0068298B /* IujuuError.swift in Sources */,
 				8F9694D61D93048F00A9EBB7 /* UIFont.swift in Sources */,
+				CE60EF3B1DA7D5F6007CEA3B /* ParticipantesViewController.swift in Sources */,
 				CE43ABDC1D9AECE100F123A6 /* EmptyHomeView.swift in Sources */,
 				464512201D95ACF6009C2FE6 /* R.generated.swift in Sources */,
 				8F0759921D7728360012D681 /* Helpers.swift in Sources */,
@@ -1578,6 +1636,7 @@
 				464512071D9595C2009C2FE6 /* GenericPasswordRow.swift in Sources */,
 				464512061D9595C2009C2FE6 /* DefaultPasswordStrengthView.swift in Sources */,
 				BFE90E6B1D955C1F00E8F758 /* SubtitleView.swift in Sources */,
+				CE3F25B41DA3FD0B0035A150 /* ImagePickerController.swift in Sources */,
 				281BF1A31C7B8EEF00809E3F /* Session.swift in Sources */,
 				CE4967971D9E95D500E2363E /* WebViewController.swift in Sources */,
 				4658D9B21D92BC1C00A2DF05 /* MockedDataManager.swift in Sources */,
@@ -1600,6 +1659,7 @@
 				8F9694D31D9302BC00A9EBB7 /* RSNameViewController.swift in Sources */,
 				8F0759A41D774C5C0012D681 /* AppDelegate+Iujuu.swift in Sources */,
 				BFE90E711D9575DA00E8F758 /* ListItemRow.swift in Sources */,
+				CE3BD1C11DA5557D00B3261B /* IdeaRegalosHeader.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

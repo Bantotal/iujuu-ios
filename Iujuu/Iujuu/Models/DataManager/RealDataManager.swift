@@ -7,8 +7,6 @@
 //
 
 import Foundation
-
-import Foundation
 import RxSwift
 import RxRealm
 import RealmSwift
@@ -142,5 +140,26 @@ class RealDataManager: DataManagerProtocol {
 //                    return nil
 //                }
 //        })
+    }
+
+    func voteRegalo(regaloId: Int, voto: String) -> Observable<[RegaloSugerido]>? {
+        guard let id = user?.id else {
+            return Observable.empty()
+        }
+
+        return Router.Regalo.VotarRegalo(userId: id, regaloId: regaloId, voto: voto).rx_anyObject().map { object in
+            let json = JSON(object)
+            let regalos = json["regalosSugeridos"]
+            let regalosSugeridos = try [RegaloSugerido].decode(regalos)
+            return regalosSugeridos
+        }
+    }
+
+    func pagarRegalo(regaloId: Int, importe: String, imagen: String? = nil, comentario: String? = nil) -> Observable<Any>? {
+        guard let id = user?.id else {
+            return Observable.empty()
+        }
+
+        return Router.Regalo.PagarRegalo(userId: id, regaloId: regaloId, importe: importe, comentario: comentario, imagen: imagen).rx_anyObject()
     }
 }

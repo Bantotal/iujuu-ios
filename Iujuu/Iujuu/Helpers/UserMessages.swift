@@ -21,6 +21,9 @@ struct UserMessages {
     struct InsertCode { }
     struct ConfirmationCode { }
     struct Deeplinks { }
+    struct RegaloDetail { }
+    struct ParticiparRegalo { }
+    struct Participantes { }
 
     static let cancel = NSLocalizedString("Cancelar", comment: "")
     static let email = NSLocalizedString("Correo Electrónico", comment: "")
@@ -102,4 +105,42 @@ extension UserMessages.Home {
     static let needAccounts = NSLocalizedString("Necesita una cuenta en Banco Galicia para crear una colecta.", comment: "")
     static let galiciaAccountError = NSLocalizedString("Hubo un error tratando de obtener sus cuentas del banco Galicia. Por favor inténtelo más tarde.", comment: "")
     static let galiciaError = NSLocalizedString("Hubo un error tratando de conectarse al servicio del banco Galicia. Por favor inténtelo más tarde.", comment: "")
+}
+
+extension UserMessages.RegaloDetail {
+
+    static let shareMessage = NSLocalizedString("Participa de este colecta!", comment: "")
+    static let title = NSLocalizedString("Colecta", comment: "")
+    static let participar = NSLocalizedString("Participar", comment: "")
+    static let finalizar = NSLocalizedString("Finalizar colecta", comment: "")
+    static let voteError = NSLocalizedString("Ocurrió un error al enviar el voto. Por favor, prueba de vuelta", comment: "")
+    static let ideasTitle = NSLocalizedString("Ideas de regalo", comment: "")
+    static let seeParticipants = NSLocalizedString("Ver todos", comment: "")
+
+    static func cantidadPersonas(cantidad: Int) -> String {
+        if cantidad == 1 {
+            return NSLocalizedString("Ya participo 1 persona", comment: "")
+        } else {
+            return NSLocalizedString("Ya participaron \(cantidad) personas", comment: "")
+        }
+    }
+
+}
+
+extension UserMessages.ParticiparRegalo {
+
+    static let title = NSLocalizedString("Participar", comment: "")
+    static let messagePlaceholder = NSLocalizedString("Deja tu mensaje...", comment: "")
+    static let imageMessage = NSLocalizedString("Adjuntar foto", comment: "")
+    static let galiciaMessage = NSLocalizedString("Los pagos de IUJUU se realizan con la plataforma Galicia Pagos", comment: "")
+    static let buttonMessage = NSLocalizedString("Pagar con galicia", comment: "")
+    static let inputTitle = NSLocalizedString("Importe", comment: "")
+
+}
+
+extension UserMessages.Participantes {
+
+    static let title = NSLocalizedString("Participantes", comment: "")
+    static let participantesTitle = NSLocalizedString("Ya participaron en la colecta", comment: "")
+
 }

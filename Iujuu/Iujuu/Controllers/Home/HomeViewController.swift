@@ -149,11 +149,6 @@ class HomeViewController: XLTableViewController {
         setUp()
     }
 
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        navigationController?.navigationBar.isHidden = false
-    }
-
     private func setUp () {
         setTitle()
         setSettingsButton()
@@ -203,6 +198,9 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        let detailController = RegaloDetailViewController()
+        detailController.regalo = regalos[indexPath.section]
+        navigationController?.pushViewController(detailController, animated: true)
     }
 
 }

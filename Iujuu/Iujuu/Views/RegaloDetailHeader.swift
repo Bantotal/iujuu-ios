@@ -11,6 +11,12 @@ import XLSwiftKit
 
 class RegaloDetailHeader: UIView {
 
+    //MARK: - Variables
+
+    var showImage = true
+
+    //MARK: - Outlets
+
     @IBOutlet weak var motivoImageView: UIImageView!
     @IBOutlet weak var motivoLabel: UILabel!
     @IBOutlet weak var nameLabel: UILabel!
@@ -18,6 +24,10 @@ class RegaloDetailHeader: UIView {
     @IBOutlet weak var recaudadoNumberLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var dateLabelBackground: UIView!
+
+    //MARK: - Constraints
+
+    @IBOutlet weak var imageHeightConstraint: NSLayoutConstraint!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -39,13 +49,27 @@ class RegaloDetailHeader: UIView {
     }
 
     func setup(regalo: Regalo) {
-        let motivo = regalo.getMotivo()
-        motivoLabel.text = NSLocalizedString("{0} de", comment: "").parametrize(motivo?.rawValue ?? regalo.motivo)
-        nameLabel.text = regalo.descripcion
-        motivoImageView.image = motivo?.image()
+        setMotivoLabels(regalo: regalo)
+        setMotivoImage(regalo: regalo)
         setDateLabel(regalo: regalo)
         setRecaudadoLabel(regalo: regalo)
         setProgressBar(regalo: regalo)
+    }
+
+    private func setMotivoLabels(regalo: Regalo) {
+        let motivo = regalo.getMotivo()
+        motivoLabel.text = NSLocalizedString("{0} de", comment: "").parametrize(motivo?.rawValue ?? regalo.motivo)
+        nameLabel.text = regalo.descripcion
+    }
+
+    private func setMotivoImage(regalo: Regalo) {
+        guard showImage else {
+            imageHeightConstraint.constant = 0
+            return
+        }
+
+        let motivo = regalo.getMotivo()
+        motivoImageView.image = motivo?.image()
     }
 
     private func setDateLabel(regalo: Regalo) {
