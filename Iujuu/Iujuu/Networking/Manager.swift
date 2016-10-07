@@ -46,6 +46,7 @@ struct Router {
     struct Session {}
     struct Regalo {}
     struct Galicia {}
+    struct User {}
 
 }
 

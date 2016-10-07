@@ -41,7 +41,6 @@ class RealDataManager: DataManagerProtocol {
                 self?.updateRegalos(collection)
                 }, onError: { error in print(error) }).subscribe().addDisposableTo(disposeBag)
         }
-
         return Observable.of(Observable.just(regalos), dbObservable).switchLatest()
     }
 
@@ -66,28 +65,43 @@ class RealDataManager: DataManagerProtocol {
         return regaloAPI
     }
 
-    func registerUser(user: User, password: String) -> Observable<User>? {
-        return Router.Session.Register(nombre: user.nombre, apellido: user.apellido, documento: user.documento, username: user.username, email: user.email, password: password).rx_anyObject().do(onNext: { _ in
-            //TODO: Instead of this we should call login
-                GCDHelper.runOnMainThread {
-                    try? user.save()
-                }
-                AppDelegate.logUser(user: user)
-        }).map { _ in user }
+    func registerUser(user: User, password: String) -> Observable<User> {
+        return
+            Router.Session.Register(
+                nombre: user.nombre,
+                apellido:
+                user.apellido,
+                documento: user.documento,
+                username: user.username,
+                email: user.email,
+                password: password
+            )
+            .rx_anyObject()
+            .flatMap { _ in DataManager.shared.login(username: user.username, email: user.email, password: password) }
     }
 
-    func login(username: String?, email: String?, password: String) -> Observable<Any>? {
-        return Router.Session.Login(username: username, email: email, password: password).rx_anyObject().do(onNext: { [weak self] object in
-            let json = JSON(object)
-            guard let userId = json["userId"].int else { return }
-            if let token = json["id"].string {
-                SessionController.sharedInstance.token = token
-            }
-            self?.userId = userId
-            SessionController.saveCurrentUserId()
-            //TODO: get user from server and then:
-//            AppDelegate.logUser(user: self?.getUser())
-        })
+    func login(username: String?, email: String?, password: String) -> Observable<User> {
+        return
+            Router.Session.Login(username: username, email: email, password: password)
+                .rx_anyObject()
+                .observeOn(MainScheduler.instance)
+                .flatMap { [weak self] object -> Observable<User> in
+                    let json = JSON(object)
+                    guard let userId = json["userId"].int else {
+                        return Observable.error(NSError.ijError(code: .loginParseResponseError))
+                    }
+                    if let token = json["id"].string {
+                        SessionController.sharedInstance.token = token
+                    }
+                    self?.userId = userId
+                    SessionController.saveCurrentUserId()
+                    return Router.User.Get(userId: userId).rx_object()
+                }
+                .flatMap { (user: User) -> Observable<User> in
+                    try? user.save()
+                    AppDelegate.logUser(user: user)
+                    return Observable.just(user)
+                }
     }
 
     func logout() -> Observable<Any>? {

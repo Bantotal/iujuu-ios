@@ -11,6 +11,7 @@ import Eureka
 
 public class _GenericPasswordRow: Row<GenericPasswordCell> {
 
+    open var keyboardReturnType: KeyboardReturnTypeConfiguration?
     public var passwordValidator: PasswordValidator = DefaultPasswordValidator()
     public var placeholder: String? = "Password"
 
@@ -29,4 +30,4 @@ public class _GenericPasswordRow: Row<GenericPasswordCell> {
 
 }
 
-public final class GenericPasswordRow: _GenericPasswordRow, RowType { }
+public final class GenericPasswordRow: _GenericPasswordRow, RowType, KeyboardReturnHandler { }

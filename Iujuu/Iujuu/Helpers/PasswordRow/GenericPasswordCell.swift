@@ -9,7 +9,7 @@
 import Foundation
 import Eureka
 
-open class GenericPasswordCell: Cell<String>, CellType {
+open class GenericPasswordCell: Cell<String>, CellType, UITextFieldDelegate {
 
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var visibilityButton: UIButton?
@@ -50,6 +50,7 @@ open class GenericPasswordCell: Cell<String>, CellType {
         textField.autocapitalizationType = .none
         textField.keyboardType = .asciiCapable
         textField.isSecureTextEntry = true
+        textField.delegate = self
         selectionStyle = .none
         textField.addTarget(self, action: #selector(GenericPasswordCell.textFieldDidChange(_:)), for: .editingChanged)
 
@@ -108,6 +109,32 @@ open class GenericPasswordCell: Cell<String>, CellType {
         let hint = genericPasswordRow.passwordValidator.hintForPassword(password)
         hintLabel?.text = hint
         hintLabel?.isHidden = hint == nil || password.isEmpty
+    }
+
+    open override func cellCanBecomeFirstResponder() -> Bool {
+        return !row.isDisabled && textField.canBecomeFirstResponder
+    }
+
+    open override func cellBecomeFirstResponder(withDirection: Direction) -> Bool {
+        return textField.becomeFirstResponder()
+    }
+
+    open override func cellResignFirstResponder() -> Bool {
+        return textField.resignFirstResponder()
+    }
+
+    open func textFieldDidBeginEditing(_ textField: UITextField) {
+        formViewController()?.beginEditing(of: self)
+        formViewController()?.textInputDidBeginEditing(textField, cell: self)
+    }
+
+    open func textFieldDidEndEditing(_ textField: UITextField) {
+        formViewController()?.endEditing(of: self)
+        formViewController()?.textInputDidEndEditing(textField, cell: self)
+    }
+
+    open func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        return formViewController()?.textInputShouldReturn(textField, cell: self) ?? true
     }
 
 }

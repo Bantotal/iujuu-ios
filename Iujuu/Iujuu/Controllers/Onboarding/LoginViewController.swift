@@ -73,14 +73,23 @@ class LoginViewController: FormViewController {
         }
     }
 
+    override func textInputShouldReturn<T>(_ textInput: UITextInput, cell: Cell<T>) -> Bool {
+        if cell.baseRow.tag == rowTags.passwordRow {
+            loginUser()
+            return true
+        }
+        return super.textInputShouldReturn(textInput, cell: cell)
+    }
+
     private func setUpNavigationBar() {
         navigationController?.navigationBar.topItem?.title = UserMessages.LogIn.title
     }
 
     private func loginUser() {
+        tableView?.endEditing(true)
         let userToLogIn = getUserToLogIn()
         LoadingIndicator.show()
-        DataManager.shared.login(username: nil, email: userToLogIn.email, password: userToLogIn.password)?
+        DataManager.shared.login(username: nil, email: userToLogIn.email, password: userToLogIn.password)
         .do( onError: { [weak self] (error) in
             LoadingIndicator.hide()
             if let error = error as? OperaError {

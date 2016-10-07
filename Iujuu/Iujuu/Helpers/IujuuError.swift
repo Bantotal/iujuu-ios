@@ -11,6 +11,7 @@ import Foundation
 enum IujuuErrorCodes: Int {
 
     case invalidDeepLink
+    case loginParseResponseError
     case regaloNotFoundForCode
 
 }
