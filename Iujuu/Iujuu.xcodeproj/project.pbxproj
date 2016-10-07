@@ -89,6 +89,8 @@
 		464512211D95AD07009C2FE6 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4645121F1D95ACF6009C2FE6 /* R.generated.swift */; };
 		464512231D95B1A5009C2FE6 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464512221D95B1A5009C2FE6 /* UITableView.swift */; };
 		464512241D95B2FA009C2FE6 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464512221D95B1A5009C2FE6 /* UITableView.swift */; };
+		46471E801DA825DD0087615E /* UserEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46471E7F1DA825DD0087615E /* UserEndpoints.swift */; };
+		46471E811DA825DD0087615E /* UserEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46471E7F1DA825DD0087615E /* UserEndpoints.swift */; };
 		4653B7F51D7A14A0002A6660 /* LoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4653B7F41D7A14A0002A6660 /* LoadingIndicator.swift */; };
 		4653B7F61D7A14A0002A6660 /* LoadingIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4653B7F41D7A14A0002A6660 /* LoadingIndicator.swift */; };
 		4653B7F81D7A1EB6002A6660 /* LoadingIndicatorManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4653B7F71D7A1EB6002A6660 /* LoadingIndicatorManager.swift */; };
@@ -350,6 +352,7 @@
 		464512151D95A9A4009C2FE6 /* ButtonStyles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonStyles.swift; sourceTree = "<group>"; };
 		4645121F1D95ACF6009C2FE6 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = R.generated.swift; path = "R-Swift/R.generated.swift"; sourceTree = "<group>"; };
 		464512221D95B1A5009C2FE6 /* UITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
+		46471E7F1DA825DD0087615E /* UserEndpoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserEndpoints.swift; sourceTree = "<group>"; };
 		4653B7F41D7A14A0002A6660 /* LoadingIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingIndicator.swift; sourceTree = "<group>"; };
 		4653B7F71D7A1EB6002A6660 /* LoadingIndicatorManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingIndicatorManager.swift; sourceTree = "<group>"; };
 		465723041D91C59A001F4DC1 /* Regalo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Regalo.swift; sourceTree = "<group>"; };
@@ -833,6 +836,7 @@
 				281BF19F1C7B8EEF00809E3F /* Session.swift */,
 				8FBEC0EF1D9AE3E600C07586 /* RegaloEndpoints.swift */,
 				8F81DA7F1DA3FDB40004CA2A /* Galicia.swift */,
+				46471E7F1DA825DD0087615E /* UserEndpoints.swift */,
 			);
 			name = Router;
 			sourceTree = "<group>";
@@ -1513,6 +1517,7 @@
 				464512191D95A9A7009C2FE6 /* ButtonFooter.swift in Sources */,
 				8F8CEA031D947545005FA5B6 /* Motivo.swift in Sources */,
 				8FBEC0F11D9AE3E600C07586 /* RegaloEndpoints.swift in Sources */,
+				46471E811DA825DD0087615E /* UserEndpoints.swift in Sources */,
 				465723061D91C59A001F4DC1 /* Regalo.swift in Sources */,
 				CE49679B1D9EA1AD00E2363E /* RegaloDetailViewController.swift in Sources */,
 				8F9694CE1D92F3EB00A9EBB7 /* ProgressView.swift in Sources */,
@@ -1615,6 +1620,7 @@
 				464512161D95A9A4009C2FE6 /* ButtonFooter.swift in Sources */,
 				8F07599A1D7742CA0012D681 /* UIImageView.swift in Sources */,
 				8FBEC0F01D9AE3E600C07586 /* RegaloEndpoints.swift in Sources */,
+				46471E801DA825DD0087615E /* UserEndpoints.swift in Sources */,
 				4666841A1D947F9C00584FDB /* UIViewController.swift in Sources */,
 				CE49679A1D9EA1AD00E2363E /* RegaloDetailViewController.swift in Sources */,
 				281731691C9C4BBC006237C7 /* XLViewController.swift in Sources */,

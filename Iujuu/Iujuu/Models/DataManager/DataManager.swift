@@ -15,8 +15,8 @@ protocol DataManagerProtocol {
     var userId: Int? { get set }
 
     //MARK: - User
-    func registerUser(user: User, password: String) -> Observable<User>?
-    func login(username: String?, email: String?, password: String) -> Observable<Any>?
+    func registerUser(user: User, password: String) -> Observable<User>
+    func login(username: String?, email: String?, password: String) -> Observable<User>
     func logout() -> Observable<Any>?
     func getUser() -> User?
 

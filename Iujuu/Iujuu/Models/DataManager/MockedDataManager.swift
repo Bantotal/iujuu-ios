@@ -31,11 +31,11 @@ class MockedDataManager: DataManagerProtocol {
         return Observable.empty() // TODO:
     }
 
-    func registerUser(user: User, password: String) -> Observable<User>? {
+    func registerUser(user: User, password: String) -> Observable<User> {
         return Observable.empty()
     }
 
-    func login(username: String?, email: String?, password: String) -> Observable<Any>? {
+    func login(username: String?, email: String?, password: String) -> Observable<User> {
         return Observable.empty()
     }
 

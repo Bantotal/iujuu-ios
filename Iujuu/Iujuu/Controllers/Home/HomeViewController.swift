@@ -31,10 +31,7 @@ class HomeViewController: XLTableViewController {
             .do(onNext: { [weak self] regalos in
                 self?.setEmptyViewState(hidden: regalos.count != 0)
                 self?.regalos = Array(regalos)
-                print(self?.regalos.count)
-                self?.tableView.reloadData()
-                }, onError: { error in
-                    print(error)
+                self?.tableView.reloadDataAnimated(completion: nil)
             }).subscribe().addDisposableTo(disposeBag)
     }
 

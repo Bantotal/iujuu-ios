@@ -65,10 +65,19 @@ class CreateAccountViewController: FormViewController {
         .addDisposableTo(disposeBag)
     }
 
+    override func textInputShouldReturn<T>(_ textInput: UITextInput, cell: Cell<T>) -> Bool {
+        if cell.baseRow.tag == rowTags.passwordRow {
+            registerUser()
+            return true
+        }
+        return super.textInputShouldReturn(textInput, cell: cell)
+    }
+
     func registerUser() {
+        tableView?.endEditing(true)
         let createdUser = getUserFromForm()
         LoadingIndicator.show()
-        DataManager.shared.registerUser(user: createdUser.user, password: createdUser.password)?
+        DataManager.shared.registerUser(user: createdUser.user, password: createdUser.password)
         .do(onError: { [weak self] error in
             LoadingIndicator.hide()
             if let error = error as? OperaError {
@@ -172,6 +181,7 @@ class CreateAccountViewController: FormViewController {
             }
 
             <<< GenericPasswordRow(rowTags.passwordRow) {
+                $0.keyboardReturnType = KeyboardReturnTypeConfiguration(nextKeyboardType: .done, defaultKeyboardType: .done)
                 $0.add(rule: RuleRequired())
                 $0.add(rule: RulePasswordIsValid())
                 $0.validationOptions = .validatesAlways
