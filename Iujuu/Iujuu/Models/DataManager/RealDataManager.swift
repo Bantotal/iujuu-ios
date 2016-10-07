@@ -39,7 +39,7 @@ class RealDataManager: DataManagerProtocol {
         if let userId = userId {
             Router.Regalo.List(userId: userId).rx_collection("regalos").do(onNext: { [weak self] (collection: [Regalo]) in
                 self?.updateRegalos(collection)
-            }).subscribe().addDisposableTo(disposeBag)
+                }, onError: { error in print(error) }).subscribe().addDisposableTo(disposeBag)
         }
 
         return Observable.of(Observable.just(regalos), dbObservable).switchLatest()
@@ -143,7 +143,7 @@ class RealDataManager: DataManagerProtocol {
     }
 
     func voteRegalo(regaloId: Int, voto: String) -> Observable<[RegaloSugerido]>? {
-        guard let id = user?.id else {
+        guard let id = userId else {
             return Observable.empty()
         }
 
@@ -156,7 +156,7 @@ class RealDataManager: DataManagerProtocol {
     }
 
     func pagarRegalo(regaloId: Int, importe: String, imagen: String? = nil, comentario: String? = nil) -> Observable<Any>? {
-        guard let id = user?.id else {
+        guard let id = userId else {
             return Observable.empty()
         }
 

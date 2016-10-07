@@ -473,7 +473,7 @@
             <objects>
                 <navigationController storyboardIdentifier="JoinRegaloNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kHN-Dd-faS" customClass="IURegaloNavigationController" customModule="Iujuu" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="213-AP-fj6">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="213-AP-fj6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

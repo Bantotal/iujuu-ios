@@ -82,7 +82,7 @@ class RegaloDetailViewController: FormViewController {
     //MARK: - Regalo helper functions
 
     private func currentUserIsAdministrator() -> Bool {
-        let currentUserId = DataManager.shared.user?.id
+        let currentUserId = DataManager.shared.userId
         guard let userId = currentUserId, let administratorId = regalo?.usuarioAdministradorId else {
             return false
         }
@@ -265,7 +265,11 @@ class RegaloDetailViewController: FormViewController {
 
     private func showOperaError(error: OperaError) {
         switch error {
-        case .networking(_, _, _, _):
+        case let .networking(error, request, response, json):
+            print(error)
+            print(request)
+            print(response)
+            print(json)
             showError(UserMessages.RegaloDetail.voteError)
         default:
             showError(UserMessages.networkError)

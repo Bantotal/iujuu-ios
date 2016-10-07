@@ -33,6 +33,8 @@ class HomeViewController: XLTableViewController {
                 self?.regalos = Array(regalos)
                 print(self?.regalos.count)
                 self?.tableView.reloadData()
+                }, onError: { error in
+                    print(error)
             }).subscribe().addDisposableTo(disposeBag)
     }
 

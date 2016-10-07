@@ -49,13 +49,14 @@ final class Regalo: Object, OperaDecodable, IUObject {
     dynamic var amount = 0
     dynamic var perPerson = 0
     dynamic var usuarioAdministradorId = ""
+    dynamic var isAdministrator = false
     dynamic var active = true
     dynamic var paid = true
     dynamic var codigo: String?
 
 
     convenience init(id: Int, saldo: Double, fechaDeCierre: Date, motivo: String, descripcion: String,
-                     regalosSugeridos: [RegaloSugerido], participantes: [String], amount: Int, perPerson: Int, active: Bool?, usuarioAdministradorId: String, paid: Bool?, codigo: String?) {
+                     regalosSugeridos: [RegaloSugerido], participantes: [String], amount: Int, perPerson: Int, active: Bool?, usuarioAdministradorId: String, isAdministrator: Bool, paid: Bool?, codigo: String?) {
         self.init()
         self.id = id
         self.saldo = saldo
@@ -67,6 +68,7 @@ final class Regalo: Object, OperaDecodable, IUObject {
         self.amount = amount
         self.perPerson = perPerson
         self.usuarioAdministradorId = usuarioAdministradorId
+        self.isAdministrator = isAdministrator
         active.map { self.active = $0 }
         paid.map { self.paid = $0 }
         self.codigo = codigo
@@ -91,12 +93,13 @@ extension Regalo: Decodable {
                           fechaDeCierre: j => "fechaDeCierre",
                           motivo: j => "motivo",
                           descripcion: j => "descripcion",
-                          regalosSugeridos: j => "regaloSugerido",
+                          regalosSugeridos: j => "regalosSugeridos",
                           participantes: j => "participantes",
                           amount: j => "montoObjetivo",
                           perPerson: j => "montoPorPersona",
                           active: j =>? "activo",
                           usuarioAdministradorId: j => "usuarioAdministradorId",
+                          isAdministrator: j => "esAdministrador",
                           paid: j =>? "pago",
                           codigo: j =>? "codigo")
     }
