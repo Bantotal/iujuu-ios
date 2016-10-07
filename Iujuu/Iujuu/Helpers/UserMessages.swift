@@ -111,7 +111,7 @@ extension UserMessages.Home {
 
 extension UserMessages.RegaloDetail {
 
-    static let shareMessage = NSLocalizedString("Participa de este colecta!", comment: "")
+    static let shareMessage = NSLocalizedString("Participa de este colecta! {0}", comment: "{0} is the deeplink")
     static let title = NSLocalizedString("Colecta", comment: "")
     static let participar = NSLocalizedString("Participar", comment: "")
     static let finalizar = NSLocalizedString("Finalizar colecta", comment: "")

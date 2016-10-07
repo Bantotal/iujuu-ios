@@ -70,7 +70,7 @@ class RegaloDetailViewController: FormViewController {
     }
 
     func sharePressed() {
-        let shareString = UserMessages.RegaloDetail.shareMessage
+        let shareString = UserMessages.RegaloDetail.shareMessage.parametrize(Constants.Texts.shareBaseUrl.parametrize(regalo?.codigo ?? ""))
         let activityViewController = UIActivityViewController(activityItems: [shareString], applicationActivities: nil)
         self.present(activityViewController, animated: true, completion: nil)
     }
