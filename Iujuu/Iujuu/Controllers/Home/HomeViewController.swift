@@ -9,6 +9,7 @@
 import UIKit
 import OAuthSwift
 import Opera
+import RxSwift
 
 class HomeViewController: XLTableViewController {
 
@@ -20,13 +21,13 @@ class HomeViewController: XLTableViewController {
 
     var regalos: [Regalo] = []
     var emptyView: EmptyHomeView?
-    let reuseIdentifier = "regaloCell"
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setTableView()
         setupCreateColectaButton()
         DataManager.shared.getRegalos()
+            .throttle(0.5, scheduler: MainScheduler.instance)
             .do(onNext: { [weak self] regalos in
                 self?.setEmptyViewState(hidden: regalos.count != 0)
                 self?.regalos = Array(regalos)
@@ -39,7 +40,7 @@ class HomeViewController: XLTableViewController {
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
-        tableView.register(R.nib.regaloCell(), forCellReuseIdentifier: reuseIdentifier)
+        tableView.register(R.nib.regaloCell(), forCellReuseIdentifier: R.reuseIdentifier.regaloCell.identifier)
         tableView.backgroundColor = .white
         setEmptyView()
     }
@@ -183,7 +184,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell: RegaloCell! = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier) as? RegaloCell
+        let cell: RegaloCell! = tableView.dequeueReusableCell(withIdentifier: R.reuseIdentifier.regaloCell.identifier) as? RegaloCell
         cell.setup(regalo: regalos[indexPath.section])
         return cell
     }

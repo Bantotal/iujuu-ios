@@ -5,10 +5,34 @@ PODS:
   - Crashlytics (3.8.2):
     - Fabric (~> 1.6.3)
   - Decodable (0.5)
+  - DeepLinkKit (1.2.1)
   - DynamicColor (3.1.0)
+  - Ecno (1.0.0)
   - Eureka (2.0.0-beta.1)
   - Fabric (1.6.9)
+  - Firebase (3.6.0):
+    - Firebase/Core (= 3.6.0)
+  - Firebase/Analytics (3.6.0):
+    - FirebaseAnalytics (= 3.4.2)
+  - Firebase/Core (3.6.0):
+    - Firebase/Analytics
+  - Firebase/DynamicLinks (3.6.0):
+    - Firebase/Analytics
+    - FirebaseDynamicLinks (= 1.3.0)
+  - FirebaseAnalytics (3.4.2):
+    - FirebaseInstanceID (~> 1.0)
+    - GoogleInterchangeUtilities (~> 1.2)
+    - GoogleSymbolUtilities (~> 1.1)
+    - GoogleUtilities (~> 1.2)
+  - FirebaseDynamicLinks (1.3.0):
+    - FirebaseAnalytics (~> 3.4)
+  - FirebaseInstanceID (1.0.8)
   - FXPageControl (1.4)
+  - GoogleInterchangeUtilities (1.2.1):
+    - GoogleSymbolUtilities (~> 1.0)
+  - GoogleSymbolUtilities (1.1.1)
+  - GoogleUtilities (1.3.1):
+    - GoogleSymbolUtilities (~> 1.0)
   - KeychainAccess (3.0.0)
   - NVActivityIndicatorView (3.0)
   - OAuthSwift (1.0.0)
@@ -41,9 +65,13 @@ DEPENDENCIES:
   - AlamofireImage (~> 3.0)
   - Crashlytics (~> 3.8)
   - Decodable (from `https://github.com/Anviking/Decodable.git`, branch `master`)
+  - DeepLinkKit
   - DynamicColor (~> 3.1)
+  - Ecno (~> 1.0.0)
   - Eureka (from `https://github.com/xmartlabs/Eureka.git`, branch `Swift3`)
   - Fabric (~> 1.6)
+  - Firebase (~> 3.6.0)
+  - Firebase/DynamicLinks
   - FXPageControl (~> 1.4)
   - KeychainAccess (~> 3.0)
   - NVActivityIndicatorView (~> 3.0)
@@ -110,10 +138,19 @@ SPEC CHECKSUMS:
   AlamofireImage: 6594aa1139a67dcd36cde6da79ea4e5b318e60fb
   Crashlytics: 27acca95a01b042a8294291dd6dff27f8f6af6d7
   Decodable: 7c90acc68d357b71d0d6efc120faf9c53c644b7e
+  DeepLinkKit: 4c3a713b7ecc6c6e25ba56c87d0c728f6035a9ef
   DynamicColor: 4dec283a881f7f9d9f3bc88fb5f306724242575f
+  Ecno: 196d1beec86a9177076dbae61393de452bbf34cc
   Eureka: d014adf16406745e1a78d5790ea37ed130a0a8e5
   Fabric: bc5bec42cef4bcf1ee3ce0e218fc518e4b44dfbb
+  Firebase: 34187200ef4979dbd485c7aa685ef078bf587c86
+  FirebaseAnalytics: 3f5358d9104adf159cc8d99b7b501e50099a39ad
+  FirebaseDynamicLinks: 860aa20fca5409c8278909de566c09720c51e572
+  FirebaseInstanceID: ba1e640935235e5fac39dfa816fe7660e72e1a8a
   FXPageControl: 5057bf21537579b40ff30e119cd425d16d8ef90a
+  GoogleInterchangeUtilities: def8415a862effc67d549d5b5b0b9c7a2f97d4de
+  GoogleSymbolUtilities: 33117db1b5f290c6fbf259585e4885b4c84b98d7
+  GoogleUtilities: 56c5ac05b7aa5dc417a1bb85221a9516e04d7032
   KeychainAccess: 412bf2650d9aebfc8135a58103b90ec38caad7f8
   NVActivityIndicatorView: 81953b5e65093ba79edf4fe7268e002039ca5268
   OAuthSwift: 08e79dc7c071418daeb9a4752a81141b1d9acc63
@@ -131,6 +168,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: f57b2b44bc166617372d1c70773591fe9f0f5fd4
   XLSwiftKit: 4d48322a602120dc6300d58d7fb07b873e223c1c
 
-PODFILE CHECKSUM: 88db66d52b5e4a0429e24b0abe8a22c72d8a5f51
+PODFILE CHECKSUM: d52e47818bf647e4e578d24ef92872663e7601a1
 
 COCOAPODS: 1.1.0.rc.2

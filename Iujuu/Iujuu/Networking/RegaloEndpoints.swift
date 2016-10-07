@@ -53,13 +53,11 @@ extension Router.Regalo {
         }
     }
 
-    struct GetByCode: GetRouteType {
+    struct Get: GetRouteType {
 
         let code: String
-
-        var path: String {
-            return "regalos/regalos/\(code)"
-        }
+        var path: String { return "regalos/regalos/\(code)" }
 
     }
+
 }

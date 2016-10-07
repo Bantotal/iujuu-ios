@@ -13,6 +13,7 @@ import Eureka
 import Crashlytics
 import SwiftDate
 import XLSwiftKit
+import Firebase
 
 extension AppDelegate {
 
@@ -152,6 +153,16 @@ extension AppDelegate {
             cell.textField.attributedPlaceholder = NSAttributedString(string: UserMessages.password, attributes: [NSForegroundColorAttributeName: titleColor])
         }
 
+    }
+
+    func setupFirebase() {
+        #if STAGING
+            let urlScheme = "com.iujuu.app.staging"
+        #else
+            let urlScheme = "com.iujuu.app"
+        #endif
+        FIROptions.default().deepLinkURLScheme = urlScheme
+        FIRApp.configure()
     }
 
 }

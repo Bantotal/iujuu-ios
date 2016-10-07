@@ -13,6 +13,7 @@ import DynamicColor
 import RxSwift
 import XLSwiftKit
 import RealmSwift
+import Ecno
 
 class OnboardingViewController: UIViewController {
 
@@ -20,19 +21,43 @@ class OnboardingViewController: UIViewController {
     @IBOutlet weak var pageControl: FXPageControl!
     @IBOutlet weak var skipButton: UIButton!
 
+    enum Mode {
+        case normal
+        case fromDeepLink(withRegalo: Regalo)
+
+        var isNormal: Bool {
+            switch self {
+            case .normal:
+                return true
+            default:
+                return false
+            }
+        }
+
+    }
+
+    var mode = Mode.normal
     let disposeBag = DisposeBag()
     var page = Variable<Int>(0)
+
+    typealias OnboardingData = (text: String, image: UIImage?, backgroundImage: UIImage?)
+
+    lazy var model: [OnboardingData] = { [unowned self] in
+        var model: [OnboardingData] = [
+            (text: UserMessages.Onboarding.texts[1], image: R.image.onboardingImage1(), backgroundImage: nil),
+            (text: UserMessages.Onboarding.texts[2], image: R.image.onboardingImage2(), backgroundImage: nil),
+            (text: UserMessages.Onboarding.texts[3], image: R.image.onboardingImage3(), backgroundImage: nil)
+        ]
+        if self.mode.isNormal {
+            let firstPage = (text: UserMessages.Onboarding.texts[0], image: R.image.splashLogo(), backgroundImage: R.image.backgroundMultiColor())
+            model.insert(firstPage, at: 0)
+        }
+        return model
+    }()
 
     override var prefersStatusBarHidden: Bool {
         return true
     }
-
-    let model = [
-        (text: UserMessages.Onboarding.texts[0], image: R.image.splashLogo(), backgroundImage: R.image.backgroundMultiColor()),
-        (text: UserMessages.Onboarding.texts[1], image: R.image.onboardingImage1(), backgroundImage: nil),
-        (text: UserMessages.Onboarding.texts[2], image: R.image.onboardingImage2(), backgroundImage: nil),
-        (text: UserMessages.Onboarding.texts[3], image: R.image.onboardingImage3(), backgroundImage: nil)
-    ]
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -79,8 +104,21 @@ class OnboardingViewController: UIViewController {
         }.addDisposableTo(disposeBag)
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if case let Mode.fromDeepLink(deepLinkRegalo) = mode {
+            // TODO: segue to the correct view controller here.
+            ((segue.destination as? UINavigationController)?.topViewController as? RegaloDetailController)?.regalo = deepLinkRegalo
+        }
+    }
+
     func finishOnboardingAction() {
-        performSegue(withIdentifier: R.segue.onboardingViewController.finishOnboarding, sender: nil)
+        Ecno.markDone(Constants.Tasks.onboardingCompleted)
+        if mode.isNormal {
+            performSegue(withIdentifier: R.segue.onboardingViewController.finishOnboarding, sender: nil)
+        } else {
+            // TODO: segue to the correct view controller here.
+            performSegue(withIdentifier: R.segue.onboardingViewController.previewRegalo, sender: nil)
+        }
     }
 
 }
@@ -121,7 +159,7 @@ extension OnboardingViewController: UICollectionViewDataSource {
         cell.backgroundImageView?.image = model[indexPath.row].backgroundImage
         cell.doneButton.isHidden = indexPath.row != model.count - 1
         cell.doneButton.addTarget(self, action: #selector(OnboardingViewController.finishOnboardingAction), for: .touchUpInside)
-        let color = indexPath.row == 0 ? UIColor.black : UIColor.white
+        let color = indexPath.row == 0 && mode.isNormal ? UIColor.black : UIColor.white
         cell.label.textColor = color
         return cell
     }

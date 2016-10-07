@@ -14,6 +14,7 @@ import Opera
 import RxSwift
 import RealmSwift
 import OAuthSwift
+import Ecno
 
 class SessionController {
 
@@ -89,6 +90,7 @@ class SessionController {
         token = nil
         SessionController.removeGaliciaToken()
         RealmManager.shared.eraseAll()
+        Ecno.clearAll()
 //        Analytics.reset()
 //        Analytics.registerUnidentifiedUser()
         Crashlytics.sharedInstance().setUserEmail(nil)

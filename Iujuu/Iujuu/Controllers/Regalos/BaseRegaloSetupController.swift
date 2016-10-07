@@ -29,15 +29,19 @@ class BaseRegaloSetupController: XLViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupNavigationBar()
         view.backgroundColor = backgroundColor
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupNavigationBar()
     }
 
     func setupNavigationBar() {
         navigationItem.rightBarButtonItem?.title = UserMessages.next
         navigationItem.rightBarButtonItem?.setTitleTextAttributes([NSFontAttributeName: UIFont.bold(size: 17)], for: .normal)
         navigationItem.backBarButtonItem?.title = UserMessages.back
-        navigationController?.navigationBar.isTranslucent = false
+        navigationController?.navigationBar.isTranslucent = true
         navigationController?.navigationBar.barTintColor = backgroundColor
         navigationController?.navigationBar.tintColor = textColor
         navigationController?.navigationBar.setBackgroundImage(UIImage(), for: .default)

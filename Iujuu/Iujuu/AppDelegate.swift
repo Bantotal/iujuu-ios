@@ -11,11 +11,15 @@ import Crashlytics
 import Decodable
 import SwiftDate
 import OAuthSwift
+import DeepLinkKit
+import RxSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
+    var deepLinkRouter: DPLDeepLinkRouter!
+    let disposeBag = DisposeBag()
 
     /// true if app was able to get pushn notification token
     static var didRegisteredPush = false
@@ -25,6 +29,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         parseArguments()
         setupCrashlytics()
         setupNetworking()
+        setupFirebase()
+        setupDeepLinkRouter()
         stylizeApp()
         SessionController.sharedInstance.setupOAuthSwift()
 
