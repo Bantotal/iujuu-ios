@@ -91,4 +91,33 @@ extension Router.Regalo {
             return ["pago": ["importe": importe]]
         }
     }
+
+    struct Edit: PostRouteType {
+
+        let userId: Int
+        let regaloId: Int
+        let descripcion: String
+        let closeDate: Date
+        let targetAmount: Int
+        let perPersonAmount: Int
+        let regalosSugeridos: [RegaloSugerido]
+
+        var path: String {
+            return "\(Router.baseUsuariosString)/\(userId)/regalos/\(regaloId)/actualizar"
+        }
+
+        var parameters: [String : Any]? {
+            return ["regalo": cleanedDict([
+                "descripcion": descripcion,
+                "fechaDeCierre": closeDate.toString(format: DateFormat.iso8601Format(.date)),
+                "montoObjetivo": targetAmount,
+                "montoPorPersona": perPersonAmount,
+                "regalosSugeridos": regalosSugeridos.map({ regalo in
+                    return ["descripcion": regalo.regaloDescription, "votos": regalo.votos]
+                })
+                ])]
+        }
+
+    }
+
 }

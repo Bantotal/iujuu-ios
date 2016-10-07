@@ -84,8 +84,6 @@ struct Constants {
         static let responseType = "code"
     }
 
-    static let locale = Locale(identifier: "es_ar")
-
     struct Tasks {
         static let onboardingCompleted = "onboardingCompleted"
     }

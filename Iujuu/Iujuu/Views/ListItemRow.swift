@@ -11,7 +11,7 @@ import Eureka
 
 class ListItemCell: _FieldCell<String>, CellType {
 
-    private var bottomSeparator: UIView?
+    var bottomSeparator: UIView?
 
     required public init(style: UITableViewCellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)

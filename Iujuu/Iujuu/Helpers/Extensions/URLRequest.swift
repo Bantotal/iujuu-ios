@@ -16,4 +16,8 @@ extension URLRequest {
     func isBackendRequest() -> Bool {
         return url?.absoluteString.hasPrefix(Constants.Network.baseUrl.absoluteString) == true
     }
+
+    mutating func setTokenHeader(token: String) {
+        setValue("Bearer \(token)", forHTTPHeaderField: Constants.Network.Galicia.AuthHeaderName)
+    }
 }

@@ -41,7 +41,7 @@ class RSAmountViewController: BaseRegaloSetupController {
             }
 
             // format currency number
-            me.reformatCurrencyNumber(textField: me.amountField)
+            me.amountField.reformatCurrencyNumber()
             }).subscribe().addDisposableTo(disposeBag)
     }
 
