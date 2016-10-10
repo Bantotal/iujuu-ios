@@ -35,7 +35,7 @@ class SettingsViewController: FormViewController {
         form +++ Section (UserMessages.Settings.headerTitle)
 
             <<< ButtonRow() {
-                $0.title = DataManager.shared.getUser()?.nombre
+                $0.title = DataManager.shared.getCurrentUser()?.nombre
             }
             .cellUpdate { cell, _ in
                 cell.accessoryType = .none
@@ -83,9 +83,9 @@ class SettingsViewController: FormViewController {
     private func logout() {
         LoadingIndicator.show()
         DataManager.shared.logout()?
-        .do(onError: { [weak self] error in
+        .do(onError: { error in
             LoadingIndicator.hide()
-            self?.showError(UserMessages.errorTitle, message: UserMessages.Settings.logoutError)
+            UIApplication.changeRootViewController(R.storyboard.onboarding().instantiateInitialViewController()!)
         }, onCompleted: {
             LoadingIndicator.hide()
             UIApplication.changeRootViewController(R.storyboard.onboarding().instantiateInitialViewController()!)

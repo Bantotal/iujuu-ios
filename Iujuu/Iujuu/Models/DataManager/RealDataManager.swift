@@ -41,7 +41,7 @@ class RealDataManager: DataManagerProtocol {
                 self?.updateRegalos(collection)
                 }, onError: { error in print(error) }).subscribe().addDisposableTo(disposeBag)
         }
-        return Observable.of(Observable.just(regalos), dbObservable).switchLatest()
+        return Observable.of(Observable.just(regalos), dbObservable).merge()
     }
 
     func getAccounts() -> Observable<[Account]> {
@@ -69,8 +69,7 @@ class RealDataManager: DataManagerProtocol {
         return
             Router.Session.Register(
                 nombre: user.nombre,
-                apellido:
-                user.apellido,
+                apellido: user.apellido,
                 documento: user.documento,
                 username: user.username,
                 email: user.email,
@@ -109,9 +108,8 @@ class RealDataManager: DataManagerProtocol {
 
         guard let _ = userToken else { return Observable.empty() }
 
-        return Router.Session.Logout().rx_anyObject().do(onNext: { object in
-            SessionController.sharedInstance.logOut()
-        })
+        SessionController.sharedInstance.logOut()
+        return Router.Session.Logout().rx_anyObject()
     }
 
     private func updateRegalos(_ regalos: [Regalo]) {
@@ -121,13 +119,31 @@ class RealDataManager: DataManagerProtocol {
     }
 
 
-    func getUser() -> User? {
+    func getUser(id: Int? = nil) -> Observable<User> {
+        if let id = id ?? userId {
+            let user = RealmManager.shared.defaultRealm.object(ofType: User.self, forPrimaryKey: id)
+            let userAPI = Router.User.Get(userId: id).rx_object().observeOn(MainScheduler.instance).do(
+                onNext: { (user: User) in
+                    try? user.save()
+                }
+            )
+
+            if let user = user {
+                return Observable.of(Observable.just(user), userAPI).merge()
+            }
+
+            return userAPI
+        }
+
+        return Observable.empty()
+    }
+
+    func getCurrentUser() -> User? {
         if let userId = userId {
             return RealmManager.shared.defaultRealm.object(ofType: User.self, forPrimaryKey: userId as AnyObject)
         } else {
             return nil
         }
-
     }
 
     func createRegalo(userId: Int, motivo: String, descripcion: String, closeDate: Date,
@@ -143,29 +159,46 @@ class RealDataManager: DataManagerProtocol {
     }
 
     func editRegalo(userId: Int, regaloId: Int, descripcion: String, closeDate: Date,
-                    targetAmount: Int, perPersonAmount: Int, regalosSugeridos: [RegaloSugerido]) -> Observable<Regalo>{
+                    targetAmount: Int, perPersonAmount: Int, regalosSugeridos: [RegaloSugerido]) -> Observable<Bool> {
         return Router.Regalo.Edit(userId: userId, regaloId: regaloId, descripcion: descripcion, closeDate: closeDate,
                                     targetAmount: targetAmount, perPersonAmount: perPersonAmount, regalosSugeridos: regalosSugeridos)
-            .rx_object("regalo")
-            .do(onNext: { (regalo: Regalo) in
-                GCDHelper.runOnMainThread {
-                    try? regalo.save()
+            .rx_anyObject()
+            .map({ (data) -> Bool in
+                let json = JSON(data)
+                if let updated = json["Updated"].bool {
+                    return updated
+                }
+                return false
+            })
+            .do(onNext: { updated in
+                if updated {
+                    GCDHelper.runOnMainThread {
+                        let realm = RealmManager.shared.defaultRealm
+                        let regalo = realm?.object(ofType: Regalo.self, forPrimaryKey: regaloId)
+                        try? realm?.write() {
+                            regalo?.descripcion = descripcion
+                            regalo?.fechaDeCierre = closeDate
+                            regalo?.amount = targetAmount
+                            regalo?.perPerson = perPersonAmount
+                            regalo?.regalosSugeridos.removeAll()
+                            _ = regalosSugeridos.map({ regalo?.regalosSugeridos.append($0) })
+                        }
+                    }
                 }
             })
     }
 
     func getPagosUrl(account: String, amount: Int, callbackUrl: String, currency: String, motive: String, owner: String) -> Observable<(String, String)?> {
-        return Observable.just(("", ""))
-//        return Router.Galicia.GetPagosUrl(account: account, amount: amount, callbackUrl: callbackUrl,
-//                                          currency: currency, motive: motive, owner: owner)
-//            .rx_anyObject().map({ (anyObject) -> (String, String)? in
-//                let json = JSON(anyObject)
-//                if let url = json["url"].string, let id = json["id"].string {
-//                    return (url, id)
-//                } else {
-//                    return nil
-//                }
-//        })
+        return Router.Galicia.GetPagosUrl(account: account, amount: amount, callbackUrl: callbackUrl,
+                                          currency: currency, motive: motive, owner: owner)
+            .rx_anyObject().map({ (anyObject) -> (String, String)? in
+                let json = JSON(anyObject)
+                if let url = json["url"].string, let id = json["id"].string {
+                    return (url, id)
+                } else {
+                    return nil
+                }
+        })
     }
 
     func voteRegalo(regaloId: Int, voto: String) -> Observable<[RegaloSugerido]>? {
@@ -188,4 +221,5 @@ class RealDataManager: DataManagerProtocol {
 
         return Router.Regalo.PagarRegalo(userId: id, regaloId: regaloId, importe: importe, comentario: comentario, imagen: imagen).rx_anyObject()
     }
+    
 }

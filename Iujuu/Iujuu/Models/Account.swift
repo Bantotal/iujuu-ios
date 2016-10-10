@@ -20,6 +20,9 @@ enum AccountType: String {
 
 final class Account: Object {
 
+    /// Database ID
+    dynamic var accountId: Int = 0
+    /// id of Galicia
     dynamic var id: String = ""
     dynamic var type: String = ""
     dynamic var balance: Int = 0
@@ -27,7 +30,7 @@ final class Account: Object {
     dynamic var cbu: String?
 
     override class func primaryKey() -> String? {
-        return "id"
+        return "accountId"
     }
 
     var accountType: AccountType? {

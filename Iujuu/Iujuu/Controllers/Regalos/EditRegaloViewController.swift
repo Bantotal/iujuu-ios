@@ -129,6 +129,7 @@ class EditRegaloViewController: FormViewController {
             showError(UserMessages.EditRegalo.ValidationError)
             return
         }
+
         let sugerencias = form.sectionBy(tag: ideaSectionTag)?.flatMap { $0.baseValue as? String }
         var existing = Dictionary<String, Int>()
         for suggestion in regalo.regalosSugeridos { existing[suggestion.regaloDescription] = suggestion.votos }
@@ -139,6 +140,7 @@ class EditRegaloViewController: FormViewController {
             }
             return RegaloSugerido(regaloDescription: suggestion, votos: 1)
         }
+
         LoadingIndicator.show()
         DataManager.shared.editRegalo(userId: userId, regaloId: regalo.id, descripcion: desc, closeDate: date,
                                       targetAmount: amount, perPersonAmount: suggested, regalosSugeridos: regalosSugeridos ?? [])

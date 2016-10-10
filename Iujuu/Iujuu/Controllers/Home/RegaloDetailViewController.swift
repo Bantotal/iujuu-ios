@@ -88,7 +88,7 @@ class RegaloDetailViewController: FormViewController {
         guard let userId = currentUserId, let administratorId = regalo?.usuarioAdministradorId else {
             return false
         }
-        return administratorId == String(describing: userId)
+        return administratorId == userId
     }
 
     //MARK: - Styles setup

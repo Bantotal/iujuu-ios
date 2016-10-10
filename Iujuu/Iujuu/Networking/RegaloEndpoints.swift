@@ -107,7 +107,7 @@ extension Router.Regalo {
         }
 
         var parameters: [String : Any]? {
-            return ["regalo": cleanedDict([
+            return cleanedDict([
                 "descripcion": descripcion,
                 "fechaDeCierre": closeDate.toString(format: DateFormat.iso8601Format(.date)),
                 "montoObjetivo": targetAmount,
@@ -115,7 +115,7 @@ extension Router.Regalo {
                 "regalosSugeridos": regalosSugeridos.map({ regalo in
                     return ["descripcion": regalo.regaloDescription, "votos": regalo.votos]
                 })
-                ])]
+            ])
         }
 
     }
