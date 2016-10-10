@@ -61,10 +61,10 @@ extension UserMessages.Settings {
 extension UserMessages.Onboarding {
 
     static let texts = [
-        NSLocalizedString("IUJUU te permite organizar tus colectas para regalos colectivos", comment: ""),
-        NSLocalizedString("Crea una colecta e invita a tus amigos a participar", comment: ""),
+        NSLocalizedString("Organizar un regalo en grupo nunca fue tan fácil", comment: ""),
+        NSLocalizedString("Crea el regalo e invita a tus amigos a participar", comment: ""),
         NSLocalizedString("Cada uno deja sus mensajes y aporta dinero de forma segura", comment: ""),
-        NSLocalizedString("El organizador retira el dinero para el regalo o se envia un cupón al destinatario", comment: "")
+        NSLocalizedString("El organizador retira el dinero para el regalo o se envia un cupón al homenajeado", comment: "")
     ]
 
     static let done = NSLocalizedString("Entendido", comment: "")
