@@ -56,7 +56,7 @@ extension Router.Regalo {
     struct Get: GetRouteType {
 
         let code: String
-        var path: String { return "regalos/regalos/\(code)" }
+        var path: String { return "regalos/codigo/\(code)" }
 
     }
 
@@ -117,6 +117,15 @@ extension Router.Regalo {
                 })
             ])
         }
+
+    }
+
+    struct Join: PostRouteType {
+
+        let userId: Int
+        let regaloCode: String
+        var path: String { return "usuarios/\(userId)/regalos/\(regaloCode)/unirme" }
+        var parameters: [String : Any]? { return ["regaloCodigo": regaloCode] }
 
     }
 

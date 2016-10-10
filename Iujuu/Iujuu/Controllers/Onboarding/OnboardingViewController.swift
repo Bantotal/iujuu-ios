@@ -106,8 +106,7 @@ class OnboardingViewController: UIViewController {
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if case let Mode.fromDeepLink(deepLinkRegalo) = mode {
-            // TODO: segue to the correct view controller here.
-            ((segue.destination as? UINavigationController)?.topViewController as? RegaloDetailController)?.regalo = deepLinkRegalo
+            ((segue.destination as? UINavigationController)?.topViewController as? RegaloDetailViewController)?.regalo = deepLinkRegalo
         }
     }
 
@@ -116,7 +115,6 @@ class OnboardingViewController: UIViewController {
         if mode.isNormal {
             performSegue(withIdentifier: R.segue.onboardingViewController.finishOnboarding, sender: nil)
         } else {
-            // TODO: segue to the correct view controller here.
             performSegue(withIdentifier: R.segue.onboardingViewController.previewRegalo, sender: nil)
         }
     }

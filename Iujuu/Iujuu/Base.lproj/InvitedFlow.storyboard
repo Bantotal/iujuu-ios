@@ -96,29 +96,39 @@
                         <outlet property="tableView" destination="2d3-9W-N7G" id="dWV-76-RaJ"/>
                         <outlet property="titleLabel" destination="9Yw-pP-KuK" id="gB9-vd-HGf"/>
                         <segue destination="Fcd-4l-n9w" kind="presentation" identifier="showOnboarding" modalTransitionStyle="crossDissolve" id="Q0O-t1-bL3"/>
-                        <segue destination="4D3-v7-eru" kind="show" identifier="showRegaloDetail" id="bKE-Oz-AAh"/>
-                        <segue destination="rs3-EW-WI2" kind="presentation" identifier="presentRegaloDetail" modalTransitionStyle="crossDissolve" id="MnE-QW-Ypm"/>
+                        <segue destination="EDv-rS-FvW" kind="presentation" identifier="presentRegaloDetail" modalTransitionStyle="crossDissolve" id="ZAK-4d-cau"/>
+                        <segue destination="0h1-jx-D68" kind="show" identifier="showRegaloDetail" id="9Iw-Ou-NIr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l4E-G8-q2T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="821.60000000000002" y="429.53523238380814"/>
         </scene>
-        <!--RegaloDetailNavigationController-->
-        <scene sceneID="0vL-3g-gyV">
+        <!--Navigation Controller-->
+        <scene sceneID="cg1-uU-qag">
             <objects>
-                <viewControllerPlaceholder storyboardName="Onboarding" referencedIdentifier="RegaloDetailNavigationController" id="rs3-EW-WI2" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="RV7-Xo-2MP" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <navigationController id="EDv-rS-FvW" sceneMemberID="viewController">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="MZC-3v-ftl">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="0h1-jx-D68" kind="relationship" relationship="rootViewController" id="fTU-HM-vhf"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dZ2-PP-6Yh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1561" y="250"/>
+            <point key="canvasLocation" x="1708" y="-362"/>
         </scene>
-        <!--RegaloDetailController-->
-        <scene sceneID="QJR-vM-fJn">
+        <!--RegaloDetailViewController-->
+        <scene sceneID="awU-HX-aBo">
             <objects>
-                <viewControllerPlaceholder storyboardName="Onboarding" referencedIdentifier="RegaloDetailController" id="4D3-v7-eru" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GKU-AX-Q6F" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="RegaloDetailViewController" id="0h1-jx-D68" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Wgx-RZ-cKh"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jK7-qt-Oze" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1582" y="353"/>
+            <point key="canvasLocation" x="1708" y="207"/>
         </scene>
         <!--Onboarding-->
         <scene sceneID="jmH-aR-rZ4">
@@ -126,11 +136,14 @@
                 <viewControllerPlaceholder storyboardName="Onboarding" id="Fcd-4l-n9w" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1wp-3F-0LW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1529" y="429"/>
+            <point key="canvasLocation" x="1631" y="429"/>
         </scene>
     </scenes>
     <resources>
         <image name="homeBackgroundBalloons" width="375" height="118"/>
         <image name="splashLogo" width="217" height="166"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="9Iw-Ou-NIr"/>
+    </inferredMetricsTieBreakers>
 </document>

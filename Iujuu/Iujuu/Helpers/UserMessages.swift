@@ -141,6 +141,7 @@ extension UserMessages.ParticiparRegalo {
     static let inputTitle = NSLocalizedString("Importe", comment: "")
     static let invalidAmountError = NSLocalizedString("Por favor ingrese un importe válido.", comment: "")
     static let noAccountError = NSLocalizedString("No se pudo obtener la cuenta asociada a este regalo.", comment: "")
+    static let couldNotJoinError = NSLocalizedString("No se pudo participar del regalo. Por favor inténtelo más tarde.", comment: "")
 
 }
 

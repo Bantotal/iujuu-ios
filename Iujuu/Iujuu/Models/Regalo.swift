@@ -103,7 +103,7 @@ extension Regalo: Decodable {
                           cuentaId: j => "cuentaId",
                           active: j =>? "activo",
                           usuarioAdministradorId: j => "usuarioAdministradorId",
-                          isAdministrator: j => "esAdministrador",
+                          isAdministrator: (j =>? "esAdministrador") ?? false,
                           paid: j =>? "pago",
                           codigo: j =>? "codigo")
     }

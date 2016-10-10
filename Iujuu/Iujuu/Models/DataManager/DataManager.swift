@@ -30,6 +30,7 @@ protocol DataManagerProtocol {
     func pagarRegalo(regaloId: Int, importe: String, imagen: String?, comentario: String?) -> Observable<Any>?
     func editRegalo(userId: Int, regaloId: Int, descripcion: String, closeDate: Date,
                       targetAmount: Int, perPersonAmount: Int, regalosSugeridos: [RegaloSugerido]) -> Observable<Bool>
+    func joinToRegalo(regalo: Regalo) -> Observable<Void>
 
     //MARK: - Accounts
 
