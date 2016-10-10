@@ -199,14 +199,16 @@ class RegaloDetailViewController: FormViewController {
     }
 
     private func finalizarColecta() {
-        //TODO - finalizar colecta
+        let finalizarViewController = FinalizarColectaViewController()
+        finalizarViewController.regalo = regalo
+        navigationController?.pushViewController(finalizarViewController, animated: true)
     }
 
     private func setUpHeader() {
         guard let regaloToShow = regalo else {
             return
         }
-        let headerHeight = suggestedVerticalConstraint(360)
+        let headerHeight = suggestedVerticalConstraint(380)
         let regaloHeader = R.nib.regaloDetailHeader.firstView(owner: nil)
         regaloHeader?.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: headerHeight)
         regaloHeader?.setup(regalo: regaloToShow)

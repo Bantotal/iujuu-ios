@@ -264,6 +264,12 @@
 		CE4967A41D9ED1DF00E2363E /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4967A21D9ED1DF00E2363E /* ProgressBarView.swift */; };
 		CE60EF3B1DA7D5F6007CEA3B /* ParticipantesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE60EF3A1DA7D5F6007CEA3B /* ParticipantesViewController.swift */; };
 		CE60EF3C1DA7D5F6007CEA3B /* ParticipantesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE60EF3A1DA7D5F6007CEA3B /* ParticipantesViewController.swift */; };
+		CE6912B71DABE86100843341 /* FinalizarColectaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6912B61DABE86100843341 /* FinalizarColectaViewController.swift */; };
+		CE6912B81DABE86100843341 /* FinalizarColectaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6912B61DABE86100843341 /* FinalizarColectaViewController.swift */; };
+		CE6912BA1DAC059D00843341 /* FinalizarColectaHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6912B91DAC059D00843341 /* FinalizarColectaHeader.swift */; };
+		CE6912BB1DAC059D00843341 /* FinalizarColectaHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6912B91DAC059D00843341 /* FinalizarColectaHeader.swift */; };
+		CE6912BD1DAC05AA00843341 /* FinalizarColectaHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE6912BC1DAC05AA00843341 /* FinalizarColectaHeader.xib */; };
+		CE6912BE1DAC05AA00843341 /* FinalizarColectaHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE6912BC1DAC05AA00843341 /* FinalizarColectaHeader.xib */; };
 		CE7A1D5D1DA28D1C00EF9B63 /* CheckRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7A1D5C1DA28D1C00EF9B63 /* CheckRow.swift */; };
 		CE7A1D5E1DA28D1C00EF9B63 /* CheckRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7A1D5C1DA28D1C00EF9B63 /* CheckRow.swift */; };
 		CE7A1D611DA2AD1300EF9B63 /* Realm.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE7A1D601DA2AD1300EF9B63 /* Realm.swift */; };
@@ -458,6 +464,9 @@
 		CE49679F1D9EA56800E2363E /* RegaloDetailHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegaloDetailHeader.xib; sourceTree = "<group>"; };
 		CE4967A21D9ED1DF00E2363E /* ProgressBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
 		CE60EF3A1DA7D5F6007CEA3B /* ParticipantesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParticipantesViewController.swift; path = Home/ParticipantesViewController.swift; sourceTree = "<group>"; };
+		CE6912B61DABE86100843341 /* FinalizarColectaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FinalizarColectaViewController.swift; path = Home/FinalizarColectaViewController.swift; sourceTree = "<group>"; };
+		CE6912B91DAC059D00843341 /* FinalizarColectaHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinalizarColectaHeader.swift; sourceTree = "<group>"; };
+		CE6912BC1DAC05AA00843341 /* FinalizarColectaHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FinalizarColectaHeader.xib; sourceTree = "<group>"; };
 		CE7A1D5C1DA28D1C00EF9B63 /* CheckRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckRow.swift; sourceTree = "<group>"; };
 		CE7A1D601DA2AD1300EF9B63 /* Realm.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Realm.swift; sourceTree = "<group>"; };
 		DEE523F7CE6A0E56FCF7A0A5 /* Pods_Iujuu.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Iujuu.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -917,6 +926,7 @@
 				CE4967991D9EA1AD00E2363E /* RegaloDetailViewController.swift */,
 				CE3F25AD1DA3E7810035A150 /* ParticiparViewController.swift */,
 				CE60EF3A1DA7D5F6007CEA3B /* ParticipantesViewController.swift */,
+				CE6912B61DABE86100843341 /* FinalizarColectaViewController.swift */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -935,6 +945,8 @@
 				CE4967A21D9ED1DF00E2363E /* ProgressBarView.swift */,
 				CE3BD1C01DA5557D00B3261B /* IdeaRegalosHeader.swift */,
 				CE3BD1C31DA5558800B3261B /* IdeaRegalosHeader.xib */,
+				CE6912B91DAC059D00843341 /* FinalizarColectaHeader.swift */,
+				CE6912BC1DAC05AA00843341 /* FinalizarColectaHeader.xib */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -1118,6 +1130,7 @@
 				CE3BD1C51DA5558800B3261B /* IdeaRegalosHeader.xib in Resources */,
 				460C0BA31D945417005814AA /* OpenSans-BoldItalic.ttf in Resources */,
 				CE43ABE01D9AECEE00F123A6 /* EmptyHomeView.xib in Resources */,
+				CE6912BE1DAC05AA00843341 /* FinalizarColectaHeader.xib in Resources */,
 				2841F1F91CCFF55600D609CE /* Main.storyboard in Resources */,
 				CE42753F1D9D626E00293CA0 /* LogoutButton.xib in Resources */,
 				46418F251D92FE540012EAC0 /* OnboardingCell.xib in Resources */,
@@ -1154,6 +1167,7 @@
 				460C0BA21D945417005814AA /* OpenSans-BoldItalic.ttf in Resources */,
 				46F5AF121DA4143600401255 /* GoogleService-Info.plist in Resources */,
 				CE43ABDF1D9AECEE00F123A6 /* EmptyHomeView.xib in Resources */,
+				CE6912BD1DAC05AA00843341 /* FinalizarColectaHeader.xib in Resources */,
 				2867E8301C74C7D400FCEBBD /* Main.storyboard in Resources */,
 				CE42753E1D9D626E00293CA0 /* LogoutButton.xib in Resources */,
 				46418F241D92FE540012EAC0 /* OnboardingCell.xib in Resources */,
@@ -1511,6 +1525,7 @@
 				8F0759A21D774B390012D681 /* SessionController.swift in Sources */,
 				8F9037E61D9973E9006E1C8E /* UIView.swift in Sources */,
 				46C395001D92DD8E000965FB /* Zeplin.swift in Sources */,
+				CE6912BB1DAC059D00843341 /* FinalizarColectaHeader.swift in Sources */,
 				46A429851DA5727900A37ACB /* ConfirmationCodeViewController.swift in Sources */,
 				464512241D95B2FA009C2FE6 /* UITableView.swift in Sources */,
 				BFE90E6F1D956ED000E8F758 /* Eureka.swift in Sources */,
@@ -1572,6 +1587,7 @@
 				8F8CEA001D9470DA005FA5B6 /* RegaloHeaderView.swift in Sources */,
 				8F81DA811DA3FDB40004CA2A /* Galicia.swift in Sources */,
 				2841F1F11CCFF55600D609CE /* Constants.swift in Sources */,
+				CE6912B81DABE86100843341 /* FinalizarColectaViewController.swift in Sources */,
 				4645120C1D9595CD009C2FE6 /* GenericPasswordCell.swift in Sources */,
 				4645120F1D9595CD009C2FE6 /* DefaultPasswordValidator.swift in Sources */,
 				CE4275391D9D4ED500293CA0 /* SettingsViewController.swift in Sources */,
@@ -1615,6 +1631,7 @@
 				46C395081D92FCD4000965FB /* OnboardingViewController.swift in Sources */,
 				8F9037E51D9973B4006E1C8E /* UIView.swift in Sources */,
 				8F9694C71D92E46300A9EBB7 /* BaseRegaloSetupController.swift in Sources */,
+				CE6912BA1DAC059D00843341 /* FinalizarColectaHeader.swift in Sources */,
 				46A429841DA5727900A37ACB /* ConfirmationCodeViewController.swift in Sources */,
 				464512231D95B1A5009C2FE6 /* UITableView.swift in Sources */,
 				BFE90E6E1D956ED000E8F758 /* Eureka.swift in Sources */,
@@ -1676,6 +1693,7 @@
 				8F8CE9FF1D9470DA005FA5B6 /* RegaloHeaderView.swift in Sources */,
 				8F81DA801DA3FDB40004CA2A /* Galicia.swift in Sources */,
 				28C282441C7797CA003ECA4F /* Constants.swift in Sources */,
+				CE6912B71DABE86100843341 /* FinalizarColectaViewController.swift in Sources */,
 				464512051D9595C2009C2FE6 /* GenericPasswordCell.swift in Sources */,
 				464512081D9595C2009C2FE6 /* DefaultPasswordValidator.swift in Sources */,
 				CE4275381D9D4ED500293CA0 /* SettingsViewController.swift in Sources */,

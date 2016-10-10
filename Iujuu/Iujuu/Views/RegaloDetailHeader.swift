@@ -28,6 +28,7 @@ class RegaloDetailHeader: UIView {
     //MARK: - Constraints
 
     @IBOutlet weak var imageHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var labelToBottomConstraint: NSLayoutConstraint!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -46,6 +47,8 @@ class RegaloDetailHeader: UIView {
 
         recaudadoNumberLabel.textColor = .ijBlackColor()
         recaudadoNumberLabel.font = .bold(size: 17)
+
+        labelToBottomConstraint.constant = suggestedVerticalConstraint(60)
     }
 
     func setup(regalo: Regalo) {
@@ -93,7 +96,7 @@ class RegaloDetailHeader: UIView {
     private func setProgressBar(regalo: Regalo) {
         let percentagePaid = regalo.saldo / Double(regalo.amount)
         let barHeight = suggestedVerticalConstraint(30)
-        let progressBar = ProgressBarView(frame: CGRect(x: frame.origin.x + 20, y: frame.height - 50, width: frame.width - 40, height: barHeight))
+        let progressBar = ProgressBarView(frame: CGRect(x: frame.origin.x + 20, y: frame.height - suggestedVerticalConstraint(50), width: frame.width - 40, height: barHeight))
         progressBar.fullColor = UIColor.ijAccentRedColor()
         progressBar.remainingColor = UIColor.ijAccentRedLightColor()
         progressBar.setProgress(percentageFull: percentagePaid)

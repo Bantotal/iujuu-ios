@@ -72,6 +72,7 @@
                 <outlet property="dateLabel" destination="90m-HD-de6" id="CdB-nT-ysk"/>
                 <outlet property="dateLabelBackground" destination="AQi-MR-GIB" id="5ck-60-Qoy"/>
                 <outlet property="imageHeightConstraint" destination="2Zi-Cv-qaO" id="DVz-VU-nTO"/>
+                <outlet property="labelToBottomConstraint" destination="heH-ty-ttJ" id="849-vi-Fez"/>
                 <outlet property="motivoImageView" destination="9t0-xh-l0w" id="V14-Kc-NW0"/>
                 <outlet property="motivoLabel" destination="owz-ss-Pg7" id="n2o-jY-O29"/>
                 <outlet property="nameLabel" destination="gJa-Nm-cjT" id="0MO-dr-uQy"/>

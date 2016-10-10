@@ -25,6 +25,7 @@ struct UserMessages {
     struct ParticiparRegalo { }
     struct Participantes { }
     struct EditRegalo { }
+    struct FinalizarColecta { }
 
     static let cancel = NSLocalizedString("Cancelar", comment: "")
     static let email = NSLocalizedString("Correo Electrónico", comment: "")
@@ -162,4 +163,12 @@ extension UserMessages.EditRegalo {
     static let deleteRegalo = NSLocalizedString("Borrar regalo", comment: "")
     static let ValidationError = NSLocalizedString("Por favor, ingrese datos válidos", comment: "")
     static let confirmationError = NSLocalizedString("No se pudo editar el regalo, por favor ingrese datos válidos.", comment: "")
+}
+
+extension UserMessages.FinalizarColecta {
+
+    static let title = NSLocalizedString("Finalizar colecta", comment: "")
+    static let buttonMessage = NSLocalizedString("Finalizar y enviar", comment: "")
+    static let networkError = NSLocalizedString("Ocurrio un error al finalizar la colecta. Por favor intente de nuevo!", comment: "")
+    
 }

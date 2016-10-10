@@ -227,5 +227,13 @@ class RealDataManager: DataManagerProtocol {
 
         return Router.Regalo.PagarRegalo(userId: id, regaloId: regaloId, importe: importe, comentario: comentario, imagen: imagen).rx_anyObject()
     }
-    
+
+    func closeRegalo(regaloId: Int, email: String) -> Observable<Any>? {
+        guard let id = userId else {
+            return Observable.empty()
+        }
+
+        return Router.Regalo.CloseRegalo(userId: id, regaloId: regaloId, email: email).rx_anyObject()
+    }
+
 }

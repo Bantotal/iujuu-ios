@@ -78,4 +78,7 @@ class MockedDataManager: DataManagerProtocol {
         return Observable.empty() // TODO:
     }
 
+    func closeRegalo(regaloId: Int, email: String) -> Observable<Any>? {
+        return Observable.empty() // TODO:
+    }
 }

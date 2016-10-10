@@ -16,7 +16,7 @@
                         <viewControllerLayoutGuide type="bottom" id="d2b-Hd-gsX"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="abf-Tu-mT9">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mVm-cS-TwN">
@@ -113,7 +113,7 @@
                         <viewControllerLayoutGuide type="bottom" id="NIm-0h-HIf"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="y2t-7m-FTn">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bZg-SM-SnU">
@@ -155,7 +155,7 @@
                         <viewControllerLayoutGuide type="bottom" id="5YB-fS-c4i"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="D7l-0y-03G">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -170,7 +170,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zOV-V0-1xs" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wXp-WV-J8K">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="wXp-WV-J8K">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -250,7 +250,7 @@
                         <viewControllerLayoutGuide type="bottom" id="BT3-fQ-QtH"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="JQw-Bf-0dB">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="LTq-0A-xtJ">
