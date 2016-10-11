@@ -124,8 +124,8 @@ extension ConfirmationCodeViewController: UITableViewDataSource, UITableViewDele
 
 extension UserMessages.ConfirmationCode {
 
-    static let youWereInvited = NSLocalizedString("Fuiste invitado a una colecta!", comment: "")
-    static let addRegalo = NSLocalizedString("Agregar colecta", comment: "")
-    static let whyAmIHere = NSLocalizedString("Esta no es mi colecta", comment: "")
+    static let youWereInvited = NSLocalizedString("Fuiste invitado a un regalo!", comment: "")
+    static let addRegalo = NSLocalizedString("Agregar regalo", comment: "")
+    static let whyAmIHere = NSLocalizedString("Esta no es mi regalo", comment: "")
 
 }

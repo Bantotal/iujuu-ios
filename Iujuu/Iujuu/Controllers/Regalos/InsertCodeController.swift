@@ -97,5 +97,5 @@ class RSInsertCodeViewController: BaseRegaloSetupController {
 extension UserMessages.InsertCode {
     static let errorMessage = NSLocalizedString("Por favor ingrese un código de 5 dígitos o letras.", comment: "")
     static let noRegaloForCode = NSLocalizedString("No existe ningún regalo para ese código.", comment: "")
-    static let textTitle = NSLocalizedString("Código de Colecta", comment: "")
+    static let textTitle = NSLocalizedString("Código de regalo", comment: "")
 }

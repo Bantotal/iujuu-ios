@@ -86,12 +86,12 @@ extension UserMessages.Register {
 extension UserMessages.RegalosSetup {
 
     static let accountText = NSLocalizedString("Cuenta a asociar", comment: "")
-    static let accountHelp = NSLocalizedString("El dinero de la colecta se irá acumulando en la cuenta seleccionada", comment: "")
+    static let accountHelp = NSLocalizedString("El dinero del regalo se irá acumulando en la cuenta seleccionada", comment: "")
     static let accountButtonText = NSLocalizedString("Agregar una cuenta", comment: "")
     static let accountError = NSLocalizedString("Debe seleccionar una cuenta", comment: "")
     static let motivoText = NSLocalizedString("Motivo", comment: "")
     static let nameError = NSLocalizedString("El nombre no puede ser vacío", comment: "")
-    static let closeDateText = NSLocalizedString("Fecha de cierre de la colecta", comment: "")
+    static let closeDateText = NSLocalizedString("Fecha de cierre del regalo", comment: "")
     static let amountError = NSLocalizedString("El monto no puede ser vacío", comment: "")
     static let amountText = NSLocalizedString("Monto objetivo", comment: "")
     static let perPersonError = NSLocalizedString("El monto sugerido no puede ser vacío", comment: "")
@@ -103,20 +103,20 @@ extension UserMessages.RegalosSetup {
 extension UserMessages.Home {
     static let notParticipated = NSLocalizedString("Aún no participe", comment: "")
     static let didParticipate = NSLocalizedString("Ya Participé", comment: "")
-    static let createColecta = NSLocalizedString("Nueva colecta", comment: "")
-    static let actionCreateColecta = NSLocalizedString("Crear nueva colecta", comment: "")
-    static let actionInsertCode = NSLocalizedString("Ingresar código de colecta", comment: "")
-    static let needAccounts = NSLocalizedString("Necesita una cuenta en Banco Galicia para crear una colecta.", comment: "")
+    static let createColecta = NSLocalizedString("Nuevo regalo", comment: "")
+    static let actionCreateColecta = NSLocalizedString("Crear nuevo regalo", comment: "")
+    static let actionInsertCode = NSLocalizedString("Ingresar código de regalo", comment: "")
+    static let needAccounts = NSLocalizedString("Necesita una cuenta en Banco Galicia para crear un regalo.", comment: "")
     static let galiciaAccountError = NSLocalizedString("Hubo un error tratando de obtener sus cuentas del banco Galicia. Por favor inténtelo más tarde.", comment: "")
     static let galiciaError = NSLocalizedString("Hubo un error tratando de conectarse al servicio del banco Galicia. Por favor inténtelo más tarde.", comment: "")
 }
 
 extension UserMessages.RegaloDetail {
 
-    static let shareMessage = NSLocalizedString("Participa de este colecta! {0}", comment: "{0} is the deeplink")
-    static let title = NSLocalizedString("Colecta", comment: "")
+    static let shareMessage = NSLocalizedString("Participa de este regalo! {0}", comment: "{0} is the deeplink")
+    static let title = NSLocalizedString("Regalo", comment: "")
     static let participar = NSLocalizedString("Participar", comment: "")
-    static let finalizar = NSLocalizedString("Finalizar colecta", comment: "")
+    static let finalizar = NSLocalizedString("Finalizar regalo", comment: "")
     static let voteError = NSLocalizedString("Ocurrió un error al enviar el voto. Por favor, prueba de vuelta", comment: "")
     static let ideasTitle = NSLocalizedString("Ideas de regalo", comment: "")
     static let seeParticipants = NSLocalizedString("Ver todos", comment: "")
@@ -147,18 +147,18 @@ extension UserMessages.ParticiparRegalo {
 extension UserMessages.Participantes {
 
     static let title = NSLocalizedString("Participantes", comment: "")
-    static let participantesTitle = NSLocalizedString("Ya participaron en la colecta", comment: "")
+    static let participantesTitle = NSLocalizedString("Ya participaron en el regalo", comment: "")
 
 }
 
 extension UserMessages.EditRegalo {
-    static let title = NSLocalizedString("Editar colecta", comment: "")
+    static let title = NSLocalizedString("Editar regalo", comment: "")
     static let motivo = NSLocalizedString("Motivo", comment: "")
     static let description = NSLocalizedString("Descripción", comment: "")
     static let finishDate = NSLocalizedString("Fecha de cierre", comment: "")
     static let montoObjetivo = NSLocalizedString("Monto objetivo", comment: "")
     static let montoSugerido = NSLocalizedString("Monto sugerido", comment: "")
-    static let deleteRegalo = NSLocalizedString("Borrar Colecta", comment: "")
+    static let deleteRegalo = NSLocalizedString("Borrar regalo", comment: "")
     static let ValidationError = NSLocalizedString("Por favor, ingrese datos válidos", comment: "")
     static let confirmationError = NSLocalizedString("No se pudo editar el regalo, por favor ingrese datos válidos.", comment: "")
 }
