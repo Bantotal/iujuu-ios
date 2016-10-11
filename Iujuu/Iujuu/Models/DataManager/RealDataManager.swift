@@ -114,7 +114,7 @@ class RealDataManager: DataManagerProtocol {
                 }
     }
 
-    func logout() -> Observable<Any>? {
+    func logout() -> Observable<Any> {
         let userToken = SessionController.sharedInstance.token
 
         guard let _ = userToken else { return Observable.empty() }
@@ -158,9 +158,9 @@ class RealDataManager: DataManagerProtocol {
     }
 
     func createRegalo(userId: Int, motivo: String, descripcion: String, closeDate: Date,
-                      targetAmount: Int, perPersonAmount: Int, regalosSugeridos: [String], account: Account) -> Observable<Regalo> {
+                      targetAmount: Int, perPersonAmount: Int, regalosSugeridos: [String], account: String) -> Observable<Regalo> {
         return Router.Regalo.Create(userId: userId, motivo: motivo, descripcion: descripcion, closeDate: closeDate,
-                             targetAmount: targetAmount, perPersonAmount: perPersonAmount, regalosSugeridos: regalosSugeridos, account: account)
+                             targetAmount: targetAmount, perPersonAmount: perPersonAmount, regalosSugeridos: regalosSugeridos, accountId: account)
             .rx_object("regalo")
             .do(onNext: { (regalo: Regalo) in
                 GCDHelper.runOnMainThread {
@@ -199,6 +199,10 @@ class RealDataManager: DataManagerProtocol {
             })
     }
 
+    func chooseAccount(cuentaId: String, amount: Int, date: Date, text: String) -> Observable<Any> {
+        return Router.Galicia.ChooseAccount(cuentaId: cuentaId, descripcion: text, date: Date(), amount: amount).rx_anyObject()
+    }
+
     func getPagosUrl(account: String, amount: Int, callbackUrl: String, currency: String, motive: String, owner: String) -> Observable<(String, String)?> {
         return Router.Galicia.GetPagosUrl(account: account, amount: amount, callbackUrl: callbackUrl,
                                           currency: currency, motive: motive, owner: owner)
@@ -212,7 +216,7 @@ class RealDataManager: DataManagerProtocol {
         })
     }
 
-    func voteRegalo(regaloId: Int, voto: String) -> Observable<[RegaloSugerido]>? {
+    func voteRegalo(regaloId: Int, voto: String) -> Observable<[RegaloSugerido]> {
         guard let id = userId else {
             return Observable.error(NSError.ijError(code: .userIdNotFound))
         }
@@ -220,7 +224,7 @@ class RealDataManager: DataManagerProtocol {
         return Router.Regalo.VotarRegalo(userId: id, regaloId: regaloId, voto: voto).rx_collection("regalosSugeridos")
     }
 
-    func pagarRegalo(regaloId: Int, importe: String, imagen: String? = nil, comentario: String? = nil) -> Observable<Any>? {
+    func pagarRegalo(regaloId: Int, importe: String, imagen: String? = nil, comentario: String? = nil) -> Observable<Any> {
         guard let id = userId else {
             return Observable.error(NSError.ijError(code: .userIdNotFound))
         }
@@ -228,7 +232,7 @@ class RealDataManager: DataManagerProtocol {
         return Router.Regalo.PagarRegalo(userId: id, regaloId: regaloId, importe: importe, comentario: comentario, imagen: imagen).rx_anyObject()
     }
 
-    func closeRegalo(regaloId: Int, email: String) -> Observable<Any>? {
+    func closeRegalo(regaloId: Int, email: String) -> Observable<Any> {
         guard let id = userId else {
             return Observable.error(NSError.ijError(code: .userIdNotFound))
         }

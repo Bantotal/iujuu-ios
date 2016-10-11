@@ -52,7 +52,7 @@ class ParticiparViewController: FormViewController {
         navigationController?.navigationBar.isHidden = false
         title = UserMessages.ParticiparRegalo.title
     }
-    
+
     //MARK: - Table setup
 
     private func setUpHeader() {
@@ -68,7 +68,7 @@ class ParticiparViewController: FormViewController {
     }
 
     private func setUpRows() {
-        
+
         form +++ Section()
 
         <<< TextAreaRow(participarRowTags.messageTag) {
@@ -123,7 +123,7 @@ class ParticiparViewController: FormViewController {
         }
 
     }
-    
+
     private func setUpConfirmarButton() {
         buttonFooter = ButtonFooter(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 100))
         tableView?.tableFooterView = buttonFooter
@@ -158,6 +158,7 @@ class ParticiparViewController: FormViewController {
                                                 request.setTokenHeader(token: token)
                                             }
                                             pagosVC.request = request
+                                            pagosVC.delegate = self
                                             self?.present(pagosVC, animated: true, completion: nil)
                                         }
                                         }, onError: { error in
@@ -166,21 +167,34 @@ class ParticiparViewController: FormViewController {
                                        }).subscribe().addDisposableTo(disposeBag)
     }
 
-    private func getFormData() -> [String : Any] {
+}
+
+extension ParticiparViewController: GaliciaPagosDelegate {
+
+    func userDidCancel() {
+
+    }
+
+    func userDidConfirmTransaction() {
         let formValues = form.values()
-
-        let importe = formValues[participarRowTags.importeTag] as? Int
-        var values: [String : Any] = ["importe": String(importe!)]
-
-        if let message = formValues[participarRowTags.messageTag] as? String {
-            values["message"] = message
+        guard let importe = formValues[participarRowTags.importeTag] as? Int else { return }
+        let message = formValues[participarRowTags.messageTag] as? String
+        var imageString: String?
+        if let image = formValues[participarRowTags.imageTag] as? UIImage, let data = UIImageJPEGRepresentation(image, 0.5) {
+            //TODO: compress image or check size
+            imageString = data.base64EncodedString()
         }
 
-        if let image = formValues[participarRowTags.imageTag] as? UIImage {
-            values["imagen"] = image
-        }
-
-        return values
+        LoadingIndicator.show()
+        DataManager.shared.pagarRegalo(regaloId: regalo.id, importe: String(importe), imagen: imageString, comentario: message)
+            .do(onNext: { [weak self] element in
+                //TODO: push to PagoConfirmadoViewController
+                LoadingIndicator.hide()
+                self?.showError("Felicidades", message: "Su participacion ha sido guardada exitosamente")
+            }, onError: { [weak self] error in
+                LoadingIndicator.hide()
+                self?.showError(error, alternative: (title: UserMessages.errorTitle, message: UserMessages.ParticiparRegalo.couldNotJoinError))
+            }).subscribe().addDisposableTo(disposeBag)
     }
 
 }

@@ -26,7 +26,7 @@ extension Router.Galicia {
         }
 
         func urlRequestParametersSetup(_ urlRequest: URLRequest, parameters: [String : Any]?) -> [String : Any]? {
-            return [:]
+            return parameters
         }
 
         func urlRequestSetup(_ urlRequest: inout URLRequest) {
@@ -34,6 +34,39 @@ extension Router.Galicia {
             urlRequest.setTokenHeader(token: token)
         }
 
+    }
+
+    struct ChooseAccount: PostRouteType {
+
+        let cuentaId: String
+        let descripcion: String
+        let date: Date
+        let amount: Int
+
+        var baseURL: URL {
+            return Constants.Network.Galicia.baseUrl
+        }
+
+        var path: String {
+            return "accounts/"
+        }
+
+        var parameters: [String : Any]? {
+            return cleanedDict(["goalBalance": amount,
+                    "goalDate": date.toString(format: .iso8601Format(.extended)),
+                    "nickname": descripcion,
+                    "relatedAccountId": cuentaId])
+        }
+
+        func urlRequestParametersSetup(_ urlRequest: URLRequest, parameters: [String : Any]?) -> [String : Any]? {
+            return parameters
+        }
+
+        func urlRequestSetup(_ urlRequest: inout URLRequest) {
+            let token = SessionController.oauthSwift.client.credential.oauthToken
+            urlRequest.setTokenHeader(token: token)
+        }
+        
     }
 
     struct GetPagosUrl: PostRouteType {

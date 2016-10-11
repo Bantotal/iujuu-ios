@@ -10,7 +10,12 @@ import Foundation
 import UIKit
 import OAuthSwift
 
-class OAuthViewController: XLWebViewController {
+class OAuthViewController: XLWebViewController, UIWebViewDelegate {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        webView.delegate = self
+    }
 
     func webView(_ webView: UIWebView, shouldStartLoadWith request: URLRequest, navigationType: UIWebViewNavigationType) -> Bool {
         debugPrint(request.url)

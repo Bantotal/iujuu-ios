@@ -13,6 +13,7 @@ import XLSwiftKit
 import SwiftDate
 import RxSwift
 import Opera
+import SwiftyJSON
 
 fileprivate let addIdeaRowTag = "addIdeaRowTag"
 fileprivate let ideaSectionTag = "ideaSectionTag"
@@ -145,15 +146,30 @@ class RegaloPreviewViewController: FormViewController {
         }
         let regalosSugeridos = form.sectionBy(tag: ideaSectionTag)?.map({ $0.baseValue as? String }).filter { $0 != nil} as? [String]
         LoadingIndicator.show()
-        DataManager.shared.createRegalo(userId: userId, motivo: motivo, descripcion: descripcion, closeDate: date,
-                             targetAmount: amount, perPersonAmount: perPersonAmount, regalosSugeridos: regalosSugeridos ?? [], account: account)
-            .do(onNext: { [weak self] (regalo: Regalo) in
+
+        DataManager.shared.chooseAccount(cuentaId: account.id, amount: amount, date: date, text: descripcion).do(onNext: { [weak self] element in
+            guard let me = self else { return }
+            let json = JSON(element)
+            guard let accountId = json["id"].string else {
                 LoadingIndicator.hide()
-                self?.performSegue(withIdentifier: R.segue.regaloPreviewViewController.showRegaloSetupCompleted.identifier, sender: regalo)
-            }, onError: { [weak self] (error) in
+                me.showError(UserMessages.errorTitle, message: UserMessages.RegaloPreview.galiciaPostError)
+                return
+            }
+            DataManager.shared.createRegalo(userId: userId, motivo: motivo, descripcion: descripcion, closeDate: date,
+                                            targetAmount: amount, perPersonAmount: perPersonAmount, regalosSugeridos: regalosSugeridos ?? [], account: accountId)
+                .do(onNext: { [weak self] (regalo: Regalo) in
+                    LoadingIndicator.hide()
+                    self?.performSegue(withIdentifier: R.segue.regaloPreviewViewController.showRegaloSetupCompleted.identifier, sender: regalo)
+                    }, onError: { [weak self] (error) in
+                        LoadingIndicator.hide()
+                        self?.showError(UserMessages.RegaloPreview.confirmationError)
+                    }).subscribe().addDisposableTo(me.disposeBag)
+            }, onError: { [weak self] error in
                 LoadingIndicator.hide()
-                self?.showError(UserMessages.RegaloPreview.confirmationError)
+                guard let me = self else { return }
+                me.showError(UserMessages.errorTitle, message: UserMessages.RegaloPreview.galiciaPostError)
         }).subscribe().addDisposableTo(disposeBag)
+
     }
 
     // MARK: Overrides

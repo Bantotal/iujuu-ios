@@ -36,7 +36,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         setupFirebase()
         setupDeepLinkRouter()
         stylizeApp()
-        SessionController.sharedInstance.setupOAuthSwift()
 
         setupDateFormatter()
         window?.makeKey()

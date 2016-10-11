@@ -58,7 +58,7 @@ final class Regalo: Object, OperaDecodable, IUObject {
 
     convenience init(id: Int, saldo: Double, fechaDeCierre: Date, motivo: String, descripcion: String,
                      regalosSugeridos: [RegaloSugerido], participantes: [String], amount: Int, perPerson: Int, cuentaId: String, active: Bool?,
-                     usuarioAdministradorId: String, isAdministrator: Bool, paid: Bool?, codigo: String?) {
+                     usuarioAdministradorId: String, isAdministrator: Bool?, paid: Bool?, codigo: String?) {
         self.init()
         self.id = id
         self.saldo = saldo
@@ -71,7 +71,7 @@ final class Regalo: Object, OperaDecodable, IUObject {
         self.perPerson = perPerson
         self.cuentaId = cuentaId
         self.usuarioAdministradorId = Int(usuarioAdministradorId) ?? 0
-        self.isAdministrator = isAdministrator
+        self.isAdministrator = isAdministrator ?? (self.usuarioAdministradorId == id)
         active.map { self.active = $0 }
         paid.map { self.paid = $0 }
         self.codigo = codigo
@@ -103,7 +103,7 @@ extension Regalo: Decodable {
                           cuentaId: j => "cuentaId",
                           active: j =>? "activo",
                           usuarioAdministradorId: j => "usuarioAdministradorId",
-                          isAdministrator: (j =>? "esAdministrador") ?? false,
+                          isAdministrator: j =>? "esAdministrador",
                           paid: j =>? "pago",
                           codigo: j =>? "codigo")
     }

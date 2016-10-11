@@ -82,7 +82,7 @@ class SettingsViewController: FormViewController {
 
     private func logout() {
         LoadingIndicator.show()
-        DataManager.shared.logout()?
+        DataManager.shared.logout()
         .do(onError: { error in
             LoadingIndicator.hide()
             UIApplication.changeRootViewController(R.storyboard.onboarding().instantiateInitialViewController()!)

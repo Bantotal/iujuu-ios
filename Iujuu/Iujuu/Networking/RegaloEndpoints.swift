@@ -22,7 +22,7 @@ extension Router.Regalo {
         let targetAmount: Int
         let perPersonAmount: Int
         let regalosSugeridos: [String]
-        let account: Account
+        let accountId: String
 
         var path: String {
             return "\(Router.baseUsuariosString)/\(userId)/regalos"
@@ -35,7 +35,7 @@ extension Router.Regalo {
                 "fechaDeCierre": closeDate.toString(format: DateFormat.iso8601Format(.date)),
                 "montoObjetivo": targetAmount,
                 "montoPorPersona": perPersonAmount,
-                "cuentaId": account.id,
+                "cuentaId": accountId,
                 "regalosSugeridos": regalosSugeridos.map({ sugerencia in
                     return ["descripcion": sugerencia, "votos": 1]
                 })
