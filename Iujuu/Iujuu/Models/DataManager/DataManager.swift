@@ -17,7 +17,7 @@ protocol DataManagerProtocol {
     //MARK: - User
     func registerUser(user: User, password: String) -> Observable<User>
     func login(username: String?, email: String?, password: String) -> Observable<User>
-    func logout() -> Observable<Any>?
+    func logout() -> Observable<Any>
     func getCurrentUser() -> User?
     func getUser(id: Int?) -> Observable<User>
 
@@ -26,12 +26,12 @@ protocol DataManagerProtocol {
     func getRegalos() -> Observable<Results<Regalo>>
     func createRegalo(userId: Int, motivo: String, descripcion: String, closeDate: Date,
                       targetAmount: Int, perPersonAmount: Int, regalosSugeridos: [String], account: String) -> Observable<Regalo>
-    func voteRegalo(regaloId: Int, voto: String) -> Observable<[RegaloSugerido]>?
-    func pagarRegalo(regaloId: Int, importe: String, imagen: String?, comentario: String?) -> Observable<Any>?
+    func voteRegalo(regaloId: Int, voto: String) -> Observable<[RegaloSugerido]>
+    func pagarRegalo(regaloId: Int, importe: String, imagen: String?, comentario: String?) -> Observable<Any>
     func editRegalo(userId: Int, regaloId: Int, descripcion: String, closeDate: Date,
                       targetAmount: Int, perPersonAmount: Int, regalosSugeridos: [RegaloSugerido]) -> Observable<Bool>
     func joinToRegalo(regalo: Regalo) -> Observable<Void>
-    func closeRegalo(regaloId: Int, email: String) -> Observable<Any>?
+    func closeRegalo(regaloId: Int, email: String) -> Observable<Any>
 
     //MARK: - Accounts  
 

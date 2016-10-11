@@ -239,7 +239,7 @@ class RegaloDetailViewController: FormViewController {
         guard let regaloSet = regalo else { return }
 
         LoadingIndicator.show()
-        DataManager.shared.voteRegalo(regaloId: regaloSet.id, voto: vote)?
+        DataManager.shared.voteRegalo(regaloId: regaloSet.id, voto: vote)
         .do(onNext: { [weak self] regalos in
             LoadingIndicator.hide()
             cell.textLabel?.font = .bold(size: 16)

@@ -47,7 +47,7 @@ class MockedDataManager: DataManagerProtocol {
         return Observable.empty()
     }
 
-    func logout() -> Observable<Any>? {
+    func logout() -> Observable<Any> {
         return Observable.empty()
 
     }
@@ -74,15 +74,15 @@ class MockedDataManager: DataManagerProtocol {
         return Observable.empty()
     }
 
-    func voteRegalo(regaloId: Int, voto: String) -> Observable<[RegaloSugerido]>? {
+    func voteRegalo(regaloId: Int, voto: String) -> Observable<[RegaloSugerido]> {
         return Observable.empty() // TODO:
     }
 
-    func pagarRegalo(regaloId: Int, importe: String, imagen: String? = nil, comentario: String? = nil) -> Observable<Any>? {
+    func pagarRegalo(regaloId: Int, importe: String, imagen: String? = nil, comentario: String? = nil) -> Observable<Any> {
         return Observable.empty() // TODO:
     }
 
-    func closeRegalo(regaloId: Int, email: String) -> Observable<Any>? {
+    func closeRegalo(regaloId: Int, email: String) -> Observable<Any> {
         return Observable.empty() // TODO:
     }
 }

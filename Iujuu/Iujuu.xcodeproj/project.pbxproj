@@ -161,6 +161,8 @@
 		8F702F991D9D579400FE159E /* RegaloCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F702F971D9D579400FE159E /* RegaloCell.swift */; };
 		8F702F9B1D9D57A100FE159E /* RegaloCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F702F9A1D9D57A100FE159E /* RegaloCell.xib */; };
 		8F702F9C1D9D57A100FE159E /* RegaloCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F702F9A1D9D57A100FE159E /* RegaloCell.xib */; };
+		8F7705CA1DAD628A000AFD65 /* PagoConfirmadoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7705C91DAD628A000AFD65 /* PagoConfirmadoViewController.swift */; };
+		8F7705CB1DAD628A000AFD65 /* PagoConfirmadoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7705C91DAD628A000AFD65 /* PagoConfirmadoViewController.swift */; };
 		8F7C01641DA54ABA004D6F54 /* URLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7C01631DA54ABA004D6F54 /* URLRequest.swift */; };
 		8F7C01651DA54ABA004D6F54 /* URLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7C01631DA54ABA004D6F54 /* URLRequest.swift */; };
 		8F7C01671DA5718F004D6F54 /* GaliciaPagosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7C01661DA5718F004D6F54 /* GaliciaPagosViewController.swift */; };
@@ -409,6 +411,7 @@
 		8F5FB2AD1DA6B76B003ED73E /* CurrencyIntRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyIntRow.swift; sourceTree = "<group>"; };
 		8F702F971D9D579400FE159E /* RegaloCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegaloCell.swift; sourceTree = "<group>"; };
 		8F702F9A1D9D57A100FE159E /* RegaloCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegaloCell.xib; sourceTree = "<group>"; };
+		8F7705C91DAD628A000AFD65 /* PagoConfirmadoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = PagoConfirmadoViewController.swift; path = Home/PagoConfirmadoViewController.swift; sourceTree = "<group>"; };
 		8F79C2471D9C3FDD00EE6D27 /* Iujuu.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = Iujuu.entitlements; path = ../Iujuu.entitlements; sourceTree = "<group>"; };
 		8F79C2481D9C3FE800EE6D27 /* Iujuu-Staging.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = "Iujuu-Staging.entitlements"; path = "../../Iujuu-Staging.entitlements"; sourceTree = "<group>"; };
 		8F7C01631DA54ABA004D6F54 /* URLRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRequest.swift; sourceTree = "<group>"; };
@@ -931,6 +934,7 @@
 				CE60EF3A1DA7D5F6007CEA3B /* ParticipantesViewController.swift */,
 				CE6912B61DABE86100843341 /* FinalizarColectaViewController.swift */,
 				CE510B731DAD13F100C783FE /* ConfirmacionEnvioViewController.swift */,
+				8F7705C91DAD628A000AFD65 /* PagoConfirmadoViewController.swift */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -1559,6 +1563,7 @@
 				8F9694E21D932A5A00A9EBB7 /* RSPerPersonController.swift in Sources */,
 				46F45F271D905BED00A44C59 /* InitialViewController.swift in Sources */,
 				4653B7F61D7A14A0002A6660 /* LoadingIndicator.swift in Sources */,
+				8F7705CB1DAD628A000AFD65 /* PagoConfirmadoViewController.swift in Sources */,
 				8F702F991D9D579400FE159E /* RegaloCell.swift in Sources */,
 				8F9037EF1D99AA37006E1C8E /* ShareRegaloController.swift in Sources */,
 				4666841E1D94802800584FDB /* CreateAccountViewController.swift in Sources */,
@@ -1666,6 +1671,7 @@
 				8F9694D91D93084000A9EBB7 /* RSCloseDateController.swift in Sources */,
 				8F9694E11D932A5A00A9EBB7 /* RSPerPersonController.swift in Sources */,
 				46F45F261D905BED00A44C59 /* InitialViewController.swift in Sources */,
+				8F7705CA1DAD628A000AFD65 /* PagoConfirmadoViewController.swift in Sources */,
 				8F702F981D9D579400FE159E /* RegaloCell.swift in Sources */,
 				8F9037EE1D99AA37006E1C8E /* ShareRegaloController.swift in Sources */,
 				4653B7F51D7A14A0002A6660 /* LoadingIndicator.swift in Sources */,

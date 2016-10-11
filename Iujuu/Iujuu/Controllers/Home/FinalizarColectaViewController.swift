@@ -99,7 +99,7 @@ class FinalizarColectaViewController: FormViewController {
 
     private func endColecta(email: String) {
         LoadingIndicator.show()
-        DataManager.shared.closeRegalo(regaloId: regalo.id, email: email)?
+        DataManager.shared.closeRegalo(regaloId: regalo.id, email: email)
         .do( onError: { [weak self] (error) in
             LoadingIndicator.hide()
             if let error = error as? OperaError {

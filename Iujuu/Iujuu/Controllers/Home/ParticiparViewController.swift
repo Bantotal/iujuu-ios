@@ -167,23 +167,6 @@ class ParticiparViewController: FormViewController {
                                        }).subscribe().addDisposableTo(disposeBag)
     }
 
-    private func getFormData() -> [String : Any] {
-        let formValues = form.values()
-
-        let importe = formValues[participarRowTags.importeTag] as? Int
-        var values: [String : Any] = ["importe": String(importe!)]
-
-        if let message = formValues[participarRowTags.messageTag] as? String {
-            values["message"] = message
-        }
-
-        if let image = formValues[participarRowTags.imageTag] as? UIImage {
-            values["imagen"] = image
-        }
-
-        return values
-    }
-
 }
 
 extension ParticiparViewController: GaliciaPagosDelegate {
@@ -193,8 +176,25 @@ extension ParticiparViewController: GaliciaPagosDelegate {
     }
 
     func userDidConfirmTransaction() {
-        //TODO: Participar
-        print("Paid")
+        let formValues = form.values()
+        guard let importe = formValues[participarRowTags.importeTag] as? Int else { return }
+        let message = formValues[participarRowTags.messageTag] as? String
+        var imageString: String?
+        if let image = formValues[participarRowTags.imageTag] as? UIImage, let data = UIImageJPEGRepresentation(image, 0.5) {
+            //TODO: compress image or check size
+            imageString = data.base64EncodedString()
+        }
+
+        LoadingIndicator.show()
+        DataManager.shared.pagarRegalo(regaloId: regalo.id, importe: String(importe), imagen: imageString, comentario: message)
+            .do(onNext: { [weak self] element in
+                //TODO: push to PagoConfirmadoViewController
+                LoadingIndicator.hide()
+                self?.showError("Felicidades", message: "Su participacion ha sido guardada exitosamente")
+            }, onError: { [weak self] error in
+                LoadingIndicator.hide()
+                self?.showError(error, alternative: (title: UserMessages.errorTitle, message: UserMessages.ParticiparRegalo.couldNotJoinError))
+            }).subscribe().addDisposableTo(disposeBag)
     }
 
 }
