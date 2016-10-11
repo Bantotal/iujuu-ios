@@ -89,7 +89,6 @@ class HomeViewController: XLTableViewController {
         controller.addAction(UIAlertAction(title: UserMessages.cancel, style: .cancel, handler: nil))
         present(controller, animated: true, completion: nil)
 
-
     }
 
     private func sendToIngresarCodigo() {

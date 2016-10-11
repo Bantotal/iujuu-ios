@@ -40,6 +40,8 @@ struct UserMessages {
     static let unkownError = NSLocalizedString("Oops! Ha ocurrido un error. Por favor inténtelo más tarde.", comment: "")
     static let noInternet = NSLocalizedString("No hay conexión a internet. Por favor inténtelo más tarde.", comment: "")
     static let errorTitle = NSLocalizedString("Error", comment: "")
+    static let retry = NSLocalizedString("Reintentar", comment: "")
+    static let accept = NSLocalizedString("Aceptar", comment: "")
 
 }
 
@@ -137,6 +139,8 @@ extension UserMessages.ParticiparRegalo {
     static let galiciaMessage = NSLocalizedString("Los pagos de IUJUU se realizan con la plataforma Galicia Pagos", comment: "")
     static let buttonMessage = NSLocalizedString("Pagar con galicia", comment: "")
     static let inputTitle = NSLocalizedString("Importe", comment: "")
+    static let invalidAmountError = NSLocalizedString("Por favor ingrese un importe válido.", comment: "")
+    static let noAccountError = NSLocalizedString("No se pudo obtener la cuenta asociada a este regalo.", comment: "")
 
 }
 

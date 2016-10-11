@@ -48,7 +48,8 @@ final class Regalo: Object, OperaDecodable, IUObject {
     var participantes = List<RLMString>()
     dynamic var amount = 0
     dynamic var perPerson = 0
-    dynamic var usuarioAdministradorId = ""
+    dynamic var cuentaId = ""
+    dynamic var usuarioAdministradorId: Int = 0
     dynamic var isAdministrator = false
     dynamic var active = true
     dynamic var paid = true
@@ -56,7 +57,8 @@ final class Regalo: Object, OperaDecodable, IUObject {
 
 
     convenience init(id: Int, saldo: Double, fechaDeCierre: Date, motivo: String, descripcion: String,
-                     regalosSugeridos: [RegaloSugerido], participantes: [String], amount: Int, perPerson: Int, active: Bool?, usuarioAdministradorId: String, isAdministrator: Bool, paid: Bool?, codigo: String?) {
+                     regalosSugeridos: [RegaloSugerido], participantes: [String], amount: Int, perPerson: Int, cuentaId: String, active: Bool?,
+                     usuarioAdministradorId: String, isAdministrator: Bool, paid: Bool?, codigo: String?) {
         self.init()
         self.id = id
         self.saldo = saldo
@@ -67,7 +69,8 @@ final class Regalo: Object, OperaDecodable, IUObject {
         self.participantes.append(objectsIn: participantes.map({ RLMString(string: $0)}) )
         self.amount = amount
         self.perPerson = perPerson
-        self.usuarioAdministradorId = usuarioAdministradorId
+        self.cuentaId = cuentaId
+        self.usuarioAdministradorId = Int(usuarioAdministradorId) ?? 0
         self.isAdministrator = isAdministrator
         active.map { self.active = $0 }
         paid.map { self.paid = $0 }
@@ -97,6 +100,7 @@ extension Regalo: Decodable {
                           participantes: j => "participantes",
                           amount: j => "montoObjetivo",
                           perPerson: j => "montoPorPersona",
+                          cuentaId: j => "cuentaId",
                           active: j =>? "activo",
                           usuarioAdministradorId: j => "usuarioAdministradorId",
                           isAdministrator: j => "esAdministrador",

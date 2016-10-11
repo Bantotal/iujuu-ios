@@ -53,6 +53,10 @@ final class User: Object, IUObject {
         self.avatar = avatar
     }
 
+    var fullName: String {
+        return "\(nombre) \(apellido)"
+    }
+
 }
 
 extension User: Decodable {

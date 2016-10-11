@@ -130,7 +130,7 @@
                         <constraints>
                             <constraint firstItem="bZg-SM-SnU" firstAttribute="leading" secondItem="y2t-7m-FTn" secondAttribute="leading" id="0Vc-bY-dzW"/>
                             <constraint firstAttribute="trailing" secondItem="Zsk-B5-ycU" secondAttribute="trailing" id="4CS-Ph-Wxf"/>
-                            <constraint firstItem="NIm-0h-HIf" firstAttribute="top" secondItem="bZg-SM-SnU" secondAttribute="bottom" id="I1u-vZ-Eg9"/>
+                            <constraint firstItem="NIm-0h-HIf" firstAttribute="top" secondItem="bZg-SM-SnU" secondAttribute="bottom" constant="68" id="I1u-vZ-Eg9"/>
                             <constraint firstItem="NIm-0h-HIf" firstAttribute="top" secondItem="Zsk-B5-ycU" secondAttribute="bottom" id="Txr-c7-YyQ"/>
                             <constraint firstAttribute="trailing" secondItem="bZg-SM-SnU" secondAttribute="trailing" id="a8a-5i-20v"/>
                             <constraint firstItem="Zsk-B5-ycU" firstAttribute="leading" secondItem="y2t-7m-FTn" secondAttribute="leading" id="iFt-Ne-jVf"/>
@@ -182,6 +182,48 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5Q-54-6Jj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-65" y="444"/>
+        </scene>
+        <!--Galicia Pagos View Controller-->
+        <scene sceneID="Xzm-9J-sZp">
+            <objects>
+                <viewController storyboardIdentifier="GaliciaPagosViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="3fN-rm-wh9" customClass="GaliciaPagosViewController" customModule="Iujuu" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="svf-Tj-ci6"/>
+                        <viewControllerLayoutGuide type="bottom" id="Vlw-lW-eh2"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PKi-WW-NFU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dM7-OP-53f">
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mVm-Hm-QeG">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="68" id="FMs-0i-hUE"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dM7-OP-53f" firstAttribute="leading" secondItem="PKi-WW-NFU" secondAttribute="leading" id="7Dy-6m-oqO"/>
+                            <constraint firstItem="Vlw-lW-eh2" firstAttribute="top" secondItem="mVm-Hm-QeG" secondAttribute="bottom" id="Brn-y8-gIL"/>
+                            <constraint firstAttribute="trailing" secondItem="mVm-Hm-QeG" secondAttribute="trailing" id="N7o-x5-s6H"/>
+                            <constraint firstItem="mVm-Hm-QeG" firstAttribute="leading" secondItem="PKi-WW-NFU" secondAttribute="leading" id="UFk-lA-qy8"/>
+                            <constraint firstAttribute="trailing" secondItem="dM7-OP-53f" secondAttribute="trailing" id="alJ-1W-Xoa"/>
+                            <constraint firstItem="Vlw-lW-eh2" firstAttribute="top" secondItem="dM7-OP-53f" secondAttribute="bottom" constant="68" id="gI8-aP-44z"/>
+                            <constraint firstItem="dM7-OP-53f" firstAttribute="top" secondItem="svf-Tj-ci6" secondAttribute="bottom" id="uLf-ZF-mMz"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cancelButton" destination="mVm-Hm-QeG" id="vDH-EK-3tf"/>
+                        <outlet property="webView" destination="dM7-OP-53f" id="kFV-c7-len"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qeo-pi-V0L" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1522" y="1142"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="kpT-1B-leC">

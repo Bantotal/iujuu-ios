@@ -19,10 +19,11 @@ private struct participarRowTags {
 
 class ParticiparViewController: FormViewController {
 
-    var regalo: Regalo? = nil
+    var regalo: Regalo!
     let disposeBag = DisposeBag()
     var buttonFooter: ButtonFooter?
-    
+    var ownerName = ""
+
     //MARK: - Lifecycle methods
 
     override func viewDidLoad() {
@@ -30,6 +31,7 @@ class ParticiparViewController: FormViewController {
         setUpHeader()
         setUpRows()
         setUpStyles()
+        getOwnerData()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -132,10 +134,36 @@ class ParticiparViewController: FormViewController {
         buttonFooter?.actionButton.setTitle(UserMessages.ParticiparRegalo.buttonMessage, for: .normal)
     }
 
+    func getOwnerData() {
+        ownerName = regalo.descripcion
+        DataManager.shared.getUser(id: regalo.usuarioAdministradorId).do(onNext: { [weak self] element in
+            self?.ownerName = element.fullName
+            }).subscribe().addDisposableTo(disposeBag)
+    }
+
     //MARK: - Actions
 
     private func pagarConGaliciaPressed() {
-        //TODO - send to pagar con galicia
+
+        guard let importe = form.rowBy(tag: participarRowTags.importeTag)?.baseValue as? Int else {
+            showError(UserMessages.ParticiparRegalo.invalidAmountError)
+            return
+        }
+        DataManager.shared.getPagosUrl(account: regalo.cuentaId, amount: importe, callbackUrl: Constants.Network.Galicia.callbackUrl,
+                                       currency: Constants.Network.Galicia.argentineCurrency, motive: regalo.descripcion, owner: ownerName).do(onNext: { [weak self] element in
+                                        if let urlString = element?.0, let url = URL(string: urlString) {
+                                            let pagosVC = R.storyboard.main.galiciaPagosViewController()!
+                                            var request = URLRequest(url: url)
+                                            if let token = SessionController.sharedInstance.galiciaToken {
+                                                request.setTokenHeader(token: token)
+                                            }
+                                            pagosVC.request = request
+                                            self?.present(pagosVC, animated: true, completion: nil)
+                                        }
+                                        }, onError: { error in
+                                            //TODO: handle error
+                                            print(error)
+                                       }).subscribe().addDisposableTo(disposeBag)
     }
 
     private func getFormData() -> [String : Any] {

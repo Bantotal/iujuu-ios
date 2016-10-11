@@ -31,8 +31,42 @@ extension Router.Galicia {
 
         func urlRequestSetup(_ urlRequest: inout URLRequest) {
             let token = SessionController.oauthSwift.client.credential.oauthToken
-            urlRequest.setValue("Bearer \(token)", forHTTPHeaderField: Constants.Network.Galicia.AuthHeaderName)
+            urlRequest.setTokenHeader(token: token)
         }
+
+    }
+
+    struct GetPagosUrl: PostRouteType {
+
+        var account: String
+        var amount: Int
+        var callbackUrl: String
+        var currency: String
+        var motive: String
+        var owner: String
+
+        var baseURL: URL {
+            return Constants.Network.Galicia.baseUrl
+        }
+
+        var path: String {
+            return "transfers/pay-transaction/"
+        }
+
+        var parameters: [String : Any]? {
+            return ["account": account,
+                    "ammount": amount,
+                    "callbackUrl": callbackUrl,
+                    "currency": currency,
+                    "motive": motive,
+                    "owner": owner]
+        }
+
+        func urlRequestParametersSetup(_ urlRequest: URLRequest, parameters: [String : Any]?) -> [String : Any]? {
+            return parameters
+        }
+
+        func urlRequestSetup(_ urlRequest: inout URLRequest) { }
 
     }
 

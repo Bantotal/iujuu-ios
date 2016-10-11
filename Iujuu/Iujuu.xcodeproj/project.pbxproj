@@ -163,6 +163,8 @@
 		8F702F9C1D9D57A100FE159E /* RegaloCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8F702F9A1D9D57A100FE159E /* RegaloCell.xib */; };
 		8F7C01641DA54ABA004D6F54 /* URLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7C01631DA54ABA004D6F54 /* URLRequest.swift */; };
 		8F7C01651DA54ABA004D6F54 /* URLRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7C01631DA54ABA004D6F54 /* URLRequest.swift */; };
+		8F7C01671DA5718F004D6F54 /* GaliciaPagosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7C01661DA5718F004D6F54 /* GaliciaPagosViewController.swift */; };
+		8F7C01681DA5718F004D6F54 /* GaliciaPagosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F7C01661DA5718F004D6F54 /* GaliciaPagosViewController.swift */; };
 		8F81DA7C1DA3F2FF0004CA2A /* InsertCodeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F81DA7B1DA3F2FF0004CA2A /* InsertCodeController.swift */; };
 		8F81DA7D1DA3F2FF0004CA2A /* InsertCodeController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F81DA7B1DA3F2FF0004CA2A /* InsertCodeController.swift */; };
 		8F81DA801DA3FDB40004CA2A /* Galicia.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F81DA7F1DA3FDB40004CA2A /* Galicia.swift */; };
@@ -402,6 +404,7 @@
 		8F79C2471D9C3FDD00EE6D27 /* Iujuu.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = Iujuu.entitlements; path = ../Iujuu.entitlements; sourceTree = "<group>"; };
 		8F79C2481D9C3FE800EE6D27 /* Iujuu-Staging.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; name = "Iujuu-Staging.entitlements"; path = "../../Iujuu-Staging.entitlements"; sourceTree = "<group>"; };
 		8F7C01631DA54ABA004D6F54 /* URLRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLRequest.swift; sourceTree = "<group>"; };
+		8F7C01661DA5718F004D6F54 /* GaliciaPagosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GaliciaPagosViewController.swift; sourceTree = "<group>"; };
 		8F81DA7B1DA3F2FF0004CA2A /* InsertCodeController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = InsertCodeController.swift; path = Regalos/InsertCodeController.swift; sourceTree = "<group>"; };
 		8F81DA7F1DA3FDB40004CA2A /* Galicia.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Galicia.swift; sourceTree = "<group>"; };
 		8F8CE9F71D946BC4005FA5B6 /* PreviewRegaloController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewRegaloController.swift; sourceTree = "<group>"; };
@@ -835,8 +838,8 @@
 			children = (
 				281BF19F1C7B8EEF00809E3F /* Session.swift */,
 				8FBEC0EF1D9AE3E600C07586 /* RegaloEndpoints.swift */,
-				8F81DA7F1DA3FDB40004CA2A /* Galicia.swift */,
 				46471E7F1DA825DD0087615E /* UserEndpoints.swift */,
+				8F81DA7F1DA3FDB40004CA2A /* Galicia.swift */,
 			);
 			name = Router;
 			sourceTree = "<group>";
@@ -887,6 +890,7 @@
 			isa = PBXGroup;
 			children = (
 				8FD9D06E1DA2E21C006AC192 /* OAuthViewController.swift */,
+				8F7C01661DA5718F004D6F54 /* GaliciaPagosViewController.swift */,
 			);
 			name = "Galicia API";
 			sourceTree = "<group>";
@@ -1490,6 +1494,7 @@
 				2841F1E01CCFF55600D609CE /* XLTableViewController.swift in Sources */,
 				464512111D9595CD009C2FE6 /* PasswordValidator.swift in Sources */,
 				8F8CEA071D947840005FA5B6 /* IJLabelRow.swift in Sources */,
+				8F7C01681DA5718F004D6F54 /* GaliciaPagosViewController.swift in Sources */,
 				2841F1E11CCFF55600D609CE /* Manager.swift in Sources */,
 				460C0B931D9431E4005814AA /* UserMessages.swift in Sources */,
 				466684171D94775900584FDB /* WelcomeViewController.swift in Sources */,
@@ -1593,6 +1598,7 @@
 				8F16F8D21D94499E003BDA0B /* IURegaloNavigationController.swift in Sources */,
 				8F8CEA061D947840005FA5B6 /* IJLabelRow.swift in Sources */,
 				2817316B1C9C4BDA006237C7 /* XLTableViewController.swift in Sources */,
+				8F7C01671DA5718F004D6F54 /* GaliciaPagosViewController.swift in Sources */,
 				4645120A1D9595C2009C2FE6 /* PasswordValidator.swift in Sources */,
 				28A6B9D81CB6271800682BCE /* Manager.swift in Sources */,
 				460C0B921D9431E4005814AA /* UserMessages.swift in Sources */,
