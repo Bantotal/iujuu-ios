@@ -71,10 +71,7 @@ extension Object {
 
     /** Must be called from main thread */
     static func save<T: Object>(_ objects: [T], update: Bool = true, removeOld: Bool = false) throws where T: IUObject {
-        guard let first = objects.first else {
-            return
-        }
-        let realm = first.realmInst()
+        guard let realm = objects.first?.realmInst() ?? (try? RealmManager.shared.createRealm()) else { return }
         try realm.write() {
             if removeOld {
                 let old = realm.objects(self)

@@ -60,10 +60,10 @@ class ConfirmationCodeViewController: XLTableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let onboardingViewController = segue.destination as? OnboardingViewController {
             onboardingViewController.mode = .fromDeepLink(withRegalo: regalo)
-        } else if let regaloDetailController = segue.destination as? RegaloDetailController {
+        } else if let regaloDetailController = segue.destination as? RegaloDetailViewController {
             // from insert code
             regaloDetailController.regalo = regalo
-        } else if let regaloDetailController = (segue.destination as? UINavigationController)?.topViewController as? RegaloDetailController {
+        } else if let regaloDetailController = (segue.destination as? UINavigationController)?.topViewController as? RegaloDetailViewController {
             // from deeplink
             regaloDetailController.regalo = regalo
         }

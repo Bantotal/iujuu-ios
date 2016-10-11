@@ -91,6 +91,7 @@ class SessionController {
         SessionController.removeGaliciaToken()
         RealmManager.shared.eraseAll()
         Ecno.clearAll()
+        AfterLoginPending.shared.clear()
 //        Analytics.reset()
 //        Analytics.registerUnidentifiedUser()
         Crashlytics.sharedInstance().setUserEmail(nil)

@@ -12,11 +12,16 @@ import Eureka
 import RealmSwift
 import RxSwift
 import Opera
+import Crashlytics
 
 class RegaloDetailViewController: FormViewController {
 
     var regalo: Regalo? = nil
     let disposeBag = DisposeBag()
+
+    var comingFromDeeplink: Bool {
+        return navigationController?.viewControllers.count == 1
+    }
 
     //MARK: - Lifecycle methods
 
@@ -41,7 +46,7 @@ class RegaloDetailViewController: FormViewController {
         var rightBarButtons = [shareRightBarButton]
 
         let userIsAdministrador = currentUserIsAdministrator()
-        if userIsAdministrador {
+        if userIsAdministrador && !comingFromDeeplink {
             let editRightBarButton = createEditButton()
             rightBarButtons.append(editRightBarButton)
         }
@@ -97,8 +102,10 @@ class RegaloDetailViewController: FormViewController {
         view.backgroundColor = .ijWhiteColor()
         tableView?.backgroundColor = .ijWhiteColor()
         tableView?.backgroundView = nil
+        if comingFromDeeplink {
+            addLeftNavigationCancel(withTarget: self, action: #selector(RegaloDetailViewController.cancel))
+        }
     }
-
 
     private func setUpNavigationBar() {
         navigationController?.navigationBar.isHidden = false
@@ -115,7 +122,7 @@ class RegaloDetailViewController: FormViewController {
         let participarButton = createParticiparButton(height: buttonHeight)
         let finalizarButton = createFinalizarButton()
 
-        if isAdministrator {
+        if isAdministrator && !comingFromDeeplink {
             containerView.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: buttonHeight * 2)
             finalizarButton.frame = CGRect(x: 0, y: 100, width: view.bounds.width, height: buttonHeight)
             containerView.addSubview(participarButton)
@@ -150,9 +157,45 @@ class RegaloDetailViewController: FormViewController {
     }
 
     private func sendtoParticipar() {
-        let participarViewController = ParticiparViewController()
-        participarViewController.regalo = regalo
-        navigationController?.pushViewController(participarViewController, animated: true)
+        guard let regalo = regalo else { return }
+        guard DataManager.shared.getCurrentUser() != nil else {
+            let welcomeViewController = R.storyboard.onboarding.welcomeViewController()!
+            AfterLoginPending.shared.add(pending: { DataManager.shared.joinToRegalo(regalo: regalo) })
+            UIApplication.changeRootViewController(welcomeViewController)
+            return
+        }
+        guard comingFromDeeplink else {
+            let participarViewController = ParticiparViewController()
+            participarViewController.regalo = regalo
+            _ = navigationController?.pushViewController(participarViewController, animated: true)
+            return
+        }
+
+        // from deeplink with user
+
+        LoadingIndicator.show()
+        DataManager.shared
+            .joinToRegalo(regalo: regalo)
+            .do(
+                onNext: { [weak self] _ in
+                    LoadingIndicator.hide()
+                    let homeViewController = R.storyboard.main.homeViewController()!
+                    let detailViewController = R.storyboard.main.regaloDetailViewController()!
+                    detailViewController.regalo = regalo
+                    let participarViewController = ParticiparViewController()
+                    participarViewController.regalo = regalo
+                    let controllers = [homeViewController, detailViewController, participarViewController]
+                    self?.navigationController?.setViewControllers(controllers, animated: true)
+                },
+                onError: { [weak self] error in
+                    LoadingIndicator.hide()
+                    Crashlytics.sharedInstance().recordError(error)
+                    let alt = (title: UserMessages.errorTitle, message: UserMessages.ParticiparRegalo.couldNotJoinError)
+                    self?.showError(error, alternative: alt)
+                }
+            )
+            .subscribe()
+            .addDisposableTo(disposeBag)
     }
 
     private func finalizarColecta() {
@@ -268,7 +311,7 @@ class RegaloDetailViewController: FormViewController {
 
     private func showOperaError(error: OperaError) {
         switch error {
-        case let .networking(error, request, response, json):
+        case .networking:
             showError(UserMessages.RegaloDetail.voteError)
         default:
             showError(UserMessages.networkError)
@@ -283,4 +326,12 @@ class RegaloDetailViewController: FormViewController {
         }
         return Double(count)
     }
+
+    func cancel() {
+        // just called when cancelling from deeeplink
+        guard let confirmViewController = R.storyboard.invitedFlow.confirmationCodeViewController() else { return }
+        confirmViewController.regalo = regalo
+        UIApplication.changeRootViewController(confirmViewController)
+    }
+
 }

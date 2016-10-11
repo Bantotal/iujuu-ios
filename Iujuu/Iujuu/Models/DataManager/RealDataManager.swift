@@ -20,16 +20,7 @@ class RealDataManager: DataManagerProtocol {
     static let shared = RealDataManager()
 
     var disposeBag = DisposeBag()
-    var userId: Int? {
-        didSet {
-            if let id = userId, RealmManager.shared.defaultRealm.object(ofType: User.self, forPrimaryKey: id as AnyObject) == nil {
-                let user = User(id: id, nombre: "", apellido: "", email: "")
-                GCDHelper.runOnMainThread {
-                    try? user.save()
-                }
-            }
-        }
-    }
+    var userId: Int?
 
     private init() { }
 
@@ -39,7 +30,7 @@ class RealDataManager: DataManagerProtocol {
         if let userId = userId {
             Router.Regalo.List(userId: userId).rx_collection("regalos").do(onNext: { [weak self] (collection: [Regalo]) in
                 self?.updateRegalos(collection)
-                }, onError: { error in print(error) }).subscribe().addDisposableTo(disposeBag)
+            }, onError: { error in print(error) }).subscribe().addDisposableTo(disposeBag)
         }
         return Observable.of(Observable.just(regalos), dbObservable).merge()
     }
@@ -50,19 +41,30 @@ class RealDataManager: DataManagerProtocol {
 
     func getRegalo(withCode code: String, onlyFromBackend: Bool = false) -> Observable<Regalo> {
         let regalo = RealmManager.shared.defaultRealm.objects(Regalo.self).filter { $0.codigo == code }.first
-        let regaloAPI = Router.Regalo.Get(code: code).rx_object("regalo").do(
-            onNext: { (regalo: Regalo) in
-                GCDHelper.runOnMainThread {
-                    try? regalo.save()
-                }
-            }
-        )
+        let regaloAPI: Observable<Regalo> = Router.Regalo.Get(code: code).rx_object("regalo")
 
         if let regalo = regalo, !onlyFromBackend {
             return Observable.of(Observable.just(regalo), regaloAPI).merge()
         }
 
         return regaloAPI
+    }
+
+    func joinToRegalo(regalo: Regalo) -> Observable<Void> {
+        guard let user = getCurrentUser() else {
+            return Observable.error(NSError.ijError(code: .userNotLogged))
+        }
+        guard let code = regalo.codigo else {
+            return Observable.error(NSError.ijError(code: .unexpectedNil))
+        }
+        return
+            Router.Regalo.Join(userId: user.id, regaloCode: code)
+                .rx_anyObject()
+                .flatMap { _ -> Observable<Void> in
+                    regalo.paid = false
+                    try? regalo.save(true)
+                    return Observable.just(())
+                }
     }
 
     func registerUser(user: User, password: String) -> Observable<User> {
@@ -100,6 +102,15 @@ class RealDataManager: DataManagerProtocol {
                     try? user.save()
                     AppDelegate.logUser(user: user)
                     return Observable.just(user)
+                }
+                .flatMap { (user: User) -> Observable<User> in
+                    return AfterLoginPending.shared
+                        .execute()
+                        .catchError { error in
+                            Crashlytics.sharedInstance().recordError(error)
+                            return Observable.just(())
+                        }
+                        .map { _ in user }
                 }
     }
 

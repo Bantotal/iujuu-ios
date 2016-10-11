@@ -125,7 +125,7 @@ class LoginViewController: FormViewController {
         let email = formValues[loginRowTags.emailRow] as? String
         let password = formValues[loginRowTags.passwordRow] as? String
 
-        return (email: email!, password: password!)
+        return (email: email ?? "", password: password ?? "")
     }
 
     private func setUpForm() {

@@ -30,6 +30,10 @@ class MockedDataManager: DataManagerProtocol {
     func getRegalo(withCode code: String, onlyFromBackend: Bool = false) -> Observable<Regalo> {
         return Observable.empty() // TODO:
     }
+    
+    func joinToRegalo(regalo: Regalo) -> Observable<Void> {
+        return Observable.empty()
+    }
 
     func registerUser(user: User, password: String) -> Observable<User> {
         return Observable.empty()
