@@ -262,6 +262,8 @@
 		CE4967A11D9EA56800E2363E /* RegaloDetailHeader.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE49679F1D9EA56800E2363E /* RegaloDetailHeader.xib */; };
 		CE4967A31D9ED1DF00E2363E /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4967A21D9ED1DF00E2363E /* ProgressBarView.swift */; };
 		CE4967A41D9ED1DF00E2363E /* ProgressBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4967A21D9ED1DF00E2363E /* ProgressBarView.swift */; };
+		CE510B741DAD13F100C783FE /* ConfirmacionEnvioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE510B731DAD13F100C783FE /* ConfirmacionEnvioViewController.swift */; };
+		CE510B751DAD13F100C783FE /* ConfirmacionEnvioViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE510B731DAD13F100C783FE /* ConfirmacionEnvioViewController.swift */; };
 		CE60EF3B1DA7D5F6007CEA3B /* ParticipantesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE60EF3A1DA7D5F6007CEA3B /* ParticipantesViewController.swift */; };
 		CE60EF3C1DA7D5F6007CEA3B /* ParticipantesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE60EF3A1DA7D5F6007CEA3B /* ParticipantesViewController.swift */; };
 		CE6912B71DABE86100843341 /* FinalizarColectaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE6912B61DABE86100843341 /* FinalizarColectaViewController.swift */; };
@@ -463,6 +465,7 @@
 		CE49679C1D9EA55400E2363E /* RegaloDetailHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegaloDetailHeader.swift; sourceTree = "<group>"; };
 		CE49679F1D9EA56800E2363E /* RegaloDetailHeader.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegaloDetailHeader.xib; sourceTree = "<group>"; };
 		CE4967A21D9ED1DF00E2363E /* ProgressBarView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressBarView.swift; sourceTree = "<group>"; };
+		CE510B731DAD13F100C783FE /* ConfirmacionEnvioViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ConfirmacionEnvioViewController.swift; path = Home/ConfirmacionEnvioViewController.swift; sourceTree = "<group>"; };
 		CE60EF3A1DA7D5F6007CEA3B /* ParticipantesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ParticipantesViewController.swift; path = Home/ParticipantesViewController.swift; sourceTree = "<group>"; };
 		CE6912B61DABE86100843341 /* FinalizarColectaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FinalizarColectaViewController.swift; path = Home/FinalizarColectaViewController.swift; sourceTree = "<group>"; };
 		CE6912B91DAC059D00843341 /* FinalizarColectaHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinalizarColectaHeader.swift; sourceTree = "<group>"; };
@@ -927,6 +930,7 @@
 				CE3F25AD1DA3E7810035A150 /* ParticiparViewController.swift */,
 				CE60EF3A1DA7D5F6007CEA3B /* ParticipantesViewController.swift */,
 				CE6912B61DABE86100843341 /* FinalizarColectaViewController.swift */,
+				CE510B731DAD13F100C783FE /* ConfirmacionEnvioViewController.swift */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -1539,6 +1543,7 @@
 				8FBEC0F11D9AE3E600C07586 /* RegaloEndpoints.swift in Sources */,
 				46471E811DA825DD0087615E /* UserEndpoints.swift in Sources */,
 				465723061D91C59A001F4DC1 /* Regalo.swift in Sources */,
+				CE510B751DAD13F100C783FE /* ConfirmacionEnvioViewController.swift in Sources */,
 				CE49679B1D9EA1AD00E2363E /* RegaloDetailViewController.swift in Sources */,
 				8F9694CE1D92F3EB00A9EBB7 /* ProgressView.swift in Sources */,
 				8F8CE9F91D946BC4005FA5B6 /* PreviewRegaloController.swift in Sources */,
@@ -1645,6 +1650,7 @@
 				8FBEC0F01D9AE3E600C07586 /* RegaloEndpoints.swift in Sources */,
 				46471E801DA825DD0087615E /* UserEndpoints.swift in Sources */,
 				4666841A1D947F9C00584FDB /* UIViewController.swift in Sources */,
+				CE510B741DAD13F100C783FE /* ConfirmacionEnvioViewController.swift in Sources */,
 				CE49679A1D9EA1AD00E2363E /* RegaloDetailViewController.swift in Sources */,
 				281731691C9C4BBC006237C7 /* XLViewController.swift in Sources */,
 				465723051D91C59A001F4DC1 /* Regalo.swift in Sources */,

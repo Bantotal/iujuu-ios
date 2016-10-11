@@ -26,6 +26,7 @@ struct UserMessages {
     struct Participantes { }
     struct EditRegalo { }
     struct FinalizarColecta { }
+    struct ConfirmarEnvio { }
 
     static let cancel = NSLocalizedString("Cancelar", comment: "")
     static let email = NSLocalizedString("Correo Electrónico", comment: "")
@@ -170,5 +171,22 @@ extension UserMessages.FinalizarColecta {
     static let title = NSLocalizedString("Finalizar colecta", comment: "")
     static let buttonMessage = NSLocalizedString("Finalizar y enviar", comment: "")
     static let networkError = NSLocalizedString("Ocurrio un error al finalizar la colecta. Por favor intente de nuevo!", comment: "")
+    static let alertTitle = NSLocalizedString("¿Seguro que quieres enviar?", comment: "")
+    static let alertCancel = NSLocalizedString("Cancelar", comment: "")
+    static let alertSend = NSLocalizedString("Enviar", comment: "")
+
+    static func alertInfo(email: String) -> String {
+        return "La dirección de correo electrónico: \(email) recibirá el cupón por $2.400 y los mensajes."
+    }
     
+}
+
+extension UserMessages.ConfirmarEnvio {
+
+    static let title = NSLocalizedString("Confirmación de envío", comment: "")
+
+    static func infoMessage(email: String) -> String {
+        return "El cupón y los mensajes han sido enviado con éxito a la dirección: \(email)"
+    }
+
 }

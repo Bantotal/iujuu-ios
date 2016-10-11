@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -16,12 +17,7 @@
                         <constraint firstAttribute="height" constant="150" id="2Zi-Cv-qaO"/>
                     </constraints>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="owz-ss-Pg7">
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <nil key="textColor"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gJa-Nm-cjT">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="owz-ss-Pg7">
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
@@ -55,17 +51,14 @@
             <constraints>
                 <constraint firstItem="9t0-xh-l0w" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="7UA-mw-CEg"/>
                 <constraint firstAttribute="trailing" secondItem="KXl-en-y7I" secondAttribute="trailing" constant="20" id="89o-hZ-ugA"/>
-                <constraint firstItem="gJa-Nm-cjT" firstAttribute="width" secondItem="owz-ss-Pg7" secondAttribute="width" id="8aD-Q6-QTq"/>
-                <constraint firstItem="gJa-Nm-cjT" firstAttribute="centerX" secondItem="owz-ss-Pg7" secondAttribute="centerX" id="JlA-C7-btJ"/>
-                <constraint firstItem="owz-ss-Pg7" firstAttribute="width" secondItem="9t0-xh-l0w" secondAttribute="width" id="LL7-rD-yU4"/>
+                <constraint firstItem="owz-ss-Pg7" firstAttribute="width" secondItem="9t0-xh-l0w" secondAttribute="width" multiplier="0.9" id="LL7-rD-yU4"/>
                 <constraint firstItem="owz-ss-Pg7" firstAttribute="centerX" secondItem="9t0-xh-l0w" secondAttribute="centerX" id="UcZ-r4-ChU"/>
-                <constraint firstItem="owz-ss-Pg7" firstAttribute="top" secondItem="9t0-xh-l0w" secondAttribute="bottom" constant="10" id="bqz-rm-XU6"/>
+                <constraint firstItem="owz-ss-Pg7" firstAttribute="top" secondItem="9t0-xh-l0w" secondAttribute="bottom" constant="20" id="bqz-rm-XU6"/>
                 <constraint firstItem="WZZ-ZK-iAr" firstAttribute="centerY" secondItem="KXl-en-y7I" secondAttribute="centerY" id="cQz-Yy-ZTK"/>
                 <constraint firstItem="WZZ-ZK-iAr" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="f8l-Fc-1cZ"/>
                 <constraint firstAttribute="bottom" secondItem="WZZ-ZK-iAr" secondAttribute="bottom" constant="60" id="heH-ty-ttJ"/>
                 <constraint firstItem="9t0-xh-l0w" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="q0Q-1x-rw8"/>
                 <constraint firstItem="9t0-xh-l0w" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="qxG-Fp-9KL"/>
-                <constraint firstItem="gJa-Nm-cjT" firstAttribute="top" secondItem="owz-ss-Pg7" secondAttribute="bottom" constant="2" id="wuq-ev-G41"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
@@ -75,7 +68,6 @@
                 <outlet property="labelToBottomConstraint" destination="heH-ty-ttJ" id="849-vi-Fez"/>
                 <outlet property="motivoImageView" destination="9t0-xh-l0w" id="V14-Kc-NW0"/>
                 <outlet property="motivoLabel" destination="owz-ss-Pg7" id="n2o-jY-O29"/>
-                <outlet property="nameLabel" destination="gJa-Nm-cjT" id="0MO-dr-uQy"/>
                 <outlet property="recaudadoNumberLabel" destination="KXl-en-y7I" id="3iT-6Z-hJt"/>
                 <outlet property="recaudadoTitleLabel" destination="WZZ-ZK-iAr" id="6XJ-ey-kQZ"/>
             </connections>

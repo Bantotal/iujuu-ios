@@ -84,19 +84,34 @@ class FinalizarColectaViewController: FormViewController {
         enviarButton?.actionButton.setTitle(UserMessages.FinalizarColecta.buttonMessage, for: .normal)
         enviarButton?.actionButton.isEnabled = false
         enviarButton?.onAction = {
-            self.endColecta()
+            self.enviarButtonPressed()
         }
         tableView?.tableFooterView = enviarButton
     }
 
-    private func endColecta() {
+    private func enviarButtonPressed() {
         let email = getEmail()
-        guard let regaloToClose = regalo, let emailToSend = email else {
+        guard let emailToSend = email else {
+            return
+        }
+
+        let alert = UIAlertController(title: UserMessages.FinalizarColecta.alertTitle, message: UserMessages.FinalizarColecta.alertInfo(email: emailToSend), preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: UserMessages.FinalizarColecta.alertCancel, style: UIAlertActionStyle.default, handler: { action in
+            alert.dismiss(animated: true, completion: nil)
+        }))
+        alert.addAction(UIAlertAction(title: UserMessages.FinalizarColecta.alertSend, style: UIAlertActionStyle.default, handler: { action in
+            self.endColecta(email: emailToSend)
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
+
+    private func endColecta(email: String) {
+        guard let regaloToClose = regalo else {
             return
         }
 
         LoadingIndicator.show()
-        DataManager.shared.closeRegalo(regaloId: regaloToClose.id, email: emailToSend)?
+        DataManager.shared.closeRegalo(regaloId: regaloToClose.id, email: email)?
         .do( onError: { [weak self] (error) in
             LoadingIndicator.hide()
             if let error = error as? OperaError {
@@ -106,7 +121,7 @@ class FinalizarColectaViewController: FormViewController {
             }
         }, onCompleted: {
             LoadingIndicator.hide()
-            UIApplication.changeRootViewController(R.storyboard.main().instantiateInitialViewController()!)
+            self.sendToConfirmacion(email: email)
         })
         .subscribe()
         .addDisposableTo(disposeBag)
@@ -121,6 +136,12 @@ class FinalizarColectaViewController: FormViewController {
             break
         }
         showError(UserMessages.networkError)
+    }
+
+    private func sendToConfirmacion(email: String) {
+        let confirmacionViewController = R.storyboard.main.confirmacionEnvioViewController()
+        confirmacionViewController?.email = email
+        navigationController?.pushViewController(confirmacionViewController!, animated: true)
     }
 
     private func getEmail() -> String? {

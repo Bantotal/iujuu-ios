@@ -46,7 +46,7 @@ class RegaloDetailViewController: FormViewController {
         var rightBarButtons = [shareRightBarButton]
 
         let userIsAdministrador = currentUserIsAdministrator()
-        if userIsAdministrador && !comingFromDeeplink {
+        if userIsAdministrador && regalo!.active && !comingFromDeeplink {
             let editRightBarButton = createEditButton()
             rightBarButtons.append(editRightBarButton)
         }
@@ -115,6 +115,10 @@ class RegaloDetailViewController: FormViewController {
     //MARK: - Table setup
 
     private func setUpParticiparButton() {
+        guard let regaloToShow = regalo, regaloToShow.active else {
+            return
+        }
+
         let containerView = UIView()
         let isAdministrator = currentUserIsAdministrator()
         let buttonHeight = suggestedVerticalConstraint(110)
