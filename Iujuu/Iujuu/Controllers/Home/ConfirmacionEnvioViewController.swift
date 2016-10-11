@@ -40,8 +40,8 @@ class ConfirmacionEnvioViewController: UIViewController {
     }
 
     private func setUpStyles() {
-        titleLabel.font = UIFont.bold(size: 36)
-        infoLabel.font = UIFont.regular(size: 17)
+        titleLabel.font = .bold(size: 36)
+        infoLabel.font = .regular(size: 17)
         okButton.setStyle(.primary)
     }
 
@@ -56,7 +56,7 @@ class ConfirmacionEnvioViewController: UIViewController {
             return
         }
 
-        infoLabel.text = UserMessages.ConfirmarEnvio.infoMessage(email: emailToShow)
+        infoLabel.text = UserMessages.ConfirmarEnvio.infoMessage.parametrize(emailToShow)
     }
 
     @IBAction func okPressed() {

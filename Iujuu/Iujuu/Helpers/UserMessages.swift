@@ -174,19 +174,13 @@ extension UserMessages.FinalizarColecta {
     static let alertTitle = NSLocalizedString("¿Seguro que quieres enviar?", comment: "")
     static let alertCancel = NSLocalizedString("Cancelar", comment: "")
     static let alertSend = NSLocalizedString("Enviar", comment: "")
-
-    static func alertInfo(email: String) -> String {
-        return "La dirección de correo electrónico: \(email) recibirá el cupón por $2.400 y los mensajes."
-    }
+    static let alertInfo = NSLocalizedString("La dirección de correo electrónico: {0} recibirá el cupón por $2.400 y los mensajes.", comment: "{0} is the email entered by the user")
     
 }
 
 extension UserMessages.ConfirmarEnvio {
 
     static let title = NSLocalizedString("Confirmación de envío", comment: "")
-
-    static func infoMessage(email: String) -> String {
-        return "El cupón y los mensajes han sido enviado con éxito a la dirección: \(email)"
-    }
+    static let infoMessage = NSLocalizedString("El cupón y los mensajes han sido enviado con éxito a la dirección: {0}", comment: "{0} is the email entered by the user")
 
 }

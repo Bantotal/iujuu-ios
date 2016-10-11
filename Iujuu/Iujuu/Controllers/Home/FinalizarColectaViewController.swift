@@ -21,7 +21,7 @@ private struct finalizarRowTags {
 class FinalizarColectaViewController: FormViewController {
 
     let disposeBag = DisposeBag()
-    var regalo: Regalo? = nil
+    var regalo: Regalo!
     var enviarButton: ButtonFooter? = nil
 
     override func viewDidLoad() {
@@ -44,12 +44,8 @@ class FinalizarColectaViewController: FormViewController {
     }
 
     private func setHeader() {
-        guard let regaloToShow = regalo else {
-            return
-        }
-
         let finalizarHeader = FinalizarColectaHeader(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 520))
-        finalizarHeader.setRegaloInfo(regaloToShow: regaloToShow)
+        finalizarHeader.setRegaloInfo(regaloToShow: regalo)
         tableView?.tableHeaderView = finalizarHeader
     }
 
@@ -71,11 +67,7 @@ class FinalizarColectaViewController: FormViewController {
             }
 
             let errors = self.form.validate()
-            if errors.isEmpty {
-                button.actionButton.isEnabled = true
-            } else {
-                button.actionButton.isEnabled = false
-            }
+            button.actionButton.isEnabled = errors.isEmpty
         }
     }
 
@@ -95,7 +87,7 @@ class FinalizarColectaViewController: FormViewController {
             return
         }
 
-        let alert = UIAlertController(title: UserMessages.FinalizarColecta.alertTitle, message: UserMessages.FinalizarColecta.alertInfo(email: emailToSend), preferredStyle: UIAlertControllerStyle.alert)
+        let alert = UIAlertController(title: UserMessages.FinalizarColecta.alertTitle, message: UserMessages.FinalizarColecta.alertInfo.parametrize(emailToSend), preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: UserMessages.FinalizarColecta.alertCancel, style: UIAlertActionStyle.default, handler: { action in
             alert.dismiss(animated: true, completion: nil)
         }))
@@ -106,12 +98,8 @@ class FinalizarColectaViewController: FormViewController {
     }
 
     private func endColecta(email: String) {
-        guard let regaloToClose = regalo else {
-            return
-        }
-
         LoadingIndicator.show()
-        DataManager.shared.closeRegalo(regaloId: regaloToClose.id, email: email)?
+        DataManager.shared.closeRegalo(regaloId: regalo.id, email: email)?
         .do( onError: { [weak self] (error) in
             LoadingIndicator.hide()
             if let error = error as? OperaError {
@@ -119,9 +107,9 @@ class FinalizarColectaViewController: FormViewController {
             } else {
                 self?.showError(UserMessages.networkError)
             }
-        }, onCompleted: {
+        }, onCompleted: { [weak self] in
             LoadingIndicator.hide()
-            self.sendToConfirmacion(email: email)
+            self?.sendToConfirmacion(email: email)
         })
         .subscribe()
         .addDisposableTo(disposeBag)
