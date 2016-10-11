@@ -126,7 +126,7 @@ class ShareRegaloViewController: XLViewController {
 extension UserMessages.Share {
 
     static let helpText1 = NSLocalizedString("Comparte este código con los demás integrantes para invitarlos a participar.", comment: "")
-    static let helpText2 = NSLocalizedString("También puedes compartir este código para agregar la colecta manualmente desde la app.", comment: "")
-    static let title = NSLocalizedString("Colecta creada!", comment: "")
+    static let helpText2 = NSLocalizedString("También puedes compartir este código para agregar el regalo manualmente desde la app.", comment: "")
+    static let title = NSLocalizedString("Regalo creado!", comment: "")
 
 }

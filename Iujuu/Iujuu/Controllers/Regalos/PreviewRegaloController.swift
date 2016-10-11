@@ -197,7 +197,7 @@ extension RegaloPreviewViewController {
 
 extension UserMessages.RegaloPreview {
 
-    static let title = NSLocalizedString("Nueva colecta", comment: "")
+    static let title = NSLocalizedString("Nuevo regalo", comment: "")
     static let addIdea = NSLocalizedString("Agregar idea", comment: "")
     static let buttonText = NSLocalizedString("Confirmar", comment: "")
     static let regaloIdeasTitle = NSLocalizedString("Ideas de regalo", comment: "")
@@ -206,5 +206,5 @@ extension UserMessages.RegaloPreview {
     static let perPersonText = NSLocalizedString("por persona", comment: "")
     static let amountText = NSLocalizedString("Objetivo", comment: "")
     static let confirmationError = NSLocalizedString("No se pudo dar de alta el regalo. Por favor, inténtelo más tarde", comment: "")
-
+    static let galiciaPostError = NSLocalizedString("Hubo un error al conectarse con el Banco Galicia. Por favor, inténtelo más tarde", comment: "")
 }
