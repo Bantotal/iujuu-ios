@@ -12,11 +12,16 @@ import Eureka
 import RealmSwift
 import RxSwift
 import Opera
+import Crashlytics
 
 class RegaloDetailViewController: FormViewController {
 
-    var regalo: Regalo? = nil
+    var regalo: Regalo!
     let disposeBag = DisposeBag()
+
+    var comingFromDeeplink: Bool {
+        return navigationController?.viewControllers.count == 1
+    }
 
     //MARK: - Lifecycle methods
 
@@ -41,7 +46,7 @@ class RegaloDetailViewController: FormViewController {
         var rightBarButtons = [shareRightBarButton]
 
         let userIsAdministrador = currentUserIsAdministrator()
-        if userIsAdministrador {
+        if userIsAdministrador && regalo.active && !comingFromDeeplink {
             let editRightBarButton = createEditButton()
             rightBarButtons.append(editRightBarButton)
         }
@@ -97,8 +102,10 @@ class RegaloDetailViewController: FormViewController {
         view.backgroundColor = .ijWhiteColor()
         tableView?.backgroundColor = .ijWhiteColor()
         tableView?.backgroundView = nil
+        if comingFromDeeplink {
+            addLeftNavigationCancel(withTarget: self, action: #selector(RegaloDetailViewController.cancel))
+        }
     }
-
 
     private func setUpNavigationBar() {
         navigationController?.navigationBar.isHidden = false
@@ -108,6 +115,10 @@ class RegaloDetailViewController: FormViewController {
     //MARK: - Table setup
 
     private func setUpParticiparButton() {
+        guard regalo.active else {
+            return
+        }
+
         let containerView = UIView()
         let isAdministrator = currentUserIsAdministrator()
         let buttonHeight = suggestedVerticalConstraint(110)
@@ -115,7 +126,7 @@ class RegaloDetailViewController: FormViewController {
         let participarButton = createParticiparButton(height: buttonHeight)
         let finalizarButton = createFinalizarButton()
 
-        if isAdministrator {
+        if isAdministrator && !comingFromDeeplink {
             containerView.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: buttonHeight * 2)
             finalizarButton.frame = CGRect(x: 0, y: 100, width: view.bounds.width, height: buttonHeight)
             containerView.addSubview(participarButton)
@@ -150,37 +161,68 @@ class RegaloDetailViewController: FormViewController {
     }
 
     private func sendtoParticipar() {
-        let participarViewController = ParticiparViewController()
-        participarViewController.regalo = regalo
-        navigationController?.pushViewController(participarViewController, animated: true)
+        guard let regalo = regalo else { return }
+        guard DataManager.shared.getCurrentUser() != nil else {
+            let welcomeViewController = R.storyboard.onboarding.welcomeViewController()!
+            AfterLoginPending.shared.add(pending: { DataManager.shared.joinToRegalo(regalo: regalo) })
+            UIApplication.changeRootViewController(welcomeViewController)
+            return
+        }
+        guard comingFromDeeplink else {
+            let participarViewController = ParticiparViewController()
+            participarViewController.regalo = regalo
+            _ = navigationController?.pushViewController(participarViewController, animated: true)
+            return
+        }
+
+        // from deeplink with user
+
+        LoadingIndicator.show()
+        DataManager.shared
+            .joinToRegalo(regalo: regalo)
+            .do(
+                onNext: { [weak self] _ in
+                    LoadingIndicator.hide()
+                    let homeViewController = R.storyboard.main.homeViewController()!
+                    let detailViewController = R.storyboard.main.regaloDetailViewController()!
+                    detailViewController.regalo = regalo
+                    let participarViewController = ParticiparViewController()
+                    participarViewController.regalo = regalo
+                    let controllers = [homeViewController, detailViewController, participarViewController]
+                    self?.navigationController?.setViewControllers(controllers, animated: true)
+                },
+                onError: { [weak self] error in
+                    LoadingIndicator.hide()
+                    Crashlytics.sharedInstance().recordError(error)
+                    let alt = (title: UserMessages.errorTitle, message: UserMessages.ParticiparRegalo.couldNotJoinError)
+                    self?.showError(error, alternative: alt)
+                }
+            )
+            .subscribe()
+            .addDisposableTo(disposeBag)
     }
 
     private func finalizarColecta() {
-        //TODO - finalizar colecta
+        let finalizarViewController = FinalizarColectaViewController()
+        finalizarViewController.regalo = regalo
+        navigationController?.pushViewController(finalizarViewController, animated: true)
     }
 
     private func setUpHeader() {
-        guard let regaloToShow = regalo else {
-            return
-        }
-        let headerHeight = suggestedVerticalConstraint(360)
+        let headerHeight = suggestedVerticalConstraint(380)
         let regaloHeader = R.nib.regaloDetailHeader.firstView(owner: nil)
         regaloHeader?.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: headerHeight)
-        regaloHeader?.setup(regalo: regaloToShow)
+        regaloHeader?.setup(regalo: regalo)
         tableView?.tableHeaderView = regaloHeader
     }
 
     private func setUpRows() {
 
-        guard let regaloToShow = regalo else {
-            return
-        }
-
         form +++ Section()
 
         <<< LabelRow() {
-            $0.title = UserMessages.RegaloDetail.cantidadPersonas(cantidad: regaloToShow.participantes.count)
-            if self.currentUserIsAdministrator() {
+            $0.title = UserMessages.RegaloDetail.cantidadPersonas(cantidad: regalo.participantes.count)
+            if self.currentUserIsAdministrator() && !(self.regalo.participantes.isEmpty) {
                 $0.value = UserMessages.RegaloDetail.seeParticipants
             }
         }
@@ -189,14 +231,14 @@ class RegaloDetailViewController: FormViewController {
             cell.height = { 60 }
         }
         .onCellSelection { cell, row in
-            if self.currentUserIsAdministrator() {
+            if self.currentUserIsAdministrator() && !(self.regalo.participantes.isEmpty) {
                 let participantesController = ParticipantesViewController()
                 participantesController.regalo = self.regalo
                 self.navigationController?.pushViewController(participantesController, animated: true)
             }
         }
 
-        let options = regaloToShow.regalosSugeridos
+        let options = regalo.regalosSugeridos
         let totalVotes = getTotalVotes(options: options)
 
         let selectableSection = SelectableSection<CheckRow<String>> { section in
@@ -236,10 +278,8 @@ class RegaloDetailViewController: FormViewController {
     }
 
     private func sendVote(vote: String, cell: CheckCell<String>) {
-        guard let regaloSet = regalo else { return }
-
         LoadingIndicator.show()
-        DataManager.shared.voteRegalo(regaloId: regaloSet.id, voto: vote)
+        DataManager.shared.voteRegalo(regaloId: regalo.id, voto: vote)
         .do(onNext: { [weak self] regalos in
             LoadingIndicator.hide()
             cell.textLabel?.font = .bold(size: 16)
@@ -283,4 +323,12 @@ class RegaloDetailViewController: FormViewController {
         }
         return Double(count)
     }
+
+    func cancel() {
+        // just called when cancelling from deeeplink
+        guard let confirmViewController = R.storyboard.invitedFlow.confirmationCodeViewController() else { return }
+        confirmViewController.regalo = regalo
+        UIApplication.changeRootViewController(confirmViewController)
+    }
+
 }

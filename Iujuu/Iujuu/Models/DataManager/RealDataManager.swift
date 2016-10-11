@@ -228,8 +228,17 @@ class RealDataManager: DataManagerProtocol {
         guard let id = userId else {
             return Observable.error(NSError.ijError(code: .userIdNotFound))
         }
-
-        return Router.Regalo.PagarRegalo(userId: id, regaloId: regaloId, importe: importe, comentario: comentario, imagen: imagen).rx_anyObject()
+        return
+            Router.Regalo.PagarRegalo(userId: id, regaloId: regaloId, importe: importe, comentario: comentario, imagen: imagen)
+                .rx_anyObject()
+                .flatMap { (object: Any) -> Observable<Any> in
+                    let realm = try? RealmManager.shared.createRealm()
+                    try? realm?.write {
+                        let regalo = realm?.object(ofType: Regalo.self, forPrimaryKey: regaloId)
+                        regalo?.paid = true
+                    }
+                    return Observable.just(object)
+                }
     }
 
     func closeRegalo(regaloId: Int, email: String) -> Observable<Any> {

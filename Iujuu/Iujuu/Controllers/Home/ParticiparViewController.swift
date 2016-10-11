@@ -190,7 +190,9 @@ extension ParticiparViewController: GaliciaPagosDelegate {
             .do(onNext: { [weak self] element in
                 //TODO: push to PagoConfirmadoViewController
                 LoadingIndicator.hide()
-                self?.showError("Felicidades", message: "Su participacion ha sido guardada exitosamente")
+                self?.showError("Felicidades", message: "Su participacion ha sido guardada exitosamente") { [weak self] in
+                    _ = self?.navigationController?.popToRootViewController(animated: true)
+                }
             }, onError: { [weak self] error in
                 LoadingIndicator.hide()
                 self?.showError(error, alternative: (title: UserMessages.errorTitle, message: UserMessages.ParticiparRegalo.couldNotJoinError))

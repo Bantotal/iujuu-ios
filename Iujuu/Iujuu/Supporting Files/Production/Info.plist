@@ -73,8 +73,10 @@
 			</dict>
 		</dict>
 	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>Iujuu solicita acceso para poder compartir imagenes en los regalos.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>"Iujuu"</string>
+	<string>Iujuu solicita acceso para poder compartir imagenes en los regalos.</string>
 	<key>UIAppFonts</key>
 	<array>
 		<string>OpenSans-Bold.ttf</string>
