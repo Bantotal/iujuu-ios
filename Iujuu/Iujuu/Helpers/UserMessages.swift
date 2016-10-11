@@ -124,7 +124,10 @@ extension UserMessages.RegaloDetail {
     static let seeParticipants = NSLocalizedString("Ver todos", comment: "")
 
     static func cantidadPersonas(cantidad: Int) -> String {
-        if cantidad == 1 {
+        if cantidad == 0 {
+            return NSLocalizedString("No ha participado nadie aún", comment: "")
+        }
+        else if cantidad == 1 {
             return NSLocalizedString("Ya participo 1 persona", comment: "")
         } else {
             return NSLocalizedString("Ya participaron \(cantidad) personas", comment: "")

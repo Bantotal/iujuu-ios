@@ -222,7 +222,7 @@ class RegaloDetailViewController: FormViewController {
 
         <<< LabelRow() {
             $0.title = UserMessages.RegaloDetail.cantidadPersonas(cantidad: regalo.participantes.count)
-            if self.currentUserIsAdministrator() {
+            if self.currentUserIsAdministrator() && !(self.regalo.participantes.isEmpty) {
                 $0.value = UserMessages.RegaloDetail.seeParticipants
             }
         }
@@ -231,7 +231,7 @@ class RegaloDetailViewController: FormViewController {
             cell.height = { 60 }
         }
         .onCellSelection { cell, row in
-            if self.currentUserIsAdministrator() {
+            if self.currentUserIsAdministrator() && !(self.regalo.participantes.isEmpty) {
                 let participantesController = ParticipantesViewController()
                 participantesController.regalo = self.regalo
                 self.navigationController?.pushViewController(participantesController, animated: true)
