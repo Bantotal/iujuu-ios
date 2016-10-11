@@ -25,7 +25,7 @@ protocol DataManagerProtocol {
     func getRegalo(withCode code: String, onlyFromBackend: Bool) -> Observable<Regalo>
     func getRegalos() -> Observable<Results<Regalo>>
     func createRegalo(userId: Int, motivo: String, descripcion: String, closeDate: Date,
-                      targetAmount: Int, perPersonAmount: Int, regalosSugeridos: [String], account: Account) -> Observable<Regalo>
+                      targetAmount: Int, perPersonAmount: Int, regalosSugeridos: [String], account: String) -> Observable<Regalo>
     func voteRegalo(regaloId: Int, voto: String) -> Observable<[RegaloSugerido]>?
     func pagarRegalo(regaloId: Int, importe: String, imagen: String?, comentario: String?) -> Observable<Any>?
     func editRegalo(userId: Int, regaloId: Int, descripcion: String, closeDate: Date,
@@ -38,6 +38,7 @@ protocol DataManagerProtocol {
     //MARK: - Galicia API
     func getPagosUrl(account: String, amount: Int, callbackUrl: String, currency: String, motive: String, owner: String) -> Observable<(String, String)?>
     func getAccounts() -> Observable<[Account]>
+    func chooseAccount(cuentaId: String, amount: Int, date: Date, text: String) -> Observable<Any>
 }
 
 class DataManager {

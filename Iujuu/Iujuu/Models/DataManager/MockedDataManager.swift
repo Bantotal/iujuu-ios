@@ -27,6 +27,10 @@ class MockedDataManager: DataManagerProtocol {
         return Observable.empty()
     }
 
+    func chooseAccount(cuentaId: String, amount: Int, date: Date, text: String) -> Observable<Any> {
+        return Observable.empty()
+    }
+
     func getRegalo(withCode code: String, onlyFromBackend: Bool = false) -> Observable<Regalo> {
         return Observable.empty() // TODO:
     }
@@ -57,7 +61,7 @@ class MockedDataManager: DataManagerProtocol {
     }
 
     func createRegalo(userId: Int, motivo: String, descripcion: String, closeDate: Date,
-                      targetAmount: Int, perPersonAmount: Int, regalosSugeridos: [String], account: Account) -> Observable<Regalo> {
+                      targetAmount: Int, perPersonAmount: Int, regalosSugeridos: [String], account: String) -> Observable<Regalo> {
         return Observable.empty()
     }
 

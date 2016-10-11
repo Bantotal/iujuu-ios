@@ -16,7 +16,7 @@ class XLViewController: UIViewController {
 
 }
 
-class XLWebViewController: UIViewController, UIWebViewDelegate {
+class XLWebViewController: UIViewController {
 
     @IBOutlet weak var webView: UIWebView!
     var request: URLRequest!
@@ -25,7 +25,6 @@ class XLWebViewController: UIViewController, UIWebViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         webView.loadRequest(request)
-        webView.delegate = self
         cancelButton.setStyle(.primary)
         cancelButton.layer.cornerRadius = 0
         cancelButton.setTitle(UserMessages.cancel, for: .normal)

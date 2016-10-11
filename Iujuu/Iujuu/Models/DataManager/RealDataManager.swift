@@ -158,9 +158,9 @@ class RealDataManager: DataManagerProtocol {
     }
 
     func createRegalo(userId: Int, motivo: String, descripcion: String, closeDate: Date,
-                      targetAmount: Int, perPersonAmount: Int, regalosSugeridos: [String], account: Account) -> Observable<Regalo> {
+                      targetAmount: Int, perPersonAmount: Int, regalosSugeridos: [String], account: String) -> Observable<Regalo> {
         return Router.Regalo.Create(userId: userId, motivo: motivo, descripcion: descripcion, closeDate: closeDate,
-                             targetAmount: targetAmount, perPersonAmount: perPersonAmount, regalosSugeridos: regalosSugeridos, account: account)
+                             targetAmount: targetAmount, perPersonAmount: perPersonAmount, regalosSugeridos: regalosSugeridos, accountId: account)
             .rx_object("regalo")
             .do(onNext: { (regalo: Regalo) in
                 GCDHelper.runOnMainThread {
@@ -197,6 +197,10 @@ class RealDataManager: DataManagerProtocol {
                     }
                 }
             })
+    }
+
+    func chooseAccount(cuentaId: String, amount: Int, date: Date, text: String) -> Observable<Any> {
+        return Router.Galicia.ChooseAccount(cuentaId: cuentaId, descripcion: text, date: Date(), amount: amount).rx_anyObject()
     }
 
     func getPagosUrl(account: String, amount: Int, callbackUrl: String, currency: String, motive: String, owner: String) -> Observable<(String, String)?> {

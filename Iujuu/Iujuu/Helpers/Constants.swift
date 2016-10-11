@@ -25,7 +25,7 @@ struct Constants {
         struct Galicia {
             static let baseUrl = URL(string: "http://galicia.desarrollo.fluxit.com.ar/api/v1")!
             static let AuthHeaderName = "Authorization"
-            static let callbackUrl = "http://IUJJU/callback"
+            static let callbackUrl = "http://iujuu/callback"
             static let argentineCurrency = "ARS"
         }
     }

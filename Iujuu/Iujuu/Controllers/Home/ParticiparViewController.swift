@@ -52,7 +52,7 @@ class ParticiparViewController: FormViewController {
         navigationController?.navigationBar.isHidden = false
         title = UserMessages.ParticiparRegalo.title
     }
-    
+
     //MARK: - Table setup
 
     private func setUpHeader() {
@@ -68,7 +68,7 @@ class ParticiparViewController: FormViewController {
     }
 
     private func setUpRows() {
-        
+
         form +++ Section()
 
         <<< TextAreaRow(participarRowTags.messageTag) {
@@ -123,7 +123,7 @@ class ParticiparViewController: FormViewController {
         }
 
     }
-    
+
     private func setUpConfirmarButton() {
         buttonFooter = ButtonFooter(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 100))
         tableView?.tableFooterView = buttonFooter
@@ -158,6 +158,7 @@ class ParticiparViewController: FormViewController {
                                                 request.setTokenHeader(token: token)
                                             }
                                             pagosVC.request = request
+                                            pagosVC.delegate = self
                                             self?.present(pagosVC, animated: true, completion: nil)
                                         }
                                         }, onError: { error in
@@ -181,6 +182,19 @@ class ParticiparViewController: FormViewController {
         }
 
         return values
+    }
+
+}
+
+extension ParticiparViewController: GaliciaPagosDelegate {
+
+    func userDidCancel() {
+
+    }
+
+    func userDidConfirmTransaction() {
+        //TODO: Participar
+        print("Paid")
     }
 
 }
