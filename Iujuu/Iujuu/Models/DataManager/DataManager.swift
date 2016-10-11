@@ -31,8 +31,9 @@ protocol DataManagerProtocol {
     func editRegalo(userId: Int, regaloId: Int, descripcion: String, closeDate: Date,
                       targetAmount: Int, perPersonAmount: Int, regalosSugeridos: [RegaloSugerido]) -> Observable<Bool>
     func joinToRegalo(regalo: Regalo) -> Observable<Void>
+    func closeRegalo(regaloId: Int, email: String) -> Observable<Any>?
 
-    //MARK: - Accounts
+    //MARK: - Accounts  
 
     //MARK: - Galicia API
     func getPagosUrl(account: String, amount: Int, callbackUrl: String, currency: String, motive: String, owner: String) -> Observable<(String, String)?>

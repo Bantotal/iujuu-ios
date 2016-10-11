@@ -25,6 +25,8 @@ struct UserMessages {
     struct ParticiparRegalo { }
     struct Participantes { }
     struct EditRegalo { }
+    struct FinalizarColecta { }
+    struct ConfirmarEnvio { }
 
     static let cancel = NSLocalizedString("Cancelar", comment: "")
     static let email = NSLocalizedString("Correo Electrónico", comment: "")
@@ -122,7 +124,10 @@ extension UserMessages.RegaloDetail {
     static let seeParticipants = NSLocalizedString("Ver todos", comment: "")
 
     static func cantidadPersonas(cantidad: Int) -> String {
-        if cantidad == 1 {
+        if cantidad == 0 {
+            return NSLocalizedString("No ha participado nadie aún", comment: "")
+        }
+        else if cantidad == 1 {
             return NSLocalizedString("Ya participo 1 persona", comment: "")
         } else {
             return NSLocalizedString("Ya participaron \(cantidad) personas", comment: "")
@@ -162,4 +167,23 @@ extension UserMessages.EditRegalo {
     static let deleteRegalo = NSLocalizedString("Borrar regalo", comment: "")
     static let ValidationError = NSLocalizedString("Por favor, ingrese datos válidos", comment: "")
     static let confirmationError = NSLocalizedString("No se pudo editar el regalo, por favor ingrese datos válidos.", comment: "")
+}
+
+extension UserMessages.FinalizarColecta {
+
+    static let title = NSLocalizedString("Finalizar regalo", comment: "")
+    static let buttonMessage = NSLocalizedString("Finalizar y enviar", comment: "")
+    static let networkError = NSLocalizedString("Ocurrio un error al finalizar el regalo. Por favor intente de nuevo!", comment: "")
+    static let alertTitle = NSLocalizedString("¿Seguro que quieres enviar?", comment: "")
+    static let alertCancel = NSLocalizedString("Cancelar", comment: "")
+    static let alertSend = NSLocalizedString("Enviar", comment: "")
+    static let alertInfo = NSLocalizedString("La dirección de correo electrónico: {0} recibirá el cupón por $2.400 y los mensajes.", comment: "{0} is the email entered by the user")
+    
+}
+
+extension UserMessages.ConfirmarEnvio {
+
+    static let title = NSLocalizedString("Confirmación de envío", comment: "")
+    static let infoMessage = NSLocalizedString("El cupón y los mensajes han sido enviado con éxito a la dirección: {0}", comment: "{0} is the email entered by the user")
+
 }

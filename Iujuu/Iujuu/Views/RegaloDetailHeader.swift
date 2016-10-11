@@ -19,7 +19,6 @@ class RegaloDetailHeader: UIView {
 
     @IBOutlet weak var motivoImageView: UIImageView!
     @IBOutlet weak var motivoLabel: UILabel!
-    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var recaudadoTitleLabel: UILabel!
     @IBOutlet weak var recaudadoNumberLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
@@ -28,15 +27,13 @@ class RegaloDetailHeader: UIView {
     //MARK: - Constraints
 
     @IBOutlet weak var imageHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var labelToBottomConstraint: NSLayoutConstraint!
 
     override func awakeFromNib() {
         super.awakeFromNib()
 
         motivoLabel.textColor = .ijSoftBlackColor()
-        nameLabel.textColor = .ijSoftBlackColor()
-
-        motivoLabel.font = .regular(size: 18)
-        nameLabel.font = .bold(size: 28)
+        motivoLabel.font = .bold(size: 28)
 
         dateLabel.textColor = .ijWhiteColor()
         dateLabel.font = .bold(size: 14)
@@ -46,6 +43,10 @@ class RegaloDetailHeader: UIView {
 
         recaudadoNumberLabel.textColor = .ijBlackColor()
         recaudadoNumberLabel.font = .bold(size: 17)
+
+        dateLabelBackground.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+        
+        labelToBottomConstraint.constant = suggestedVerticalConstraint(60)
     }
 
     func setup(regalo: Regalo) {
@@ -57,14 +58,15 @@ class RegaloDetailHeader: UIView {
     }
 
     private func setMotivoLabels(regalo: Regalo) {
-        let motivo = regalo.getMotivo()
-        motivoLabel.text = NSLocalizedString("{0} de", comment: "").parametrize(motivo?.rawValue ?? regalo.motivo)
-        nameLabel.text = regalo.descripcion
+        motivoLabel.text = regalo.descripcion
     }
 
     private func setMotivoImage(regalo: Regalo) {
         guard showImage else {
             imageHeightConstraint.constant = 0
+            dateLabel.isHidden = true
+            dateLabelBackground.isHidden = true
+            dateLabelBackground.backgroundColor = .clear
             return
         }
 
@@ -93,7 +95,7 @@ class RegaloDetailHeader: UIView {
     private func setProgressBar(regalo: Regalo) {
         let percentagePaid = regalo.saldo / Double(regalo.amount)
         let barHeight = suggestedVerticalConstraint(30)
-        let progressBar = ProgressBarView(frame: CGRect(x: frame.origin.x + 20, y: frame.height - 50, width: frame.width - 40, height: barHeight))
+        let progressBar = ProgressBarView(frame: CGRect(x: frame.origin.x + 20, y: frame.height - suggestedVerticalConstraint(50), width: frame.width - 40, height: barHeight))
         progressBar.fullColor = UIColor.ijAccentRedColor()
         progressBar.remainingColor = UIColor.ijAccentRedLightColor()
         progressBar.setProgress(percentageFull: percentagePaid)

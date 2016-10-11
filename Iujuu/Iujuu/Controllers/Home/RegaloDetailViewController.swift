@@ -16,7 +16,7 @@ import Crashlytics
 
 class RegaloDetailViewController: FormViewController {
 
-    var regalo: Regalo? = nil
+    var regalo: Regalo!
     let disposeBag = DisposeBag()
 
     var comingFromDeeplink: Bool {
@@ -46,7 +46,7 @@ class RegaloDetailViewController: FormViewController {
         var rightBarButtons = [shareRightBarButton]
 
         let userIsAdministrador = currentUserIsAdministrator()
-        if userIsAdministrador && !comingFromDeeplink {
+        if userIsAdministrador && regalo.active && !comingFromDeeplink {
             let editRightBarButton = createEditButton()
             rightBarButtons.append(editRightBarButton)
         }
@@ -115,6 +115,10 @@ class RegaloDetailViewController: FormViewController {
     //MARK: - Table setup
 
     private func setUpParticiparButton() {
+        guard regalo.active else {
+            return
+        }
+
         let containerView = UIView()
         let isAdministrator = currentUserIsAdministrator()
         let buttonHeight = suggestedVerticalConstraint(110)
@@ -199,31 +203,26 @@ class RegaloDetailViewController: FormViewController {
     }
 
     private func finalizarColecta() {
-        //TODO - finalizar colecta
+        let finalizarViewController = FinalizarColectaViewController()
+        finalizarViewController.regalo = regalo
+        navigationController?.pushViewController(finalizarViewController, animated: true)
     }
 
     private func setUpHeader() {
-        guard let regaloToShow = regalo else {
-            return
-        }
-        let headerHeight = suggestedVerticalConstraint(360)
+        let headerHeight = suggestedVerticalConstraint(380)
         let regaloHeader = R.nib.regaloDetailHeader.firstView(owner: nil)
         regaloHeader?.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: headerHeight)
-        regaloHeader?.setup(regalo: regaloToShow)
+        regaloHeader?.setup(regalo: regalo)
         tableView?.tableHeaderView = regaloHeader
     }
 
     private func setUpRows() {
 
-        guard let regaloToShow = regalo else {
-            return
-        }
-
         form +++ Section()
 
         <<< LabelRow() {
-            $0.title = UserMessages.RegaloDetail.cantidadPersonas(cantidad: regaloToShow.participantes.count)
-            if self.currentUserIsAdministrator() {
+            $0.title = UserMessages.RegaloDetail.cantidadPersonas(cantidad: regalo.participantes.count)
+            if self.currentUserIsAdministrator() && !(self.regalo.participantes.isEmpty) {
                 $0.value = UserMessages.RegaloDetail.seeParticipants
             }
         }
@@ -232,14 +231,14 @@ class RegaloDetailViewController: FormViewController {
             cell.height = { 60 }
         }
         .onCellSelection { cell, row in
-            if self.currentUserIsAdministrator() {
+            if self.currentUserIsAdministrator() && !(self.regalo.participantes.isEmpty) {
                 let participantesController = ParticipantesViewController()
                 participantesController.regalo = self.regalo
                 self.navigationController?.pushViewController(participantesController, animated: true)
             }
         }
 
-        let options = regaloToShow.regalosSugeridos
+        let options = regalo.regalosSugeridos
         let totalVotes = getTotalVotes(options: options)
 
         let selectableSection = SelectableSection<CheckRow<String>> { section in
@@ -279,10 +278,8 @@ class RegaloDetailViewController: FormViewController {
     }
 
     private func sendVote(vote: String, cell: CheckCell<String>) {
-        guard let regaloSet = regalo else { return }
-
         LoadingIndicator.show()
-        DataManager.shared.voteRegalo(regaloId: regaloSet.id, voto: vote)?
+        DataManager.shared.voteRegalo(regaloId: regalo.id, voto: vote)?
         .do(onNext: { [weak self] regalos in
             LoadingIndicator.hide()
             cell.textLabel?.font = .bold(size: 16)

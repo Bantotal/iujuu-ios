@@ -129,4 +129,20 @@ extension Router.Regalo {
 
     }
 
+    struct CloseRegalo: PostRouteType {
+
+        let userId: Int
+        let regaloId: Int
+        let email: String
+
+        var path: String {
+            return "\(Router.baseUsuariosString)/\(userId)/regalos/\(regaloId)/cerrar"
+        }
+
+        var parameters: [String : Any]? {
+            return ["email": email]
+        }
+
+    }
+
 }
