@@ -168,9 +168,9 @@ extension UserMessages.EditRegalo {
 
 extension UserMessages.FinalizarColecta {
 
-    static let title = NSLocalizedString("Finalizar colecta", comment: "")
+    static let title = NSLocalizedString("Finalizar regalo", comment: "")
     static let buttonMessage = NSLocalizedString("Finalizar y enviar", comment: "")
-    static let networkError = NSLocalizedString("Ocurrio un error al finalizar la colecta. Por favor intente de nuevo!", comment: "")
+    static let networkError = NSLocalizedString("Ocurrio un error al finalizar el regalo. Por favor intente de nuevo!", comment: "")
     static let alertTitle = NSLocalizedString("¿Seguro que quieres enviar?", comment: "")
     static let alertCancel = NSLocalizedString("Cancelar", comment: "")
     static let alertSend = NSLocalizedString("Enviar", comment: "")

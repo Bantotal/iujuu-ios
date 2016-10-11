@@ -44,6 +44,8 @@ class RegaloDetailHeader: UIView {
         recaudadoNumberLabel.textColor = .ijBlackColor()
         recaudadoNumberLabel.font = .bold(size: 17)
 
+        dateLabelBackground.backgroundColor = UIColor.black.withAlphaComponent(0.5)
+        
         labelToBottomConstraint.constant = suggestedVerticalConstraint(60)
     }
 
@@ -64,6 +66,7 @@ class RegaloDetailHeader: UIView {
             imageHeightConstraint.constant = 0
             dateLabel.isHidden = true
             dateLabelBackground.isHidden = true
+            dateLabelBackground.backgroundColor = .clear
             return
         }
 
