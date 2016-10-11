@@ -241,6 +241,7 @@ class RegaloDetailViewController: FormViewController {
         LoadingIndicator.show()
         DataManager.shared.voteRegalo(regaloId: regaloSet.id, voto: vote)?
         .do(onNext: { [weak self] regalos in
+            LoadingIndicator.hide()
             cell.textLabel?.font = .bold(size: 16)
             cell.optionWasSelected = true
             self?.disableSection()

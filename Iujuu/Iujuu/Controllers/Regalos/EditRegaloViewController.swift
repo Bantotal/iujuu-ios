@@ -68,18 +68,6 @@ class EditRegaloViewController: FormViewController {
                     cell.textField.font = .regular(size: 18)
                     cell.bottomSeparator?.isHidden = true
             }
-        +++ Section()
-            <<< ButtonRow() {
-                $0.title = UserMessages.EditRegalo.deleteRegalo
-            }.cellUpdate { (cell, row) in
-                cell.textLabel?.textColor = .ijDangerRed
-                cell.textLabel?.textAlignment = .center
-                cell.textLabel?.font = .regular(size: 17)
-                cell.accessoryType = .none
-            }.onCellSelection { [weak self] (cell, row) in
-                //TODO: alert popup
-                self?.showError("Delete")
-            }
 
         for idea in regalo.regalosSugeridos {
             addItem(with: idea.regaloDescription)
@@ -93,6 +81,7 @@ class EditRegaloViewController: FormViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setUpNavigationBar()
+        tableView?.separatorStyle = .none
     }
 
     func setUpNavigationBar() {
@@ -183,6 +172,36 @@ class EditRegaloViewController: FormViewController {
             }
         }
         return result
+    }
+
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        if let section = form.sectionBy(tag: ideaSectionTag), indexPath.section == section.index && indexPath.row != section.count - 1 {
+            return true
+        }
+        return false
+    }
+
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+        if let section = form.sectionBy(tag: ideaSectionTag), indexPath.section == section.index && indexPath.row != section.count - 1 {
+            return .delete
+        }
+        return .none
+    }
+
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            form[indexPath.section].remove(at: indexPath.row)
+        }
+    }
+
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = super.tableView(tableView, cellForRowAt: indexPath)
+        if indexPath.section == 0 && indexPath.row != 0 {
+            let separator = UIView(frame: CGRect(x: 0, y: 0, width: tableView.frame.width, height: 1))
+            separator.backgroundColor = UIColor.ijSeparatorGrayColor()
+            cell.addSubview(separator)
+        }
+        return cell
     }
 
 }

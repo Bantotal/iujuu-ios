@@ -49,7 +49,10 @@ class ListItemCell: _FieldCell<String>, CellType {
     override func layoutSubviews() {
         super.layoutSubviews()
         if let bottom = bottomSeparator {
-            bottom.frame = CGRect(x: Constants.Cells.ListItemMargin, y: frame.height - 1, width: contentView.frame.width - 2 * Constants.Cells.ListItemMargin, height: 1)
+            bottom.frame = CGRect(x: Constants.Cells.ListItemMargin,
+                                  y: frame.height - 1,
+                                  width: contentView.frame.width - 2 * Constants.Cells.ListItemMargin,
+                                  height: 1)
         }
     }
 

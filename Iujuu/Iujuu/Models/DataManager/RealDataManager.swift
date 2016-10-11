@@ -173,12 +173,7 @@ class RealDataManager: DataManagerProtocol {
             return Observable.empty()
         }
 
-        return Router.Regalo.VotarRegalo(userId: id, regaloId: regaloId, voto: voto).rx_anyObject().map { object in
-            let json = JSON(object)
-            let regalos = json["regalosSugeridos"]
-            let regalosSugeridos = try [RegaloSugerido].decode(regalos)
-            return regalosSugeridos
-        }
+        return Router.Regalo.VotarRegalo(userId: id, regaloId: regaloId, voto: voto).rx_collection("regalosSugeridos")
     }
 
     func pagarRegalo(regaloId: Int, importe: String, imagen: String? = nil, comentario: String? = nil) -> Observable<Any>? {
