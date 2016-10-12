@@ -54,7 +54,9 @@ class RSChooseAccountViewController: BaseRegaloSetupController {
         super.viewWillAppear(animated)
         setProgressBarPercentage(page: 1)
         selectedAccount = accounts.first
-        tableViewHeightConstraint.constant = CGFloat(tableView.numberOfRows(inSection: 0)) * rowHeight + CGFloat(16)
+        let maxTableHeight = view.frame.height - 220
+        tableViewHeightConstraint.constant = min(CGFloat(tableView.numberOfRows(inSection: 0)) * rowHeight + CGFloat(16), maxTableHeight)
+        tableView.isScrollEnabled = tableViewHeightConstraint.constant == maxTableHeight
     }
 
     func setupTableView() {
@@ -62,7 +64,6 @@ class RSChooseAccountViewController: BaseRegaloSetupController {
         tableView.dataSource = self
         tableView.separatorStyle = .none
         tableView.backgroundColor = .clear
-        tableView.isScrollEnabled = false
     }
 
     func nextTapped() {

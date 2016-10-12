@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="zOV-V0-1xs">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -348,11 +349,85 @@
             </objects>
             <point key="canvasLocation" x="2156" y="1156"/>
         </scene>
+        <!--Pago Confirmado View Controller-->
+        <scene sceneID="Fzj-zi-q4r">
+            <objects>
+                <viewController storyboardIdentifier="PagoConfirmadoViewController" id="uHc-cl-SSM" customClass="PagoConfirmadoViewController" customModule="Iujuu" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LMP-wu-Yrz"/>
+                        <viewControllerLayoutGuide type="bottom" id="M4I-vf-lhx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="PGV-7g-nt3">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pagoImagen" translatesAutoresizingMaskIntoConstraints="NO" id="dPJ-2F-37r">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="180" id="VmK-il-r3Q"/>
+                                    <constraint firstAttribute="width" secondItem="dPJ-2F-37r" secondAttribute="height" multiplier="1:1" id="o9J-cQ-fyb"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Pago confirmado" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="26" translatesAutoresizingMaskIntoConstraints="NO" id="g6d-j3-Qay">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="ibd-mv-QxE"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="jxa-zH-khk">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4sX-h8-c6G">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="j0P-0r-STl"/>
+                                </constraints>
+                                <state key="normal" title="Ok"/>
+                                <connections>
+                                    <action selector="okPressed" destination="uHc-cl-SSM" eventType="touchUpInside" id="aIK-kU-fLw"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="g6d-j3-Qay" firstAttribute="centerX" secondItem="PGV-7g-nt3" secondAttribute="centerX" id="6Xp-ra-Od4"/>
+                            <constraint firstItem="4sX-h8-c6G" firstAttribute="width" secondItem="g6d-j3-Qay" secondAttribute="width" id="D4w-oM-6g6"/>
+                            <constraint firstItem="g6d-j3-Qay" firstAttribute="top" secondItem="dPJ-2F-37r" secondAttribute="bottom" constant="30" id="Kt2-hS-FmP"/>
+                            <constraint firstItem="jxa-zH-khk" firstAttribute="width" secondItem="g6d-j3-Qay" secondAttribute="width" id="VIM-CT-Pe5"/>
+                            <constraint firstItem="jxa-zH-khk" firstAttribute="centerX" secondItem="PGV-7g-nt3" secondAttribute="centerX" id="XQs-4R-XU4"/>
+                            <constraint firstItem="M4I-vf-lhx" firstAttribute="top" secondItem="4sX-h8-c6G" secondAttribute="bottom" constant="20" id="cqz-3O-3AY"/>
+                            <constraint firstItem="4sX-h8-c6G" firstAttribute="centerX" secondItem="PGV-7g-nt3" secondAttribute="centerX" id="ex1-zG-f3z"/>
+                            <constraint firstItem="dPJ-2F-37r" firstAttribute="centerX" secondItem="PGV-7g-nt3" secondAttribute="centerX" id="gZZ-ZB-tNQ"/>
+                            <constraint firstItem="jxa-zH-khk" firstAttribute="top" secondItem="g6d-j3-Qay" secondAttribute="bottom" constant="34" id="jb9-fG-5ct"/>
+                            <constraint firstItem="g6d-j3-Qay" firstAttribute="leading" secondItem="PGV-7g-nt3" secondAttribute="leadingMargin" constant="20" id="qry-m6-6zJ"/>
+                            <constraint firstItem="dPJ-2F-37r" firstAttribute="top" secondItem="LMP-wu-Yrz" secondAttribute="bottom" constant="30" id="tPO-lq-qPw"/>
+                            <constraint firstItem="4sX-h8-c6G" firstAttribute="top" secondItem="jxa-zH-khk" secondAttribute="bottom" constant="30" id="wuW-ff-iyT"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="actionButton" destination="4sX-h8-c6G" id="yHC-1M-CGW"/>
+                        <outlet property="bottomConstraint" destination="cqz-3O-3AY" id="DNV-4z-KMG"/>
+                        <outlet property="imageHeightConstraint" destination="VmK-il-r3Q" id="mVI-E9-jrM"/>
+                        <outlet property="textLabel" destination="jxa-zH-khk" id="cOb-ze-8qd"/>
+                        <outlet property="textToButtonConstraint" destination="wuW-ff-iyT" id="NHH-fr-BTS"/>
+                        <outlet property="textToTitleConstraint" destination="jb9-fG-5ct" id="gMq-ac-VA7"/>
+                        <outlet property="titleLabel" destination="g6d-j3-Qay" id="diT-9o-x9x"/>
+                        <outlet property="titleToImageConstraint" destination="Kt2-hS-FmP" id="zB6-T9-o5O"/>
+                        <outlet property="topConstraint" destination="tPO-lq-qPw" id="d8p-Mx-rjG"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Xm7-yS-De3" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2878" y="444"/>
+        </scene>
     </scenes>
     <resources>
         <image name="homeBackgroundBalloons" width="375" height="118"/>
         <image name="homeLogo" width="60" height="60"/>
         <image name="iconSettings" width="22" height="22"/>
+        <image name="pagoImagen" width="180" height="180"/>
         <image name="sentImage" width="180" height="180"/>
     </resources>
 </document>

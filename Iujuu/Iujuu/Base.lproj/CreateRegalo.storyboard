@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Jni-3C-69S">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="Jni-3C-69S">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -18,17 +18,23 @@
                         <viewControllerLayoutGuide type="bottom" id="WRW-ap-XsO"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Euk-t1-tKA">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="68K-ik-jTG">
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="68K-ik-jTG">
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sls-RB-Ytq">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="753" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sls-RB-Ytq">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="24" id="dta-99-px4"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1zB-qu-VyF">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" verticalCompressionResistancePriority="754" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1zB-qu-VyF">
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="38" id="g8h-4Q-zpz"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
@@ -36,7 +42,7 @@
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="z9N-fR-3wT">
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="70" id="TJT-23-U76"/>
+                                            <constraint firstAttribute="height" id="TJT-23-U76"/>
                                         </constraints>
                                     </tableView>
                                 </subviews>
@@ -50,8 +56,9 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="68K-ik-jTG" firstAttribute="leading" secondItem="Euk-t1-tKA" secondAttribute="leading" constant="25" id="8Ae-5d-C2M"/>
-                            <constraint firstItem="68K-ik-jTG" firstAttribute="centerY" secondItem="Euk-t1-tKA" secondAttribute="centerY" constant="-32" id="Env-qN-6HM"/>
+                            <constraint firstItem="68K-ik-jTG" firstAttribute="centerY" secondItem="Euk-t1-tKA" secondAttribute="centerY" id="Env-qN-6HM"/>
                             <constraint firstItem="68K-ik-jTG" firstAttribute="centerX" secondItem="Euk-t1-tKA" secondAttribute="centerX" id="Unp-nw-Ljd"/>
+                            <constraint firstItem="68K-ik-jTG" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Viz-2C-l1b" secondAttribute="bottom" priority="999" constant="64" id="lG2-hr-DJo"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="2eW-NM-yY9">
@@ -79,7 +86,7 @@
                         <viewControllerLayoutGuide type="bottom" id="93d-H4-6cV"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="46b-ew-rb8">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="XPG-YC-Saf">
@@ -103,7 +110,7 @@
                         <constraints>
                             <constraint firstItem="XPG-YC-Saf" firstAttribute="leading" secondItem="46b-ew-rb8" secondAttribute="leadingMargin" id="MYn-Me-WFq"/>
                             <constraint firstAttribute="trailingMargin" secondItem="XPG-YC-Saf" secondAttribute="trailing" id="UoR-qq-dmM"/>
-                            <constraint firstItem="XPG-YC-Saf" firstAttribute="centerY" secondItem="46b-ew-rb8" secondAttribute="centerY" constant="-32" id="V5m-v5-hbH"/>
+                            <constraint firstItem="XPG-YC-Saf" firstAttribute="centerY" secondItem="46b-ew-rb8" secondAttribute="centerY" id="V5m-v5-hbH"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="bU6-cr-8CA">
@@ -127,7 +134,7 @@
             <objects>
                 <navigationController storyboardIdentifier="RegaloSetupNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="Jni-3C-69S" customClass="IURegaloNavigationController" customModule="Iujuu" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="ZVF-Ii-yGk">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="ZVF-Ii-yGk">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -149,7 +156,7 @@
                         <viewControllerLayoutGuide type="bottom" id="vzX-Sm-YZm"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="yil-kf-439">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="opN-jg-Kur" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
@@ -162,7 +169,7 @@
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="opN-jg-Kur" secondAttribute="trailing" id="8KY-QP-RgB"/>
                             <constraint firstItem="opN-jg-Kur" firstAttribute="leading" secondItem="yil-kf-439" secondAttribute="leadingMargin" id="WV0-8V-dU7"/>
-                            <constraint firstItem="opN-jg-Kur" firstAttribute="centerY" secondItem="yil-kf-439" secondAttribute="centerY" constant="-32" id="oxj-gH-EdE"/>
+                            <constraint firstItem="opN-jg-Kur" firstAttribute="centerY" secondItem="yil-kf-439" secondAttribute="centerY" id="oxj-gH-EdE"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="fJp-cz-1iG">
@@ -186,7 +193,7 @@
                         <viewControllerLayoutGuide type="bottom" id="VoT-UB-ZWn"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="GKd-uA-ESp">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="ACI-yL-ng8">
@@ -211,7 +218,7 @@
                         <constraints>
                             <constraint firstItem="ACI-yL-ng8" firstAttribute="leading" secondItem="GKd-uA-ESp" secondAttribute="leadingMargin" id="SQF-ZY-UZd"/>
                             <constraint firstAttribute="trailingMargin" secondItem="ACI-yL-ng8" secondAttribute="trailing" id="WWL-GH-Cfh"/>
-                            <constraint firstItem="ACI-yL-ng8" firstAttribute="centerY" secondItem="GKd-uA-ESp" secondAttribute="centerY" constant="-32" id="lih-e3-CDA"/>
+                            <constraint firstItem="ACI-yL-ng8" firstAttribute="centerY" secondItem="GKd-uA-ESp" secondAttribute="centerY" id="lih-e3-CDA"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="IQQ-M5-shB">
@@ -239,7 +246,7 @@
                         <viewControllerLayoutGuide type="bottom" id="qnr-bj-ywB"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Api-bc-9fd">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="uQX-Fn-CfW" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
@@ -252,7 +259,7 @@
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="uQX-Fn-CfW" secondAttribute="trailing" id="Swk-Om-cgf"/>
                             <constraint firstAttribute="leadingMargin" secondItem="uQX-Fn-CfW" secondAttribute="leading" id="lrn-SX-FdD"/>
-                            <constraint firstItem="uQX-Fn-CfW" firstAttribute="centerY" secondItem="Api-bc-9fd" secondAttribute="centerY" constant="-32" id="pwj-pV-6C4"/>
+                            <constraint firstItem="uQX-Fn-CfW" firstAttribute="centerY" secondItem="Api-bc-9fd" secondAttribute="centerY" id="pwj-pV-6C4"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Rk7-5s-Qmh">
@@ -276,7 +283,7 @@
                         <viewControllerLayoutGuide type="bottom" id="qMe-dl-rON"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="FMo-eS-j5c">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="skw-8E-BQ5" customClass="SkyFloatingLabelTextField" customModule="SkyFloatingLabelTextField">
@@ -297,7 +304,7 @@
                             <constraint firstAttribute="trailingMargin" secondItem="skw-8E-BQ5" secondAttribute="trailing" id="Xk1-bc-bNJ"/>
                             <constraint firstItem="UlI-EL-QJa" firstAttribute="top" secondItem="skw-8E-BQ5" secondAttribute="bottom" constant="8" id="cBE-Dt-M9l"/>
                             <constraint firstAttribute="leadingMargin" secondItem="skw-8E-BQ5" secondAttribute="leading" id="l0e-c3-9ZG"/>
-                            <constraint firstItem="skw-8E-BQ5" firstAttribute="centerY" secondItem="FMo-eS-j5c" secondAttribute="centerY" constant="-32" id="ttu-74-khr"/>
+                            <constraint firstItem="skw-8E-BQ5" firstAttribute="centerY" secondItem="FMo-eS-j5c" secondAttribute="centerY" id="ttu-74-khr"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Fia-cD-lQS">
@@ -322,7 +329,7 @@
                         <viewControllerLayoutGuide type="bottom" id="ys1-b8-2w8"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="JqQ-m6-BMg">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="KKj-yB-ga6">
@@ -355,7 +362,7 @@
                         <viewControllerLayoutGuide type="bottom" id="SdZ-N3-Kjn"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="P4o-gM-VMa">
-                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YuZ-L4-4oD">
@@ -473,7 +480,7 @@
             <objects>
                 <navigationController storyboardIdentifier="JoinRegaloNavigationController" automaticallyAdjustsScrollViewInsets="NO" useStoryboardIdentifierAsRestorationIdentifier="YES" id="kHN-Dd-faS" customClass="IURegaloNavigationController" customModule="Iujuu" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" translucent="NO" id="213-AP-fj6">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" translucent="NO" id="213-AP-fj6">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

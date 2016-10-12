@@ -100,19 +100,18 @@ class ParticiparViewController: FormViewController {
             row.validate()
             cell.height = { 120 }
         }
-        .onRowValidationChanged { _, _ in
-            guard let button = self.buttonFooter else {
+        .onRowValidationChanged { [weak self] _, row in
+            guard let button = self?.buttonFooter else {
                 return
             }
 
-            let errors = self.form.validate()
+            let errors = row.validationErrors
             if errors.isEmpty {
                 button.actionButton.isEnabled = true
             } else {
                 button.actionButton.isEnabled = false
             }
         }
-
 
         <<< LabelRow() {
             $0.title = UserMessages.ParticiparRegalo.galiciaMessage
@@ -125,13 +124,15 @@ class ParticiparViewController: FormViewController {
     }
 
     private func setUpConfirmarButton() {
-        buttonFooter = ButtonFooter(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 100))
-        tableView?.tableFooterView = buttonFooter
-        buttonFooter?.actionButton.isEnabled = false
-        buttonFooter?.onAction = {
-            self.pagarConGaliciaPressed()
+        if buttonFooter == nil {
+            buttonFooter = ButtonFooter(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 100))
+            tableView?.tableFooterView = buttonFooter
+            buttonFooter?.actionButton.isEnabled = false
+            buttonFooter?.onAction = {
+                self.pagarConGaliciaPressed()
+            }
+            buttonFooter?.actionButton.setTitle(UserMessages.ParticiparRegalo.buttonMessage, for: .normal)
         }
-        buttonFooter?.actionButton.setTitle(UserMessages.ParticiparRegalo.buttonMessage, for: .normal)
     }
 
     func getOwnerData() {
@@ -188,11 +189,9 @@ extension ParticiparViewController: GaliciaPagosDelegate {
         LoadingIndicator.show()
         DataManager.shared.pagarRegalo(regaloId: regalo.id, importe: String(importe), imagen: imageString, comentario: message)
             .do(onNext: { [weak self] element in
-                //TODO: push to PagoConfirmadoViewController
                 LoadingIndicator.hide()
-                self?.showError("Felicidades", message: "Su participacion ha sido guardada exitosamente") { [weak self] in
-                    _ = self?.navigationController?.popToRootViewController(animated: true)
-                }
+                let vc = R.storyboard.main.pagoConfirmadoViewController()!
+                self?.show(vc, sender: self)
             }, onError: { [weak self] error in
                 LoadingIndicator.hide()
                 self?.showError(error, alternative: (title: UserMessages.errorTitle, message: UserMessages.ParticiparRegalo.couldNotJoinError))
