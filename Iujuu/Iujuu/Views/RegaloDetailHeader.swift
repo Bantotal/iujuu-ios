@@ -26,6 +26,7 @@ class RegaloDetailHeader: UIView {
 
     //MARK: - Constraints
 
+    @IBOutlet weak var labelBackgroundWidthConstraint: NSLayoutConstraint!
     @IBOutlet weak var imageHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var labelToBottomConstraint: NSLayoutConstraint!
 
@@ -37,6 +38,7 @@ class RegaloDetailHeader: UIView {
 
         dateLabel.textColor = .ijWhiteColor()
         dateLabel.font = .bold(size: 14)
+        dateLabel.textAlignment = .center
 
         recaudadoTitleLabel.textColor = .ijBlackColor()
         recaudadoTitleLabel.font = .regular(size: 17)
@@ -75,17 +77,21 @@ class RegaloDetailHeader: UIView {
     }
 
     private func setDateLabel(regalo: Regalo) {
-        if 7.days.fromNow > regalo.fechaDeCierre && Date() < regalo.fechaDeCierre {
+        let now = Date()
+        if !regalo.active {
             dateLabelBackground.isHidden = false
-            let days = regalo.fechaDeCierre.daysFrom(date: Date())
-            if days == 0 {
-                dateLabel.text = NSLocalizedString("Quedan {0} horas!", comment: "").parametrize(regalo.fechaDeCierre.hoursFrom(date: Date()))
-            } else {
-                dateLabel.text = NSLocalizedString("Quedan {0} dias!", comment: "").parametrize(days)
-            }
+            dateLabel.text = UserMessages.finished
+        } else if regalo.hasExpired() {
+            dateLabelBackground.isHidden = false
+            dateLabel.text = UserMessages.Home.willFinishSoon
+        } else if regalo.expiresSoon() {
+            dateLabelBackground.isHidden = false
+            dateLabel.text = regalo.timeStatusText
         } else {
             dateLabelBackground.isHidden = true
         }
+        dateLabel.sizeToFit()
+        labelBackgroundWidthConstraint.constant = max(100, dateLabel.frame.width + 16)
     }
 
     private func setRecaudadoLabel(regalo: Regalo) {

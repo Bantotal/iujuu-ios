@@ -20,6 +20,7 @@ class RegaloCell: UITableViewCell {
     @IBOutlet weak var dateLabelBackground: UIView!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var centerMotivoLabelConstraint: NSLayoutConstraint!
+    @IBOutlet weak var labelBackgroundWidthConstraint: NSLayoutConstraint!
 
     static let rowHeight = suggestedHorizontalConstraint(242)
 
@@ -53,25 +54,33 @@ class RegaloCell: UITableViewCell {
 
         dateLabel.textColor = .ijWhiteColor()
         dateLabel.font = .bold(size: 14)
+        dateLabel.textAlignment = .center
 
     }
 
     func setup(regalo: Regalo) {
         let motivo = regalo.getMotivo()
+        let now = Date()
         motivoLabel.text = regalo.descripcion
-        statusLabel.text = regalo.paid ? UserMessages.Home.didParticipate : UserMessages.Home.notParticipated
         motivoImageView.image = motivo?.image()
-        if 7.days.fromNow > regalo.fechaDeCierre && Date() < regalo.fechaDeCierre {
+        if !regalo.active {
+            statusLabel.text = regalo.paid ? UserMessages.Home.didParticipateFinished : UserMessages.Home.notParticipatedFinished
             dateLabelBackground.isHidden = false
-            let days = regalo.fechaDeCierre.daysFrom(date: Date())
-            if days == 0 {
-                dateLabel.text = NSLocalizedString("Quedan {0} horas!", comment: "").parametrize(regalo.fechaDeCierre.hoursFrom(date: Date()))
-            } else {
-                dateLabel.text = NSLocalizedString("Quedan {0} dias!", comment: "").parametrize(days)
-            }
+            dateLabel.text = UserMessages.finished
         } else {
-            dateLabelBackground.isHidden = true
+            statusLabel.text = regalo.paid ? UserMessages.Home.didParticipate : UserMessages.Home.notParticipated
+            if regalo.hasExpired() {
+                dateLabelBackground.isHidden = false
+                dateLabel.text = UserMessages.Home.willFinishSoon
+            } else if regalo.expiresSoon() {
+                dateLabelBackground.isHidden = false
+                dateLabel.text = regalo.timeStatusText
+            } else {
+                dateLabelBackground.isHidden = true
+            }
         }
+        dateLabel.sizeToFit()
+        labelBackgroundWidthConstraint.constant = max(100, dateLabel.frame.width + 16)
     }
 
     override func layoutSubviews() {
