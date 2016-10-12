@@ -11,9 +11,9 @@ import UIKit
 class ProgressBarView: UIView {
 
     //MARK:  - Configurable options
-    var fullColor = UIColor.red
-    var completedColor = UIColor.green
-    var remainingColor = UIColor.gray
+    let fullColor = UIColor.ijAccentRedColor()
+    let remainingColor = UIColor.ijAccentRedLightColor()
+    let completedColor = UIColor.ijGreenColor()
     var showPercentageLabel = true
     var borderRadius: CGFloat = 4
     var animationDuration: TimeInterval = 0.9
