@@ -177,9 +177,10 @@ class RegaloDetailViewController: FormViewController {
 
         form +++ Section()
 
-        <<< LabelRow() {
-            $0.title = UserMessages.RegaloDetail.cantidadPersonas(cantidad: regalo.participantes.count)
-            if self.currentUserIsAdministrator() && !(self.regalo.participantes.isEmpty) {
+        <<< LabelRow() { [weak self] in
+            guard let me = self else { return }
+            $0.title = UserMessages.RegaloDetail.cantidadPersonas(cantidad: me.regalo.participantes.count)
+            if me.currentUserIsAdministrator() && !(me.regalo.participantes.isEmpty) {
                 $0.value = UserMessages.RegaloDetail.seeParticipants
             }
         }
@@ -187,11 +188,24 @@ class RegaloDetailViewController: FormViewController {
             cell.textLabel?.font = .regular(size: 17)
             cell.height = { 60 }
         }
-        .onCellSelection { cell, row in
-            if self.currentUserIsAdministrator() && !(self.regalo.participantes.isEmpty) {
-                let participantesController = ParticipantesViewController()
-                participantesController.regalo = self.regalo
-                self.navigationController?.pushViewController(participantesController, animated: true)
+        .onCellSelection { [weak self] cell, row in
+            guard let me = self else { return }
+            if me.currentUserIsAdministrator() && !(me.regalo.participantes.isEmpty) {
+                LoadingIndicator.show()
+                let users: [Observable<User>] = me.regalo.participantes.map({ str in
+                    return DataManager.shared.getUser(id: Int(str.string)!)
+                })
+                Observable.from(users)
+                    .merge()
+                    .toArray()
+                    .do(onNext: { [weak self] users in
+                        LoadingIndicator.hide()
+                        self?.showParticipants(users)
+                    }, onError: { [weak self] error in
+                        LoadingIndicator.hide()
+                        self?.showError(error, alternative: (title: UserMessages.errorTitle, message: UserMessages.RegaloDetail.participantError))
+                    })
+                    .subscribe().addDisposableTo(me.disposeBag)
             }
         }
 
@@ -279,6 +293,12 @@ class RegaloDetailViewController: FormViewController {
             count += regalo.votos
         }
         return Double(count)
+    }
+
+    private func showParticipants(_ participants: [User]) {
+        let participantesController = ParticipantesViewController()
+        participantesController.users = participants
+        navigationController?.pushViewController(participantesController, animated: true)
     }
 
     func cancel() {
