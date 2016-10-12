@@ -104,6 +104,7 @@ class RegaloDetailHeader: UIView {
         let progressBar = ProgressBarView(frame: CGRect(x: frame.origin.x + 20, y: frame.height - suggestedVerticalConstraint(50), width: frame.width - 40, height: barHeight))
         progressBar.fullColor = UIColor.ijAccentRedColor()
         progressBar.remainingColor = UIColor.ijAccentRedLightColor()
+        progressBar.completedColor = UIColor.ijGreenColor()
         progressBar.setProgress(percentageFull: percentagePaid)
         addSubview(progressBar)
     }
