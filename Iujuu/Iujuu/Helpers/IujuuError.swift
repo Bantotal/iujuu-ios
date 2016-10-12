@@ -16,6 +16,7 @@ enum IujuuErrorCodes: Int {
     case userNotLogged
     case unexpectedNil
     case userIdNotFound
+    case errorUpdatingRegalo
 
 }
 

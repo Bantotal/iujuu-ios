@@ -47,16 +47,16 @@ class RegaloDetailHeader: UIView {
         recaudadoNumberLabel.font = .bold(size: 17)
 
         dateLabelBackground.backgroundColor = UIColor.black.withAlphaComponent(0.5)
-        
+
         labelToBottomConstraint.constant = suggestedVerticalConstraint(60)
     }
 
-    func setup(regalo: Regalo) {
+    func setup(regalo: Regalo, animated: Bool = true) {
         setMotivoLabels(regalo: regalo)
         setMotivoImage(regalo: regalo)
         setDateLabel(regalo: regalo)
         setRecaudadoLabel(regalo: regalo)
-        setProgressBar(regalo: regalo)
+        setProgressBar(regalo: regalo, animated: animated)
     }
 
     private func setMotivoLabels(regalo: Regalo) {
@@ -98,11 +98,11 @@ class RegaloDetailHeader: UIView {
         recaudadoNumberLabel.text = "$\(Int(regalo.saldo)) / $\(regalo.amount)"
     }
 
-    private func setProgressBar(regalo: Regalo) {
+    private func setProgressBar(regalo: Regalo, animated: Bool) {
         let percentagePaid = regalo.saldo / Double(regalo.amount)
         let barHeight = suggestedVerticalConstraint(30)
         let progressBar = ProgressBarView(frame: CGRect(x: frame.origin.x + 20, y: frame.height - suggestedVerticalConstraint(50), width: frame.width - 40, height: barHeight))
-        progressBar.setProgress(percentageFull: percentagePaid)
+        progressBar.setProgress(percentageFull: percentagePaid, animated: animated)
         addSubview(progressBar)
     }
 

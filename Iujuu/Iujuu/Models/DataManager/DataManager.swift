@@ -29,7 +29,7 @@ protocol DataManagerProtocol {
     func voteRegalo(regaloId: Int, voto: String) -> Observable<[RegaloSugerido]>
     func pagarRegalo(regaloId: Int, importe: String, imagen: String?, comentario: String?) -> Observable<Any>
     func editRegalo(userId: Int, regaloId: Int, descripcion: String, closeDate: Date,
-                      targetAmount: Int, perPersonAmount: Int, regalosSugeridos: [RegaloSugerido]) -> Observable<Bool>
+                      targetAmount: Int, perPersonAmount: Int, regalosSugeridos: [RegaloSugerido]) -> Observable<Void>
     func joinToRegalo(regalo: Regalo) -> Observable<Void>
     func closeRegalo(regaloId: Int, email: String) -> Observable<Any>
 

@@ -66,7 +66,7 @@ class MockedDataManager: DataManagerProtocol {
     }
 
     func editRegalo(userId: Int, regaloId: Int, descripcion: String, closeDate: Date,
-                    targetAmount: Int, perPersonAmount: Int, regalosSugeridos: [RegaloSugerido]) -> Observable<Bool> {
+                    targetAmount: Int, perPersonAmount: Int, regalosSugeridos: [RegaloSugerido]) -> Observable<Void> {
         return Observable.empty()
     }
 
