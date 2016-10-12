@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
@@ -54,6 +54,8 @@
                 <outlet property="buttonsHeightConstraint" destination="cf3-Jd-9U1" id="orf-YT-rBp"/>
                 <outlet property="buttonsToTitleConstraint" destination="8rs-FF-HFm" id="VKv-X0-pWc"/>
                 <outlet property="iconImage" destination="7Lc-g1-MDH" id="qkt-xp-WQr"/>
+                <outlet property="imageHeightConstraint" destination="l7q-wM-3On" id="Z0R-kb-5Zm"/>
+                <outlet property="imageWidthConstraint" destination="w8N-Vg-ild" id="oSV-eF-ice"/>
                 <outlet property="ingresarCodigoButton" destination="tXw-NG-pnj" id="kfs-TR-3g9"/>
                 <outlet property="nuevaColectaButton" destination="cFp-Sq-zId" id="GYD-LW-9pY"/>
                 <outlet property="titleLabel" destination="9bv-0v-6j2" id="gal-jG-69K"/>

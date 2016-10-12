@@ -114,7 +114,7 @@ class RegaloDetailViewController: FormViewController {
 
         let containerView = UIView()
         let isAdministrator = currentUserIsAdministrator()
-        let buttonHeight = suggestedVerticalConstraint(110)
+        let buttonHeight = suggestedVerticalConstraint(140)
 
         let participarButton = createParticiparButton(height: buttonHeight)
         let finalizarButton = createFinalizarButton()
@@ -166,7 +166,7 @@ class RegaloDetailViewController: FormViewController {
     }
 
     private func setUpHeader() {
-        let headerHeight = suggestedVerticalConstraint(380)
+        let headerHeight = suggestedVerticalConstraint(340, q6: 0.9, q5: 0.86, q4: 0.82)
         let regaloHeader = R.nib.regaloDetailHeader.firstView(owner: nil)
         regaloHeader?.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: headerHeight)
         regaloHeader?.setup(regalo: regalo)

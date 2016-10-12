@@ -24,6 +24,8 @@ class EmptyHomeView: UIView {
 
     @IBOutlet weak var buttonsHeightConstraint: NSLayoutConstraint!
     @IBOutlet weak var buttonsToTitleConstraint: NSLayoutConstraint!
+    @IBOutlet weak var imageHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var imageWidthConstraint: NSLayoutConstraint!
 
     var nuevaColectaAction : () -> () = {} {
         didSet {
@@ -59,5 +61,7 @@ class EmptyHomeView: UIView {
     private func setConstraints() {
         buttonsToTitleConstraint.constant = suggestedVerticalConstraint(40)
         buttonsHeightConstraint.constant = suggestedVerticalConstraint(70)
+        imageHeightConstraint.constant = suggestedVerticalConstraint(160)
+        imageWidthConstraint.constant = imageHeightConstraint.constant
     }
 }
