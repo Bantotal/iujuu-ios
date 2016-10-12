@@ -20,6 +20,7 @@ class HomeViewController: XLTableViewController {
     var emptyView: EmptyHomeView?
 
     private let headerHeight = 180
+    private let emptyViewHeight = 400
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,8 +46,7 @@ class HomeViewController: XLTableViewController {
     }
 
     private func setEmptyView() {
-        emptyView = R.nib.emptyHomeView.firstView(owner: nil)
-        emptyView?.frame = CGRect(x: 0, y: CGFloat(headerHeight), width: view.bounds.width, height: (emptyView?.frame.height)!)
+        emptyView = EmptyHomeView(frame: CGRect(x: 0, y: headerHeight, width: Int(view.bounds.width), height: emptyViewHeight))
 
         emptyView?.nuevaColectaAction = {
             self.getAccounts()
@@ -56,7 +56,7 @@ class HomeViewController: XLTableViewController {
             self.sendToIngresarCodigo()
         }
 
-        let containerView = UIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: (emptyView?.bounds.height)! + CGFloat(headerHeight)))
+        let containerView = UIView(frame: CGRect(x: 0, y: 0, width: Int(view.bounds.width), height: headerHeight + emptyViewHeight))
         containerView.addSubview(emptyView!)
 
         tableView.backgroundView = containerView

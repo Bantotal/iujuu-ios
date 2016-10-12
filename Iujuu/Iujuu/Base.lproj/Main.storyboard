@@ -209,7 +209,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zOV-V0-1xs" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="wXp-WV-J8K">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wXp-WV-J8K">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -268,7 +268,7 @@
         <scene sceneID="kpT-1B-leC">
             <objects>
                 <navigationController storyboardIdentifier="EditRegaloNavigationController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="J0u-2E-PjY" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="t1z-80-HN0">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="t1z-80-HN0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
