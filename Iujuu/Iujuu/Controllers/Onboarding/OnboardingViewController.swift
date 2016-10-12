@@ -104,19 +104,9 @@ class OnboardingViewController: UIViewController {
         }.addDisposableTo(disposeBag)
     }
 
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if case let Mode.fromDeepLink(deepLinkRegalo) = mode {
-            ((segue.destination as? UINavigationController)?.topViewController as? RegaloDetailViewController)?.regalo = deepLinkRegalo
-        }
-    }
-
     func finishOnboardingAction() {
         Ecno.markDone(Constants.Tasks.onboardingCompleted)
-        if mode.isNormal {
-            performSegue(withIdentifier: R.segue.onboardingViewController.finishOnboarding, sender: nil)
-        } else {
-            performSegue(withIdentifier: R.segue.onboardingViewController.previewRegalo, sender: nil)
-        }
+        performSegue(withIdentifier: R.segue.onboardingViewController.finishOnboarding, sender: nil)
     }
 
 }

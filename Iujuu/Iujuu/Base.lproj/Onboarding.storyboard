@@ -70,7 +70,6 @@
                         <outlet property="pageControl" destination="EKG-eo-QHF" id="N56-m6-tdh"/>
                         <outlet property="skipButton" destination="Q4d-uf-NWj" id="Ukr-QM-1ci"/>
                         <segue destination="5ht-tB-Lrl" kind="presentation" identifier="finishOnboarding" modalPresentationStyle="overFullScreen" modalTransitionStyle="crossDissolve" id="abj-X8-bCa"/>
-                        <segue destination="Uyo-J4-ebC" kind="presentation" identifier="previewRegalo" modalTransitionStyle="crossDissolve" id="Ngp-z9-zD8"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yAQ-Qy-VxL" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -199,7 +198,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8Rw-UX-qOR" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="vfV-Dt-p5G">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="vfV-Dt-p5G">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -217,7 +216,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="vEx-W5-AeD" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Oa8-LP-g7T">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Oa8-LP-g7T">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -229,34 +228,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lkv-pm-gd1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2431.1999999999998" y="797.45127436281871"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="uNw-vf-rNd">
-            <objects>
-                <navigationController storyboardIdentifier="RegaloDetailNavigationController" automaticallyAdjustsScrollViewInsets="NO" id="Uyo-J4-ebC" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="fWl-Jm-KtF">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="8ZF-8y-rp6" kind="relationship" relationship="rootViewController" id="3VC-Bq-WyB"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="lX9-G2-8Yd" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-202" y="833"/>
-        </scene>
-        <!--RegaloDetailViewController-->
-        <scene sceneID="DH3-7W-Uhw">
-            <objects>
-                <viewControllerPlaceholder storyboardName="Main" referencedIdentifier="RegaloDetailViewController" id="8ZF-8y-rp6" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="Ciu-UR-4t5"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Tbs-MN-Pqg" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="553" y="832"/>
         </scene>
     </scenes>
     <resources>

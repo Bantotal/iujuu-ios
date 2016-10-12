@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import Ecno
+import Crashlytics
 
 class ConfirmationCodeViewController: XLTableViewController {
 
@@ -17,6 +18,10 @@ class ConfirmationCodeViewController: XLTableViewController {
     @IBOutlet weak var cancelButton: UIButton!
 
     var regalo: Regalo!
+
+    var comingFromDeeplink: Bool {
+        return navigationController == nil
+    }
 
     override var prefersStatusBarHidden: Bool {
         return navigationController == nil
@@ -63,9 +68,6 @@ class ConfirmationCodeViewController: XLTableViewController {
         } else if let regaloDetailController = segue.destination as? RegaloDetailViewController {
             // from insert code
             regaloDetailController.regalo = regalo
-        } else if let regaloDetailController = (segue.destination as? UINavigationController)?.topViewController as? RegaloDetailViewController {
-            // from deeplink
-            regaloDetailController.regalo = regalo
         }
     }
 
@@ -74,27 +76,63 @@ class ConfirmationCodeViewController: XLTableViewController {
     }
 
     @IBAction func addButtonDidTouch(_ sender: UIButton) {
-        if Ecno.beenDone(Constants.Tasks.onboardingCompleted) {
-            if let _ = navigationController {
-                performSegue(withIdentifier: R.segue.confirmationCodeViewController.showRegaloDetail, sender: nil)
-            } else {
-                performSegue(withIdentifier: R.segue.confirmationCodeViewController.presentRegaloDetail, sender: nil)
-            }
-        } else {
-            performSegue(withIdentifier: R.segue.confirmationCodeViewController.showOnboarding, sender: nil)
-        }
+        addRegalo()
     }
 
     @IBAction func cancelButtonDidTouch(_ sender: UIButton) {
         if let navigationController = navigationController {
             navigationController.popViewController(animated: true)
         } else {
-            if let _ = SessionController.sharedInstance.token, let _ = DataManager.shared.userId {
+            if DataManager.shared.getCurrentUser() != nil {
                 UIApplication.changeRootViewController(R.storyboard.main().instantiateInitialViewController()!)
             } else {
                 UIApplication.changeRootViewController(R.storyboard.onboarding.onboardingViewController()!)
             }
         }
+    }
+
+    private func addRegalo() {
+        guard let regalo = regalo else { return }
+        guard DataManager.shared.getCurrentUser() != nil else {
+            AfterLoginPending.shared.add(pending: { DataManager.shared.joinToRegalo(regalo: regalo) })
+            if Ecno.beenDone(Constants.Tasks.onboardingCompleted) {
+                let welcomeViewController = R.storyboard.onboarding.welcomeViewController()!
+                UIApplication.changeRootViewController(welcomeViewController)
+            } else {
+                performSegue(withIdentifier: R.segue.confirmationCodeViewController.showOnboarding, sender: nil)
+            }
+            return
+        }
+
+        LoadingIndicator.show()
+        DataManager.shared
+            .joinToRegalo(regalo: regalo)
+            .do(
+                onNext: { [weak self] _ in
+                    LoadingIndicator.hide()
+                    guard let me = self else { return }
+
+                    if me.comingFromDeeplink {
+                        let navigationController = UINavigationController()
+                        let homeViewController = R.storyboard.main.homeViewController()!
+                        let detailViewController = R.storyboard.main.regaloDetailViewController()!
+                        detailViewController.regalo = regalo
+                        let controllers = [homeViewController, detailViewController]
+                        navigationController.setViewControllers(controllers, animated: false)
+                        UIApplication.changeRootViewController(navigationController)
+                    } else {
+                        me.performSegue(withIdentifier: R.segue.confirmationCodeViewController.showRegaloDetail, sender: nil)
+                    }
+                },
+                onError: { [weak self] error in
+                    LoadingIndicator.hide()
+                    Crashlytics.sharedInstance().recordError(error)
+                    let alt = (title: UserMessages.errorTitle, message: UserMessages.ParticiparRegalo.couldNotJoinError)
+                    self?.showError(error, alternative: alt)
+                }
+            )
+            .subscribe()
+            .addDisposableTo(disposeBag)
     }
 
 }
@@ -125,7 +163,7 @@ extension ConfirmationCodeViewController: UITableViewDataSource, UITableViewDele
 extension UserMessages.ConfirmationCode {
 
     static let youWereInvited = NSLocalizedString("Fuiste invitado a un regalo!", comment: "")
-    static let addRegalo = NSLocalizedString("Agregar regalo", comment: "")
-    static let whyAmIHere = NSLocalizedString("Esta no es mi regalo", comment: "")
+    static let addRegalo = NSLocalizedString("Participar del regalo", comment: "")
+    static let whyAmIHere = NSLocalizedString("Cancelar", comment: "")
 
 }
