@@ -254,6 +254,10 @@
 		CE43ABDD1D9AECE100F123A6 /* EmptyHomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE43ABDB1D9AECE100F123A6 /* EmptyHomeView.swift */; };
 		CE43ABDF1D9AECEE00F123A6 /* EmptyHomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE43ABDE1D9AECEE00F123A6 /* EmptyHomeView.xib */; };
 		CE43ABE01D9AECEE00F123A6 /* EmptyHomeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE43ABDE1D9AECEE00F123A6 /* EmptyHomeView.xib */; };
+		CE43D9181DAEC91900D60BBF /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE43D9171DAEC91900D60BBF /* HomeHeaderView.swift */; };
+		CE43D9191DAEC91900D60BBF /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE43D9171DAEC91900D60BBF /* HomeHeaderView.swift */; };
+		CE43D91B1DAEC92500D60BBF /* HomeHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE43D91A1DAEC92500D60BBF /* HomeHeaderView.xib */; };
+		CE43D91C1DAEC92500D60BBF /* HomeHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE43D91A1DAEC92500D60BBF /* HomeHeaderView.xib */; };
 		CE4967971D9E95D500E2363E /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4967961D9E95D500E2363E /* WebViewController.swift */; };
 		CE4967981D9E95D500E2363E /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4967961D9E95D500E2363E /* WebViewController.swift */; };
 		CE49679A1D9EA1AD00E2363E /* RegaloDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4967991D9EA1AD00E2363E /* RegaloDetailViewController.swift */; };
@@ -463,6 +467,8 @@
 		CE43ABD71D9ACD9D00F123A6 /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HomeViewController.swift; path = Home/HomeViewController.swift; sourceTree = "<group>"; };
 		CE43ABDB1D9AECE100F123A6 /* EmptyHomeView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmptyHomeView.swift; sourceTree = "<group>"; };
 		CE43ABDE1D9AECEE00F123A6 /* EmptyHomeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmptyHomeView.xib; sourceTree = "<group>"; };
+		CE43D9171DAEC91900D60BBF /* HomeHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
+		CE43D91A1DAEC92500D60BBF /* HomeHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeHeaderView.xib; sourceTree = "<group>"; };
 		CE4967961D9E95D500E2363E /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebViewController.swift; path = Home/WebViewController.swift; sourceTree = "<group>"; };
 		CE4967991D9EA1AD00E2363E /* RegaloDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegaloDetailViewController.swift; path = Home/RegaloDetailViewController.swift; sourceTree = "<group>"; };
 		CE49679C1D9EA55400E2363E /* RegaloDetailHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegaloDetailHeader.swift; sourceTree = "<group>"; };
@@ -955,6 +961,8 @@
 				CE3BD1C31DA5558800B3261B /* IdeaRegalosHeader.xib */,
 				CE6912B91DAC059D00843341 /* FinalizarColectaHeader.swift */,
 				CE6912BC1DAC05AA00843341 /* FinalizarColectaHeader.xib */,
+				CE43D9171DAEC91900D60BBF /* HomeHeaderView.swift */,
+				CE43D91A1DAEC92500D60BBF /* HomeHeaderView.xib */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -1130,6 +1138,7 @@
 				8F9694D11D92F48000A9EBB7 /* ProgressView.xib in Resources */,
 				CE3F25BD1DA419280035A150 /* FloatingLabelCell.xib in Resources */,
 				2841F1F81CCFF55600D609CE /* Assets.xcassets in Resources */,
+				CE43D91C1DAEC92500D60BBF /* HomeHeaderView.xib in Resources */,
 				460C0BA91D945417005814AA /* OpenSans-Italic.ttf in Resources */,
 				460C0BA11D945417005814AA /* OpenSans-Bold.ttf in Resources */,
 				8F8CE9FD1D946F76005FA5B6 /* RegaloHeaderView.xib in Resources */,
@@ -1167,6 +1176,7 @@
 				CE3F25BC1DA419280035A150 /* FloatingLabelCell.xib in Resources */,
 				2867E8321C74C7D400FCEBBD /* Assets.xcassets in Resources */,
 				460C0BA81D945417005814AA /* OpenSans-Italic.ttf in Resources */,
+				CE43D91B1DAEC92500D60BBF /* HomeHeaderView.xib in Resources */,
 				460C0BA01D945417005814AA /* OpenSans-Bold.ttf in Resources */,
 				8F8CE9FC1D946F76005FA5B6 /* RegaloHeaderView.xib in Resources */,
 				464512171D95A9A4009C2FE6 /* ButtonFooter.xib in Resources */,
@@ -1549,6 +1559,7 @@
 				465723061D91C59A001F4DC1 /* Regalo.swift in Sources */,
 				CE510B751DAD13F100C783FE /* ConfirmacionEnvioViewController.swift in Sources */,
 				CE49679B1D9EA1AD00E2363E /* RegaloDetailViewController.swift in Sources */,
+				CE43D9191DAEC91900D60BBF /* HomeHeaderView.swift in Sources */,
 				8F9694CE1D92F3EB00A9EBB7 /* ProgressView.swift in Sources */,
 				8F8CE9F91D946BC4005FA5B6 /* PreviewRegaloController.swift in Sources */,
 				8F0759A81D774FC10012D681 /* RealmManager.swift in Sources */,
@@ -1657,6 +1668,7 @@
 				4666841A1D947F9C00584FDB /* UIViewController.swift in Sources */,
 				CE510B741DAD13F100C783FE /* ConfirmacionEnvioViewController.swift in Sources */,
 				CE49679A1D9EA1AD00E2363E /* RegaloDetailViewController.swift in Sources */,
+				CE43D9181DAEC91900D60BBF /* HomeHeaderView.swift in Sources */,
 				281731691C9C4BBC006237C7 /* XLViewController.swift in Sources */,
 				465723051D91C59A001F4DC1 /* Regalo.swift in Sources */,
 				8F9694CD1D92F3EB00A9EBB7 /* ProgressView.swift in Sources */,
