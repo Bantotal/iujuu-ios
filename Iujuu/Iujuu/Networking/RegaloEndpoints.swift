@@ -88,7 +88,7 @@ extension Router.Regalo {
         }
 
         var parameters: [String : Any]? {
-            return ["pago": ["importe": importe]]
+            return ["pago": cleanedDict(["importe": importe, "foto": imagen, "comentario": comentario])]
         }
     }
 

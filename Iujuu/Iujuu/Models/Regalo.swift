@@ -52,7 +52,7 @@ final class Regalo: Object, OperaDecodable, IUObject {
     dynamic var usuarioAdministradorId: Int = 0
     dynamic var isAdministrator = false
     dynamic var active = true
-    dynamic var paid = true
+    dynamic var paid = false
     dynamic var codigo: String?
 
 

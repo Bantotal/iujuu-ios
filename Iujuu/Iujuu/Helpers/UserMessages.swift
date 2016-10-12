@@ -27,7 +27,9 @@ struct UserMessages {
     struct EditRegalo { }
     struct FinalizarColecta { }
     struct ConfirmarEnvio { }
+    struct PagoConfirmado {} 
 
+    static let ok = NSLocalizedString("Ok", comment: "")
     static let cancel = NSLocalizedString("Cancelar", comment: "")
     static let email = NSLocalizedString("Correo Electrónico", comment: "")
     static let firstName = NSLocalizedString("Nombre", comment: "")
