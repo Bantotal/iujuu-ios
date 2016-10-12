@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
@@ -13,7 +13,7 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="220"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="DcA-nB-iAq" id="5U2-Lm-DTl">
-                <frame key="frameInset" width="375" height="219"/>
+                <frame key="frameInset" width="375" height="220"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cq3-FF-nOB">
@@ -91,6 +91,7 @@
                 <outlet property="centerMotivoLabelConstraint" destination="uJU-PF-YE6" id="Mrs-me-YjE"/>
                 <outlet property="dateLabel" destination="xve-2h-3PS" id="vHZ-Mv-A7W"/>
                 <outlet property="dateLabelBackground" destination="yeR-5P-nhn" id="xD7-zG-uYq"/>
+                <outlet property="labelBackgroundWidthConstraint" destination="Wfp-0A-xvj" id="3eI-cI-kyE"/>
                 <outlet property="motivoImageView" destination="B0O-4v-BJY" id="vIz-YE-ARA"/>
                 <outlet property="motivoLabel" destination="zDy-4h-M89" id="Juj-eQ-7ue"/>
                 <outlet property="statusLabel" destination="oda-vz-OXB" id="AUj-I4-V8c"/>

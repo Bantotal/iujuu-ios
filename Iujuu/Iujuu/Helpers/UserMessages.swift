@@ -37,6 +37,7 @@ struct UserMessages {
     static let next = NSLocalizedString("Siguiente", comment: "")
     static let share = NSLocalizedString("Compartir", comment: "")
     static let finish = NSLocalizedString("Finalizar", comment: "")
+    static let finished = NSLocalizedString("Finalizado!", comment: "")
     static let save = NSLocalizedString("Guardar", comment: "")
     static let networkError = NSLocalizedString("Hubo un error de conexión. Por favor inténtelo más tarde.", comment: "")
     static let unkownError = NSLocalizedString("Oops! Ha ocurrido un error. Por favor inténtelo más tarde.", comment: "")
@@ -103,14 +104,17 @@ extension UserMessages.RegalosSetup {
 }
 
 extension UserMessages.Home {
-    static let notParticipated = NSLocalizedString("Aún no participe", comment: "")
-    static let didParticipate = NSLocalizedString("Ya Participé", comment: "")
+    static let notParticipated = NSLocalizedString("Aún no participé", comment: "")
+    static let didParticipate = NSLocalizedString("Ya participé", comment: "")
+    static let notParticipatedFinished = NSLocalizedString("No participé", comment: "")
+    static let didParticipateFinished = NSLocalizedString("Participé", comment: "")
     static let createColecta = NSLocalizedString("Nuevo regalo", comment: "")
     static let actionCreateColecta = NSLocalizedString("Crear nuevo regalo", comment: "")
     static let actionInsertCode = NSLocalizedString("Ingresar código de regalo", comment: "")
     static let needAccounts = NSLocalizedString("Necesita una cuenta en Banco Galicia para crear un regalo.", comment: "")
     static let galiciaAccountError = NSLocalizedString("Hubo un error tratando de obtener sus cuentas del banco Galicia. Por favor inténtelo más tarde.", comment: "")
     static let galiciaError = NSLocalizedString("Hubo un error tratando de conectarse al servicio del banco Galicia. Por favor inténtelo más tarde.", comment: "")
+    static let willFinishSoon = NSLocalizedString("Está a punto de finalizar, apúrate!", comment: "")
 }
 
 extension UserMessages.RegaloDetail {

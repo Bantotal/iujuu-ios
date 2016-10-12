@@ -119,8 +119,6 @@ class HomeViewController: XLTableViewController {
                     default:
                         break
                     }
-                    print(error.debugDescription)
-                    print(error.description)
                 }
                 self?.showError(UserMessages.Home.galiciaAccountError)
             }).subscribe().addDisposableTo(disposeBag)
