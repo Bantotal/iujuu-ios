@@ -128,6 +128,7 @@ extension UserMessages.RegaloDetail {
     static let voteError = NSLocalizedString("Ocurrió un error al enviar el voto. Por favor, prueba de vuelta", comment: "")
     static let ideasTitle = NSLocalizedString("Ideas de regalo", comment: "")
     static let seeParticipants = NSLocalizedString("Ver todos", comment: "")
+    static let participantError = NSLocalizedString("No se pudo obtener detalles acerca de los participantes", comment: "")
 
     static func cantidadPersonas(cantidad: Int) -> String {
         if cantidad == 0 {

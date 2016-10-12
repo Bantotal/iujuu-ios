@@ -136,11 +136,12 @@ class RealDataManager: DataManagerProtocol {
             let userAPI = Router.User.Get(userId: id).rx_object().observeOn(MainScheduler.instance).do(
                 onNext: { (user: User) in
                     try? user.save()
-                }
-            )
+                })
 
             if let user = user {
-                return Observable.of(Observable.just(user), userAPI).merge()
+                // will return only the user from the database
+                userAPI.subscribe().addDisposableTo(disposeBag)
+                return Observable.just(user)
             }
 
             return userAPI

@@ -11,7 +11,7 @@ import Eureka
 
 class ParticipantesViewController: FormViewController {
 
-    var regalo: Regalo? = nil
+    var users: [User]!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,8 +31,7 @@ class ParticipantesViewController: FormViewController {
     private func setUpRows() {
         form +++ Section(UserMessages.Participantes.participantesTitle)
 
-        regalo?.participantes
-            .map { $0.string }
+        users.map { "\($0.nombre) \($0.apellido)" }
             .forEach { participante in
                 form.last!
                     <<< LabelRow() {
