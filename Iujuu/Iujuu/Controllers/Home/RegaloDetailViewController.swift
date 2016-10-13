@@ -18,6 +18,9 @@ class RegaloDetailViewController: FormViewController {
 
     var regalo: Regalo!
     let disposeBag = DisposeBag()
+    var participarButton: ButtonFooter?
+
+    let participarFooterHeight = suggestedVerticalConstraint(140)
 
     //MARK: - Lifecycle methods
 
@@ -114,19 +117,19 @@ class RegaloDetailViewController: FormViewController {
 
         let containerView = UIView()
         let isAdministrator = currentUserIsAdministrator()
-        let buttonHeight = suggestedVerticalConstraint(140)
+        let buttonHeight = participarFooterHeight
 
-        let participarButton = createParticiparButton(height: buttonHeight)
+        participarButton = createParticiparButton(height: buttonHeight)
         let finalizarButton = createFinalizarButton()
 
         if isAdministrator {
             containerView.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: buttonHeight * 2)
             finalizarButton.frame = CGRect(x: 0, y: 100, width: view.bounds.width, height: buttonHeight)
-            containerView.addSubview(participarButton)
+            containerView.addSubview(participarButton!)
             containerView.addSubview(finalizarButton)
         } else {
             containerView.frame = CGRect(x: 0, y: 0, width: view.bounds.width, height: buttonHeight)
-            containerView.addSubview(participarButton)
+            containerView.addSubview(participarButton!)
         }
 
         tableView?.tableFooterView = containerView

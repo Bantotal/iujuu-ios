@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import XLSwiftKit
 
 class IdeaRegalosHeader: UIView {
 
     @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var leadingConstraint: NSLayoutConstraint!
 
     var text = "" {
         didSet {
@@ -21,6 +23,7 @@ class IdeaRegalosHeader: UIView {
     override func awakeFromNib() {
         titleLabel.font = UIFont.regular(size: 17)
         titleLabel.textColor = UIColor.ijBlackColor()
+        leadingConstraint.constant = suggestedHorizontalConstraint(20, q6: 0.75, q5: 0.75, q4: 0.75)
     }
 
 }

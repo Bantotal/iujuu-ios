@@ -60,4 +60,8 @@ extension UIViewController {
         present(controller, animated: true, completion: nil)
     }
 
+    func navigationBarHeight() -> CGFloat {
+        return (navigationController?.navigationBar.frame.height ?? 0) + UIApplication.shared.statusBarFrame.size.height
+    }
+
 }

@@ -43,10 +43,11 @@
                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="150" id="0GX-iW-qex"/>
-                        <constraint firstItem="90m-HD-de6" firstAttribute="height" secondItem="AQi-MR-GIB" secondAttribute="height" id="8mW-QX-dxB"/>
                         <constraint firstItem="90m-HD-de6" firstAttribute="centerX" secondItem="AQi-MR-GIB" secondAttribute="centerX" id="Ozh-NP-aLe"/>
                         <constraint firstItem="90m-HD-de6" firstAttribute="leading" secondItem="AQi-MR-GIB" secondAttribute="leading" constant="8" id="WG4-W2-HWY"/>
                         <constraint firstItem="90m-HD-de6" firstAttribute="top" secondItem="AQi-MR-GIB" secondAttribute="top" id="gdL-az-Gow"/>
+                        <constraint firstItem="90m-HD-de6" firstAttribute="centerY" secondItem="AQi-MR-GIB" secondAttribute="centerY" id="oMd-cj-gyb"/>
+                        <constraint firstAttribute="height" constant="23" id="x9N-jJ-gGh"/>
                     </constraints>
                 </view>
             </subviews>
@@ -54,7 +55,7 @@
             <constraints>
                 <constraint firstItem="9t0-xh-l0w" firstAttribute="width" secondItem="iN0-l3-epB" secondAttribute="width" id="7UA-mw-CEg"/>
                 <constraint firstAttribute="trailing" secondItem="KXl-en-y7I" secondAttribute="trailing" constant="20" id="89o-hZ-ugA"/>
-                <constraint firstItem="9t0-xh-l0w" firstAttribute="top" secondItem="AQi-MR-GIB" secondAttribute="bottom" constant="-31" id="Gx9-Qi-l2a"/>
+                <constraint firstItem="9t0-xh-l0w" firstAttribute="top" secondItem="AQi-MR-GIB" secondAttribute="top" constant="-10" id="Gx9-Qi-l2a"/>
                 <constraint firstItem="owz-ss-Pg7" firstAttribute="width" secondItem="9t0-xh-l0w" secondAttribute="width" multiplier="0.9" id="LL7-rD-yU4"/>
                 <constraint firstItem="owz-ss-Pg7" firstAttribute="centerX" secondItem="9t0-xh-l0w" secondAttribute="centerX" id="UcZ-r4-ChU"/>
                 <constraint firstItem="owz-ss-Pg7" firstAttribute="top" secondItem="9t0-xh-l0w" secondAttribute="bottom" constant="20" id="bqz-rm-XU6"/>
