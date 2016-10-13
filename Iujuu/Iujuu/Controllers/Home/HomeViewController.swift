@@ -40,7 +40,8 @@ class HomeViewController: XLTableViewController {
         tableView.dataSource = self
         tableView.separatorStyle = .none
         tableView.register(R.nib.regaloCell(), forCellReuseIdentifier: R.reuseIdentifier.regaloCell.identifier)
-        tableView.backgroundColor = .white
+        tableView.backgroundColor = .clear
+        view.backgroundColor = .white
         setEmptyView()
         setTableHeader()
     }

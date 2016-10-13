@@ -184,7 +184,7 @@ extension UserMessages.FinalizarColecta {
     static let alertTitle = NSLocalizedString("¿Seguro que quieres enviar?", comment: "")
     static let alertCancel = NSLocalizedString("Cancelar", comment: "")
     static let alertSend = NSLocalizedString("Enviar", comment: "")
-    static let alertInfo = NSLocalizedString("La dirección de correo electrónico: {0} recibirá el cupón por $2.400 y los mensajes.", comment: "{0} is the email entered by the user")
+    static let alertInfo = NSLocalizedString("La dirección de correo electrónico: {0} recibirá el cupón por ${1} y los mensajes.", comment: "{0} is the email entered by the user and {1} the amount")
     
 }
 

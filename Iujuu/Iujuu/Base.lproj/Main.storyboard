@@ -29,6 +29,11 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lbB-Z6-w7t">
                                 <state key="normal" title="Secondary"/>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homeBackgroundBalloons" translatesAutoresizingMaskIntoConstraints="NO" id="rB5-BG-7X2">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="118" id="y8C-l1-mta"/>
+                                </constraints>
+                            </imageView>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="H0f-bN-dQj">
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             </tableView>
@@ -55,6 +60,9 @@
                             <constraint firstItem="lbB-Z6-w7t" firstAttribute="width" secondItem="mVm-cS-TwN" secondAttribute="width" id="bUe-7W-AUu"/>
                             <constraint firstItem="mVm-cS-TwN" firstAttribute="width" secondItem="abf-Tu-mT9" secondAttribute="width" multiplier="0.7" id="eIq-DG-7gD"/>
                             <constraint firstItem="vSo-me-hl3" firstAttribute="leading" secondItem="abf-Tu-mT9" secondAttribute="leading" id="fZH-3R-asj"/>
+                            <constraint firstItem="rB5-BG-7X2" firstAttribute="width" secondItem="abf-Tu-mT9" secondAttribute="width" id="hck-7K-AhB"/>
+                            <constraint firstItem="rB5-BG-7X2" firstAttribute="top" secondItem="tbR-v9-2c6" secondAttribute="bottom" constant="-20" id="xKr-nQ-WMf"/>
+                            <constraint firstItem="rB5-BG-7X2" firstAttribute="centerX" secondItem="abf-Tu-mT9" secondAttribute="centerX" id="xS7-4i-ueB"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Iujuu" id="1ki-Np-hkz"/>
@@ -388,6 +396,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="homeBackgroundBalloons" width="375" height="118"/>
         <image name="pagoImagen" width="180" height="180"/>
         <image name="sentImage" width="180" height="180"/>
     </resources>

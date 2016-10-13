@@ -38,8 +38,8 @@ class HomeHeaderView: OwnerView {
     }
 
     private func setTitle() {
-        titleLabel.font = UIFont.regular(size: 20)
-        titleLabel.textColor = UIColor.ijGreyishBrownColor()
+        titleLabel.font = .regular(size: 20)
+        titleLabel.textColor = .ijGreyishBrownColor()
     }
 
 }
