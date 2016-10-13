@@ -19,8 +19,14 @@ class RegaloDetailViewController: FormViewController {
     var regalo: Regalo!
     let disposeBag = DisposeBag()
     var participarButton: ButtonFooter?
+    
+    private struct RowTags {
+        static let participations = "participations"
+    }
 
     let participarFooterHeight = suggestedVerticalConstraint(140)
+
+    private var regaloObservableToken: NotificationToken?
 
     //MARK: - Lifecycle methods
 
@@ -30,6 +36,7 @@ class RegaloDetailViewController: FormViewController {
         setUpRows()
         setUpStyles()
         setBarRightButtons()
+        observeRegaloChanges()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -168,23 +175,54 @@ class RegaloDetailViewController: FormViewController {
         navigationController?.pushViewController(finalizarViewController, animated: true)
     }
 
-    private func setUpHeader() {
+    private func setUpHeader(animated: Bool = true) {
         let headerHeight = suggestedVerticalConstraint(340, q6: 0.9, q5: 0.86, q4: 0.82)
         let regaloHeader = R.nib.regaloDetailHeader.firstView(owner: nil)
         regaloHeader?.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: headerHeight)
-        regaloHeader?.setup(regalo: regalo)
+        regaloHeader?.setup(regalo: regalo, animated: animated)
         tableView?.tableHeaderView = regaloHeader
+    }
+
+    private func updateFormFrom(regalo: Regalo) {
+        (tableView?.tableHeaderView as? RegaloDetailHeader)?.setup(regalo: regalo, animated: false)
+
+        let labelRow: LabelRow! = form.rowBy(tag: RowTags.participations) as? LabelRow
+        labelRow.updateCell()
+
+        let options = regalo.regalosSugeridos
+        let optionsTags = options.map { $0.regaloDescription }
+        let totalVotes = getTotalVotes(options: options)
+
+        let oldOptionTags = form.last?.flatMap { $0.tag } ?? []
+        let newOptionTags = optionsTags.filter { !oldOptionTags.contains($0) }
+        let updateOptionTags = optionsTags.filter { oldOptionTags.contains($0) }
+
+        for option in options {
+            if newOptionTags.contains(option.regaloDescription) {
+                form.last! <<< createOptionRow(regaloDescription: option.regaloDescription, votes: option.votos, totalVotes: totalVotes)
+            } else if updateOptionTags.contains(option.regaloDescription) {
+                let optionRow = form.rowBy(tag: option.regaloDescription) as? CheckRow<String>
+                optionRow?.title = option.regaloDescription
+                optionRow?.selectableValue = option.regaloDescription
+                let percentage = Double(option.votos) / totalVotes
+                optionRow?.cell.showPercentageBackground(percentage: percentage)
+            } else { // delete
+                let optionRow = form.rowBy(tag: option.regaloDescription) as? CheckRow<String>
+                form[form.count - 1].remove(at: optionRow!.indexPath!.row)
+            }
+        }
     }
 
     private func setUpRows() {
 
         form +++ Section()
 
-        <<< LabelRow() { [weak self] in
+        <<< LabelRow(RowTags.participations)
+        .cellUpdate { [weak self] _, row in
             guard let me = self else { return }
-            $0.title = UserMessages.RegaloDetail.cantidadPersonas(cantidad: me.regalo.participantes.count)
+            row.title = UserMessages.RegaloDetail.cantidadPersonas(cantidad: me.regalo.participantes.count)
             if me.currentUserIsAdministrator() && !(me.regalo.participantes.isEmpty) {
-                $0.value = UserMessages.RegaloDetail.seeParticipants
+                row.value = UserMessages.RegaloDetail.seeParticipants
             }
         }
         .cellSetup { cell, _ in
@@ -236,18 +274,22 @@ class RegaloDetailViewController: FormViewController {
         form +++ selectableSection
 
         for option in options {
-            form.last! <<< CheckRow<String>(option.regaloDescription) { lrow in
-                lrow.title = option.regaloDescription
-                lrow.selectableValue = option.regaloDescription
+            form.last! <<< createOptionRow(regaloDescription: option.regaloDescription, votes: option.votos, totalVotes: totalVotes)
+        }
+    }
+
+    private func createOptionRow(regaloDescription: String, votes: Int, totalVotes: Double) -> CheckRow<String> {
+        return CheckRow<String>(regaloDescription) { lrow in
+                lrow.title = regaloDescription
+                lrow.selectableValue = regaloDescription
             }
             .cellUpdate { cell, _ in
-                let percentage = Double(option.votos) / totalVotes
+                let percentage = Double(votes) / totalVotes
                 cell.showPercentageBackground(percentage: percentage)
             }
             .cellSetup { cell, _ in
                 cell.selectionStyle = .none
                 cell.textLabel?.font = .regular(size: 16)
-            }
         }
     }
 
@@ -304,11 +346,24 @@ class RegaloDetailViewController: FormViewController {
         navigationController?.pushViewController(participantesController, animated: true)
     }
 
-    func cancel() {
-        // just called when cancelling from deeeplink
-        guard let confirmViewController = R.storyboard.invitedFlow.confirmationCodeViewController() else { return }
-        confirmViewController.regalo = regalo
-        UIApplication.changeRootViewController(confirmViewController)
+    func observeRegaloChanges() {
+        regaloObservableToken = RealmManager.shared.defaultRealm.objects(Regalo.self)
+            .addNotificationBlock { [weak self] regaloChanges in
+                guard let me = self else { return }
+                switch regaloChanges {
+                case let .update(regalos, _, _, _):
+                    guard let regalo = regalos.filter("id == \(me.regalo.id)").first else { return }
+                    if me.isViewLoaded && me.view.window != nil {
+                        me.updateFormFrom(regalo: regalo)
+                    }
+                default:
+                    break
+                }
+            }
+    }
+
+    deinit {
+        regaloObservableToken?.stop()
     }
 
 }

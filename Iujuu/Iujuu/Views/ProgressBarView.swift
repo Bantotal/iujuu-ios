@@ -30,7 +30,7 @@ class ProgressBarView: UIView {
         super.init(coder: aDecoder)
     }
 
-    func setProgress(percentageFull: Double) {
+    func setProgress(percentageFull: Double, animated: Bool = true) {
         let percentageToShow = percentageFull > 1 ? 1 : percentageFull
 
         let fullBarWidth = frame.width
@@ -56,11 +56,19 @@ class ProgressBarView: UIView {
             addSubview(percentageLabel)
         }
 
-        UIView.animate(withDuration: animationDuration) {
+        let updateBlock = {
             fullView.frame = CGRect(x: 0, y: 0, width: fullBarWidth * CGFloat(percentageToShow), height: barHeight)
             if percentageToShow != 1 && self.showPercentageLabel {
                 percentageLabel.frame = CGRect(x: fullView.frame.width + self.labelOffset, y: 0, width: self.labelOffset + fullBarWidth * CGFloat(1 - percentageToShow), height: barHeight)
             }
+        }
+
+        if animated {
+            UIView.animate(withDuration: animationDuration) {
+                updateBlock()
+            }
+        } else {
+            updateBlock()
         }
     }
 

@@ -171,19 +171,33 @@ class RealDataManager: DataManagerProtocol {
     }
 
     func editRegalo(userId: Int, regaloId: Int, descripcion: String, closeDate: Date,
-                    targetAmount: Int, perPersonAmount: Int, regalosSugeridos: [RegaloSugerido]) -> Observable<Bool> {
+                    targetAmount: Int, perPersonAmount: Int, regalosSugeridos: [RegaloSugerido]) -> Observable<Void> {
         return Router.Regalo.Edit(userId: userId, regaloId: regaloId, descripcion: descripcion, closeDate: closeDate,
                                     targetAmount: targetAmount, perPersonAmount: perPersonAmount, regalosSugeridos: regalosSugeridos)
             .rx_anyObject()
-            .map({ (data) -> Bool in
+            .map { (data) -> Bool in
                 let json = JSON(data)
                 if let updated = json["Updated"].bool {
                     return updated
                 }
                 return false
-            })
-            .do(onNext: { updated in
-                if updated {
+            }
+            .flatMap { success -> Observable<Void> in
+                guard success else {
+                    return Observable.error(NSError.ijError(code: .errorUpdatingRegalo))
+                }
+                return /* vote for regalos sugeridos will create them */
+                    Observable.from(regalosSugeridos.map { Observable.just($0) })
+                        .merge()
+                        .asObservable()
+                        .flatMap { regaloSugerido in
+                            return DataManager.shared.voteRegalo(regaloId: regaloId, voto: regaloSugerido.regaloDescription)
+                        }
+                        .toArray()
+                        .map { _ in () }
+            }
+            .do(
+                onNext: { _ in
                     GCDHelper.runOnMainThread {
                         let realm = RealmManager.shared.defaultRealm
                         let regalo = realm?.object(ofType: Regalo.self, forPrimaryKey: regaloId)
@@ -197,7 +211,7 @@ class RealDataManager: DataManagerProtocol {
                         }
                     }
                 }
-            })
+            )
     }
 
     func chooseAccount(cuentaId: String, amount: Int, date: Date, text: String) -> Observable<Any> {
@@ -222,7 +236,21 @@ class RealDataManager: DataManagerProtocol {
             return Observable.error(NSError.ijError(code: .userIdNotFound))
         }
 
-        return Router.Regalo.VotarRegalo(userId: id, regaloId: regaloId, voto: voto).rx_collection("regalosSugeridos")
+        return
+            Router.Regalo.VotarRegalo(userId: id, regaloId: regaloId, voto: voto)
+                .rx_collection("regalosSugeridos")
+                .do(
+                    onNext: { (regalosSugeridos: [RegaloSugerido]) in
+                        GCDHelper.runOnMainThread {
+                            let realm = RealmManager.shared.defaultRealm
+                            let regalo = realm?.object(ofType: Regalo.self, forPrimaryKey: regaloId)
+                            try? realm?.write() {
+                                regalo?.regalosSugeridos.removeAll()
+                                _ = regalosSugeridos.map({ regalo?.regalosSugeridos.append($0) })
+                            }
+                        }
+                    }
+                )
     }
 
     func pagarRegalo(regaloId: Int, importe: String, imagen: String? = nil, comentario: String? = nil) -> Observable<Any> {
