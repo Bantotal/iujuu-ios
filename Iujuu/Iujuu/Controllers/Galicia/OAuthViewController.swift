@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import OAuthSwift
+import XLSwiftKit
 
 class OAuthViewController: XLWebViewController, UIWebViewDelegate {
 
@@ -31,7 +32,9 @@ class OAuthViewController: XLWebViewController, UIWebViewDelegate {
         super.webView(webView, didFailLoadWithError: error)
         let presenter = presentingViewController
         dismiss(animated: true, completion: {
-            presenter?.showError(UserMessages.Home.galiciaError)
+            GCDHelper.delay(0.4, block: { [weak presenter] in
+                presenter?.showError(UserMessages.Home.galiciaError)
+            })
         })
     }
 
