@@ -65,9 +65,6 @@ class ConfirmationCodeViewController: XLTableViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let onboardingViewController = segue.destination as? OnboardingViewController {
             onboardingViewController.mode = .fromDeepLink(withRegalo: regalo)
-        } else if let regaloDetailController = segue.destination as? RegaloDetailViewController {
-            // from insert code
-            regaloDetailController.regalo = regalo
         }
     }
 
@@ -121,7 +118,7 @@ class ConfirmationCodeViewController: XLTableViewController {
                         navigationController.setViewControllers(controllers, animated: false)
                         UIApplication.changeRootViewController(navigationController)
                     } else {
-                        me.performSegue(withIdentifier: R.segue.confirmationCodeViewController.showRegaloDetail, sender: nil)
+                        me.performSegue(withIdentifier: R.segue.confirmationCodeViewController.showHome, sender: nil)
                     }
                 },
                 onError: { [weak self] error in
