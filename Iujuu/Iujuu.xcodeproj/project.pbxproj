@@ -130,8 +130,6 @@
 		46C395091D92FCD4000965FB /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46C395071D92FCD4000965FB /* OnboardingViewController.swift */; };
 		46CBE7AB1DA6A10B0068298B /* IujuuError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CBE7AA1DA6A10B0068298B /* IujuuError.swift */; };
 		46CBE7AC1DA6A10B0068298B /* IujuuError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CBE7AA1DA6A10B0068298B /* IujuuError.swift */; };
-		46F45F261D905BED00A44C59 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F45F251D905BED00A44C59 /* InitialViewController.swift */; };
-		46F45F271D905BED00A44C59 /* InitialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F45F251D905BED00A44C59 /* InitialViewController.swift */; };
 		46F5AF0D1DA413A400401255 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46F5AF091DA4135100401255 /* GoogleService-Info.plist */; };
 		46F5AF121DA4143600401255 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 46F5AF0F1DA4142E00401255 /* GoogleService-Info.plist */; };
 		46F5AF151DA41D6C00401255 /* AppDelegate+Iujuu+Deeplinks.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46F5AF141DA41D6C00401255 /* AppDelegate+Iujuu+Deeplinks.swift */; };
@@ -151,6 +149,8 @@
 		8F0759A81D774FC10012D681 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F0759A61D774FC10012D681 /* RealmManager.swift */; };
 		8F16F8D21D94499E003BDA0B /* IURegaloNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F16F8D11D94499E003BDA0B /* IURegaloNavigationController.swift */; };
 		8F16F8D31D9449C1003BDA0B /* IURegaloNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F16F8D11D94499E003BDA0B /* IURegaloNavigationController.swift */; };
+		8F5EEA3F1DAFD46700B68F45 /* HomeRegaloTransitionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5EEA3E1DAFD46700B68F45 /* HomeRegaloTransitionController.swift */; };
+		8F5EEA401DAFD46700B68F45 /* HomeRegaloTransitionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5EEA3E1DAFD46700B68F45 /* HomeRegaloTransitionController.swift */; };
 		8F5FB2A71DA691BC003ED73E /* EditRegaloViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5FB2A61DA691BC003ED73E /* EditRegaloViewController.swift */; };
 		8F5FB2A81DA691BC003ED73E /* EditRegaloViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5FB2A61DA691BC003ED73E /* EditRegaloViewController.swift */; };
 		8F5FB2AB1DA6B674003ED73E /* UITextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F5FB2AA1DA6B674003ED73E /* UITextField.swift */; };
@@ -388,7 +388,6 @@
 		46C395041D92FB46000965FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		46C395071D92FCD4000965FB /* OnboardingViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = OnboardingViewController.swift; path = Onboarding/OnboardingViewController.swift; sourceTree = "<group>"; };
 		46CBE7AA1DA6A10B0068298B /* IujuuError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IujuuError.swift; sourceTree = "<group>"; };
-		46F45F251D905BED00A44C59 /* InitialViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InitialViewController.swift; sourceTree = "<group>"; };
 		46F5AF071DA4134900401255 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = Production/Info.plist; sourceTree = "<group>"; };
 		46F5AF091DA4135100401255 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "Staging/GoogleService-Info.plist"; sourceTree = "<group>"; };
 		46F5AF0A1DA4135100401255 /* Info-Staging.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "Info-Staging.plist"; path = "Staging/Info-Staging.plist"; sourceTree = "<group>"; };
@@ -410,6 +409,7 @@
 		8F0759A31D774C5C0012D681 /* AppDelegate+Iujuu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AppDelegate+Iujuu.swift"; sourceTree = "<group>"; };
 		8F0759A61D774FC10012D681 /* RealmManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		8F16F8D11D94499E003BDA0B /* IURegaloNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = IURegaloNavigationController.swift; sourceTree = "<group>"; };
+		8F5EEA3E1DAFD46700B68F45 /* HomeRegaloTransitionController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeRegaloTransitionController.swift; sourceTree = "<group>"; };
 		8F5FB2A61DA691BC003ED73E /* EditRegaloViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditRegaloViewController.swift; sourceTree = "<group>"; };
 		8F5FB2AA1DA6B674003ED73E /* UITextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITextField.swift; sourceTree = "<group>"; };
 		8F5FB2AD1DA6B76B003ED73E /* CurrencyIntRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CurrencyIntRow.swift; sourceTree = "<group>"; };
@@ -664,7 +664,7 @@
 				CE43ABD21D9ACD1D00F123A6 /* Home */,
 				8F9694C51D92E38D00A9EBB7 /* Regalos */,
 				8F81DA7E1DA3F3090004CA2A /* Ingresar Codigo */,
-				46F45F251D905BED00A44C59 /* InitialViewController.swift */,
+				8F5EEA3D1DAFD43300B68F45 /* Transitions */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -853,6 +853,14 @@
 				2867E8311C74C7D400FCEBBD /* Assets.xcassets */,
 			);
 			name = Resources;
+			sourceTree = "<group>";
+		};
+		8F5EEA3D1DAFD43300B68F45 /* Transitions */ = {
+			isa = PBXGroup;
+			children = (
+				8F5EEA3E1DAFD46700B68F45 /* HomeRegaloTransitionController.swift */,
+			);
+			path = Transitions;
 			sourceTree = "<group>";
 		};
 		8F64AD221D9195A100E46737 /* Router */ = {
@@ -1524,6 +1532,7 @@
 				8F16F8D31D9449C1003BDA0B /* IURegaloNavigationController.swift in Sources */,
 				8F7C01651DA54ABA004D6F54 /* URLRequest.swift in Sources */,
 				2841F1E01CCFF55600D609CE /* XLTableViewController.swift in Sources */,
+				8F5EEA401DAFD46700B68F45 /* HomeRegaloTransitionController.swift in Sources */,
 				464512111D9595CD009C2FE6 /* PasswordValidator.swift in Sources */,
 				8F8CEA071D947840005FA5B6 /* IJLabelRow.swift in Sources */,
 				8F7C01681DA5718F004D6F54 /* GaliciaPagosViewController.swift in Sources */,
@@ -1572,7 +1581,6 @@
 				4658D9AD1D92BBDB00A2DF05 /* DataManager.swift in Sources */,
 				8F9694DA1D93084000A9EBB7 /* RSCloseDateController.swift in Sources */,
 				8F9694E21D932A5A00A9EBB7 /* RSPerPersonController.swift in Sources */,
-				46F45F271D905BED00A44C59 /* InitialViewController.swift in Sources */,
 				4653B7F61D7A14A0002A6660 /* LoadingIndicator.swift in Sources */,
 				8F7705CB1DAD628A000AFD65 /* PagoConfirmadoViewController.swift in Sources */,
 				8F702F991D9D579400FE159E /* RegaloCell.swift in Sources */,
@@ -1633,6 +1641,7 @@
 				B23A40F01C972C2B004AB8DC /* Date.swift in Sources */,
 				8F7C01641DA54ABA004D6F54 /* URLRequest.swift in Sources */,
 				8F16F8D21D94499E003BDA0B /* IURegaloNavigationController.swift in Sources */,
+				8F5EEA3F1DAFD46700B68F45 /* HomeRegaloTransitionController.swift in Sources */,
 				8F8CEA061D947840005FA5B6 /* IJLabelRow.swift in Sources */,
 				2817316B1C9C4BDA006237C7 /* XLTableViewController.swift in Sources */,
 				8F7C01671DA5718F004D6F54 /* GaliciaPagosViewController.swift in Sources */,
@@ -1682,7 +1691,6 @@
 				4658D9AC1D92BBDB00A2DF05 /* DataManager.swift in Sources */,
 				8F9694D91D93084000A9EBB7 /* RSCloseDateController.swift in Sources */,
 				8F9694E11D932A5A00A9EBB7 /* RSPerPersonController.swift in Sources */,
-				46F45F261D905BED00A44C59 /* InitialViewController.swift in Sources */,
 				8F7705CA1DAD628A000AFD65 /* PagoConfirmadoViewController.swift in Sources */,
 				8F702F981D9D579400FE159E /* RegaloCell.swift in Sources */,
 				8F9037EE1D99AA37006E1C8E /* ShareRegaloController.swift in Sources */,

@@ -19,11 +19,15 @@ class HomeViewController: XLTableViewController {
     var regalos: [Regalo] = []
     var emptyView: EmptyHomeView?
 
+    fileprivate var selectedCell: RegaloCell?
+    fileprivate let customAnimationController = HomeRegaloTransitionController()
+
     private let headerHeight = 180
     private let emptyViewHeight = 400
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.delegate = self
         setTableView()
         setupCreateColectaButton()
         DataManager.shared.getRegalos()
@@ -193,6 +197,7 @@ extension HomeViewController: UITableViewDataSource, UITableViewDelegate {
         tableView.deselectRow(at: indexPath, animated: true)
         let detailController = RegaloDetailViewController()
         detailController.regalo = regalos[indexPath.section]
+        selectedCell = tableView.cellForRow(at: indexPath) as? RegaloCell
         navigationController?.pushViewController(detailController, animated: true)
     }
 
@@ -206,4 +211,25 @@ extension HomeViewController: OAuthSwiftURLHandlerType {
         present(webViewController, animated: true, completion: nil)
     }
 
+}
+
+extension HomeViewController: UINavigationControllerDelegate, UIViewControllerTransitioningDelegate {
+
+    func navigationController(_ navigationController: UINavigationController,
+                              animationControllerFor operation: UINavigationControllerOperation,
+                              from fromVC: UIViewController,
+                              to toVC: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        if let selectedCell = selectedCell {
+            if fromVC is HomeViewController && toVC is RegaloDetailViewController {
+                customAnimationController.selectedCell = selectedCell
+                return customAnimationController
+            } else if fromVC is RegaloDetailViewController && toVC is HomeViewController {
+                customAnimationController.selectedCell = selectedCell
+                return customAnimationController
+            }
+
+        }
+
+        return nil
+    }
 }
