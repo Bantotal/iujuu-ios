@@ -196,16 +196,27 @@ class RegaloPreviewViewController: FormViewController {
 // MARK: TableView editing
 extension RegaloPreviewViewController {
 
-    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+    @objc(tableView:canEditRowAtIndexPath:)
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         if let section = form.sectionBy(tag: ideaSectionTag), indexPath.section == section.index && indexPath.row != section.count - 1 {
+            return true
+        }
+        return false
+    }
+
+    @objc(tableView:editingStyleForRowAtIndexPath:)
+    func tableView(_ tableView: UITableView, editingStyleForRowAt indexPath: IndexPath) -> UITableViewCellEditingStyle {
+        if let section = form.sectionBy(tag: ideaSectionTag), indexPath.section == section.index {
             return .delete
         }
         return .none
     }
 
+    @objc(tableView:commitEditingStyle:forRowAtIndexPath:)
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            form[indexPath.section].remove(at: indexPath.row)
+            var section = form[indexPath.section]
+            section.remove(at: indexPath.row)
         }
     }
 
