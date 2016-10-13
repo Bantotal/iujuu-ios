@@ -92,8 +92,6 @@ class SessionController {
         RealmManager.shared.eraseAll()
         Ecno.clearAll()
         AfterLoginPending.shared.clear()
-//        Analytics.reset()
-//        Analytics.registerUnidentifiedUser()
         Crashlytics.sharedInstance().setUserEmail(nil)
         Crashlytics.sharedInstance().setUserIdentifier(nil)
         Crashlytics.sharedInstance().setUserName(nil)

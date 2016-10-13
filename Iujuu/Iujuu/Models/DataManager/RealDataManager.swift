@@ -116,11 +116,16 @@ class RealDataManager: DataManagerProtocol {
 
     func logout() -> Observable<Any> {
         let userToken = SessionController.sharedInstance.token
-
         guard let _ = userToken else { return Observable.empty() }
-
-        SessionController.sharedInstance.logOut()
-        return Router.Session.Logout().rx_anyObject()
+        return
+            Router.Session.Logout()
+                .rx_anyObject()
+                .observeOn(MainScheduler.instance)
+                .do(
+                    onNext: { _ in
+                        SessionController.sharedInstance.logOut()
+                    }
+                )
     }
 
     private func updateRegalos(_ regalos: [Regalo]) {
