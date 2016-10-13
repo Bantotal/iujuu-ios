@@ -10,7 +10,7 @@ import UIKit
 import RxSwift
 import XLSwiftKit
 
-class EmptyHomeView: UIView {
+class EmptyHomeView: OwnerView {
 
     let disposeBag = DisposeBag()
 
@@ -39,8 +39,13 @@ class EmptyHomeView: UIView {
         }
     }
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
+    override func viewForContent() -> UIView? {
+        return R.nib.emptyHomeView.firstView(owner: self)
+    }
+
+    override func setup() {
+        super.setup()
+        contentView.backgroundColor = .clear
         setButtonsStyle()
         setTitleStyle()
         setConstraints()

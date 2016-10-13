@@ -87,7 +87,7 @@ class FinalizarColectaViewController: FormViewController {
             return
         }
 
-        let alert = UIAlertController(title: UserMessages.FinalizarColecta.alertTitle, message: UserMessages.FinalizarColecta.alertInfo.parametrize(emailToSend), preferredStyle: UIAlertControllerStyle.alert)
+        let alert = UIAlertController(title: UserMessages.FinalizarColecta.alertTitle, message: UserMessages.FinalizarColecta.alertInfo.parametrize(emailToSend, regalo.saldo), preferredStyle: UIAlertControllerStyle.alert)
         alert.addAction(UIAlertAction(title: UserMessages.FinalizarColecta.alertCancel, style: UIAlertActionStyle.default, handler: { action in
             alert.dismiss(animated: true, completion: nil)
         }))

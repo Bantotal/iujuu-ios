@@ -35,7 +35,8 @@ class RegaloCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-
+        backgroundColor = .clear
+        
         borderView.layer.borderColor = UIColor.ijSeparatorGrayColor().cgColor
         borderView.layer.borderWidth = 1
         borderView.layer.shadowOffset = CGSize(width: 0, height: 1)

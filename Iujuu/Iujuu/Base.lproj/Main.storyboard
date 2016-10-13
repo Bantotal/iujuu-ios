@@ -29,27 +29,11 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lbB-Z6-w7t">
                                 <state key="normal" title="Secondary"/>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homeBackgroundBalloons" translatesAutoresizingMaskIntoConstraints="NO" id="n4Q-wx-Oc0">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homeBackgroundBalloons" translatesAutoresizingMaskIntoConstraints="NO" id="rB5-BG-7X2">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="118" id="oZW-6H-c9d"/>
+                                    <constraint firstAttribute="height" constant="118" id="y8C-l1-mta"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homeLogo" translatesAutoresizingMaskIntoConstraints="NO" id="mp9-iq-m2L">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="53" id="M5c-Te-M7w"/>
-                                </constraints>
-                            </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="iconSettings" translatesAutoresizingMaskIntoConstraints="NO" id="KU9-JL-5D3">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="22" id="JTX-50-d6h"/>
-                                    <constraint firstAttribute="width" constant="22" id="Nqm-fJ-dm7"/>
-                                </constraints>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mis regalos activos" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FS0-hy-mtH">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="H0f-bN-dQj">
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             </tableView>
@@ -63,42 +47,30 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="H0f-bN-dQj" firstAttribute="centerX" secondItem="lbB-Z6-w7t" secondAttribute="centerX" id="0VV-Dp-HA3"/>
-                            <constraint firstItem="H0f-bN-dQj" firstAttribute="top" secondItem="FS0-hy-mtH" secondAttribute="bottom" constant="20" id="0mL-Vz-G0I"/>
-                            <constraint firstItem="n4Q-wx-Oc0" firstAttribute="top" secondItem="tbR-v9-2c6" secondAttribute="bottom" constant="-20" id="5CI-Nf-ATR"/>
                             <constraint firstItem="H0f-bN-dQj" firstAttribute="width" secondItem="abf-Tu-mT9" secondAttribute="width" id="7AT-IH-24m"/>
-                            <constraint firstItem="n4Q-wx-Oc0" firstAttribute="width" secondItem="abf-Tu-mT9" secondAttribute="width" id="8vp-25-hTT"/>
                             <constraint firstItem="mVm-cS-TwN" firstAttribute="height" secondItem="lbB-Z6-w7t" secondAttribute="height" id="9W7-Bg-liC"/>
+                            <constraint firstItem="H0f-bN-dQj" firstAttribute="top" secondItem="tbR-v9-2c6" secondAttribute="bottom" constant="-20" id="Ak8-HJ-vMi"/>
                             <constraint firstAttribute="trailing" secondItem="vSo-me-hl3" secondAttribute="trailing" id="HWW-mb-xwV"/>
                             <constraint firstAttribute="bottom" secondItem="H0f-bN-dQj" secondAttribute="bottom" id="L7S-LG-RZg"/>
                             <constraint firstItem="d2b-Hd-gsX" firstAttribute="top" secondItem="vSo-me-hl3" secondAttribute="bottom" id="RCP-AL-RMu"/>
                             <constraint firstItem="lbB-Z6-w7t" firstAttribute="centerX" secondItem="mVm-cS-TwN" secondAttribute="centerX" id="SNu-fV-KPt"/>
                             <constraint firstItem="mVm-cS-TwN" firstAttribute="top" secondItem="tbR-v9-2c6" secondAttribute="bottom" constant="39" id="U8F-Lr-zaL"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="FS0-hy-mtH" secondAttribute="trailing" constant="25" id="WvI-HH-cYv"/>
                             <constraint firstItem="lbB-Z6-w7t" firstAttribute="top" secondItem="mVm-cS-TwN" secondAttribute="bottom" constant="25" id="ZvX-R3-JEO"/>
                             <constraint firstItem="mVm-cS-TwN" firstAttribute="centerX" secondItem="abf-Tu-mT9" secondAttribute="centerX" id="awH-OH-Z2f"/>
                             <constraint firstItem="lbB-Z6-w7t" firstAttribute="width" secondItem="mVm-cS-TwN" secondAttribute="width" id="bUe-7W-AUu"/>
-                            <constraint firstItem="mp9-iq-m2L" firstAttribute="centerX" secondItem="n4Q-wx-Oc0" secondAttribute="centerX" id="bha-Rl-wKg"/>
-                            <constraint firstItem="FS0-hy-mtH" firstAttribute="centerX" secondItem="abf-Tu-mT9" secondAttribute="centerX" id="eH7-1G-Bve"/>
                             <constraint firstItem="mVm-cS-TwN" firstAttribute="width" secondItem="abf-Tu-mT9" secondAttribute="width" multiplier="0.7" id="eIq-DG-7gD"/>
                             <constraint firstItem="vSo-me-hl3" firstAttribute="leading" secondItem="abf-Tu-mT9" secondAttribute="leading" id="fZH-3R-asj"/>
-                            <constraint firstItem="n4Q-wx-Oc0" firstAttribute="centerX" secondItem="abf-Tu-mT9" secondAttribute="centerX" id="ftY-UI-fRd"/>
-                            <constraint firstItem="FS0-hy-mtH" firstAttribute="top" secondItem="n4Q-wx-Oc0" secondAttribute="bottom" constant="15" id="gJb-U4-sXk"/>
-                            <constraint firstItem="FS0-hy-mtH" firstAttribute="leading" secondItem="abf-Tu-mT9" secondAttribute="leadingMargin" constant="25" id="gWn-Tn-2hS"/>
-                            <constraint firstItem="KU9-JL-5D3" firstAttribute="leading" secondItem="n4Q-wx-Oc0" secondAttribute="trailing" constant="-40" id="nbE-fd-Kgb"/>
-                            <constraint firstItem="mp9-iq-m2L" firstAttribute="bottom" secondItem="n4Q-wx-Oc0" secondAttribute="bottom" id="ryM-1t-Jks"/>
-                            <constraint firstItem="KU9-JL-5D3" firstAttribute="centerY" secondItem="n4Q-wx-Oc0" secondAttribute="centerY" id="wKM-Sz-p2Q"/>
-                            <constraint firstItem="mp9-iq-m2L" firstAttribute="height" secondItem="n4Q-wx-Oc0" secondAttribute="height" multiplier="0.5" id="zOQ-IH-uHc"/>
+                            <constraint firstItem="rB5-BG-7X2" firstAttribute="width" secondItem="abf-Tu-mT9" secondAttribute="width" id="hck-7K-AhB"/>
+                            <constraint firstItem="rB5-BG-7X2" firstAttribute="top" secondItem="tbR-v9-2c6" secondAttribute="bottom" constant="-20" id="xKr-nQ-WMf"/>
+                            <constraint firstItem="rB5-BG-7X2" firstAttribute="centerX" secondItem="abf-Tu-mT9" secondAttribute="centerX" id="xS7-4i-ueB"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Iujuu" id="1ki-Np-hkz"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
-                        <outlet property="balloonsImage" destination="n4Q-wx-Oc0" id="obj-d9-AgM"/>
                         <outlet property="createColectaButton" destination="vSo-me-hl3" id="eio-NJ-hiR"/>
-                        <outlet property="settingsIcon" destination="KU9-JL-5D3" id="71A-4S-yCj"/>
                         <outlet property="tableBottomConstraint" destination="L7S-LG-RZg" id="LEz-Pj-0pl"/>
                         <outlet property="tableView" destination="H0f-bN-dQj" id="reY-zS-XGL"/>
-                        <outlet property="titleLabel" destination="FS0-hy-mtH" id="7mc-Kz-wvl"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ohZ-iu-QMB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -245,7 +217,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zOV-V0-1xs" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="wXp-WV-J8K">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wXp-WV-J8K">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -304,7 +276,7 @@
         <scene sceneID="kpT-1B-leC">
             <objects>
                 <navigationController storyboardIdentifier="EditRegaloNavigationController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="J0u-2E-PjY" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="t1z-80-HN0">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="t1z-80-HN0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -425,8 +397,6 @@
     </scenes>
     <resources>
         <image name="homeBackgroundBalloons" width="375" height="118"/>
-        <image name="homeLogo" width="60" height="60"/>
-        <image name="iconSettings" width="22" height="22"/>
         <image name="pagoImagen" width="180" height="180"/>
         <image name="sentImage" width="180" height="180"/>
     </resources>

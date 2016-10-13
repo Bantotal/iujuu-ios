@@ -13,14 +13,14 @@ import RxSwift
 
 class HomeViewController: XLTableViewController {
 
-    @IBOutlet weak var balloonsImage: UIImageView!
-    @IBOutlet weak var settingsIcon: UIImageView!
-    @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var createColectaButton: UIButton!
     @IBOutlet weak var tableBottomConstraint: NSLayoutConstraint!
 
     var regalos: [Regalo] = []
     var emptyView: EmptyHomeView?
+
+    private let headerHeight = 180
+    private let emptyViewHeight = 400
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,12 +40,14 @@ class HomeViewController: XLTableViewController {
         tableView.dataSource = self
         tableView.separatorStyle = .none
         tableView.register(R.nib.regaloCell(), forCellReuseIdentifier: R.reuseIdentifier.regaloCell.identifier)
-        tableView.backgroundColor = .white
+        tableView.backgroundColor = .clear
+        view.backgroundColor = .white
         setEmptyView()
+        setTableHeader()
     }
 
     private func setEmptyView() {
-        emptyView = R.nib.emptyHomeView.firstView(owner: nil)
+        emptyView = EmptyHomeView(frame: CGRect(x: 0, y: headerHeight, width: Int(view.bounds.width), height: emptyViewHeight))
 
         emptyView?.nuevaColectaAction = {
             self.getAccounts()
@@ -55,7 +57,18 @@ class HomeViewController: XLTableViewController {
             self.sendToIngresarCodigo()
         }
 
-        tableView.backgroundView = emptyView
+        let containerView = UIView(frame: CGRect(x: 0, y: 0, width: Int(view.bounds.width), height: headerHeight + emptyViewHeight))
+        containerView.addSubview(emptyView!)
+
+        tableView.backgroundView = containerView
+    }
+
+    private func setTableHeader() {
+        let homeHeader = HomeHeaderView(frame: CGRect(x: 0, y: 0, width: Int(view.bounds.width), height: headerHeight))
+        homeHeader.settingsTappedAction = { [weak self] in
+            self?.settingsTapped()
+        }
+        tableView.tableHeaderView = homeHeader
     }
 
     private func setupCreateColectaButton() {
@@ -67,6 +80,7 @@ class HomeViewController: XLTableViewController {
 
     func setEmptyViewState(hidden: Bool) {
         emptyView?.isHidden = hidden
+        tableView.isScrollEnabled = hidden
         createColectaButton.isHidden = !hidden
         tableBottomConstraint.constant = hidden ? 68 : 0
     }
@@ -142,24 +156,6 @@ class HomeViewController: XLTableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.isHidden = true
-        navigationController?.navigationBar.tintColor = .ijBlackColor()
-        setUp()
-    }
-
-    private func setUp () {
-        setTitle()
-        setSettingsButton()
-    }
-
-    private func setTitle() {
-        titleLabel.font = UIFont.regular(size: 20)
-        titleLabel.textColor = UIColor.ijGreyishBrownColor()
-    }
-
-    private func setSettingsButton() {
-        let tap = UITapGestureRecognizer(target: self, action: #selector(HomeViewController.settingsTapped))
-        settingsIcon.addGestureRecognizer(tap)
-        settingsIcon.isUserInteractionEnabled = true
     }
 
     func settingsTapped() {
