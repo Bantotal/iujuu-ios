@@ -16,7 +16,7 @@ extension Date {
     }
 
     func dateString() -> String? {
-        return self.toString(format: DateFormat.custom("dd/MM/yyyy"))
+        return self.string(format: DateFormat.custom("dd/MM/yyyy"))
     }
 
     func daysFrom(date: Date) -> Int {

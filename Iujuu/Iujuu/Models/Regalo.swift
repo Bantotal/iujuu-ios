@@ -124,7 +124,7 @@ extension Regalo {
     }
 
     func expiresSoon() -> Bool {
-        return 7.days.fromNow > fechaDeCierre
+        return 7.days.fromNow()! > fechaDeCierre
     }
 
     func hasExpired() -> Bool {

@@ -32,7 +32,7 @@ extension Router.Regalo {
             return ["regalo": cleanedDict([
                 "descripcion": descripcion,
                 "motivo": motivo,
-                "fechaDeCierre": closeDate.toString(format: DateFormat.iso8601Format(.date)),
+                "fechaDeCierre": closeDate.string(format: .iso8601(options: .withInternetDateTimeExtended)),
                 "montoObjetivo": targetAmount,
                 "montoPorPersona": perPersonAmount,
                 "cuentaId": accountId,
@@ -109,7 +109,7 @@ extension Router.Regalo {
         var parameters: [String : Any]? {
             return cleanedDict([
                 "descripcion": descripcion,
-                "fechaDeCierre": closeDate.toString(format: DateFormat.iso8601Format(.date)),
+                "fechaDeCierre": closeDate.string(format: .iso8601(options: .withInternetDateTimeExtended)),
                 "montoObjetivo": targetAmount,
                 "montoPorPersona": perPersonAmount,
                 "regalosSugeridos": regalosSugeridos.map({ regalo in
