@@ -38,7 +38,7 @@ class HomeRegaloTransitionController: NSObject, UIViewControllerAnimatedTransiti
         initialFrame = fromVC.view.convert(selectedCell.motivoImageView.frame, from: selectedCell) // selectedCell.motivoImageView.frame
         let initialLabel = fromVC.view.convert(selectedCell.dateLabelBackground.frame, from: selectedCell)
         initialFrame.origin.x += 10
-        let finalImageFrame = CGRect(x: 0, y: fromVC.navigationBarHeight(), width: UIScreen.main.bounds.width, height: 150)
+        let finalImageFrame = CGRect(x: 0, y: fromVC.navigationBarHeight(), width: UIScreen.main.bounds.width, height: 0.6 * RegaloCell.rowHeight)
 
         // snapshot cell image view
         let imageSnapshot = snapshotImageView(from: selectedCell.motivoImageView)

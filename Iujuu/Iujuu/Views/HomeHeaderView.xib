@@ -43,7 +43,7 @@
                 <constraint firstItem="Jq4-gb-dX5" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="KDO-ZQ-oZO"/>
                 <constraint firstAttribute="trailing" secondItem="Jq4-gb-dX5" secondAttribute="trailing" constant="25" id="hey-8J-yZ2"/>
                 <constraint firstItem="kqP-nh-b6W" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="jEI-mj-XbL"/>
-                <constraint firstItem="kqP-nh-b6W" firstAttribute="top" secondItem="ZIj-HY-nj7" secondAttribute="bottom" constant="-10" id="lZ8-Pe-50d"/>
+                <constraint firstItem="kqP-nh-b6W" firstAttribute="top" secondItem="ZIj-HY-nj7" secondAttribute="bottom" id="lZ8-Pe-50d"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="60.5" y="-190.5"/>

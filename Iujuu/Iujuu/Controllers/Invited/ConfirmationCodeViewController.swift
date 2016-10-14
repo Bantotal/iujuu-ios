@@ -10,12 +10,14 @@ import Foundation
 import UIKit
 import Ecno
 import Crashlytics
+import XLSwiftKit
 
 class ConfirmationCodeViewController: XLTableViewController {
 
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var cancelButton: UIButton!
+    @IBOutlet weak var balloonHeightConstraint: NSLayoutConstraint!
 
     var regalo: Regalo!
 
@@ -42,6 +44,7 @@ class ConfirmationCodeViewController: XLTableViewController {
     }
 
     private func stylize() {
+        balloonHeightConstraint.constant = suggestedHorizontalConstraint(130)
         title = ""
         tableView.delegate = self
         tableView.dataSource = self

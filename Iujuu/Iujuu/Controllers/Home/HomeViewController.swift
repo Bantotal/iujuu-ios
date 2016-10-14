@@ -10,11 +10,16 @@ import UIKit
 import OAuthSwift
 import Opera
 import RxSwift
+import XLSwiftKit
 
 class HomeViewController: XLTableViewController {
 
     @IBOutlet weak var createColectaButton: UIButton!
     @IBOutlet weak var tableBottomConstraint: NSLayoutConstraint!
+    @IBOutlet weak var leadingBalloonConstraint: NSLayoutConstraint!
+    @IBOutlet weak var trailingBalloonConstraint: NSLayoutConstraint!
+    @IBOutlet weak var topBalloonConstraint: NSLayoutConstraint!
+    @IBOutlet weak var balloonHeightConstraint: NSLayoutConstraint!
 
     var regalos: [Regalo] = []
     var emptyView: EmptyHomeView?
@@ -22,12 +27,13 @@ class HomeViewController: XLTableViewController {
     fileprivate var selectedCell: RegaloCell?
     fileprivate let customAnimationController = HomeRegaloTransitionController()
 
-    private let headerHeight = 180
+    private let headerHeight = Int(suggestedHorizontalConstraint(180, q6: 0.95, q5: 0.9, q4: 0.9))
     private let emptyViewHeight = 400
 
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationController?.delegate = self
+        balloonHeightConstraint.constant = suggestedHorizontalConstraint(130)
         setTableView()
         setupCreateColectaButton()
         DataManager.shared.getRegalos()
@@ -48,6 +54,18 @@ class HomeViewController: XLTableViewController {
         view.backgroundColor = .white
         setEmptyView()
         setTableHeader()
+
+        tableView.rx.contentOffset.asObservable().do(onNext: { [weak self] offset in
+            // starts on 0, from 50 to 160 we want to move
+            // top constraint starts on -20
+            // leading and trailing constraints start on 0; move to negative
+            let startOffset: CGFloat = 60.0
+            let endOffset: CGFloat = suggestedHorizontalConstraint(180.0, q6: 0.95, q5: 0.9, q4: 0.9)
+            let translation = min(max(offset.y - startOffset, 0), endOffset - startOffset)
+            self?.leadingBalloonConstraint.constant = -translation * 0.5
+            self?.trailingBalloonConstraint.constant = -translation * 0.5
+            self?.topBalloonConstraint.constant = -20 - translation
+        }).subscribe().addDisposableTo(disposeBag)
     }
 
     private func setEmptyView() {
