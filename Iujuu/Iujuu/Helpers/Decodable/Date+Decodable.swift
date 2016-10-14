@@ -14,10 +14,12 @@ extension Date {
 
     public static func decode(_ json: Any) throws -> Date {
         let string = try String.decode(json)
-        guard let date = string.toDate(format: DateFormat.iso8601Format(.extended)) else {
+        do {
+            let date = try string.date(format: .iso8601(options: .withInternetDateTimeExtended))
+            return self.init(timeIntervalSinceReferenceDate: date.timeIntervalSinceReferenceDate)
+        } catch {
             throw DecodingError.typeMismatch(expected: Date.self, actual: String.self, DecodingError.Metadata(object: json))
         }
-        return self.init(timeIntervalSince1970: date.timeIntervalSince1970)
     }
 
 }

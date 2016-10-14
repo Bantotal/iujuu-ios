@@ -53,7 +53,7 @@ extension Router.Galicia {
 
         var parameters: [String : Any]? {
             return cleanedDict(["goalBalance": amount,
-                    "goalDate": date.toString(format: .iso8601Format(.extended)),
+                    "goalDate": date.string(format: .iso8601(options: .withInternetDateTimeExtended)),
                     "nickname": descripcion,
                     "relatedAccountId": cuentaId])
         }
