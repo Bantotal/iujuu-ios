@@ -194,19 +194,30 @@ class RealDataManager: DataManagerProtocol {
                 }
                 return false
             }
+            .observeOn(MainScheduler.instance)
             .flatMap { success -> Observable<Void> in
                 guard success else {
                     return Observable.error(NSError.ijError(code: .errorUpdatingRegalo))
                 }
-                return /* vote for regalos sugeridos will create them */
-                    Observable.from(regalosSugeridos.map { Observable.just($0) })
-                        .merge()
-                        .asObservable()
-                        .flatMap { regaloSugerido in
-                            return DataManager.shared.voteRegalo(regaloId: regaloId, voto: regaloSugerido.regaloDescription)
-                        }
-                        .toArray()
-                        .map { _ in () }
+                let realm = RealmManager.shared.defaultRealm
+                let regalo = realm?.object(ofType: Regalo.self, forPrimaryKey: regaloId)
+
+                let oldRegalosIds = regalo?.regalosSugeridos.map { $0.regaloDescription } ?? []
+                let newRegalosIds = regalosSugeridos.map { $0.regaloDescription }
+
+                let createRegalosSugeridos = regalosSugeridos.filter { !oldRegalosIds.contains($0.regaloDescription) }
+                let deleteRegalosSugeridos = (regalo?.regalosSugeridos.map { $0 } ?? []).filter { !newRegalosIds.contains($0.regaloDescription) }
+
+                let createObservables = createRegalosSugeridos.map {
+                    DataManager.shared.voteRegalo(regaloId: regaloId, voto: $0.regaloDescription).map { _ in () }
+                }
+                let deleteObservable = deleteRegalosSugeridos.map {
+                    Router.Regalo.DeleteRegaloSuggestion(userId: userId, regaloId: regaloId, voto: $0.regaloDescription).rx_anyObject().map { _ in () }
+                }
+                return Observable.from(createObservables + deleteObservable)
+                    .merge()
+                    .toArray()
+                    .map { _ in () }
             }
             .do(
                 onNext: { _ in

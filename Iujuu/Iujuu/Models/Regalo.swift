@@ -116,9 +116,12 @@ extension Regalo {
     var timeStatusText: String {
         let now = Date()
         let days = fechaDeCierre.daysFrom(date: now)
-        if days == 0 {
+        switch days {
+        case 0:
             return NSLocalizedString("Quedan {0} horas!", comment: "").parametrize(fechaDeCierre.hoursFrom(date: now))
-        } else {
+        case 1:
+            return NSLocalizedString("Queda 1 dia!", comment: "")
+        default:
             return NSLocalizedString("Quedan {0} dias!", comment: "").parametrize(days)
         }
     }
