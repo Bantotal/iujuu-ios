@@ -90,6 +90,7 @@ class ParticiparViewController: FormViewController {
             cell.imageView?.image = image
             cell.imageView?.contentMode = .center
             cell.accessoryType = .none
+            cell.separatorInset.left = suggestedHorizontalConstraint(20, q6: 0.8, q5: 0.75, q4: 0.75)
         }
 
         <<< FloatingLabelRow(participarRowTags.importeTag) {
@@ -181,7 +182,7 @@ extension ParticiparViewController: GaliciaPagosDelegate {
         guard let importe = formValues[participarRowTags.importeTag] as? Int else { return }
         let message = formValues[participarRowTags.messageTag] as? String
         var imageString: String?
-        if let image = formValues[participarRowTags.imageTag] as? UIImage, let data = UIImageJPEGRepresentation(image, 0.5) {
+        if let image = formValues[participarRowTags.imageTag] as? UIImage, let data = UIImageJPEGRepresentation(image, 0.3) {
             //TODO: compress image or check size
             imageString = data.base64EncodedString()
         }
@@ -193,6 +194,7 @@ extension ParticiparViewController: GaliciaPagosDelegate {
                 let vc = R.storyboard.main.pagoConfirmadoViewController()!
                 self?.show(vc, sender: self)
             }, onError: { [weak self] error in
+                //TODO: Schedule to notify backend of payment later.
                 LoadingIndicator.hide()
                 self?.showError(error, alternative: (title: UserMessages.errorTitle, message: UserMessages.ParticiparRegalo.couldNotJoinError))
             }).subscribe().addDisposableTo(disposeBag)

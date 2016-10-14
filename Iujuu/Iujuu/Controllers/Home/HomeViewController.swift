@@ -40,9 +40,20 @@ class HomeViewController: XLTableViewController {
             .throttle(0.5, scheduler: MainScheduler.instance)
             .do(onNext: { [weak self] regalos in
                 self?.setEmptyViewState(hidden: regalos.count != 0)
+                let wasEmpty = self?.regalos.isEmpty ?? true
                 self?.regalos = Array(regalos)
-                self?.tableView.reloadDataAnimated(completion: nil)
-            }).subscribe().addDisposableTo(disposeBag)
+                if wasEmpty && !regalos.isEmpty {
+                    self?.tableView.reloadDataAnimated(completion: nil)
+                } else {
+                    self?.tableView.reloadData()
+                }
+                }).subscribe().addDisposableTo(disposeBag)
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.navigationBar.isHidden = true
+        DataManager.shared.reloadRegalos()
     }
 
     private func setTableView() {
@@ -173,11 +184,6 @@ class HomeViewController: XLTableViewController {
         } else {
             getAccountsAuthenticated()
         }
-    }
-
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.navigationBar.isHidden = true
     }
 
     func settingsTapped() {
