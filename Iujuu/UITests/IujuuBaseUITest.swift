@@ -11,10 +11,12 @@ import XCTest
 
 class IujuuBaseUITest: XCTestCase {
 
+    var app = XCUIApplication()
+
     override func setUp() {
         super.setUp()
         continueAfterFailure = false
-        let app = XCUIApplication()
+        app = XCUIApplication()
         app.launchArguments = [TestArguments.mockData]
         app.launch()
     }

@@ -11,7 +11,7 @@ import Eureka
 import RxSwift
 import SkyFloatingLabelTextField
 
-public class FloatingLabelCell: Cell<Int>, CellType {
+public class FloatingLabelCell: Cell<Int>, CellType, UITextFieldDelegate {
 
     @IBOutlet weak var amountField: SkyFloatingLabelTextField!
     let disposeBag = DisposeBag()
@@ -25,6 +25,7 @@ public class FloatingLabelCell: Cell<Int>, CellType {
 
     public override func setup() {
         super.setup()
+        selectionStyle = .none
         row.value = nil
 
         setupField()
@@ -51,6 +52,8 @@ public class FloatingLabelCell: Cell<Int>, CellType {
     }
 
     func setupField() {
+        accessibilityLabel = "ImporteCell"
+        amountField.accessibilityLabel = "ImporteInput"
         amountField.textAlignment = .left
         amountField.textColor = textFieldColor
         amountField.lineColor = lineColor
@@ -64,6 +67,30 @@ public class FloatingLabelCell: Cell<Int>, CellType {
         amountField.errorColor = lineColor
         amountField.placeholder = placeholderTitle
         amountField.keyboardType = .numberPad
+    }
+
+    override public func cellCanBecomeFirstResponder() -> Bool {
+        return !row.isDisabled && amountField.canBecomeFirstResponder
+    }
+
+    override public func cellBecomeFirstResponder(withDirection: Direction) -> Bool {
+        return amountField.becomeFirstResponder()
+    }
+
+    override public func cellResignFirstResponder() -> Bool {
+        return amountField.resignFirstResponder()
+    }
+
+    //MARK: TextFieldDelegate
+
+    public func textFieldDidBeginEditing(_ textField: UITextField) {
+        formViewController()?.beginEditing(of: self)
+        formViewController()?.textInputDidBeginEditing(textField, cell: self)
+    }
+
+    public func textFieldDidEndEditing(_ textField: UITextField) {
+        formViewController()?.endEditing(of: self)
+        formViewController()?.textInputDidEndEditing(textField, cell: self)
     }
 }
 

@@ -95,7 +95,7 @@ class LoginViewController: FormViewController {
             if let error = error as? OperaError {
                 self?.showOperaError(error: error)
             } else {
-                self?.showError(UserMessages.networkError)
+                self?.showError(UserMessages.errorTitle, message: UserMessages.networkError)
             }
         },
         onCompleted: {

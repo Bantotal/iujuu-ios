@@ -36,7 +36,6 @@
 		28C2824A1C7798B0003ECA4F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C282481C7798B0003ECA4F /* User.swift */; };
 		28C69D3C1CD8E3D600F839D6 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28C69D3B1CD8E3D600F839D6 /* Tests.swift */; };
 		28D65F951C99D8AF008ED705 /* UIDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28D65F941C99D8AF008ED705 /* UIDevice.swift */; };
-		28F4E15C1CDA53B5002B70A7 /* UITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28F4E15B1CDA53B5002B70A7 /* UITests.swift */; };
 		28FEB24C1C9875F60027D470 /* UIApplication.swift in Sources */ = {isa = PBXBuildFile; fileRef = 28FEB24B1C9875F60027D470 /* UIApplication.swift */; };
 		3C40F919E8D37A2F37F7B6B6 /* Pods_Iujuu_Staging.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5447D68A31F540904DA06E64 /* Pods_Iujuu_Staging.framework */; };
 		460C0B921D9431E4005814AA /* UserMessages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 460C0B911D9431E4005814AA /* UserMessages.swift */; };
@@ -240,6 +239,12 @@
 		CE3F25BA1DA416210035A150 /* FloatingLabelRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE3F25B81DA416210035A150 /* FloatingLabelRow.swift */; };
 		CE3F25BC1DA419280035A150 /* FloatingLabelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE3F25BB1DA419280035A150 /* FloatingLabelCell.xib */; };
 		CE3F25BD1DA419280035A150 /* FloatingLabelCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE3F25BB1DA419280035A150 /* FloatingLabelCell.xib */; };
+		CE403E911DB10579001492A9 /* RegalosJson.json in Resources */ = {isa = PBXBuildFile; fileRef = CE403E901DB10579001492A9 /* RegalosJson.json */; };
+		CE403E921DB10579001492A9 /* RegalosJson.json in Resources */ = {isa = PBXBuildFile; fileRef = CE403E901DB10579001492A9 /* RegalosJson.json */; };
+		CE403E931DB10579001492A9 /* RegalosJson.json in Resources */ = {isa = PBXBuildFile; fileRef = CE403E901DB10579001492A9 /* RegalosJson.json */; };
+		CE403E9D1DB11FFE001492A9 /* RegaloJson.json in Resources */ = {isa = PBXBuildFile; fileRef = CE403E9C1DB11FFE001492A9 /* RegaloJson.json */; };
+		CE403E9E1DB11FFE001492A9 /* RegaloJson.json in Resources */ = {isa = PBXBuildFile; fileRef = CE403E9C1DB11FFE001492A9 /* RegaloJson.json */; };
+		CE403E9F1DB11FFE001492A9 /* RegaloJson.json in Resources */ = {isa = PBXBuildFile; fileRef = CE403E9C1DB11FFE001492A9 /* RegaloJson.json */; };
 		CE40784A1D9C47AB00A3CD4B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4078491D9C47AB00A3CD4B /* LoginViewController.swift */; };
 		CE40784B1D9C47AB00A3CD4B /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4078491D9C47AB00A3CD4B /* LoginViewController.swift */; };
 		CE4275381D9D4ED500293CA0 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4275371D9D4ED500293CA0 /* SettingsViewController.swift */; };
@@ -258,6 +263,8 @@
 		CE43D9191DAEC91900D60BBF /* HomeHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE43D9171DAEC91900D60BBF /* HomeHeaderView.swift */; };
 		CE43D91B1DAEC92500D60BBF /* HomeHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE43D91A1DAEC92500D60BBF /* HomeHeaderView.xib */; };
 		CE43D91C1DAEC92500D60BBF /* HomeHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = CE43D91A1DAEC92500D60BBF /* HomeHeaderView.xib */; };
+		CE4562B51DAFCAEC00539B52 /* OnboardingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4562B41DAFCAEC00539B52 /* OnboardingUITests.swift */; };
+		CE4562BC1DAFF46600539B52 /* HomeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4562BB1DAFF46600539B52 /* HomeUITests.swift */; };
 		CE4967971D9E95D500E2363E /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4967961D9E95D500E2363E /* WebViewController.swift */; };
 		CE4967981D9E95D500E2363E /* WebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4967961D9E95D500E2363E /* WebViewController.swift */; };
 		CE49679A1D9EA1AD00E2363E /* RegaloDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE4967991D9EA1AD00E2363E /* RegaloDetailViewController.swift */; };
@@ -340,7 +347,6 @@
 		28C69D3D1CD8E3D600F839D6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		28D65F941C99D8AF008ED705 /* UIDevice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIDevice.swift; sourceTree = "<group>"; };
 		28F4E1591CDA53B5002B70A7 /* UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		28F4E15B1CDA53B5002B70A7 /* UITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITests.swift; sourceTree = "<group>"; };
 		28F4E15D1CDA53B5002B70A7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		28FEB24B1C9875F60027D470 /* UIApplication.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIApplication.swift; sourceTree = "<group>"; };
 		460C0B911D9431E4005814AA /* UserMessages.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserMessages.swift; sourceTree = "<group>"; };
@@ -460,6 +466,8 @@
 		CE3F25B31DA3FD0B0035A150 /* ImagePickerController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerController.swift; sourceTree = "<group>"; };
 		CE3F25B81DA416210035A150 /* FloatingLabelRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FloatingLabelRow.swift; sourceTree = "<group>"; };
 		CE3F25BB1DA419280035A150 /* FloatingLabelCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FloatingLabelCell.xib; sourceTree = "<group>"; };
+		CE403E901DB10579001492A9 /* RegalosJson.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RegalosJson.json; sourceTree = "<group>"; };
+		CE403E9C1DB11FFE001492A9 /* RegaloJson.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = RegaloJson.json; sourceTree = "<group>"; };
 		CE4078491D9C47AB00A3CD4B /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Onboarding/LoginViewController.swift; sourceTree = "<group>"; };
 		CE4275371D9D4ED500293CA0 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SettingsViewController.swift; path = Home/SettingsViewController.swift; sourceTree = "<group>"; };
 		CE42753A1D9D625B00293CA0 /* LogoutButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogoutButton.swift; sourceTree = "<group>"; };
@@ -469,6 +477,8 @@
 		CE43ABDE1D9AECEE00F123A6 /* EmptyHomeView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = EmptyHomeView.xib; sourceTree = "<group>"; };
 		CE43D9171DAEC91900D60BBF /* HomeHeaderView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeHeaderView.swift; sourceTree = "<group>"; };
 		CE43D91A1DAEC92500D60BBF /* HomeHeaderView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeHeaderView.xib; sourceTree = "<group>"; };
+		CE4562B41DAFCAEC00539B52 /* OnboardingUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OnboardingUITests.swift; sourceTree = "<group>"; };
+		CE4562BB1DAFF46600539B52 /* HomeUITests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeUITests.swift; sourceTree = "<group>"; };
 		CE4967961D9E95D500E2363E /* WebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = WebViewController.swift; path = Home/WebViewController.swift; sourceTree = "<group>"; };
 		CE4967991D9EA1AD00E2363E /* RegaloDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RegaloDetailViewController.swift; path = Home/RegaloDetailViewController.swift; sourceTree = "<group>"; };
 		CE49679C1D9EA55400E2363E /* RegaloDetailHeader.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegaloDetailHeader.swift; sourceTree = "<group>"; };
@@ -645,6 +655,7 @@
 		28C282381C7795B3003ECA4F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				CE4562B61DAFD0DE00539B52 /* Test Files */,
 				4658D9AA1D92BBC200A2DF05 /* DataManager */,
 				28C282481C7798B0003ECA4F /* User.swift */,
 				465723041D91C59A001F4DC1 /* Regalo.swift */,
@@ -703,10 +714,11 @@
 		28F4E15A1CDA53B5002B70A7 /* UITests */ = {
 			isa = PBXGroup;
 			children = (
-				28F4E15B1CDA53B5002B70A7 /* UITests.swift */,
 				28F4E15D1CDA53B5002B70A7 /* Info.plist */,
 				4658D9B61D92CB4E00A2DF05 /* TestArguments.swift */,
 				4658D9BA1D92CC8A00A2DF05 /* IujuuBaseUITest.swift */,
+				CE4562B41DAFCAEC00539B52 /* OnboardingUITests.swift */,
+				CE4562BB1DAFF46600539B52 /* HomeUITests.swift */,
 			);
 			path = UITests;
 			sourceTree = "<group>";
@@ -975,6 +987,16 @@
 			name = Home;
 			sourceTree = "<group>";
 		};
+		CE4562B61DAFD0DE00539B52 /* Test Files */ = {
+			isa = PBXGroup;
+			children = (
+				CE403E901DB10579001492A9 /* RegalosJson.json */,
+				CE403E9C1DB11FFE001492A9 /* RegaloJson.json */,
+			);
+			name = "Test Files";
+			path = TestFiles;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1165,9 +1187,11 @@
 				46A429811DA5697000A37ACB /* InvitedFlow.storyboard in Resources */,
 				460C0BB11D945417005814AA /* OpenSans-Semibold.ttf in Resources */,
 				BFE90E691D955B8D00E8F758 /* SubtitleView.xib in Resources */,
+				CE403E9E1DB11FFE001492A9 /* RegaloJson.json in Resources */,
 				CE4967A11D9EA56800E2363E /* RegaloDetailHeader.xib in Resources */,
 				46C395061D92FB46000965FB /* Onboarding.storyboard in Resources */,
 				464512121D9595CD009C2FE6 /* GenericPasswordCell.xib in Resources */,
+				CE403E921DB10579001492A9 /* RegalosJson.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1203,9 +1227,11 @@
 				460C0BB01D945417005814AA /* OpenSans-Semibold.ttf in Resources */,
 				46A429801DA5697000A37ACB /* InvitedFlow.storyboard in Resources */,
 				BFE90E681D955B8D00E8F758 /* SubtitleView.xib in Resources */,
+				CE403E9D1DB11FFE001492A9 /* RegaloJson.json in Resources */,
 				CE4967A01D9EA56800E2363E /* RegaloDetailHeader.xib in Resources */,
 				46C395051D92FB46000965FB /* Onboarding.storyboard in Resources */,
 				4645120B1D9595C2009C2FE6 /* GenericPasswordCell.xib in Resources */,
+				CE403E911DB10579001492A9 /* RegalosJson.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1220,6 +1246,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE403E931DB10579001492A9 /* RegalosJson.json in Resources */,
+				CE403E9F1DB11FFE001492A9 /* RegaloJson.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1752,8 +1780,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CE4562BC1DAFF46600539B52 /* HomeUITests.swift in Sources */,
 				4658D9B91D92CB4E00A2DF05 /* TestArguments.swift in Sources */,
-				28F4E15C1CDA53B5002B70A7 /* UITests.swift in Sources */,
+				CE4562B51DAFCAEC00539B52 /* OnboardingUITests.swift in Sources */,
 				4658D9BB1D92CC8A00A2DF05 /* IujuuBaseUITest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

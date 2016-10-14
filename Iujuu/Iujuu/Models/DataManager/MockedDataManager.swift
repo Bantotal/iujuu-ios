@@ -9,6 +9,9 @@
 import Foundation
 import RxSwift
 import RealmSwift
+import Opera
+import SwiftyJSON
+import Decodable
 
 class MockedDataManager: DataManagerProtocol {
 
@@ -18,9 +21,22 @@ class MockedDataManager: DataManagerProtocol {
 
     var userId: Int?
 
-    //TODO: all functions for testing
-    func getRegalos() -> Observable<Results<Regalo>> {
-        return Observable.empty()
+    //MARK: - Mocked functions
+
+    func getRegalos() -> Observable<[Regalo]> {
+        guard userId != 1 else {
+            return Observable.just([])
+        }
+        
+        let json = getJsonFromPath(path: "RegalosJson")
+        let regalosJson = json?["regalos"]
+        do {
+            let regalosList = try [Regalo].decode(regalosJson)
+            return Observable.just(regalosList)
+        } catch {
+            print(error)
+            return Observable.just([])
+        }
     }
 
     func reloadRegalos() {}
@@ -34,7 +50,18 @@ class MockedDataManager: DataManagerProtocol {
     }
 
     func getRegalo(withCode code: String, onlyFromBackend: Bool = false) -> Observable<Regalo> {
-        return Observable.empty() // TODO:
+        guard code == "AAAAA" else {
+            return Observable.error(NSError.ijError(code: .regaloNotFoundForCode))
+        }
+        
+        let json = getJsonFromPath(path: "RegaloJson")
+        do {
+            let regalo = try Regalo.decode(json)
+            return Observable.just(regalo)
+        } catch {
+            print(error)
+            return Observable.empty()
+        }
     }
     
     func joinToRegalo(regalo: Regalo) -> Observable<Void> {
@@ -42,11 +69,24 @@ class MockedDataManager: DataManagerProtocol {
     }
 
     func registerUser(user: User, password: String) -> Observable<User> {
-        return Observable.empty()
+        if user.nombre == "ErrorUser" {
+            return Observable.error(NSError.ijError(code: .loginParseResponseError))
+        } else {
+            return Observable.just(user)
+        }
     }
 
     func login(username: String?, email: String?, password: String) -> Observable<User> {
-        return Observable.empty()
+        if email == "error@error.com" {
+            return Observable.error(NSError.ijError(code: .loginParseResponseError))
+        } else {
+            if email == "empty@empty.com" {
+                userId = 1
+            } else {
+                userId = 2
+            }
+            return Observable.just(User(id: 1, nombre: "", apellido: "", email: ""))
+        }
     }
 
     func logout() -> Observable<Any> {
@@ -77,14 +117,33 @@ class MockedDataManager: DataManagerProtocol {
     }
 
     func voteRegalo(regaloId: Int, voto: String) -> Observable<[RegaloSugerido]> {
-        return Observable.empty() // TODO:
+        return Observable.just([])
     }
 
     func pagarRegalo(regaloId: Int, importe: String, imagen: String? = nil, comentario: String? = nil) -> Observable<Any> {
-        return Observable.empty() // TODO:
+        return Observable.empty()
     }
 
     func closeRegalo(regaloId: Int, email: String) -> Observable<Any> {
-        return Observable.empty() // TODO:
+        return Observable.empty()
+    }
+
+    //MARK: - Json parsing functions
+
+    private func getJsonFromPath(path: String) -> NSDictionary? {
+        guard let path = Bundle.main.path(forResource: path, ofType: "json") else {
+            return [:]
+        }
+
+        do {
+            let jsonData = try NSData(contentsOfFile: path, options: NSData.ReadingOptions.mappedIfSafe)
+            do {
+                return try JSONSerialization.jsonObject(with: jsonData as Data, options: JSONSerialization.ReadingOptions.mutableContainers) as? NSDictionary
+            } catch {
+                return [:]
+            }
+        } catch {
+            return [:]
+        }
     }
 }

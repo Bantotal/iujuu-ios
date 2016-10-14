@@ -23,8 +23,8 @@ protocol DataManagerProtocol {
 
     //MARK: - Regalos
     func getRegalo(withCode code: String, onlyFromBackend: Bool) -> Observable<Regalo>
-    func getRegalos() -> Observable<Results<Regalo>>
     func reloadRegalos()
+    func getRegalos() -> Observable<[Regalo]>
     func createRegalo(userId: Int, motivo: String, descripcion: String, closeDate: Date,
                       targetAmount: Int, perPersonAmount: Int, regalosSugeridos: [String], account: String) -> Observable<Regalo>
     func voteRegalo(regaloId: Int, voto: String) -> Observable<[RegaloSugerido]>

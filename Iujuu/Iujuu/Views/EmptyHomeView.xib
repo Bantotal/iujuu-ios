@@ -35,9 +35,11 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tXw-NG-pnj">
+                    <accessibility key="accessibilityConfiguration" label="IngresarCodigo"/>
                     <state key="normal" title="Ingresar codigo"/>
                 </button>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cFp-Sq-zId">
+                    <accessibility key="accessibilityConfiguration" label="NuevoRegalo"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="60" id="cf3-Jd-9U1"/>
                     </constraints>

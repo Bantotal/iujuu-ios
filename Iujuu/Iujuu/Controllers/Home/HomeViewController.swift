@@ -41,7 +41,7 @@ class HomeViewController: XLTableViewController {
             .do(onNext: { [weak self] regalos in
                 self?.setEmptyViewState(hidden: regalos.count != 0)
                 let wasEmpty = self?.regalos.isEmpty ?? true
-                self?.regalos = Array(regalos)
+                self?.regalos = regalos
                 if wasEmpty && !regalos.isEmpty {
                     self?.tableView.reloadDataAnimated(completion: nil)
                 } else {
@@ -53,6 +53,7 @@ class HomeViewController: XLTableViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.isHidden = true
+        navigationController?.navigationBar.tintColor = .ijBlackColor()
         DataManager.shared.reloadRegalos()
     }
 
