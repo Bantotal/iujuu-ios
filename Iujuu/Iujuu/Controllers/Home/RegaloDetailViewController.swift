@@ -19,7 +19,7 @@ class RegaloDetailViewController: FormViewController {
     var regalo: Regalo!
     let disposeBag = DisposeBag()
     var participarButton: ButtonFooter?
-    
+
     private struct RowTags {
         static let participations = "participations"
     }
@@ -36,13 +36,18 @@ class RegaloDetailViewController: FormViewController {
         setUpRows()
         setUpStyles()
         setBarRightButtons()
-        observeRegaloChanges()
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         setUpNavigationBar()
         setUpParticiparButton()
+        observeRegaloChanges()
+    }
+
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        regaloObservableToken?.stop()
     }
 
     //MARK: - Navigation bar buttons
@@ -197,6 +202,14 @@ class RegaloDetailViewController: FormViewController {
         let newOptionTags = optionsTags.filter { !oldOptionTags.contains($0) }
         let updateOptionTags = optionsTags.filter { oldOptionTags.contains($0) }
 
+        for option in oldOptionTags {
+            if !optionsTags.contains(option) {
+                let optionRow = form.rowBy(tag: option) as? CheckRow<String>
+                var section = form[form.count - 1]
+                section.remove(at: optionRow!.indexPath!.row)
+            }
+        }
+
         for option in options {
             if newOptionTags.contains(option.regaloDescription) {
                 form.last! <<< createOptionRow(regaloDescription: option.regaloDescription, votes: option.votos, totalVotes: totalVotes)
@@ -206,11 +219,9 @@ class RegaloDetailViewController: FormViewController {
                 optionRow?.selectableValue = option.regaloDescription
                 let percentage = Double(option.votos) / totalVotes
                 optionRow?.cell.showPercentageBackground(percentage: percentage)
-            } else { // delete
-                let optionRow = form.rowBy(tag: option.regaloDescription) as? CheckRow<String>
-                form[form.count - 1].remove(at: optionRow!.indexPath!.row)
             }
         }
+
     }
 
     private func setUpRows() {
@@ -350,6 +361,7 @@ class RegaloDetailViewController: FormViewController {
         regaloObservableToken = RealmManager.shared.defaultRealm.objects(Regalo.self)
             .addNotificationBlock { [weak self] regaloChanges in
                 guard let me = self else { return }
+                guard !me.regalo.isInvalidated else { return }
                 switch regaloChanges {
                 case let .update(regalos, _, _, _):
                     guard let regalo = regalos.filter("id == \(me.regalo.id)").first else { return }
@@ -360,10 +372,6 @@ class RegaloDetailViewController: FormViewController {
                     break
                 }
             }
-    }
-
-    deinit {
-        regaloObservableToken?.stop()
     }
 
 }

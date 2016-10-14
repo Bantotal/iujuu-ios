@@ -47,7 +47,7 @@ class HomeViewController: XLTableViewController {
                 } else {
                     self?.tableView.reloadData()
                 }
-                }).subscribe().addDisposableTo(disposeBag)
+            }).subscribe().addDisposableTo(disposeBag)
     }
 
     override func viewWillAppear(_ animated: Bool) {

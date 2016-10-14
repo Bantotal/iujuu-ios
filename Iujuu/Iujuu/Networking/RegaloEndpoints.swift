@@ -74,6 +74,22 @@ extension Router.Regalo {
             return ["voto": voto]
         }
     }
+    
+    struct DeleteRegaloSuggestion: PostRouteType {
+
+        let userId: Int
+        let regaloId: Int
+        let voto: String
+
+        var path: String {
+            return "\(Router.baseUsuariosString)/\(userId)/regalos/\(regaloId)/eliminarSugerencia"
+        }
+
+        var parameters: [String : Any]? {
+            return ["voto": voto]
+        }
+
+    }
 
     struct PagarRegalo: PostRouteType {
 
