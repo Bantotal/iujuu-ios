@@ -23,6 +23,8 @@ class MockedDataManager: DataManagerProtocol {
         return Observable.empty()
     }
 
+    func reloadRegalos() {}
+
     func getAccounts() -> Observable<[Account]> {
         return Observable.empty()
     }

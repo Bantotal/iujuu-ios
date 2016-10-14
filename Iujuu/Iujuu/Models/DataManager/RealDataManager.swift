@@ -50,6 +50,14 @@ class RealDataManager: DataManagerProtocol {
         return regaloAPI
     }
 
+    func reloadRegalos() {
+        if let userId = userId {
+            Router.Regalo.List(userId: userId).rx_collection("regalos").do(onNext: { [weak self] (collection: [Regalo]) in
+                self?.updateRegalos(collection)
+                }).subscribe().addDisposableTo(disposeBag)
+        }
+    }
+
     func joinToRegalo(regalo: Regalo) -> Observable<Void> {
         guard let user = getCurrentUser() else {
             return Observable.error(NSError.ijError(code: .userNotLogged))
@@ -122,10 +130,9 @@ class RealDataManager: DataManagerProtocol {
                 .rx_anyObject()
                 .observeOn(MainScheduler.instance)
                 .do(
-                    onNext: { _ in
+                    onDispose: {
                         SessionController.sharedInstance.logOut()
-                    }
-                )
+                    })
     }
 
     private func updateRegalos(_ regalos: [Regalo]) {

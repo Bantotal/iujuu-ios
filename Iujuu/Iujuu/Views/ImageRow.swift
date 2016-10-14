@@ -125,7 +125,8 @@ open class _ImageRow<Cell: CellType>: SelectorRow<Cell, ImagePickerController> w
             let clearPhotoOption = UIAlertAction(title: NSLocalizedString("Clear Photo", comment: ""), style: style, handler: { [weak self] _ in
                 self?.value = nil
                 self?.imageURL = nil
-                self?.updateCell()
+                self?.cell.height = { 60 }
+                self?.cell.formViewController()?.tableView?.reloadData()
                 })
             sourceActionSheet.addAction(clearPhotoOption)
         }
@@ -159,10 +160,8 @@ open class _ImageRow<Cell: CellType>: SelectorRow<Cell, ImagePickerController> w
             cell.height = { 140 }
             addImageSelected(image: image)
         } else {
-            cell.height = { 60 }
             removeImage()
         }
-        reloadImageCell()
     }
 
     private func addImageSelected(image: UIImage) {
@@ -186,8 +185,6 @@ open class _ImageRow<Cell: CellType>: SelectorRow<Cell, ImagePickerController> w
 
     private func reloadImageCell() {
         section?.reload()
-        cell.setNeedsLayout()
-        cell.layoutIfNeeded()
     }
 }
 

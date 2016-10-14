@@ -64,5 +64,5 @@ class PagoConfirmadoViewController: UIViewController {
 extension UserMessages.PagoConfirmado {
     static let titleText = NSLocalizedString("Pago confirmado", comment: "")
     static let navigationTitle = NSLocalizedString("Confirmación de pago", comment: "")
-    static let descriptionText = NSLocalizedString("Se ha confirmado tu pago exitosamente y tu mensaje ha sido registrado.\n\n El destinatario recibirá todos los mensajes y el dinero al finalizada la colecta.", comment: "")
+    static let descriptionText = NSLocalizedString("Se ha confirmado tu pago exitosamente y tu mensaje ha sido registrado.\n\n El destinatario recibirá todos los mensajes y el dinero al finalizada el regalo.", comment: "")
 }
