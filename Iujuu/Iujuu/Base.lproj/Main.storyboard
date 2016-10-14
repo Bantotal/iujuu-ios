@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="zOV-V0-1xs">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="zOV-V0-1xs">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -17,7 +17,7 @@
                         <viewControllerLayoutGuide type="bottom" id="d2b-Hd-gsX"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="abf-Tu-mT9">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mVm-cS-TwN">
@@ -29,7 +29,8 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lbB-Z6-w7t">
                                 <state key="normal" title="Secondary"/>
                             </button>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homeBackgroundBalloons" translatesAutoresizingMaskIntoConstraints="NO" id="rB5-BG-7X2">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="balloonright" translatesAutoresizingMaskIntoConstraints="NO" id="vfU-pU-lOL"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="balloonleft" translatesAutoresizingMaskIntoConstraints="NO" id="rB5-BG-7X2">
                                 <constraints>
                                     <constraint firstAttribute="height" constant="118" id="y8C-l1-mta"/>
                                 </constraints>
@@ -49,28 +50,36 @@
                             <constraint firstItem="H0f-bN-dQj" firstAttribute="centerX" secondItem="lbB-Z6-w7t" secondAttribute="centerX" id="0VV-Dp-HA3"/>
                             <constraint firstItem="H0f-bN-dQj" firstAttribute="width" secondItem="abf-Tu-mT9" secondAttribute="width" id="7AT-IH-24m"/>
                             <constraint firstItem="mVm-cS-TwN" firstAttribute="height" secondItem="lbB-Z6-w7t" secondAttribute="height" id="9W7-Bg-liC"/>
-                            <constraint firstItem="H0f-bN-dQj" firstAttribute="top" secondItem="tbR-v9-2c6" secondAttribute="bottom" constant="-20" id="Ak8-HJ-vMi"/>
+                            <constraint firstItem="vfU-pU-lOL" firstAttribute="top" secondItem="rB5-BG-7X2" secondAttribute="top" id="ASZ-ya-zaj"/>
+                            <constraint firstItem="H0f-bN-dQj" firstAttribute="top" secondItem="tbR-v9-2c6" secondAttribute="bottom" id="Ak8-HJ-vMi"/>
                             <constraint firstAttribute="trailing" secondItem="vSo-me-hl3" secondAttribute="trailing" id="HWW-mb-xwV"/>
                             <constraint firstAttribute="bottom" secondItem="H0f-bN-dQj" secondAttribute="bottom" id="L7S-LG-RZg"/>
+                            <constraint firstAttribute="trailing" secondItem="vfU-pU-lOL" secondAttribute="trailing" id="MrP-o0-zeW"/>
+                            <constraint firstItem="vfU-pU-lOL" firstAttribute="width" secondItem="rB5-BG-7X2" secondAttribute="width" id="OeO-44-fjG"/>
                             <constraint firstItem="d2b-Hd-gsX" firstAttribute="top" secondItem="vSo-me-hl3" secondAttribute="bottom" id="RCP-AL-RMu"/>
                             <constraint firstItem="lbB-Z6-w7t" firstAttribute="centerX" secondItem="mVm-cS-TwN" secondAttribute="centerX" id="SNu-fV-KPt"/>
                             <constraint firstItem="mVm-cS-TwN" firstAttribute="top" secondItem="tbR-v9-2c6" secondAttribute="bottom" constant="39" id="U8F-Lr-zaL"/>
                             <constraint firstItem="lbB-Z6-w7t" firstAttribute="top" secondItem="mVm-cS-TwN" secondAttribute="bottom" constant="25" id="ZvX-R3-JEO"/>
                             <constraint firstItem="mVm-cS-TwN" firstAttribute="centerX" secondItem="abf-Tu-mT9" secondAttribute="centerX" id="awH-OH-Z2f"/>
                             <constraint firstItem="lbB-Z6-w7t" firstAttribute="width" secondItem="mVm-cS-TwN" secondAttribute="width" id="bUe-7W-AUu"/>
+                            <constraint firstItem="vfU-pU-lOL" firstAttribute="height" secondItem="rB5-BG-7X2" secondAttribute="height" id="dL8-Wy-yAK"/>
                             <constraint firstItem="mVm-cS-TwN" firstAttribute="width" secondItem="abf-Tu-mT9" secondAttribute="width" multiplier="0.7" id="eIq-DG-7gD"/>
                             <constraint firstItem="vSo-me-hl3" firstAttribute="leading" secondItem="abf-Tu-mT9" secondAttribute="leading" id="fZH-3R-asj"/>
-                            <constraint firstItem="rB5-BG-7X2" firstAttribute="width" secondItem="abf-Tu-mT9" secondAttribute="width" id="hck-7K-AhB"/>
+                            <constraint firstItem="rB5-BG-7X2" firstAttribute="leading" secondItem="abf-Tu-mT9" secondAttribute="leading" id="jzE-R9-DWt"/>
                             <constraint firstItem="rB5-BG-7X2" firstAttribute="top" secondItem="tbR-v9-2c6" secondAttribute="bottom" constant="-20" id="xKr-nQ-WMf"/>
-                            <constraint firstItem="rB5-BG-7X2" firstAttribute="centerX" secondItem="abf-Tu-mT9" secondAttribute="centerX" id="xS7-4i-ueB"/>
+                            <constraint firstItem="rB5-BG-7X2" firstAttribute="trailing" secondItem="vfU-pU-lOL" secondAttribute="leading" id="ybc-6h-boY"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Iujuu" id="1ki-Np-hkz"/>
                     <nil key="simulatedTopBarMetrics"/>
                     <connections>
+                        <outlet property="balloonHeightConstraint" destination="y8C-l1-mta" id="rMY-Ag-vbo"/>
                         <outlet property="createColectaButton" destination="vSo-me-hl3" id="eio-NJ-hiR"/>
+                        <outlet property="leadingBalloonConstraint" destination="jzE-R9-DWt" id="QPc-gi-eDy"/>
                         <outlet property="tableBottomConstraint" destination="L7S-LG-RZg" id="LEz-Pj-0pl"/>
                         <outlet property="tableView" destination="H0f-bN-dQj" id="reY-zS-XGL"/>
+                        <outlet property="topBalloonConstraint" destination="xKr-nQ-WMf" id="wbV-Wh-Skl"/>
+                        <outlet property="trailingBalloonConstraint" destination="MrP-o0-zeW" id="6HA-Pt-XZ4"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ohZ-iu-QMB" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -86,7 +95,7 @@
                         <viewControllerLayoutGuide type="bottom" id="NIm-0h-HIf"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="y2t-7m-FTn">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bZg-SM-SnU">
@@ -128,7 +137,7 @@
                         <viewControllerLayoutGuide type="bottom" id="5YB-fS-c4i"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="D7l-0y-03G">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -147,7 +156,7 @@
                         <viewControllerLayoutGuide type="bottom" id="VS8-3j-yPq"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="sCc-lJ-4D0">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sentImage" translatesAutoresizingMaskIntoConstraints="NO" id="fPv-Pk-3J9">
@@ -217,7 +226,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zOV-V0-1xs" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wXp-WV-J8K">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="wXp-WV-J8K">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -239,7 +248,7 @@
                         <viewControllerLayoutGuide type="bottom" id="Vlw-lW-eh2"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="PKi-WW-NFU">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dM7-OP-53f">
@@ -276,7 +285,7 @@
         <scene sceneID="kpT-1B-leC">
             <objects>
                 <navigationController storyboardIdentifier="EditRegaloNavigationController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="J0u-2E-PjY" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="t1z-80-HN0">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="t1z-80-HN0">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -297,7 +306,7 @@
                         <viewControllerLayoutGuide type="bottom" id="BT3-fQ-QtH"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="JQw-Bf-0dB">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="44" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="LTq-0A-xtJ">
@@ -330,7 +339,7 @@
                         <viewControllerLayoutGuide type="bottom" id="M4I-vf-lhx"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="PGV-7g-nt3">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="pagoImagen" translatesAutoresizingMaskIntoConstraints="NO" id="dPJ-2F-37r">
@@ -396,7 +405,8 @@
         </scene>
     </scenes>
     <resources>
-        <image name="homeBackgroundBalloons" width="375" height="118"/>
+        <image name="balloonleft" width="187" height="118"/>
+        <image name="balloonright" width="187" height="118"/>
         <image name="pagoImagen" width="180" height="180"/>
         <image name="sentImage" width="180" height="180"/>
     </resources>

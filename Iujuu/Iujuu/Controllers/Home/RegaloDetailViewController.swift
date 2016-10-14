@@ -176,7 +176,7 @@ class RegaloDetailViewController: FormViewController {
     }
 
     private func setUpHeader(animated: Bool = true) {
-        let headerHeight = suggestedVerticalConstraint(340, q6: 0.9, q5: 0.86, q4: 0.82)
+        let headerHeight = suggestedVerticalConstraint(340)
         let regaloHeader = R.nib.regaloDetailHeader.firstView(owner: nil)
         regaloHeader?.frame = CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: headerHeight)
         regaloHeader?.setup(regalo: regalo, animated: animated)

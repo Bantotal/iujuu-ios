@@ -72,6 +72,7 @@ class RegaloDetailHeader: UIView {
             return
         }
 
+        imageHeightConstraint.constant = 0.6 * RegaloCell.rowHeight
         let motivo = regalo.getMotivo()
         motivoImageView.image = motivo?.image()
     }
