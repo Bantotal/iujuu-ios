@@ -1,0 +1,751 @@
+{
+    "regalos": [
+                {
+                "usuarioAdministradorId": "1",
+                "codigo": "LWDJY",
+                "descripcion": "Cumpleaños de Valentina",
+                "motivo": "Cumpleaños",
+                "fechaDeCierre": "2016-08-29T00:00:00.000Z",
+                "montoObjetivo": 2500,
+                "montoPorPersona": 20,
+                "cuentaId": "1",
+                "saldo": 2300,
+                "imagen": "fdfsfsdfsdf",
+                "regalosSugeridos": [
+                                     {
+                                     "descripcion": "Jean",
+                                     "votos": 29
+                                     },
+                                     {
+                                     "descripcion": "Cartera",
+                                     "votos": 25
+                                     },
+                                     {
+                                     "descripcion": "Otro",
+                                     "votos": 36
+                                     },
+                                     {
+                                     "descripcion": "Asdfafa",
+                                     "votos": 20
+                                     },
+                                     {
+                                     "descripcion": "Nuevo",
+                                     "votos": 11
+                                     },
+                                     {
+                                     "descripcion": "Otto mas",
+                                     "votos": 5
+                                     },
+                                     {
+                                     "descripcion": "Remera",
+                                     "votos": 3
+                                     }
+                                     ],
+                "participantes": [
+                                  "1",
+                                  "3",
+                                  "7"
+                                  ],
+                "pagos": [
+                          "1",
+                          "2",
+                          "8",
+                          "10",
+                          "11",
+                          "12",
+                          "13",
+                          "14",
+                          "15",
+                          "16"
+                          ],
+                "activo": true,
+                "id": 2,
+                "esAdministrador": false,
+                "pago": true
+                },
+                {
+                "usuarioAdministradorId": "1",
+                "codigo": "LWDJY",
+                "descripcion": "Cumpleaños de Raul",
+                "motivo": "Cumpleaños",
+                "fechaDeCierre": "2016-08-29T00:00:00.000Z",
+                "montoObjetivo": 2500,
+                "montoPorPersona": 20,
+                "cuentaId": "1",
+                "saldo": 2300,
+                "imagen": "fdfsfsdfsdf",
+                "regalosSugeridos": [
+                                     {
+                                     "descripcion": "Jean",
+                                     "votos": 29
+                                     },
+                                     {
+                                     "descripcion": "Cartera",
+                                     "votos": 25
+                                     },
+                                     {
+                                     "descripcion": "Otro",
+                                     "votos": 36
+                                     },
+                                     {
+                                     "descripcion": "Asdfafa",
+                                     "votos": 20
+                                     },
+                                     {
+                                     "descripcion": "Nuevo",
+                                     "votos": 11
+                                     },
+                                     {
+                                     "descripcion": "Otto mas",
+                                     "votos": 5
+                                     },
+                                     {
+                                     "descripcion": "Remera",
+                                     "votos": 3
+                                     }
+                                     ],
+                "participantes": [
+                                  "1",
+                                  "3",
+                                  "7"
+                                  ],
+                "pagos": [
+                          "1",
+                          "2",
+                          "8",
+                          "10",
+                          "11",
+                          "12",
+                          "13",
+                          "14",
+                          "15",
+                          "16"
+                          ],
+                "activo": true,
+                "id": 2,
+                "esAdministrador": true,
+                "pago": false
+                },
+                {
+                "usuarioAdministradorId": "1",
+                "codigo": "LWDJY",
+                "descripcion": "Cumpleaños de Valentinaa",
+                "motivo": "Cumpleaños",
+                "fechaDeCierre": "2016-08-29T00:00:00.000Z",
+                "montoObjetivo": 2500,
+                "montoPorPersona": 20,
+                "cuentaId": "1",
+                "saldo": 2300,
+                "imagen": "fdfsfsdfsdf",
+                "regalosSugeridos": [
+                                     {
+                                     "descripcion": "Jean",
+                                     "votos": 29
+                                     },
+                                     {
+                                     "descripcion": "Cartera",
+                                     "votos": 25
+                                     },
+                                     {
+                                     "descripcion": "Otro",
+                                     "votos": 36
+                                     },
+                                     {
+                                     "descripcion": "Asdfafa",
+                                     "votos": 20
+                                     },
+                                     {
+                                     "descripcion": "Nuevo",
+                                     "votos": 11
+                                     },
+                                     {
+                                     "descripcion": "Otto mas",
+                                     "votos": 5
+                                     },
+                                     {
+                                     "descripcion": "Remera",
+                                     "votos": 3
+                                     }
+                                     ],
+                "participantes": [
+                                  "1",
+                                  "3",
+                                  "7"
+                                  ],
+                "pagos": [
+                          "1",
+                          "2",
+                          "8",
+                          "10",
+                          "11",
+                          "12",
+                          "13",
+                          "14",
+                          "15",
+                          "16"
+                          ],
+                "activo": true,
+                "id": 2,
+                "esAdministrador": false,
+                "pago": true
+                },
+                {
+                "usuarioAdministradorId": "1",
+                "codigo": "LWDJY",
+                "descripcion": "Cumpleaños de Valentinaa",
+                "motivo": "Cumpleaños",
+                "fechaDeCierre": "2016-08-29T00:00:00.000Z",
+                "montoObjetivo": 2500,
+                "montoPorPersona": 20,
+                "cuentaId": "1",
+                "saldo": 2300,
+                "imagen": "fdfsfsdfsdf",
+                "regalosSugeridos": [
+                                     {
+                                     "descripcion": "Jean",
+                                     "votos": 29
+                                     },
+                                     {
+                                     "descripcion": "Cartera",
+                                     "votos": 25
+                                     },
+                                     {
+                                     "descripcion": "Otro",
+                                     "votos": 36
+                                     },
+                                     {
+                                     "descripcion": "Asdfafa",
+                                     "votos": 20
+                                     },
+                                     {
+                                     "descripcion": "Nuevo",
+                                     "votos": 11
+                                     },
+                                     {
+                                     "descripcion": "Otto mas",
+                                     "votos": 5
+                                     },
+                                     {
+                                     "descripcion": "Remera",
+                                     "votos": 3
+                                     }
+                                     ],
+                "participantes": [
+                                  "1",
+                                  "3",
+                                  "7"
+                                  ],
+                "pagos": [
+                          "1",
+                          "2",
+                          "8",
+                          "10",
+                          "11",
+                          "12",
+                          "13",
+                          "14",
+                          "15",
+                          "16"
+                          ],
+                "activo": true,
+                "id": 2,
+                "esAdministrador": false,
+                "pago": true
+                },
+                {
+                "usuarioAdministradorId": "1",
+                "codigo": "LWDJY",
+                "descripcion": "Cumpleaños de Valentinaa",
+                "motivo": "Cumpleaños",
+                "fechaDeCierre": "2016-08-29T00:00:00.000Z",
+                "montoObjetivo": 2500,
+                "montoPorPersona": 20,
+                "cuentaId": "1",
+                "saldo": 2300,
+                "imagen": "fdfsfsdfsdf",
+                "regalosSugeridos": [
+                                     {
+                                     "descripcion": "Jean",
+                                     "votos": 29
+                                     },
+                                     {
+                                     "descripcion": "Cartera",
+                                     "votos": 25
+                                     },
+                                     {
+                                     "descripcion": "Otro",
+                                     "votos": 36
+                                     },
+                                     {
+                                     "descripcion": "Asdfafa",
+                                     "votos": 20
+                                     },
+                                     {
+                                     "descripcion": "Nuevo",
+                                     "votos": 11
+                                     },
+                                     {
+                                     "descripcion": "Otto mas",
+                                     "votos": 5
+                                     },
+                                     {
+                                     "descripcion": "Remera",
+                                     "votos": 3
+                                     }
+                                     ],
+                "participantes": [
+                                  "1",
+                                  "3",
+                                  "7"
+                                  ],
+                "pagos": [
+                          "1",
+                          "2",
+                          "8",
+                          "10",
+                          "11",
+                          "12",
+                          "13",
+                          "14",
+                          "15",
+                          "16"
+                          ],
+                "activo": true,
+                "id": 2,
+                "esAdministrador": false,
+                "pago": true
+                },
+                {
+                "usuarioAdministradorId": "1",
+                "codigo": "LWDJY",
+                "descripcion": "Cumpleaños de Valentinaa",
+                "motivo": "Cumpleaños",
+                "fechaDeCierre": "2016-08-29T00:00:00.000Z",
+                "montoObjetivo": 2500,
+                "montoPorPersona": 20,
+                "cuentaId": "1",
+                "saldo": 2300,
+                "imagen": "fdfsfsdfsdf",
+                "regalosSugeridos": [
+                                     {
+                                     "descripcion": "Jean",
+                                     "votos": 29
+                                     },
+                                     {
+                                     "descripcion": "Cartera",
+                                     "votos": 25
+                                     },
+                                     {
+                                     "descripcion": "Otro",
+                                     "votos": 36
+                                     },
+                                     {
+                                     "descripcion": "Asdfafa",
+                                     "votos": 20
+                                     },
+                                     {
+                                     "descripcion": "Nuevo",
+                                     "votos": 11
+                                     },
+                                     {
+                                     "descripcion": "Otto mas",
+                                     "votos": 5
+                                     },
+                                     {
+                                     "descripcion": "Remera",
+                                     "votos": 3
+                                     }
+                                     ],
+                "participantes": [
+                                  "1",
+                                  "3",
+                                  "7"
+                                  ],
+                "pagos": [
+                          "1",
+                          "2",
+                          "8",
+                          "10",
+                          "11",
+                          "12",
+                          "13",
+                          "14",
+                          "15",
+                          "16"
+                          ],
+                "activo": true,
+                "id": 2,
+                "esAdministrador": false,
+                "pago": true
+                },
+                {
+                "usuarioAdministradorId": "1",
+                "codigo": "LWDJY",
+                "descripcion": "Cumpleaños de Valentinaa",
+                "motivo": "Cumpleaños",
+                "fechaDeCierre": "2016-08-29T00:00:00.000Z",
+                "montoObjetivo": 2500,
+                "montoPorPersona": 20,
+                "cuentaId": "1",
+                "saldo": 2300,
+                "imagen": "fdfsfsdfsdf",
+                "regalosSugeridos": [
+                                     {
+                                     "descripcion": "Jean",
+                                     "votos": 29
+                                     },
+                                     {
+                                     "descripcion": "Cartera",
+                                     "votos": 25
+                                     },
+                                     {
+                                     "descripcion": "Otro",
+                                     "votos": 36
+                                     },
+                                     {
+                                     "descripcion": "Asdfafa",
+                                     "votos": 20
+                                     },
+                                     {
+                                     "descripcion": "Nuevo",
+                                     "votos": 11
+                                     },
+                                     {
+                                     "descripcion": "Otto mas",
+                                     "votos": 5
+                                     },
+                                     {
+                                     "descripcion": "Remera",
+                                     "votos": 3
+                                     }
+                                     ],
+                "participantes": [
+                                  "1",
+                                  "3",
+                                  "7"
+                                  ],
+                "pagos": [
+                          "1",
+                          "2",
+                          "8",
+                          "10",
+                          "11",
+                          "12",
+                          "13",
+                          "14",
+                          "15",
+                          "16"
+                          ],
+                "activo": true,
+                "id": 2,
+                "esAdministrador": false,
+                "pago": true
+                },
+                {
+                "usuarioAdministradorId": "1",
+                "codigo": "LWDJY",
+                "descripcion": "Cumpleaños de Valentinaa",
+                "motivo": "Cumpleaños",
+                "fechaDeCierre": "2016-08-29T00:00:00.000Z",
+                "montoObjetivo": 2500,
+                "montoPorPersona": 20,
+                "cuentaId": "1",
+                "saldo": 2300,
+                "imagen": "fdfsfsdfsdf",
+                "regalosSugeridos": [
+                                     {
+                                     "descripcion": "Jean",
+                                     "votos": 29
+                                     },
+                                     {
+                                     "descripcion": "Cartera",
+                                     "votos": 25
+                                     },
+                                     {
+                                     "descripcion": "Otro",
+                                     "votos": 36
+                                     },
+                                     {
+                                     "descripcion": "Asdfafa",
+                                     "votos": 20
+                                     },
+                                     {
+                                     "descripcion": "Nuevo",
+                                     "votos": 11
+                                     },
+                                     {
+                                     "descripcion": "Otto mas",
+                                     "votos": 5
+                                     },
+                                     {
+                                     "descripcion": "Remera",
+                                     "votos": 3
+                                     }
+                                     ],
+                "participantes": [
+                                  "1",
+                                  "3",
+                                  "7"
+                                  ],
+                "pagos": [
+                          "1",
+                          "2",
+                          "8",
+                          "10",
+                          "11",
+                          "12",
+                          "13",
+                          "14",
+                          "15",
+                          "16"
+                          ],
+                "activo": true,
+                "id": 2,
+                "esAdministrador": false,
+                "pago": true
+                },
+                {
+                "usuarioAdministradorId": "1",
+                "codigo": "LWDJY",
+                "descripcion": "Cumpleaños de Valentinaa",
+                "motivo": "Cumpleaños",
+                "fechaDeCierre": "2016-08-29T00:00:00.000Z",
+                "montoObjetivo": 2500,
+                "montoPorPersona": 20,
+                "cuentaId": "1",
+                "saldo": 2300,
+                "imagen": "fdfsfsdfsdf",
+                "regalosSugeridos": [
+                                     {
+                                     "descripcion": "Jean",
+                                     "votos": 29
+                                     },
+                                     {
+                                     "descripcion": "Cartera",
+                                     "votos": 25
+                                     },
+                                     {
+                                     "descripcion": "Otro",
+                                     "votos": 36
+                                     },
+                                     {
+                                     "descripcion": "Asdfafa",
+                                     "votos": 20
+                                     },
+                                     {
+                                     "descripcion": "Nuevo",
+                                     "votos": 11
+                                     },
+                                     {
+                                     "descripcion": "Otto mas",
+                                     "votos": 5
+                                     },
+                                     {
+                                     "descripcion": "Remera",
+                                     "votos": 3
+                                     }
+                                     ],
+                "participantes": [
+                                  "1",
+                                  "3",
+                                  "7"
+                                  ],
+                "pagos": [
+                          "1",
+                          "2",
+                          "8",
+                          "10",
+                          "11",
+                          "12",
+                          "13",
+                          "14",
+                          "15",
+                          "16"
+                          ],
+                "activo": true,
+                "id": 2,
+                "esAdministrador": false,
+                "pago": true
+                },
+                {
+                "usuarioAdministradorId": "1",
+                "codigo": "RTOLM",
+                "descripcion": "Cumpleaños de Raul",
+                "motivo": "Cumpleaños",
+                "fechaDeCierre": "2016-10-17T00:00:00.000Z",
+                "montoObjetivo": 250,
+                "montoPorPersona": 100,
+                "cuentaId": "001671650211-5",
+                "saldo": 250,
+                "regalosSugeridos": [
+                                     {
+                                     "descripcion": "Sdfgsd",
+                                     "votos": 2
+                                     },
+                                     {
+                                     "descripcion": "Sdfgsdfg",
+                                     "votos": 4
+                                     }
+                                     ],
+                "participantes": [
+                                  "1",
+                                  "4",
+                                  "5",
+                                  "6",
+                                  "12"
+                                  ],
+                "pagos": [
+                          "5"
+                          ],
+                "activo": true,
+                "id": 4,
+                "esAdministrador": false,
+                "pago": false
+                },
+                {
+                "usuarioAdministradorId": "1",
+                "codigo": "RTOLM",
+                "descripcion": "Cumpleaños de Raul",
+                "motivo": "Cumpleaños",
+                "fechaDeCierre": "2016-10-17T00:00:00.000Z",
+                "montoObjetivo": 250,
+                "montoPorPersona": 100,
+                "cuentaId": "001671650211-5",
+                "saldo": 250,
+                "regalosSugeridos": [
+                                     {
+                                     "descripcion": "Sdfgsd",
+                                     "votos": 2
+                                     },
+                                     {
+                                     "descripcion": "Sdfgsdfg",
+                                     "votos": 4
+                                     }
+                                     ],
+                "participantes": [
+                                  "1",
+                                  "4",
+                                  "5",
+                                  "6",
+                                  "12"
+                                  ],
+                "pagos": [
+                          "5"
+                          ],
+                "activo": true,
+                "id": 4,
+                "esAdministrador": true,
+                "pago": false
+                },
+                {
+                "usuarioAdministradorId": "1",
+                "codigo": "RTOLM",
+                "descripcion": "Cumpleaños de Raul",
+                "motivo": "Cumpleaños",
+                "fechaDeCierre": "2016-10-17T00:00:00.000Z",
+                "montoObjetivo": 250,
+                "montoPorPersona": 100,
+                "cuentaId": "001671650211-5",
+                "saldo": 250,
+                "regalosSugeridos": [
+                                     {
+                                     "descripcion": "Sdfgsd",
+                                     "votos": 2
+                                     },
+                                     {
+                                     "descripcion": "Sdfgsdfg",
+                                     "votos": 4
+                                     }
+                                     ],
+                "participantes": [
+                                  "1",
+                                  "4",
+                                  "5",
+                                  "6",
+                                  "12"
+                                  ],
+                "pagos": [
+                          "5"
+                          ],
+                "activo": true,
+                "id": 4,
+                "esAdministrador": false,
+                "pago": true
+                },
+                {
+                "usuarioAdministradorId": "7",
+                "codigo": "SDW6U",
+                "descripcion": "Casamiento de Carlos Y Maria",
+                "motivo": "Casamiento",
+                "fechaDeCierre": "2016-10-31T00:00:00.000Z",
+                "montoObjetivo": 8888,
+                "montoPorPersona": 254,
+                "cuentaId": "001671650211-5",
+                "saldo": 0,
+                "regalosSugeridos": [
+                                     {
+                                     "descripcion": "Casa",
+                                     "votos": 1
+                                     }
+                                     ],
+                "participantes": [
+                                  "1"
+                                  ],
+                "activo": true,
+                "id": 8,
+                "esAdministrador": false,
+                "pago": false
+                },
+                {
+                "usuarioAdministradorId": "1",
+                "codigo": "SQYQQ",
+                "descripcion": "Graduación de Abi",
+                "motivo": "Graduación",
+                "fechaDeCierre": "2016-11-13T00:00:00.000Z",
+                "montoObjetivo": 2500,
+                "montoPorPersona": 200,
+                "cuentaId": "001671650211-5",
+                "saldo": 0,
+                "regalosSugeridos": [],
+                "participantes": [],
+                "activo": true,
+                "id": 11,
+                "esAdministrador": true,
+                "pago": false
+                },
+                {
+                "usuarioAdministradorId": "2",
+                "codigo": "5XOWU",
+                "descripcion": "Despedida de Vidal",
+                "motivo": "Despedida",
+                "fechaDeCierre": "2016-12-10T00:00:00.000Z",
+                "montoObjetivo": 3000,
+                "montoPorPersona": 200,
+                "cuentaId": "2",
+                "saldo": 400,
+                "imagen": "fdfsfsdfsdf",
+                "regalosSugeridos": [
+                                     {
+                                     "descripcion": "Guitarra",
+                                     "votos": 3
+                                     }
+                                     ],
+                "participantes": [
+                                  "2",
+                                  "1",
+                                  "4",
+                                  "5",
+                                  "10",
+                                  "12"
+                                  ],
+                "pagos": [
+                          "3",
+                          "17"
+                          ],
+                "activo": true,
+                "id": 1,
+                "esAdministrador": true,
+                "pago": true
+                }
+                ]
+}

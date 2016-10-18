@@ -24,9 +24,9 @@ class RealDataManager: DataManagerProtocol {
 
     private init() { }
 
-    func getRegalos() -> Observable<Results<Regalo>> {
-        let regalos = RealmManager.shared.defaultRealm.objects(Regalo.self)
-        let dbObservable = Observable.from(RealmManager.shared.defaultRealm.objects(Regalo.self))
+    func getRegalos() -> Observable<[Regalo]> {
+        let regalos = RealmManager.shared.defaultRealm.objects(Regalo.self).toArray()
+        let dbObservable = Observable.from(RealmManager.shared.defaultRealm.objects(Regalo.self)).map { result in result.toArray() }
         if let userId = userId {
             Router.Regalo.List(userId: userId).rx_collection("regalos").do(onNext: { [weak self] (collection: [Regalo]) in
                 self?.updateRegalos(collection)
