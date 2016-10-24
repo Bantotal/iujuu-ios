@@ -84,7 +84,7 @@ extension UserMessages.Register {
     static let registerError = NSLocalizedString("Ocurrió un error al intentar registrarse. Por favor intente de nuevo!", comment: "")
     static let passwordInvalid = NSLocalizedString("Password must have 6 character, one capital letter and one number!", comment: "")
     static let loginError = NSLocalizedString("Nombre de usuario o clave incorrecta.", comment: "")
-    static let duplicatedEmail = NSLocalizedString("Ya ha un usuario registrado con este email.", comment: "")
+    static let duplicatedEmail = NSLocalizedString("Ya hay un usuario registrado con este email.", comment: "")
 
 }
 
