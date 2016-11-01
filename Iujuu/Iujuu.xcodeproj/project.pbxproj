@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1A8A44521DC8D6C000BF89A0 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8A44511DC8D6C000BF89A0 /* R.generated.swift */; };
+		1A8A44531DC8D6C000BF89A0 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1A8A44511DC8D6C000BF89A0 /* R.generated.swift */; };
 		281731691C9C4BBC006237C7 /* XLViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281731681C9C4BBC006237C7 /* XLViewController.swift */; };
 		2817316B1C9C4BDA006237C7 /* XLTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2817316A1C9C4BDA006237C7 /* XLTableViewController.swift */; };
 		281BF1A31C7B8EEF00809E3F /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = 281BF19F1C7B8EEF00809E3F /* Session.swift */; };
@@ -84,8 +86,6 @@
 		464512191D95A9A7009C2FE6 /* ButtonFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464512131D95A9A4009C2FE6 /* ButtonFooter.swift */; };
 		4645121A1D95A9A7009C2FE6 /* ButtonFooter.xib in Resources */ = {isa = PBXBuildFile; fileRef = 464512141D95A9A4009C2FE6 /* ButtonFooter.xib */; };
 		4645121B1D95A9A7009C2FE6 /* ButtonStyles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464512151D95A9A4009C2FE6 /* ButtonStyles.swift */; };
-		464512201D95ACF6009C2FE6 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4645121F1D95ACF6009C2FE6 /* R.generated.swift */; };
-		464512211D95AD07009C2FE6 /* R.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4645121F1D95ACF6009C2FE6 /* R.generated.swift */; };
 		464512231D95B1A5009C2FE6 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464512221D95B1A5009C2FE6 /* UITableView.swift */; };
 		464512241D95B2FA009C2FE6 /* UITableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 464512221D95B1A5009C2FE6 /* UITableView.swift */; };
 		46471E801DA825DD0087615E /* UserEndpoints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46471E7F1DA825DD0087615E /* UserEndpoints.swift */; };
@@ -327,6 +327,7 @@
 		07D33F5B22E367732FA2BFF0 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		0A1759BFE439013D1F0FBED3 /* Pods-UITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-UITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-UITests/Pods-UITests.release.xcconfig"; sourceTree = "<group>"; };
 		174F585F7E9D6B2B6BF61B19 /* Pods_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1A8A44511DC8D6C000BF89A0 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = R.generated.swift; path = "R-Swift/R.generated.swift"; sourceTree = "<group>"; };
 		20C3863EDAF6B64F5C07C53A /* Pods-Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Tests/Pods-Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		281731681C9C4BBC006237C7 /* XLViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XLViewController.swift; sourceTree = "<group>"; };
 		2817316A1C9C4BDA006237C7 /* XLTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = XLTableViewController.swift; sourceTree = "<group>"; };
@@ -372,7 +373,6 @@
 		464512131D95A9A4009C2FE6 /* ButtonFooter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonFooter.swift; sourceTree = "<group>"; };
 		464512141D95A9A4009C2FE6 /* ButtonFooter.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ButtonFooter.xib; sourceTree = "<group>"; };
 		464512151D95A9A4009C2FE6 /* ButtonStyles.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ButtonStyles.swift; sourceTree = "<group>"; };
-		4645121F1D95ACF6009C2FE6 /* R.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = R.generated.swift; path = "R-Swift/R.generated.swift"; sourceTree = "<group>"; };
 		464512221D95B1A5009C2FE6 /* UITableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UITableView.swift; sourceTree = "<group>"; };
 		46471E7F1DA825DD0087615E /* UserEndpoints.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserEndpoints.swift; sourceTree = "<group>"; };
 		4653B7F41D7A14A0002A6660 /* LoadingIndicator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoadingIndicator.swift; sourceTree = "<group>"; };
@@ -567,7 +567,7 @@
 		283020A21C86130600E6EBC2 /* R-Swift */ = {
 			isa = PBXGroup;
 			children = (
-				4645121F1D95ACF6009C2FE6 /* R.generated.swift */,
+				1A8A44511DC8D6C000BF89A0 /* R.generated.swift */,
 			);
 			name = "R-Swift";
 			sourceTree = "<group>";
@@ -1612,6 +1612,7 @@
 				4653B7F61D7A14A0002A6660 /* LoadingIndicator.swift in Sources */,
 				8F7705CB1DAD628A000AFD65 /* PagoConfirmadoViewController.swift in Sources */,
 				8F702F991D9D579400FE159E /* RegaloCell.swift in Sources */,
+				1A8A44531DC8D6C000BF89A0 /* R.generated.swift in Sources */,
 				8F9037EF1D99AA37006E1C8E /* ShareRegaloController.swift in Sources */,
 				4666841E1D94802800584FDB /* CreateAccountViewController.swift in Sources */,
 				8F9694D71D93048F00A9EBB7 /* UIFont.swift in Sources */,
@@ -1623,7 +1624,6 @@
 				CE60EF3C1DA7D5F6007CEA3B /* ParticipantesViewController.swift in Sources */,
 				8F5FB2AC1DA6B674003ED73E /* UITextField.swift in Sources */,
 				CE43ABDD1D9AECE100F123A6 /* EmptyHomeView.swift in Sources */,
-				464512211D95AD07009C2FE6 /* R.generated.swift in Sources */,
 				8F0759931D7728360012D681 /* Helpers.swift in Sources */,
 				4658D9B01D92BBF700A2DF05 /* RealDataManager.swift in Sources */,
 				CE49679E1D9EA55400E2363E /* RegaloDetailHeader.swift in Sources */,
@@ -1721,6 +1721,7 @@
 				8F9694E11D932A5A00A9EBB7 /* RSPerPersonController.swift in Sources */,
 				8F7705CA1DAD628A000AFD65 /* PagoConfirmadoViewController.swift in Sources */,
 				8F702F981D9D579400FE159E /* RegaloCell.swift in Sources */,
+				1A8A44521DC8D6C000BF89A0 /* R.generated.swift in Sources */,
 				8F9037EE1D99AA37006E1C8E /* ShareRegaloController.swift in Sources */,
 				4653B7F51D7A14A0002A6660 /* LoadingIndicator.swift in Sources */,
 				4666841D1D94802800584FDB /* CreateAccountViewController.swift in Sources */,
@@ -1732,7 +1733,6 @@
 				CE60EF3B1DA7D5F6007CEA3B /* ParticipantesViewController.swift in Sources */,
 				8F5FB2AB1DA6B674003ED73E /* UITextField.swift in Sources */,
 				CE43ABDC1D9AECE100F123A6 /* EmptyHomeView.swift in Sources */,
-				464512201D95ACF6009C2FE6 /* R.generated.swift in Sources */,
 				8F0759921D7728360012D681 /* Helpers.swift in Sources */,
 				4658D9AF1D92BBF700A2DF05 /* RealDataManager.swift in Sources */,
 				CE49679D1D9EA55400E2363E /* RegaloDetailHeader.swift in Sources */,

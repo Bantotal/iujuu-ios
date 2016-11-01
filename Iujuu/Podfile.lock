@@ -83,7 +83,7 @@ DEPENDENCIES:
   - RxCocoa (~> 3.0.0-beta.1)
   - RxRealm (~> 0.2.3)
   - RxSwift (~> 3.0.0-beta.1)
-  - SkyFloatingLabelTextField (~> 1.2)
+  - SkyFloatingLabelTextField (from `https://github.com/xmartlabs/SkyFloatingLabelTextField.git`, tag `1.3`)
   - SwiftDate (~> 4.0)
   - SwiftyJSON (= 3.0.0)
   - XLSwiftKit (~> 2.0)
@@ -95,6 +95,9 @@ EXTERNAL SOURCES:
   Opera:
     :branch: Swift3
     :git: https://github.com/xmartlabs/Opera.git
+  SkyFloatingLabelTextField:
+    :git: https://github.com/xmartlabs/SkyFloatingLabelTextField.git
+    :tag: '1.3'
 
 CHECKOUT OPTIONS:
   Eureka:
@@ -103,6 +106,9 @@ CHECKOUT OPTIONS:
   Opera:
     :commit: 521f936dabb1377d608612f285fa74908eb35135
     :git: https://github.com/xmartlabs/Opera.git
+  SkyFloatingLabelTextField:
+    :git: https://github.com/xmartlabs/SkyFloatingLabelTextField.git
+    :tag: '1.3'
 
 SPEC CHECKSUMS:
   Alamofire: 7682d43245de14874acd142ec137b144aa1dd335
@@ -139,6 +145,6 @@ SPEC CHECKSUMS:
   SwiftyJSON: f57b2b44bc166617372d1c70773591fe9f0f5fd4
   XLSwiftKit: 4d48322a602120dc6300d58d7fb07b873e223c1c
 
-PODFILE CHECKSUM: 5b668647403a257073263627f041f3fae21d1365
+PODFILE CHECKSUM: 6d1b4f792f40bc4ae90698bd199a51401cbd51ab
 
 COCOAPODS: 1.1.0.rc.2
