@@ -10,11 +10,14 @@ import Foundation
 import Alamofire
 import Crashlytics
 import KeychainAccess
-//import Opera
+import Opera
 import RxSwift
 import RealmSwift
+import OAuthSwift
+import Ecno
 
 class SessionController {
+
     static let sharedInstance = SessionController()
     fileprivate let keychain = Keychain(service: Constants.Keychain.serviceIdentifier)
     fileprivate init() { }
@@ -25,70 +28,99 @@ class SessionController {
         set { keychain[Constants.Keychain.sessionToken] = newValue }
     }
 
-    // MARK: - Session handling
-    func logOut() {
-        clearSession()
-        //TODO: Logout: App should transition to login / onboarding screen
+    var galiciaToken: String? {
+        get { return keychain[Constants.Keychain.galiciaToken] }
+        set { keychain[Constants.Keychain.galiciaToken] = newValue }
     }
 
-    func isLoggedIn() -> Bool {
-        invalidateIfNeeded()
-        return token != nil
-    }
+    //MARK: OAuthSwift
+    static var oauthSwift: OAuth2Swift = {
+        let oauth = OAuth2Swift(
+            consumerKey:    Constants.Oauth.ClientId,
+            consumerSecret: Constants.Oauth.ClientSecret,
+            authorizeUrl:   Constants.Oauth.authorizationUrl,
+            accessTokenUrl: Constants.Oauth.accessTokenUrl,
+            responseType:   Constants.Oauth.responseType
+        )
+        oauth.accessTokenBasicAuthentification = true
+        return oauth
+    }()
 
-    func invalidateIfNeeded() {
-        if token != nil && user == nil {
-            clearSession()
+    func setupOAuthSwift() {
+        if let token = galiciaToken {
+            SessionController.oauthSwift.client.credential.oauthToken = token
         }
     }
 
-    func refreshToken() -> Observable<String?> {
-        //TODO: refresh session token if necessary
-        return  Observable.just(nil)
+    func getOAuthToken(urlHandler: OAuthSwiftURLHandlerType, onFinish: @escaping (OAuthSwiftError?) -> Void) {
+        SessionController.authorize(urlHandler: urlHandler, success: { [unowned self] (credential, response, parameters) in
+            self.galiciaToken = credential.oauthToken
+            onFinish(nil)
+        }) { (error) in
+            onFinish(error)
+        }
     }
 
-    // MARK: - User handling
-    var user: User? {
-        //TODO: CHANGE ME
-        // This implementation just works if you will only have one User in the database all the time
-        // If you might have more than one then you should implement something else like another object that saves a relation to the 'currentUser'.
-        do {
-            let realm = try RealmManager.sharedInstance.createRealm()
-            return realm.objects(User.self).first
-        } catch {
-            Crashlytics.sharedInstance().recordError(error as NSError)
-            return nil
+    // MARK: - Session handling
+    func logOut() {
+        clearSession()
+    }
+
+    func isLoggedIn() -> Bool {
+        return token != nil
+    }
+
+    static func hasGaliciaToken() -> Bool {
+        return !SessionController.oauthSwift.client.credential.oauthToken.isEmpty
+    }
+
+    static func removeGaliciaToken() {
+        SessionController.sharedInstance.galiciaToken = nil
+        SessionController.oauthSwift.client.credential.oauthToken = ""
+    }
+
+    func invalidateIfNeeded() {
+        if token != nil && DataManager.shared.userId == nil {
+            clearSession()
         }
     }
 
     // MARK: - Auxiliary functions
     func clearSession() {
         token = nil
-        RealmManager.sharedInstance.eraseAll()
-//        Analytics.reset()
-//        Analytics.registerUnidentifiedUser()
+        SessionController.removeGaliciaToken()
+        RealmManager.shared.eraseAll()
+        Ecno.clearAll()
+        AfterLoginPending.shared.clear()
         Crashlytics.sharedInstance().setUserEmail(nil)
         Crashlytics.sharedInstance().setUserIdentifier(nil)
         Crashlytics.sharedInstance().setUserName(nil)
     }
 
-    // MARK: - User observable
-    fileprivate var userObserverToken: NotificationToken?
+    static func saveCurrentUserId() {
+        let defaults = UserDefaults.standard
+        defaults.set(DataManager.shared.userId, forKey: Constants.Keychain.userIdentifier)
+    }
 
-    lazy var userObservable: Observable<User> = {
-        return Observable.create() { [unowned self] (subscriber: AnyObserver<User>) in
-            let realm = RealmManager.sharedInstance.defaultRealm
-            let userResult = realm?.objects(User.self)
-            self.userObserverToken = userResult?.addNotificationBlock { _ in
-                if let user = self.user {
-                    subscriber.onNext(user)
-                }
-            }
-            return Disposables.create()
-        }
-    }()
+    static func loadCurrentUserId() {
+        let defaults = UserDefaults.standard
+        DataManager.shared.userId = defaults.value(forKey: Constants.Keychain.userIdentifier) as? Int
+    }
 
-    deinit {
-        userObserverToken?.stop()
+}
+
+extension SessionController {
+
+    static func authorize(urlHandler: OAuthSwiftURLHandlerType, success: @escaping OAuthSwift.TokenSuccessHandler,
+                          failure: @escaping OAuthSwift.FailureHandler) {
+
+        let state = generateStateWithLength(20) as String
+        SessionController.oauthSwift.authorizeURLHandler = urlHandler
+        _ = SessionController.oauthSwift
+            .authorize(withCallbackURL: Constants.Oauth.callbackUrl,
+                                            scope: Constants.Oauth.Scope, state: state,
+                                            success: success,
+                                            failure: failure
+        )
     }
 }

@@ -7,37 +7,54 @@
 //
 
 import Foundation
-//import Opera
+import Opera
 import Alamofire
 import KeychainAccess
 import RxSwift
+import SwiftyJSON
 
-class NetworkManager: SessionManager {
+class NetworkManager: RxManager {
 
-    static let singleton = NetworkManager()
+    static let singleton = NetworkManager(manager: SessionManager.default)
 
-    override public init(
-        configuration: URLSessionConfiguration = URLSessionConfiguration.default,
-        delegate: SessionDelegate = SessionDelegate(),
-        serverTrustPolicyManager: ServerTrustPolicyManager? = nil) {
-        super.init(configuration: configuration, delegate: delegate, serverTrustPolicyManager: serverTrustPolicyManager)
+    override init(manager: Alamofire.SessionManager) {
+        super.init(manager: manager)
+        observers = [Logger()]
     }
-    
-//        override init() {
-//        super.init()
-////        observers = [Logger()]
-//    }
 
-//    override func rx_response(_ requestConvertible: URLRequestConvertible) -> Observable<OperaResult> {
-//        let response = super.rx_response(requestConvertible)
-//        return SessionController.sharedInstance.refreshToken().flatMap { _ in response }
-//    }
 }
 
-final class Route {}
+class GaliciaNetworkManager: RxManager {
 
-//struct Logger: Opera.ObserverType {
-//    func willSendRequest(_ alamoRequest: Alamofire.Request, requestConvertible: URLRequestConvertible) {
-//        debugPrint(alamoRequest)
-//    }
-//}
+    static let singleton = GaliciaNetworkManager(manager: SessionManager.default)
+
+    override init(manager: Alamofire.SessionManager) {
+        super.init(manager: manager)
+        observers = [Logger()]
+    }
+
+    func refreshToken() -> Observable<String?> {
+        return Observable.just(nil)
+    }
+
+}
+
+struct Router {
+
+    static let baseUsuariosString = "usuarios"
+
+    struct Session {}
+    struct Regalo {}
+    struct Galicia {}
+    struct User {}
+    struct Accounts {}
+
+}
+
+struct Logger: Opera.ObserverType {
+
+    func willSendRequest(_ alamoRequest: Alamofire.Request, requestConvertible: URLRequestConvertible) {
+        debugPrint(alamoRequest)
+    }
+
+}

@@ -13,19 +13,19 @@ import RealmSwift
 
 
 final class User: Object {
-    
+
     dynamic var id: Int = Int.min
     dynamic var email: String?
     dynamic var company: String?
     dynamic var username: String = ""
     dynamic var avatarUrlString: String?
-    
+
     let followers = List<User>()
-    
+
     var avatarUrl: URL? {
         return URL(string: self.avatarUrlString ?? "")
     }
-    
+
     /**
      Return property names that should be ignored by Realm. Realm will not persist these properties.
      */
@@ -52,5 +52,5 @@ final class User: Object {
 //               company: j =>? "name",
 //              username: j => "login")
 //    }
-//    
+//
 //}

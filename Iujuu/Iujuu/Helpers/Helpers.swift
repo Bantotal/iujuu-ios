@@ -25,3 +25,25 @@ func DEBUGJson(_ value: AnyObject) {
         }
     #endif
 }
+
+func cleanedDict(_ dictionary: [String: Any?]) -> [String: Any] {
+    var newDict = [String: Any]()
+    dictionary.enumerated().forEach { (offset, element) in
+        if let value = element.value {
+            newDict[element.key] = value
+        }
+    }
+
+    return newDict
+}
+
+public func generateStateWithLength (_ len: Int) -> NSString {
+    let letters: NSString = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
+    let randomString: NSMutableString = NSMutableString(capacity: len)
+    for _ in 0 ..< len {
+        let length = UInt32 (letters.length)
+        let rand = arc4random_uniform(length)
+        randomString.appendFormat("%C", letters.character(at: Int(rand)))
+    }
+    return randomString
+}

@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="EmptyHomeView" customModule="Iujuu" customModuleProvider="target">
+            <connections>
+                <outlet property="buttonsHeightConstraint" destination="cf3-Jd-9U1" id="snu-Zx-p7i"/>
+                <outlet property="buttonsToTitleConstraint" destination="8rs-FF-HFm" id="K52-Sv-QJP"/>
+                <outlet property="iconImage" destination="7Lc-g1-MDH" id="MVU-HA-j8A"/>
+                <outlet property="imageHeightConstraint" destination="l7q-wM-3On" id="4yl-R1-Q9T"/>
+                <outlet property="imageWidthConstraint" destination="w8N-Vg-ild" id="ZSl-mK-QKr"/>
+                <outlet property="ingresarCodigoButton" destination="tXw-NG-pnj" id="awr-kS-jvI"/>
+                <outlet property="nuevaColectaButton" destination="cFp-Sq-zId" id="lCL-NI-vue"/>
+                <outlet property="titleLabel" destination="9bv-0v-6j2" id="aGe-Ew-d4m"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="390" height="402"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="homeEmpty" translatesAutoresizingMaskIntoConstraints="NO" id="7Lc-g1-MDH">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="150" id="l7q-wM-3On"/>
+                        <constraint firstAttribute="width" constant="150" id="w8N-Vg-ild"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No tienes ningun regalo!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9bv-0v-6j2">
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tXw-NG-pnj">
+                    <accessibility key="accessibilityConfiguration" label="IngresarCodigo"/>
+                    <state key="normal" title="Ingresar codigo"/>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cFp-Sq-zId">
+                    <accessibility key="accessibilityConfiguration" label="NuevoRegalo"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="60" id="cf3-Jd-9U1"/>
+                    </constraints>
+                    <state key="normal" title="Nuevo regalo"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="9bv-0v-6j2" firstAttribute="top" secondItem="7Lc-g1-MDH" secondAttribute="bottom" constant="11" id="1P8-ef-P4c"/>
+                <constraint firstItem="cFp-Sq-zId" firstAttribute="top" secondItem="9bv-0v-6j2" secondAttribute="bottom" constant="40" id="8rs-FF-HFm"/>
+                <constraint firstItem="tXw-NG-pnj" firstAttribute="width" secondItem="cFp-Sq-zId" secondAttribute="width" id="Nbk-3J-Pkb"/>
+                <constraint firstItem="7Lc-g1-MDH" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="QDv-ed-ijb"/>
+                <constraint firstItem="cFp-Sq-zId" firstAttribute="centerX" secondItem="9bv-0v-6j2" secondAttribute="centerX" id="a9K-nq-q64"/>
+                <constraint firstItem="cFp-Sq-zId" firstAttribute="width" secondItem="7Lc-g1-MDH" secondAttribute="width" multiplier="1.7" id="e9g-p2-5GX"/>
+                <constraint firstItem="tXw-NG-pnj" firstAttribute="centerX" secondItem="cFp-Sq-zId" secondAttribute="centerX" id="eYf-r3-hFK"/>
+                <constraint firstAttribute="trailing" secondItem="9bv-0v-6j2" secondAttribute="trailing" id="fTf-ua-bxA"/>
+                <constraint firstItem="tXw-NG-pnj" firstAttribute="top" secondItem="cFp-Sq-zId" secondAttribute="bottom" constant="20" id="fsa-Ti-nNN"/>
+                <constraint firstItem="9bv-0v-6j2" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="kZ1-tA-SyA"/>
+                <constraint firstItem="9bv-0v-6j2" firstAttribute="centerX" secondItem="7Lc-g1-MDH" secondAttribute="centerX" id="nlH-7B-IJy"/>
+                <constraint firstItem="7Lc-g1-MDH" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="vTd-n5-u6T"/>
+                <constraint firstItem="tXw-NG-pnj" firstAttribute="height" secondItem="cFp-Sq-zId" secondAttribute="height" id="vaB-2I-7zM"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="33" y="-80"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="homeEmpty" width="150" height="150"/>
+    </resources>
+</document>

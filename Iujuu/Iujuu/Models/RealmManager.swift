@@ -13,7 +13,7 @@ import RealmSwift
 
 class RealmManager: AnyObject {
 
-    static let sharedInstance = RealmManager()
+    static let shared = RealmManager()
 
     fileprivate(set) var defaultRealm: Realm!
 
@@ -58,7 +58,7 @@ class RealmManager: AnyObject {
 extension Object {
 
     fileprivate func realmInst() -> Realm {
-        return self.realm ?? RealmManager.sharedInstance.defaultRealm
+        return self.realm ?? RealmManager.shared.defaultRealm
     }
 
     /** Must be called from main thread */
@@ -70,14 +70,16 @@ extension Object {
     }
 
     /** Must be called from main thread */
-    static func save(_ objects: [Object], update: Bool = true) throws {
-        guard let first = objects.first else {
-            return
-        }
-        let realm = first.realmInst()
+    static func save<T: Object>(_ objects: [T], update: Bool = true, removeOld: Bool = false) throws where T: IUObject {
+        guard let realm = objects.first?.realmInst() ?? (try? RealmManager.shared.createRealm()) else { return }
         try realm.write() {
+            if removeOld {
+                let old = realm.objects(self)
+                let deleted = old.filter { del in !objects.contains(where: { obj in obj.id == (del as? T)!.id }) }
+                realm.delete(deleted)
+            }
             objects.forEach() { realm.add($0, update: update) }
         }
     }
-    
+
 }

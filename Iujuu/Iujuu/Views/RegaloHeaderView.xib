@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="OpenSans-Regular.ttf">
+            <string>OpenSans</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="RegaloHeaderView" customModule="Iujuu" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="236"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="kXY-AW-4t6">
+                    <constraints>
+                        <constraint firstAttribute="height" constant="156" id="53Q-uC-yXM"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5sU-Cq-8Cb">
+                    <frame key="frameInset" minX="186" minY="166" width="43" height="50"/>
+                    <fontDescription key="fontDescription" name="OpenSans" family="Open Sans" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="5sU-Cq-8Cb" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="35v-gi-C1I"/>
+                <constraint firstItem="5sU-Cq-8Cb" firstAttribute="top" secondItem="kXY-AW-4t6" secondAttribute="bottom" constant="10" id="ISA-BA-iKn"/>
+                <constraint firstItem="kXY-AW-4t6" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="Tsq-Zt-QdV"/>
+                <constraint firstItem="kXY-AW-4t6" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="qTu-N4-ph5"/>
+                <constraint firstAttribute="trailing" secondItem="kXY-AW-4t6" secondAttribute="trailing" id="yHr-iT-XKY"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="firstLabel" destination="5sU-Cq-8Cb" id="GhE-fk-gOd"/>
+                <outlet property="imageHeightConstraint" destination="53Q-uC-yXM" id="0mx-nt-mBM"/>
+                <outlet property="imageView" destination="kXY-AW-4t6" id="P8u-0Z-Qm2"/>
+            </connections>
+            <point key="canvasLocation" x="-159" y="-192"/>
+        </view>
+    </objects>
+</document>
