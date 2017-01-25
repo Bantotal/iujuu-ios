@@ -23,7 +23,7 @@ struct Constants {
         static let ServerError = 500
 
         struct Galicia {
-            static let baseUrl = URL(string: "http://galicia.desarrollo.fluxit.com.ar/api/v1")!
+            static let baseUrl = URL(string: "http://api.bancogalicia.com.ar/api/v1")!
             static let AuthHeaderName = "Authorization"
             static let callbackUrl = "http://iujuu/callback"
             static let argentineCurrency = "ARS"
@@ -79,10 +79,10 @@ struct Constants {
         static let ClientId = "8c4179cb-a2ad-478f-9ddc-d6a58d2d038b"
         static let ClientSecret = "26d74708-4476-41e1-b0a9-448212011ac0"
         static let Scope = "global"
-        static let authorizationUrl = "http://galicia.desarrollo.fluxit.com.ar/auth/oauth/authorize"
-        static let accessTokenUrl = "http://galicia.desarrollo.fluxit.com.ar/auth/oauth/token"
-        static let loginUrl = "http://galicia.desarrollo.fluxit.com.ar/auth/login"
-        static let callbackUrl = "http://galicia.desarrollo.fluxit.com.ar/pagos/" //"http://localhost:8084/pagos/"
+        static let authorizationUrl = "http://api.bancogalicia.com.ar/auth/oauth/authorize"
+        static let accessTokenUrl = "http://api.bancogalicia.com.ar/auth/oauth/token"
+        static let loginUrl = "http://api.bancogalicia.com.ar/auth/login"
+        static let callbackUrl = "http://api.bancogalicia.com.ar/pagos/" //"http://localhost:8084/pagos/"
         static let responseType = "code"
     }
 
